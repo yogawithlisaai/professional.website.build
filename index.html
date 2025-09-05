@@ -4,10 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Yoga with Lisa</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="images/favicon.png">
-  <!-- Google Fonts for elegant serif + clean sans -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Elegant serif + clean sans (similar vibe to shaep.co) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Header -->
@@ -27,37 +28,39 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-overlay"></div>
+  <!-- Hero (image) -->
+  <section class="hero hero--image" role="banner" aria-label="Hero">
+    <!-- Set your image at images/hero.jpg -->
+    <div class="hero-media" style="background-image:url('images/hero.jpg');" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
     <div class="hero-inner">
-      <h1><span>Yoga with Lisa</span></h1>
-      <p class="hero-sub">Science meets movement. Where yoga, fitness, and mindfulness flow together.</p>
+      <h1 class="display">
+        It’s time for you to <em>awaken</em> your practice.<br />
+        Welcome to your power.
+      </h1>
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="yoga.html">Explore Yoga</a>
-        <a class="btn btn-ghost" href="#">Work With Me</a>
+        <a class="btn btn-dark btn-pill" href="yoga.html">START YOUR FREE TRIAL NOW</a>
       </div>
     </div>
   </section>
 
-  <!-- Minimal Intro Section -->
+  <!-- Minimal Intro -->
   <section class="intro container">
-    <h2>Elevate Your Practice</h2>
+    <h2>Yoga, science, and mindfulness—beautifully integrated.</h2>
     <p>
-      A modern space blending yoga, science, and wellness. Join me for classes, coaching, and insights 
-      that empower your mind and body.
+      Editorial-clean design. Focused movement. Evidence-informed guidance.
+      Begin with classes, coaching, and tools that meet you exactly where you are.
     </p>
   </section>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="y"></span> Yoga with Lisa — All Rights Reserved</p>
+      <p>© <span id="y"></span> Yoga with Lisa — All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    // year
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
