@@ -94,3 +94,15 @@ h1,h2,h3{
   .main-nav ul{gap:18px}
   .brand{font-size:1.25rem}
 }
+
+footer {
+  background-color: #000;       /* black background */
+  color: #fff;                  /* white text */
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* clean sans serif */
+  font-size: 14px;              /* slightly smaller text */
+  font-weight: 600;             /* semi-bold */
+  text-transform: uppercase;    /* all caps */
+  letter-spacing: 1px;          /* adds spacing between letters */
+  text-align: center;           /* center align */
+  padding: 20px 0;              /* space above and below */
+}
