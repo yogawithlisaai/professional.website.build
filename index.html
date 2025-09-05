@@ -3,23 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>yogawithlisa</title>
+  <title>Yoga with Lisa</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="images/favicon.png">
+  <!-- Google Fonts for elegant serif + clean sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Top Nav -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#">
-        <span class="brand-strong">yoga</span>withlisa
-      </a>
-
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-
+      <a class="brand" href="index.html">Yoga with Lisa</a>
       <nav class="main-nav" aria-label="Primary">
         <ul>
-          <li><a href="#">YOGA</a></li>
+          <li><a href="yoga.html">YOGA</a></li>
           <li><a href="#">CHAT</a></li>
           <li><a href="#">APP</a></li>
           <li><a href="#">WELLNESS</a></li>
@@ -31,73 +28,35 @@
   </header>
 
   <!-- Hero -->
-<section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline poster="images/hero-poster.jpg">
-    <source src="videos/hero.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-<div class="hero-text">
-    <h1>BECOME YOUR BEST SELF</h1>
-    <p>Yoga, fitness, and self-care tips designed with you in mind.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary" href="#">START FREE TRIAL</a>
-      <a class="btn btn-ghost" href="#">Send a Gift Card</a>
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <h1><span>Yoga with Lisa</span></h1>
+      <p class="hero-sub">Science meets movement. Where yoga, fitness, and mindfulness flow together.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="yoga.html">Explore Yoga</a>
+        <a class="btn btn-ghost" href="#">Work With Me</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- Intro -->
+  <!-- Minimal Intro Section -->
   <section class="intro container">
-    <h2>GET INSPIRED</h2>
-    <p class="lede">
-      Whether you're a complete beginner, want to deepen your practice, or complement your practice with strength training and cardio,
-      get the full studio experience at home with hundreds of classes for body, mind, and spirit.
-      <span class="nowrap">Chat with Lisa AI</span> to personalize your workout experience to the tee—from eating habits to cycle syncing—let's get you to where you want to be.
+    <h2>Elevate Your Practice</h2>
+    <p>
+      A modern space blending yoga, science, and wellness. Join me for classes, coaching, and insights 
+      that empower your mind and body.
     </p>
   </section>
 
-  <!-- Feature Cards -->
-  <section class="cards container" aria-label="Featured categories">
-    <article class="card">
-      <img src="images/yoga.jpg" alt="Person practicing yoga at sunrise">
-      <div class="card-body">
-        <h3>YOGA <span aria-hidden="true">›</span></h3>
-        <p>Get lost in your flow state with every yoga variety, from Vinyasa to Hatha.</p>
-      </div>
-    </article>
-
-    <article class="card">
-      <img src="images/fitness.jpg" alt="Strength workout by the pool">
-      <div class="card-body">
-        <h3>FITNESS <span aria-hidden="true">›</span></h3>
-        <p>Complement your yoga practice with strength training or cardio workouts to keep you stronger for longer.</p>
-      </div>
-    </article>
-
-    <article class="card">
-      <img src="images/selfcare.jpg" alt="Self-care ritual with gua sha">
-      <div class="card-body">
-        <h3>SELF‑CARE <span aria-hidden="true">›</span></h3>
-        <p>Unwind with meditative rituals like dry brushing, gua sha, and journaling.</p>
-      </div>
-    </article>
-  </section>
-
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="y"></span> yogawithlisa — Made with ♥</p>
+      <p>© <span id="y"></span> Yoga with Lisa — All Rights Reserved</p>
     </div>
   </footer>
 
   <script>
-    // mobile menu
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.main-nav');
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-    });
     // year
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
