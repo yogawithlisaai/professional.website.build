@@ -153,3 +153,68 @@ footer {
 }
 
 
+/* Brand name top-right */
+.brand-text {
+  white-space: nowrap;          /* keeps 'yoga with lisa' on one line */
+}
+
+/* Hero heading */
+.display {
+  text-wrap: balance;           /* evens out line breaks */
+  word-break: keep-all;         /* don’t break inside words */
+  overflow-wrap: normal;
+  line-height: 1.15;
+  max-width: 16ch;              /* ~16 characters per line feels elegant */
+  margin: 0 auto;               /* centers within hero */
+}
+
+/* Keep specific words together */
+.nowrap {
+  white-space: nowrap;
+}
+
+/* Mobile tweaks */
+@media (max-width: 430px) {
+  .display {
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
+    max-width: 18ch;           /* allow a bit more width on small screens */
+    letter-spacing: -0.3px;
+  }
+}
+
+/* Brand name top-right */
+.brand-text {
+  white-space: nowrap;          /* keeps 'yoga with lisa' on one line */
+}
+
+/* Hero heading */
+.display {
+  text-wrap: balance;           /* evens out line breaks */
+  word-break: keep-all;         /* don’t break inside words */
+  overflow-wrap: normal;
+  line-height: 1.15;
+  max-width: 16ch;              /* tighter column width for desktop */
+  margin: 0 auto;
+}
+
+/* Keep specific phrases together */
+.nowrap { white-space: nowrap; }
+
+/* Mobile tweaks */
+@media (max-width: 430px) {
+  .display {
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
+    max-width: 18ch;           /* allow a bit more width so text doesn’t stack too tall */
+    letter-spacing: -0.3px;
+  }
+}
+
+/* Larger desktop screens: extra editorial feel */
+@media (min-width: 1200px) {
+  .display {
+    max-width: 14ch;           /* narrow for elegant line breaks */
+    font-size: clamp(2.8rem, 4vw, 4.2rem);
+    line-height: 1.1;
+  }
+}
+
