@@ -217,4 +217,11 @@ footer {
     line-height: 1.1;
   }
 }
-
+.brand {
+  font-family: "amandine", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  text-decoration: none;
+  color: #000;        /* adjust if you want a softer gray/white */
+  letter-spacing: .02em;
+}
