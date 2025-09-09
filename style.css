@@ -225,4 +225,45 @@ footer {
   color: #ffffff;        /* adjust if you want a softer gray/white */
   letter-spacing: .02em;
   font-size: 3rem;
+
+}
+
+/* Login Button in Header */
+.login-btn {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200; /* Thin */
+  border: 1px solid #000;   /* black outline */
+  background: transparent;  /* see-through background */
+  color: #000;              /* black text */
+  padding: 6px 18px;
+  border-radius: 20px;      /* pill style */
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #000;   /* black fill on hover */
+  color: #fff;        /* invert to white text */
+}
+
+/* CTA Button (Hero Section) */
+.btn {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200; /* Thin */
+  border-radius: 25px;
+  padding: 12px 28px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.btn-dark {
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+}
+
+.btn-dark:hover {
+  background: #fff;
+  color: #000;
 }
