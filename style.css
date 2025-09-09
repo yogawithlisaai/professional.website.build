@@ -219,9 +219,9 @@ footer {
 }
 .brand {
   font-family: "amandine", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   text-decoration: none;
-  color: #000;        /* adjust if you want a softer gray/white */
-  letter-spacing: .02em;
+  color: #ffffff;        /* adjust if you want a softer gray/white */
+  letter-spacing: .08em;
 }
