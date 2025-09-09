@@ -223,5 +223,6 @@ footer {
   font-style: normal;
   text-decoration: none;
   color: #ffffff;        /* adjust if you want a softer gray/white */
-  letter-spacing: .08em;
+  letter-spacing: .02em;
+  font-size: 6rem;
 }
