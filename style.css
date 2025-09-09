@@ -267,3 +267,21 @@ footer {
   background: #fff;
   color: #000;
 }
+
+.login-btn {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200; /* Thin */
+  border: 1px solid #000;   /* Black outline */
+  background: transparent;  
+  color: #000;
+  padding: 6px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-left: 12px;
+}
+
+.login-btn:hover {
+  background: #000;
+  color: #fff;
+}
