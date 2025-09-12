@@ -15,17 +15,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
-<script>
-  window.addEventListener("scroll", function() {
-    const header = document.querySelector(".site-header");
-    if (window.scrollY > 50) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
-  });
-</script>
-
 <body>
   <!-- Header -->
   <header class="site-header">
@@ -73,8 +62,23 @@
     </div>
   </footer>
 
+<!-- Sticky taupe nav on scroll -->
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    (function () {
+      const header = document.querySelector('.site-header');
+      if (!header) return;
+
+      const toggle = () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      };
+
+      toggle(); // set initial state on load
+      window.addEventListener('scroll', toggle, { passive: true });
+    })();
   </script>
 </body>
 </html>
