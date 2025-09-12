@@ -366,3 +366,16 @@ footer {
   background: #fff !important;
   color: #000 !important;
 }
+
+.main-nav .login-btn{
+  background:#000 !important;
+  color:#fff !important;
+  border:1px solid #000 !important;
+  border-radius:9999px !important;
+  padding:10px 22px !important;
+  display:inline-block !important;
+}
+.main-nav .login-btn:hover{
+  background:#fff !important;
+  color:#000 !important;
+}
