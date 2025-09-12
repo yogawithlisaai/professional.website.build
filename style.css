@@ -529,3 +529,27 @@ html, body { overflow-x: hidden; }
   background: #F0E9D8; /* taupe */
   box-shadow: 0 2px 10px rgba(0,0,0,.08);
 }
+
+:root { --taupe: #F0E9D8; }
+
+/* Sticky header default (transparent) */
+.site-header{
+  position: fixed !important;
+  top: 0; left: 0; right: 0;
+  padding: 22px 0;
+  background: transparent;
+  z-index: 1000; /* above hero overlay */
+  transition: background .3s ease, box-shadow .3s ease, backdrop-filter .3s ease;
+}
+
+/* When scrolled, show the taupe bar */
+.site-header.scrolled{
+  background: var(--taupe);
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  backdrop-filter: saturate(110%) blur(6px);
+}
+
+/* Improve contrast on taupe */
+.site-header.scrolled .main-nav a{ color:#111 !important; opacity:.9; }
+.site-header.scrolled .main-nav a:hover{ opacity:1; }
+.site-header.scrolled .brand{ color:#111 !important; }
