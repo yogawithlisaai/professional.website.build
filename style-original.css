@@ -29,6 +29,10 @@ h1,h2,h3{
 .container{max-width:var(--container); margin-inline:auto; padding-inline:20px}
 
 /* ---------- Header / Nav ---------- */
+.site-header{
+  position:absolute; inset:0 0 auto 0; /* sits on top of hero */
+  padding:22px 0; z-index:10; background:transparent;
+}
 .nav-wrap{display:flex; align-items:center; justify-content:space-between}
 .brand{
   text-decoration:none; color:var(--white);
@@ -478,28 +482,74 @@ html, body { overflow-x: hidden; }
   letter-spacing: 0.3px;         /* keep balance */
 }
 
+/* ==== Sticky taupe header (override earlier rules) ==== */
 :root { --taupe: #F0E9D8; }
 
-/* Sticky header (transparent by default) */
+/* Make sure this wins over the earlier absolute rule */
 .site-header{
-  position: fixed;          /* pin to top */
+  position: fixed !important;   /* stays pinned to top */
+  top: 0; left: 0; right: 0;
+  padding: 22px 0;
+  background: transparent;      /* start transparent */
+  transition: background .3s ease, box-shadow .3s ease, backdrop-filter .3s ease;
+  z-index: 1000;                /* above hero and overlay */
+}
+
+/* When scrolled, show the taupe bar */
+.site-header.scrolled{
+  background: var(--taupe);
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  /* a little glassy polish helps readability over video/images */
+  backdrop-filter: saturate(110%) blur(6px);
+}
+
+/* Optional: when the header turns taupe, make nav links dark for contrast */
+.site-header.scrolled .main-nav a{
+  color:#111 !important;
+  opacity: 0.9;
+}
+.site-header.scrolled .main-nav a:hover{ opacity: 1; }
+
+/* Keep the brand visible over taupe too */
+.site-header.scrolled .brand{ color:#111 !important; }
+
+/* Sticky header default (transparent) */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Sticky header when scrolling */
+.site-header.scrolled {
+  background: #F0E9D8; /* taupe */
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
+:root { --taupe: #F0E9D8; }
+
+/* Sticky header default (transparent) */
+.site-header{
+  position: fixed !important;
   top: 0; left: 0; right: 0;
   padding: 22px 0;
   background: transparent;
-  z-index: 1000;
+  z-index: 1000; /* above hero overlay */
   transition: background .3s ease, box-shadow .3s ease, backdrop-filter .3s ease;
 }
 
-/* Taupe when scrolled */
+/* When scrolled, show the taupe bar */
 .site-header.scrolled{
   background: var(--taupe);
   box-shadow: 0 2px 10px rgba(0,0,0,.08);
   backdrop-filter: saturate(110%) blur(6px);
 }
 
-/* Link colors over each state */
-.site-header .brand,
-.site-header .main-nav a { color:#fff; }
-
-.site-header.scrolled .brand,
-.site-header.scrolled .main-nav a { color:#111 !important; }
+/* Improve contrast on taupe */
+.site-header.scrolled .main-nav a{ color:#111 !important; opacity:.9; }
+.site-header.scrolled .main-nav a:hover{ opacity:1; }
+.site-header.scrolled .brand{ color:#111 !important; }
