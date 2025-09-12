@@ -333,3 +333,23 @@ footer {
     line-height:1.12;
   }
 }
+
+/* LOGIN button in header */
+.main-nav a.login-btn {
+  display: inline-block;         
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  background: #000;              /* black fill */
+  color: #fff !important;        /* white text */
+  padding: 10px 22px;            /* a bit more padding for balance */
+  border-radius: 9999px;         /* full pill */
+  text-decoration: none;
+  letter-spacing: .5px;
+  transition: all .25s ease;
+  margin-left: 12px;             /* small gap */
+}
+.main-nav a.login-btn:hover {
+  background: #fff;              /* invert on hover */
+  color: #000 !important;        /* black text */
+  border: 1px solid #000;
+}
