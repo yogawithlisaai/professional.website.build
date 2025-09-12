@@ -353,3 +353,16 @@ footer {
   color: #000 !important;        /* black text */
   border: 1px solid #000;
 }
+
+/* Force LOGIN to look like CTA button */
+.main-nav .login-btn {
+  background: #000 !important;
+  color: #fff !important;
+  border: 1px solid #000;
+  padding: 10px 22px;
+  border-radius: 9999px;
+}
+.main-nav .login-btn:hover {
+  background: #fff !important;
+  color: #000 !important;
+}
