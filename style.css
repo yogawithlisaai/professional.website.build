@@ -459,3 +459,25 @@ html, body { overflow-x: hidden; }
   padding:10px 18px;      /* slightly shorter so it aligns */
   font-weight:600;        /* same weight as other nav links */
 }
+
+/* Sticky nav background effect */
+.site-header {
+  position: fixed;          /* stays pinned at top */
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;  /* start transparent */
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+  background: #F0E9D8;       /* taupe banner color */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* subtle depth */
+}
+
+/* Soften LOGIN text */
+.site-header .main-nav a.login-btn {
+  font-weight: 400 !important;   /* normal, not bold */
+  font-size: 0.9rem;             /* slightly smaller */
+  letter-spacing: 0.3px;         /* keep balance */
+}
