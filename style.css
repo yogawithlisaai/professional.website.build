@@ -512,3 +512,20 @@ html, body { overflow-x: hidden; }
 
 /* Keep the brand visible over taupe too */
 .site-header.scrolled .brand{ color:#111 !important; }
+
+/* Sticky header default (transparent) */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Sticky header when scrolling */
+.site-header.scrolled {
+  background: #F0E9D8; /* taupe */
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
