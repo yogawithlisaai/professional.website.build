@@ -73,9 +73,8 @@
           header.classList.add('scrolled');
         } else {
           header.classList.remove('scrolled');
-// DEBUG:
-      // console.log('scrolled?', on);
-    };
+    	}
+      };
 
     toggle(); // initial state
     window.addEventListener('scroll', toggle, { passive: true });
