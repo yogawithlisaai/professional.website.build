@@ -487,3 +487,6 @@ html, body { overflow-x: hidden; }
 /* Ensure hero layers sit under the header */
 .hero, .hero-media, .hero-overlay { z-index: 0; }
 .hero-inner { z-index: 1; }
+
+/* DEBUG: make it obvious if the class is applied */
+.site-header.scrolled { background: red !important; }
