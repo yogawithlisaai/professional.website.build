@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Header Scroll Test (Standalone)</title>
+<style>
+  :root { --taupe:#F0E9D8; --text:#111; --white:#fff; }
+
+  /* Reset + demo layout */
+  *{box-sizing:border-box} html,body{margin:0;padding:0}
+  body{font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--text)}
+  .spacer{height:100vh; display:flex; align-items:center; justify-content:center}
+  .spacer:nth-child(odd){background:#f7f7f7}
+  .spacer:nth-child(even){background:#eaeaea}
+
+  /* Header (fixed, starts transparent) */
+  .site-header{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:2000;
+    padding:18px 0;
+    background:transparent;
+    transition: background .25s ease, box-shadow .25s ease;
+  }
+  .container{max-width:1100px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:space-between;}
+  .brand{font-weight:700; text-decoration:none; color:#fff}
+  .main-nav ul{display:flex; gap:22px; list-style:none; margin:0; padding:0}
+  .main-nav a{color:#fff; text-decoration:none; font-weight:600}
+  .login-btn{padding:10px 18px; border-radius:9999px; background:#000; color:#fff; border:1px solid #000}
+
+  /* Scrolled state */
+  .site-header.scrolled{
+    background:var(--taupe);
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+  }
+  .site-header.scrolled .brand,
+  .site-header.scrolled .main-nav a{ color:var(--text); }
+  .site-header.scrolled .login-btn{
+    background:#000; color:#fff; border-color:#000;
+  }
+
+  /* Make room so content isn't hidden under fixed header */
+  body{padding-top:68px;}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="#">yoga with lisa</a>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#">YOGA</a></li>
+        <li><a href="#">CORPORATE</a></li>
+        <li><a href="#">WELLNESS</a></li>
+        <li><a class="login-btn" href="#">LOGIN</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="spacer"><h1>Scroll down…</h1></section>
+<section class="spacer"><h2>Header should turn taupe</h2></section>
+<section class="spacer"><h2>…and link colors switch to dark</h2></section>
+
+<script>
+  (function () {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+    const toggle = () => {
+      if (window.scrollY > 50) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    toggle();
+    window.addEventListener('scroll', toggle, { passive:true });
+  })();
+</script>
+</body>
+</html>
