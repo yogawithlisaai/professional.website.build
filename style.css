@@ -569,3 +569,13 @@ html, body { overflow-x: hidden; }
     overflow-wrap: normal;    /* don’t split words */
   }
 }
+
+/* Reduce gap between hero and next section */
+.hero {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.intro {
+  margin-top: 2rem;   /* adjust smaller if you want them closer */
+}
