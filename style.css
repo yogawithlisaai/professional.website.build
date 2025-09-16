@@ -291,8 +291,8 @@ footer {
   font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight:150;
   border:1px solid #000;
-  background:transparent;
-  color:#000 !important;        /* override white nav link color */
+  background:000;
+  color:#fff !important;        /* override white nav link color */
   padding:6px 16px;
   border-radius:20px;
   text-decoration:none;
@@ -301,8 +301,9 @@ footer {
   margin-left:12px;             /* little gap from last nav link */
 }
 .main-nav a.login-btn:hover{
-  background:#000;
-  color:#fff !important;
+  background:#fff;
+  color:#000 !important;
+  border-color:#000;
 }
 
 /* Hero headline */
@@ -531,26 +532,12 @@ html, body { overflow-x: hidden; }
     padding-right: max(16px, env(safe-area-inset-right));
   }
 }
-
-/* ===== Final Hero Headline Styles (override all earlier .display rules) ===== */
-.display {
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 400;       /* thinner headline */
-  line-height: 1.2;
-  letter-spacing: -0.3px;
-  text-wrap: balance;
-  word-break: keep-all;
-  overflow-wrap: normal;
-  max-width: 20ch;        /* narrower column for elegance */
-  margin: 0 auto;
-  text-align: center;
+/* Keep LOGIN white in scrolled (taupe) state */
+.site-header.scrolled .main-nav a.login-btn{
+  color:#fff !important;
+  background:#000;
+  border-color:#000;
 }
 
-/* Mobile tweak: prevent cutoff on smaller screens */
-@media (max-width: 430px) {
-  .display {
-    font-size: clamp(1.6rem, 6vw, 2.4rem);
-    max-width: 90vw;
-    padding-inline: 16px;
-  }
-}
+/* Final hero weight override */
+.hero .display{ font-weight:300; }
