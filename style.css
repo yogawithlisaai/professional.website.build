@@ -117,8 +117,8 @@ footer {
 }
 
 .hero .btn {
-  font-size: 0.8rem;  
-  font-weight: 600;    
+  font-size: 0.75rem;  
+  font-weight: 500;    
   padding: 0.75rem 1.5rem; /* balanced pill button */
   border-radius: 9999px;
 }
@@ -504,4 +504,53 @@ html, body { overflow-x: hidden; }
 .site-header.scrolled .main-nav a.login-btn:hover {
   background: #fff;         /* invert on hover */
   color: #000 !important;   /* black text only on hover */
+}
+
+/* --- Mobile hero fixes (center + reflow) --- */
+@media (max-width: 430px){
+  /* Let the first line wrap normally on small screens */
+  .nowrap { white-space: normal; }
+
+  /* Give the headline a full-width, centered box with padding */
+  .hero .display,
+  .display{
+    max-width: calc(100vw - 32px);   /* ~16px side padding */
+    padding-inline: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-wrap: balance;               /* nicer line breaks */
+    overflow-wrap: anywhere;          /* never clip off-screen */
+    font-size: clamp(1.75rem, 6.8vw, 2.35rem);  /* a touch smaller */
+    line-height: 1.18;
+  }
+
+  /* iOS safe-area nicety (notch edges) */
+  .hero .display{
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+}
+
+/* ===== Final Hero Headline Styles (override all earlier .display rules) ===== */
+.display {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 400;       /* thinner headline */
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  max-width: 20ch;        /* narrower column for elegance */
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Mobile tweak: prevent cutoff on smaller screens */
+@media (max-width: 430px) {
+  .display {
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+    max-width: 90vw;
+    padding-inline: 16px;
+  }
 }
