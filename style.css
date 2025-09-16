@@ -7,7 +7,7 @@
 
   --black:#000;
   --white:#fff;
-  --taupe:#F0E9D8;
+  --taupe:#e3ddd6;
 }
 
 *{box-sizing:border-box}
@@ -386,6 +386,7 @@ footer {
   background: #000;              /* solid black like the hero CTA */
   color: #fff !important;        /* defeat .main-nav a { color: white } */
   font-weight: 700;
+  font-size: 0.85rem;   /* or try 14px */
   letter-spacing: .2px;
   text-decoration: none;
   transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
