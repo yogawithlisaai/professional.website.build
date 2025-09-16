@@ -541,3 +541,31 @@ html, body { overflow-x: hidden; }
 
 /* Final hero weight override */
 .hero .display{ font-weight:300; }
+
+/* ===== FINAL hero headline overrides ===== */
+.display {
+  font-weight: 400 !important;   /* thinner text */
+  font-size: clamp(2rem, 5vw, 3rem) !important;  /* flexible sizing */
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  text-align: center;
+}
+
+/* Mobile: keep first line together */
+@media (max-width: 430px) {
+  .display {
+    white-space: nowrap;    /* don’t let it break mid-line */
+    font-size: 1.8rem;      /* adjust so it fits better */
+    max-width: 95vw;        /* use nearly the full viewport */
+  }
+}
+
+/* Keep hero headline tighter on mobile */
+@media (max-width: 430px) {
+  .hero .display {
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+    max-width: 95vw;          /* allow nearly full width */
+    white-space: nowrap;      /* prevent breaking */
+    overflow-wrap: normal;    /* don’t split words */
+  }
+}
