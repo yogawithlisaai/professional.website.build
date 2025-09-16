@@ -486,3 +486,19 @@ html, body { overflow-x: hidden; }
 /* Ensure the hero sits under the header */
 .hero, .hero-media, .hero-overlay { z-index: 0; }
 .hero-inner { z-index: 1; }
+
+/* Keep LOGIN text white always */
+.site-header .main-nav a.login-btn {
+  color: #fff !important;
+}
+
+.site-header.scrolled .main-nav a.login-btn {
+  color: #fff !important;   /* force white even when scrolled */
+  border-color: #000;       /* keep the black pill outline */
+  background: #000;         /* solid black fill (if you want) */
+}
+
+.site-header.scrolled .main-nav a.login-btn:hover {
+  background: #fff;         /* invert on hover */
+  color: #000 !important;   /* black text only on hover */
+}
