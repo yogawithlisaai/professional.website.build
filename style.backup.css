@@ -22,7 +22,7 @@ body{
 
 h1,h2,h3{
   font-family:'Playfair Display', Georgia, serif;
-  font-weight:300;
+  font-weight:700;
   letter-spacing:-0.4px;
   margin:0;
 }
@@ -105,9 +105,9 @@ footer {
 }
 
 .hero h1 {
-  font-size: clamp(1.8rem, 4.5vw, 2.6rem);  /* bigger: ~35–48px */
+  font-size: clamp(2.2rem, 4vw, 3rem);  /* bigger: ~35–48px */
   line-height: 1.2;
-  font-weight: 300;  /* lighter, like Shaep */
+  font-weight: 400;  /* lighter, like Shaep */
 }
 
 .hero h2 {
@@ -578,10 +578,4 @@ html, body { overflow-x: hidden; }
 
 .intro {
   margin-top: 2rem;   /* adjust smaller if you want them closer */
-}
-
-/* Final override for hero headline */
-.hero .display {
-  font-weight: 300;
-  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
 }
