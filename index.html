@@ -53,18 +53,35 @@
     </p>
   </section>
 
-<!-- Sticky taupe nav on scroll -->
+<!-- Sticky taupe nav on scroll (diagnostic version) -->
 <script>
   (function () {
     const header = document.querySelector('.site-header');
     if (!header) return;
 
-    const toggle = () => {
-      header.classList.toggle('scrolled', window.scrollY > 50);
+    const getY = () =>
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop || 0;
+
+    const apply = (y) => {
+      const on = y > 50;
+      header.classList.toggle('scrolled', on);
+      header.dataset.scrolled = on; // handy for inspecting
     };
 
-    toggle();                          // set initial state on load
-    window.addEventListener('scroll', toggle, { passive: true });
+    const onScroll = () => apply(getY());
+    window.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+
+    let last = -1;
+    (function tick(){
+      const y = getY();
+      if (y !== last) { apply(y); last = y; }
+      requestAnimationFrame(tick);
+    })();
+
+    apply(getY());
   })();
 </script>
 
