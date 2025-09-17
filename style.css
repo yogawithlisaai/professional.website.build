@@ -717,3 +717,114 @@ html, body { overflow-x: hidden; }
   .membership, .founder{ min-height: 360px; }
   .membership-inner, .founder-inner{ padding: 40px 16px; }
 }
+
+/* ==== Rounded section cards (membership + founder) ==== */
+.membership,
+.founder {
+  position: relative;
+  max-width: 1200px;       /* same container width */
+  margin: 48px auto;       /* centered with breathing room */
+  border-radius: 24px;     /* the softness */
+  overflow: hidden;        /* clips the background image to the curve */
+  isolation: isolate;      /* keeps overlay effects contained */
+}
+
+.membership-media,
+.founder-media {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transform: scale(1.02);         /* subtle luxe zoom */
+}
+
+.membership-overlay,
+.founder-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,.55), rgba(0,0,0,.25));
+}
+
+.membership-inner,
+.founder-inner {
+  position: relative; z-index: 1; color: #fff;
+  padding: clamp(28px, 6vw, 64px);
+  text-align: left;
+}
+
+.membership-inner h2,
+.founder-inner h2 { margin: 0 0 12px; }
+
+/* Optional: a soft outer shadow like rhode cards */
+.membership,
+.founder { box-shadow: 0 10px 30px rgba(0,0,0,.10); }
+
+/* Optional: outline button style you used elsewhere */
+.btn-outline {
+  background: transparent;
+  color: #fff; border: 1.5px solid #fff;
+}
+.btn-outline:hover { background: #fff; color: #000; }
+
+/* ==== Card wrapper for carousel (rounded + shadow, like rhode) ==== */
+.card {
+  max-width: 1200px; margin: 48px auto;
+  background: #fff; border-radius: 24px; overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+/* Header row: title left, CTA right */
+.ig-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 24px clamp(20px, 4vw, 32px) 12px;
+}
+.ig-head h3 {
+  margin: 0; font-size: clamp(1.25rem, 2vw, 1.6rem);
+}
+
+/* Track area with scroll-snap */
+.ig-wrap {
+  position: relative;
+  padding: 12px clamp(16px, 3vw, 24px) 28px; /* extra bottom = room for dots/nav */
+}
+
+.ig-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 80%;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.ig-track::-webkit-scrollbar { display: none; }
+
+@media (min-width: 700px) {
+  .ig-track { grid-auto-columns: calc((100% - 2*16px) / 3); } /* 3-up */
+}
+@media (min-width: 1100px) {
+  .ig-track { grid-auto-columns: calc((100% - 3*16px) / 4); } /* 4-up */
+}
+
+.ig-card {
+  display: block; height: 360px;
+  border-radius: 20px; overflow: hidden;
+  scroll-snap-align: start;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+}
+.ig-card img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .35s ease;
+}
+.ig-card:hover img { transform: scale(1.03); }
+
+/* Nav arrows */
+.ig-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid #ddd; background: rgba(255,255,255,.9);
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  display: grid; place-items: center; font-size: 24px; line-height: 1;
+  cursor: pointer;
+}
+.ig-prev { left: 10px; }
+.ig-next { right: 10px; }
+.ig-nav:hover { background: #fff; }
+@media (max-width: 640px) { .ig-nav { display: none; } } /* arrows off on small phones */
