@@ -828,3 +828,17 @@ html, body { overflow-x: hidden; }
 .ig-next { right: 10px; }
 .ig-nav:hover { background: #fff; }
 @media (max-width: 640px) { .ig-nav { display: none; } } /* arrows off on small phones */
+
+/* ==== Instagram header CTA override ==== */
+.ig-head .btn-outline {
+  color: #111;                     /* dark text */
+  border-color: #111;              /* dark border */
+  font-size: 0.9rem;
+  padding: 8px 18px;
+  transition: all .25s ease;
+}
+
+.ig-head .btn-outline:hover {
+  background: #111;
+  color: #fff;
+}
