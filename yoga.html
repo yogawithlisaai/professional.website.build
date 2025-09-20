@@ -3,103 +3,225 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>yogawithlisa</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Yoga with Lisa</title>
   <link rel="icon" href="images/favicon.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Adobe Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/uwl6zhw.css">
+  <title>Yoga with Lisa</title>
+  <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <!-- Top Nav -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#">
-        <span class="brand-strong">yoga</span>withlisa
-      </a>
-
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-
+      <a class="brand" href="index.html">yoga with lisa</a>     
       <nav class="main-nav" aria-label="Primary">
         <ul>
-          <li><a href="#">YOGA</a></li>
-          <li><a href="#">CHAT</a></li>
-          <li><a href="#">APP</a></li>
-          <li><a href="#">WELLNESS</a></li>
-          <li><a href="#">MINDFULNESS</a></li>
-          <li><a href="#">COACHING</a></li>
+          <li><a href="login.html" class="login-btn">LOGIN</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-<section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline poster="images/hero-poster.jpg">
-    <source src="videos/hero.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <!-- Hero (image) -->
+  <section class="hero hero--image" role="banner" aria-label="Hero">
+    <!-- Set your image at images/hero.jpg -->
+    <div class="hero-media" style="background-image:url('images/hero.jpg');" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
 
-<div class="hero-text">
-    <h1>BECOME YOUR BEST SELF</h1>
-    <p>Yoga, fitness, and self-care tips designed with you in mind.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary" href="#">START FREE TRIAL</a>
-      <a class="btn btn-ghost" href="#">Send a Gift Card</a>
+    <div class="hero-inner">
+      <h1 class="display">
+  	<span class="nowrap">Your <em>dream</em> body awaits.</span><br/>
+  	Awaken your <em>inner</em> yogi.  
+      </h1>
+  <div class="hero-ctas">
+        <a class="btn btn-dark btn-pill" href="login.html">START YOUR FREE TRIAL TODAY</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- Intro -->
+  <!-- Minimal Intro -->
   <section class="intro container">
-    <h2>GET INSPIRED</h2>
-    <p class="lede">
-      Whether you're a complete beginner, want to deepen your practice, or complement your practice with strength training and cardio,
-      get the full studio experience at home with hundreds of classes for body, mind, and spirit.
-      <span class="nowrap">Chat with Lisa AI</span> to personalize your workout experience to the tee—from eating habits to cycle syncing—let's get you to where you want to be.
+    <h2>A lil' mo' cardio.</h2>
+    <p>
+    Whether you are looking for something upbeat and filled with action or a chance to decompress and let go on your mat, we've got you covered. Welcome to our extensive library of hundreds of yoga classes, that we hope will meet your every need.   
     </p>
   </section>
 
-  <!-- Feature Cards -->
-  <section class="cards container" aria-label="Featured categories">
+<!-- Sticky taupe nav on scroll (diagnostic version) -->
+<script>
+  (function () {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+
+    const getY = () =>
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop || 0;
+
+    const apply = (y) => {
+      const on = y > 50;
+      header.classList.toggle('scrolled', on);
+      header.dataset.scrolled = on; // handy for inspecting
+    };
+
+    const onScroll = () => apply(getY());
+    window.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+
+    let last = -1;
+    (function tick(){
+      const y = getY();
+      if (y !== last) { apply(y); last = y; }
+      requestAnimationFrame(tick);
+    })();
+
+    apply(getY());
+  })();
+</script>
+
+<!-- =================== Feature Carousel =================== -->
+<section class="cards container" aria-label="Featured links">
+  <h2 class="visually-hidden">Explore</h2>
+
+  <div class="cards-row" tabindex="0">
+    <!-- Card 1 -->
     <article class="card">
-      <img src="images/yoga.jpg" alt="Person practicing yoga at sunrise">
-      <div class="card-body">
-        <h3>YOGA <span aria-hidden="true">›</span></h3>
-        <p>Get lost in your flow state with every yoga variety, from Vinyasa to Hatha.</p>
-      </div>
+      <a class="card-link" href="https://partiful.com/e/KKvYNm7SQLW4SXslqEhJ">
+        <!-- default image -->
+        <img class="card-img img-default" src="images/sept19-greenyogi-flyer-default.jpg" alt="Pop-Up Classes" loading="lazy">
+        <!-- hover/alt image -->
+        <img class="card-img img-hover"   src="images/sept19-greenyogi-flyer-hover.jpg.jpg"   alt="" aria-hidden="true">
+        <div class="card-tag">Pop-Up Classes</div>
+        <div class="card-cta">
+          <span>Pop-Up Classes</span>
+        </div>
+      </a>
     </article>
 
+    <!-- Card 2 -->
     <article class="card">
-      <img src="images/fitness.jpg" alt="Strength workout by the pool">
-      <div class="card-body">
-        <h3>FITNESS <span aria-hidden="true">›</span></h3>
-        <p>Complement your yoga practice with strength training or cardio workouts to keep you stronger for longer.</p>
-      </div>
+      <a class="card-link" href="#glowlift">
+        <img class="card-img img-default" src="images/glow-lift-series-default.jpg" alt="Glow Lift">
+        <img class="card-img img-hover"   src="images/glow-lift-series-hover.jpg"   alt="" aria-hidden="true">
+        <div class="card-cta"><span>Glow Lift</span></div>
+      </a>
     </article>
 
+    <!-- Card 3 -->
     <article class="card">
-      <img src="images/selfcare.jpg" alt="Self-care ritual with gua sha">
-      <div class="card-body">
-        <h3>SELF‑CARE <span aria-hidden="true">›</span></h3>
-        <p>Unwind with meditative rituals like dry brushing, gua sha, and journaling.</p>
-      </div>
+      <a class="card-link" href="#corerestore">
+        <img class="card-img img-default" src="images/core-restore-default.jpg" alt="Core-Restore">
+        <img class="card-img img-hover"   src="images/core-restore-hover.jpg"   alt="" aria-hidden="true">
+        <div class="card-cta"><span>Core Restore</span></div>
+      </a>
     </article>
-  </section>
+
+    <!-- Card 4 -->
+    <article class="card">
+      <a class="card-link" href="#bootybotox">
+        <img class="card-img img-default" src="images/bootybotox-default.jpg" alt="Travel">
+        <img class="card-img img-hover"   src="images/bootybotox-hover.jpg"   alt="" aria-hidden="true">
+        <div class="card-cta"><span>Booty Botox</span></div>
+      </a>
+    </article>
+  </div>
+</section>
+
+<!-- =================== Membership Banner =================== -->
+<section class="membership" aria-label="Membership">
+  <div class="membership-media" style="background-image:url('images/membership.jpg')"></div>
+  <div class="membership-overlay"></div>
+  <div class="membership-inner container">
+    <h2>membership perks</h2>
+    <p>
+      + Full access to workout library, featuring yoga sculpt, vinyasa, ashtanga, yin & more!    
+    </p>
+    <p>
+      + New videos published every Monday. 
+    </p>
+    <p>
+      + Full access to meditation & mindfulness series. 
+    </p>
+    <p>
+      + Full access to heart-healthy and gluten free recipes & meal plans. 
+    </p>
+    <p>
+      + Read more about our <strong>Corporate Wellness Program</strong> here! 
+    </p>
+    <p>
+      <strong>Monthly pricing: $16.99 USD | Yearly pricing $169.99</strong><em>(2 Months Free!)</em>  
+    </p>
+    <a class="btn btn-pill btn-outline" href="membership.html">SUBSCRIBE NOW</a>
+  </div>
+</section>
+
+<!-- =================== Instagram Carousel =================== -->
+<section class="ig card" aria-label="Instagram">
+  <div class="ig-head">
+    <h3>you + lisa</h3>
+    <a class="btn btn-pill btn-outline" href="https://instagram.com/lisaeshunwilson" target="_blank" rel="noopener">
+      FIND US ON SOCIAL
+    </a>
+  </div>
+
+  <div class="ig-wrap">
+    <button class="ig-nav ig-prev" aria-label="Previous">‹</button>
+
+    <div class="ig-track" id="igTrack">
+      <!-- Replace these image paths with your own (local images or CDN) -->
+      <a class="ig-card" href="#" aria-label="Instagram post 1">
+        <img src="images/ig/ig1.jpg" alt="Yoga with Lisa — post 1" />
+      </a>
+      <a class="ig-card" href="#" aria-label="Instagram post 2">
+        <img src="images/ig/ig2.jpg" alt="Yoga with Lisa — post 2" />
+      </a>
+      <a class="ig-card" href="#" aria-label="Instagram post 3">
+        <img src="images/ig/ig3.jpg" alt="Yoga with Lisa — post 3" />
+      </a>
+      <a class="ig-card" href="#" aria-label="Instagram post 4">
+        <img src="images/ig/ig4.jpg" alt="Yoga with Lisa — post 4" />
+      </a>
+      <a class="ig-card" href="#" aria-label="Instagram post 5">
+        <img src="images/ig/ig5.jpg" alt="Yoga with Lisa — post 5" />
+      </a>
+    </div>
+
+    <button class="ig-nav ig-next" aria-label="Next">›</button>
+  </div>
+</section>
+
+<!-- =================== Founder Banner =================== -->
+<section class="founder message" aria-label="Our founder">
+  <div class="founder-media" style="background-image:url('images/founder.jpg')"></div>
+  <div class="founder-overlay"></div>
+  <div class="founder-inner container">
+    <h2>meet the founder</h2>
+    <p>
+      Dr. Lisa Eshun-Wilson receieved her PhD in Molecular and Cell Biology from UC Berkeley. Her passion for longevity and AI research inspired her journey to not only practice yoga in her free time but, ultimately, to teach and build community around this transformative practice. Her mission? Build tools and systems that motivate you to practice consistently and watch your body and mind transform for the better.
+    </p>
+    <a class="btn btn-pill btn-outline" href="https://available-tarsal-b72.notion.site/Lisa-the-Yogi-2746b96c1321807a9f28fddbb373cf88">LISA THE YOGI</a>
+  </div>
+</section>
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="y"></span> yogawithlisa — Made with ♥</p>
+      <p>© <span id="y"></span> YOGA WITH LISA BY LISA ESHUN-WILSON & ASSOCIATES,LLC. / ALL RIGHTS RESERVED</p>
     </div>
   </footer>
 
-  <script>
-    // mobile menu
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.main-nav');
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-    });
-    // year
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+<div class="container" style="padding: 0 16px;">
+  <!-- membership section here -->
+</div>
+
+<div class="container" style="padding: 0 16px;">
+  <!-- founder section here -->
+</div>
+
 </body>
 </html>
