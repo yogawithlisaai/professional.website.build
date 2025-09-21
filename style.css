@@ -842,3 +842,10 @@ html, body { overflow-x: hidden; }
   background: #111;
   color: #fff;
 }
+
+/* Align "Back to Home" button inside aside column */
+.back-home-wrap {
+  margin-top: 16px;       /* space above button */
+  display: flex;
+  justify-content: flex-start;  /* aligns with left edge of text in aside */
+}
