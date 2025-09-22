@@ -117,65 +117,70 @@ From energizing flows to restful resets, we’ve got you covered. Join our free 
 </div>
 </section>
  
-<!--=================== Guests see this version (locked previews + CTA) ===================-->
-<section class="library" aria-label="Members library" data-ms-content="!members">
-  <div class="library-head">
+<!-- =================== Member Library (carousel) =================== -->
+<section class="card-shelf member-reel container" aria-label="Member Library">
+  <div class="shelf-head">
     <h2>Member Library</h2>
-    <p>Peek at what’s inside — subscribe to unlock everything.</p>
+    <p class="sub">A peek at what’s inside — subscribe to unlock everything.</p>
   </div>
 
-  <div class="video-grid">
-    <!-- Card (locked preview) -->
-    <article class="video-card is-locked">
-      <a class="video-thumb" href="login.html">
-        <img src="images/class-hip-mobility-thumb.jpg" alt="20-min Hip Mobility">
-        <span class="lock-badge" aria-hidden="true">🔒</span>
+  <!-- Left/Right buttons -->
+  <button class="shelf-nav prev" type="button" aria-label="Previous" data-dir="prev">‹</button>
+  <button class="shelf-nav next" type="button" aria-label="Next" data-dir="next">›</button>
+
+  <!-- Track -->
+  <div class="card-track" tabindex="0">
+    <!-- Card 1 -->
+    <article class="mcard locked">
+      <a class="mcard-link"
+         href="login.html" 
+         aria-label="Unlock with membership">
+        <div class="mcard-media">
+          <img src="images/class-hip-mobility-thumb.jpg" alt="20-min Hip Mobility">
+          <span class="lock">🔒</span>
+        </div>
+        <div class="mcard-meta">
+          <h3>20-min Hip Mobility</h3>
+          <span class="pill">20:10</span>
+        </div>
       </a>
-      <h3>20-min Hip Mobility</h3>
-      <p class="meta">Mobility • 20:00</p>
     </article>
 
-   #<!-- Duplicate more cards (all hrefs point to login.html for guests) -->
-   
-  </div>
-
-  <div class="library-cta">
-    <!-- Your add-price buttons go here -->
-    <a class="btn btn-pill btn-dark"
-       href="#"
-       data-ms-price:add="prc_premium-monthly-plan-cklp04n5">Subscribe Monthly</a>
-
-    <a class="btn btn-pill btn-dark"
-       href="#"
-       data-ms-price:add="prc_premium-annual--felk04yk">Subscribe Annually</a>
-
-    <a class="btn btn-pill btn-outline"
-       href="#"
-       data-ms-plan:add="pln_free-plan-pqjp04f9">Create a Free Account</a>
-  </div>
-</section>
-
-
-<!-- Members see this version (unlocked links) -->
-<section class="library" aria-label="Members library" data-ms-content="members">
-  <div class="library-head">
-    <h2>Member Library</h2>
-    <p>Welcome back — enjoy your classes ✨</p>
-  </div>
-
-  <div class="video-grid">
-    <!-- Card (unlocked) -->
-    <article class="video-card">
-      <!-- Real destination: YouTube/Vimeo/Notion embed page/etc. -->
-      <a class="video-thumb" href="videos/hip-mobility.html">
-        <img src="images/class-hip-mobility-thumb.jpg" alt="20-min Hip Mobility">
+    <!-- Card 2 -->
+    <article class="mcard locked">
+      <a class="mcard-link" href="login.html" aria-label="Unlock with membership">
+        <div class="mcard-media">
+          <img src="images/class-full-body-thumb.jpg" alt="34-min Full Body Sculpt">
+          <span class="lock">🔒</span>
+        </div>
+        <div class="mcard-meta">
+          <h3>34-min Full Body Sculpt</h3>
+          <span class="pill">34:54</span>
+        </div>
       </a>
-      <h3>20-min Hip Mobility</h3>
-      <p class="meta">Mobility • 20:10</p>
     </article>
 
-    <!-- More unlocked cards -->
-    <!-- ... -->
+    <!-- Card 3 -->
+    <article class="mcard locked">
+      <a class="mcard-link" href="login.html" aria-label="Unlock with membership">
+        <div class="mcard-media">
+          <img src="images/class-abs-thumb.jpg" alt="12-min Abs">
+          <span class="lock">🔒</span>
+        </div>
+        <div class="mcard-meta">
+          <h3>12-min Abs</h3>
+          <span class="pill">12:43</span>
+        </div>
+      </a>
+    </article>
+
+    <!-- Duplicate/extend as needed -->
+  </div>
+
+  <!-- Inline upsell (optional) -->
+  <div class="shelf-cta">
+    <a class="btn btn-pill btn-dark" href="login.html">SUBSCRIBE MONTHLY</a>
+    <a class="btn btn-pill btn-outline" href="login.html">SUBSCRIBE ANNUALLY</a>
   </div>
 </section>
 
