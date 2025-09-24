@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Corporate Wellness • Yoga with Lisa</title>
+  <title>Yoga with Lisa</title>
   <link rel="icon" href="images/favicon.png">
-  <!-- Fonts & CSS -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/uwl6zhw.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Yoga with Lisa</title>
+  <link rel="icon" href="images/favicon.png">
   <link rel="stylesheet" href="style.css" />
-  <!-- Memberstack (if you want plan buttons on this page too) -->
-  <script
-    data-memberstack-app="app_cmfs64j5s00jl0wu4h1ee40in"
-    src="https://static.memberstack.com/scripts/v2/memberstack.js">
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -23,38 +23,68 @@
       <a class="brand" href="index.html">yoga with lisa</a>
       <nav class="main-nav" aria-label="Primary">
         <ul>
-          <li><a href="yoga.html">YOGA</a></li>
-          <li><a href="corporate.html">CORPORATE</a></li>
           <li><a href="login.html" class="login-btn">LOGIN</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero hero--image" aria-label="Corporate Wellness Banner">
-    <!-- Replace with a relevant banner image -->
-    <div class="hero-media" style="background-image:url('images/corporate-hero.jpg');"></div>
+  <!-- Hero for Corporate Page -->
+  <section class="hero hero--image" role="banner" aria-label="Hero">
+    <!-- Set your image at images/hero.jpg -->
+    <div class="hero-media" style="background-image:url('images/corporate.jpg');" aria-hidden="true"></div>
     <div class="hero-overlay" aria-hidden="true"></div>
-    <div class="hero-inner container">
+
+    <div class="hero-inner">
       <h1 class="display">
-        Where movement meets meditation.<br>
-        <span class="nowrap">Wellness that lifts teams & students.</span>
+        <span class="nowrap">Movement <em>&</em> Meditation.</span><br/>
+        Holistic wellness <em>your team</em> deserves.
       </h1>
-      <div class="hero-ctas">
         <a class="btn btn-dark btn-pill" href="#packages">VIEW PROGRAMS</a>
         <a class="btn btn-dark btn-pill" href="#contact">REQUEST A QUOTE</a>
       </div>
     </div>
   </section>
 
-  <!-- Intro / Value -->
-  <section class="intro container" style="padding-top:64px;">
-    <h2>Corporate & Campus wellness that actually gets used</h2>
+  <!-- Minimal Intro -->
+  <section class="intro container">
+    <h2>Client-First Service.</h2>
     <p>
-      Your people are busy. Yoga with Lisa makes wellness simple, accessible, and genuinely effective—on-demand classes, guided breathwork & meditation, and light strength to balance long work or study days. Programs are flexible (morning, midday, or after-hours), inclusive for all levels, and built to help folks feel better and perform better.
+     Yoga with Lisa makes wellness simple and accessible with genuinely effective—on-demand classes, guided breathwork & meditation, as well as light strength to balance tough work or study days. Programs are flexible (morning, midday, or after-hours), inclusive for all levels, and built to help you perform at your best.
     </p>
   </section>
+
+<!-- Sticky taupe nav on scroll (diagnostic version) -->
+<script>
+  (function () {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+
+    const getY = () =>
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop || 0;
+
+    const apply = (y) => {
+      const on = y > 50;
+      header.classList.toggle('scrolled', on);
+      header.dataset.scrolled = on; // handy for inspecting
+    };
+
+    const onScroll = () => apply(getY());
+    window.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+
+    let last = -1;
+    (function tick(){
+      const y = getY();
+      if (y !== last) { apply(y); last = y; }
+      requestAnimationFrame(tick);
+    })();
+
+    apply(getY());
+  })();
+</script>
 
   <!-- Benefits strip -->
   <section class="container" style="padding:30px 20px 10px;">
