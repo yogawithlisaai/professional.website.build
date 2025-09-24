@@ -79,26 +79,30 @@
             <h1>Welcome ✨</h1>
             <p class="lead">Log in to access member content, your class library, and your billing portal.</p>
 	<div class="plan-stack">
-  	<!-- Free -->
-  	<a class="btn btn-pill btn-dark btn-wide"
-    	 href="#"
-     	data-ms-plan:add="pln_free-plan-pqjp04f9">
-     	Create a FREE account
-  	</a>
 
-  	<!-- Monthly -->
-  	<a class="btn btn-pill btn-dark btn-wide"
-     	href="#"
-     	data-ms-price:add="prc_premium-monthly-plan-cklp04n5">
-     	Subscribe Now | Monthly Plan for $16.99
-  	</a>
+<!-- Free -->
+<a class="btn btn-pill btn-dark btn-wide"
+   href="#"
+   data-ms-action="plan:add"
+   data-ms-plan="pln_free-plan-pqjp04f9">
+  CREATE A FREE ACCOUNT
+</a>
 
-  	<!-- Annual -->
-  	<a class="btn btn-pill btn-dark btn-wide"
-     	href="#"
-     	data-ms-price:add="prc_premium-annual--felk04yk">
-     	Subscribe Now | Annual Plan for $169.99
-  	</a>
+<!-- Monthly (paid) -->
+<a class="btn btn-pill btn-dark btn-wide"
+   href="#"
+   data-ms-action="price:add"
+   data-ms-price="prc_premium-monthly-plan-cklp04n5">
+  SUBSCRIBE NOW | MONTHLY PLAN FOR $16.99
+</a>
+
+<!-- Annual (paid) -->
+<a class="btn btn-pill btn-dark btn-wide"
+   href="#"
+   data-ms-action="price:add"
+   data-ms-price="prc_premium-annual--felk04yk">
+  SUBSCRIBE NOW | ANNUAL PLAN FOR $169.99
+</a>
 
   	<p class="plan-note">
     	Change or cancel anytime. Practice, breathe, give back—1.5% of proceeds go to permanent carbon removal thanks to
@@ -123,10 +127,9 @@
 	<div class="back-home-wrap">
   	<a class="btn btn-pill btn-dark" href="index.html" aria-label="Back to home">BACK TO HOME</a>
      </div>
-   </aside>
-        </div>
-      </div>
-  </section>
+    </div>
+   </div>
+ </section>
 
   <!-- Footer -->
   <footer class="site-footer">
