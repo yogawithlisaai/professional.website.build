@@ -5,18 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Login</title>
 
+<!-- Memberstack v2 (must be in <head>, ideally first) -->
+<script
+  data-memberstack-app="app_cmfs64j5s00jl0wu4h1ee40in"
+  src="https://static.memberstack.com/scripts/v2/memberstack.js?ts=MS1"
+  onload="console.log('MS v2 onload:', !!window.Memberstack)"
+></script>
+
+<!-- Tiny fallback: if onload never fires, poll for Memberstack so we can see what's happening -->
+<script>
+  (function waitForMS(start = Date.now()){
+    const ready = !!(window.Memberstack);
+    if (ready) { console.log('MS v2 ready via poll'); return; }
+    if (Date.now() - start > 8000) { console.warn('MS v2 not detected after 8s'); return; }
+    setTimeout(waitForMS, 200, start);
+  })();
+</script>
+
   <!-- Fonts / CSS (same as index) -->
   <link rel="icon" href="images/favicon.png">
   <link rel="stylesheet" href="https://use.typekit.net/uwl6zhw.css">
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- Memberstack (v2) -->
-<script
-  data-memberstack-app="app_cmfs64j5s00jl0wu4h1ee40in"
-  src="https://static.memberstack.com/scripts/v2/memberstack.js"
-  onload="console.log('Memberstack v2 loaded:', !!window.Memberstack)">
-</script>
 
   <style>
     /* Page-local polish; safe with your existing CSS */
@@ -82,28 +92,29 @@
 	<div class="plan-stack">
 
 <!-- Free (plan) -->
-<a class="btn btn-pill btn-dark btn-wide"
-   href="#"
-   data-ms-modal="signup"
-   data-ms-plan:add="pln_free-plan-pqjp04f9">
+<button type="button"
+  class="btn btn-pill btn-dark btn-wide"
+  data-ms-modal="signup"
+  data-ms-plan:add="pln_free-plan-pqjp04f9">
   CREATE A FREE ACCOUNT
-</a>
+</button>
 
 <!-- Monthly (price) -->
-<a class="btn btn-pill btn-dark btn-wide"
-   href="#"
-   data-ms-modal="signup"
-   data-ms-price:add="prc_premium-monthly-plan-cklp04n5">
+<button type="button"
+  class="btn btn-pill btn-dark btn-wide"
+  data-ms-modal="signup"
+  data-ms-price:add="prc_premium-monthly-plan-cklp04n5">
   SUBSCRIBE NOW | MONTHLY PLAN FOR $16.99
-</a>
+</button>
 
 <!-- Annual (price) -->
-<a class="btn btn-pill btn-dark btn-wide"
-   href="#"
-   data-ms-modal="signup"
-   data-ms-price:add="prc_premium-annual--felk04yk">
+<button type="button"
+  class="btn btn-pill btn-dark btn-wide"
+  data-ms-modal="signup"
+  data-ms-price:add="prc_premium-annual--felk04yk">
   SUBSCRIBE NOW | ANNUAL PLAN FOR $169.99
-</a>
+</button>
+
   	<p class="plan-note">
     	Change or cancel anytime. Practice, breathe, give back—1.5% of proceeds go to permanent carbon removal thanks to
     	<a href="https://stripe.com/climate" target="_blank" rel="noopener">Stripe Climate</a>.
