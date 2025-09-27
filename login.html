@@ -5,22 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Login</title>
 
-<!-- Memberstack v2 (must be in <head>, ideally first) -->
-<script
-  data-memberstack-app="app_cmfs64j5s00jl0wu4h1ee40in"
-  src="https://static.memberstack.com/scripts/v2/memberstack.js?ts=MS1"
-  onload="console.log('MS v2 onload:', !!window.Memberstack)"
-></script>
-
-<!-- Tiny fallback: if onload never fires, poll for Memberstack so we can see what's happening -->
-<script>
-  (function waitForMS(start = Date.now()){
-    const ready = !!(window.Memberstack);
-    if (ready) { console.log('MS v2 ready via poll'); return; }
-    if (Date.now() - start > 8000) { console.warn('MS v2 not detected after 8s'); return; }
-    setTimeout(waitForMS, 200, start);
-  })();
-</script>
+<!-- Memberstack webflow package -->
+<script data-memberstack-app="app_cmfs64j5s00jl0wu4h1ee40in" src="https://static.memberstack.com/scripts/v1/memberstack.js" type="text/javascript"></script>
 
   <!-- Fonts / CSS (same as index) -->
   <link rel="icon" href="images/favicon.png">
