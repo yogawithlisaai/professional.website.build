@@ -32,22 +32,22 @@
     </div>
   </header>
 
-  <!-- Hero (image) -->
-  <section class="hero hero--image" role="banner" aria-label="Hero">
-    <!-- Set your image at images/wellness-hero.jpg -->
-    <div class="wellness-media" style="background-image:url('images/wellness-hero.jpg');" aria-hidden="true"></div>
-    <div class="wellness-overlay" aria-hidden="true"></div>
+<!-- Hero (image) -->
+<section class="hero hero--image" role="banner" aria-label="Wellness Hero">
+  <!-- Use the class names your CSS already styles -->
+  <div class="media" style="background-image:url('images/wellness-hero.jpg');" aria-hidden="true"></div>
+  <div class="overlay" aria-hidden="true"></div>
 
-    <div class="hero-inner">
-      <h1 class="display">
-  	<span class="nowrap">Wellness <em>with</em> Lisa.</span><br/>
-  	Lustre, <em>Lean, &</em> Legacy.  
-      </h1>
-  <div class="hero-ctas">
-        <a class="btn btn-dark btn-pill" href="login.html">EXPLORE TODAY</a>
-      </div>
+  <div class="hero-inner">
+    <h1 class="display">
+      <span class="nowrap">Wellness <em>with</em> Lisa.</span><br />
+      Lustre, <em>Lean, &</em> Legacy.
+    </h1>
+    <div class="hero-ctas">
+      <a class="btn btn-dark btn-pill" href="login.html">EXPLORE TODAY</a>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Minimal Intro -->
   <section class="intro container">
@@ -89,60 +89,55 @@ From glowing skin to add lustre to life or nourishing meals to keep you lean to 
   })();
 </script>
 
-<!-- =================== Wellness: Lustre / Lean / Legacy =================== -->
 <section class="container" style="padding: 80px 0;">
   <h2 style="text-align:center; font-family:'Playfair Display', serif; font-size:2.2rem; margin-bottom:40px;">
     Lustre • Lean • Legacy
   </h2>
 
-  <div class="cards-row" tabindex="0" 
-       style="display:flex; gap:24px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:12px;">
-    
+  <div class="wellness-row" tabindex="0">
     <!-- Lustre -->
-    <article class="theme-card" 
-             style="flex:0 0 280px; scroll-snap-align:start; text-align:center;">
-      <img src="images/lustre.jpg" alt="Lustre Wellness"
-           style="width:100%; border-radius:16px; margin-bottom:16px;">
-      <h3 style="font-family:'Playfair Display', serif; margin:12px 0;">Lustre</h3>
-      <p style="font-size:0.95rem; color:#444; margin-bottom:16px;">
-        Glow from the inside out with skincare, haircare, and self-care practices 
-        designed to bring radiance and confidence to your daily routine.
-      </p>
-      <a href="https://available-tarsal-b72.notion.site/Lustre-27d6b96c13218032b618d4b93ef4ea85" 
-         class="btn btn-pill btn-dark">Glow-Up</a>
+    <article class="wellness-card">
+      <a class="poster" href="https://available-tarsal-b72.notion.site/Lustre-27d6b96c13218032b618d4b93ef4ea85">
+        <img src="images/lustre.jpg" alt="Lustre Wellness">
+      </a>
+      <div class="meta">
+        <h3>Lustre</h3>
+        <p>Glow from the inside out with skincare, haircare, and self-care practices designed to bring
+           radiance and confidence to your daily routine.</p>
+        <a href="https://available-tarsal-b72.notion.site/Lustre-27d6b96c13218032b618d4b93ef4ea85"
+           class="btn btn-pill btn-dark">Glow-Up</a>
+      </div>
     </article>
 
     <!-- Lean -->
-    <article class="theme-card" 
-             style="flex:0 0 280px; scroll-snap-align:start; text-align:center;">
-      <img src="images/lean.jpg" alt="Lean Wellness" 
-           style="width:100%; border-radius:16px; margin-bottom:16px;">
-      <h3 style="font-family:'Playfair Display', serif; margin:12px 0;">Lean</h3>
-      <p style="font-size:0.95rem; color:#444; margin-bottom:16px;">
-        Nourish your body with balanced, plant-forward recipes, mindful eating tips, 
-        and nutrition strategies to fuel energy and long-term health.
-      </p>
-      <a href="https://available-tarsal-b72.notion.site/Lean-27e6b96c13218090aeacdb3db064eca7" 
-         class="btn btn-pill btn-dark">Eat Lean</a>
+    <article class="wellness-card">
+      <a class="poster" href="https://available-tarsal-b72.notion.site/Lean-27e6b96c13218090aeacdb3db064eca7">
+        <img src="images/lean.jpg" alt="Lean Wellness">
+      </a>
+      <div class="meta">
+        <h3>Lean</h3>
+        <p>Nourish your body with balanced, plant-forward recipes, mindful eating tips, and nutrition
+           strategies to fuel energy and long-term health.</p>
+        <a href="https://available-tarsal-b72.notion.site/Lean-27e6b96c13218090aeacdb3db064eca7"
+           class="btn btn-pill btn-dark">Eat Lean</a>
+      </div>
     </article>
 
     <!-- Legacy -->
-    <article class="theme-card" 
-             style="flex:0 0 280px; scroll-snap-align:start; text-align:center;">
-      <img src="images/legacy.jpg" alt="Legacy Wellness"
-           style="width:100%; border-radius:16px; margin-bottom:16px;">
-      <h3 style="font-family:'Playfair Display', serif; margin:12px 0;">Legacy</h3>
-      <p style="font-size:0.95rem; color:#444; margin-bottom:16px;">
-        Build a strong money mindset with budgeting tools, savings hacks,
-        and investing basics to create financial freedom and security for the future.
-      </p>
-      <a href="https://available-tarsal-b72.notion.site/Legacy-27e6b96c132180788beef9b2f1f4b0b8?pvs=74" 
-         class="btn btn-pill btn-dark">Grow Your Legacy</a>
+    <article class="wellness-card">
+      <a class="poster" href="https://available-tarsal-b72.notion.site/Legacy-27e6b96c132180788beef9b2f1f4b0b8?pvs=74">
+        <img src="images/legacy.jpg" alt="Legacy Wellness">
+      </a>
+      <div class="meta">
+        <h3>Legacy</h3>
+        <p>Build a strong money mindset with budgeting tools, savings hacks, and investing basics
+           to create financial freedom and security for the future.</p>
+        <a href="https://available-tarsal-b72.notion.site/Legacy-27e6b96c132180788beef9b2f1f4b0b8?pvs=74"
+           class="btn btn-pill btn-dark">Grow Your Legacy</a>
+      </div>
     </article>
-
   </div>
 </section>
-
 
 <!-- =================== Feature Carousel =================== -->
 <section class="cards container" aria-label="Featured links">

@@ -929,3 +929,49 @@ html, body { overflow-x: hidden; }
 /* Unlock state: when logged in, hide lock & remove "locked" pointer behavior */
 body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 
+/* Wellness poster cards (match pop-up look) */
+.wellness-row {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 12px;
+}
+.wellness-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  text-align: center;
+}
+.wellness-card .poster {
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.wellness-card .poster img {
+  width: 100%;
+  aspect-ratio: 3 / 4;         /* tall poster */
+  object-fit: cover;
+  display: block;
+}
+.wellness-card:hover .poster {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 28px rgba(0,0,0,.14);
+}
+.wellness-card .meta {
+  padding: 12px 6px 0;
+}
+.wellness-card h3 {
+  font-family: "Playfair Display", serif;
+  margin: 10px 0 6px;
+}
+.wellness-card p {
+  font-size: .95rem;
+  color: #444;
+  margin: 0 0 12px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;       /* keep it tidy like the posters */
+  overflow: hidden;
+}
