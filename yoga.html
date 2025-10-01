@@ -89,51 +89,60 @@ From energizing flows to restful resets, we’ve got you covered. Join our free 
   })();
 </script>
 
-<!-- =================== Lift / Lull / Level Up =================== -->
+<!-- =================== Lift / Lull / Level Up (Carousel) =================== -->
 <section class="container" style="padding: 80px 0;">
   <h2 style="text-align:center; font-family:'Playfair Display', serif; font-size:2.2rem; margin-bottom:40px;">
     Find your perfect workout ✨
   </h2>
-  <div class="grid-3" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
+
+  <!-- horizontally scrollable row -->
+  <div class="cards-row yoga-cards" tabindex="0"
+       style="
+         display:flex; gap:24px; overflow-x:auto; scroll-snap-type:x mandatory;
+         -webkit-overflow-scrolling: touch; padding: 2px 2px 12px;
+       ">
 
     <!-- Lift -->
-    <article class="theme-card" style="text-align:center;">
-      <img src="images/lift.jpg" alt="Lift Yoga" 
+    <article class="theme-card"
+             style="flex:0 0 clamp(260px, 32vw, 360px); scroll-snap-align:start; text-align:center;">
+      <img src="images/lift.jpg" alt="Lift Yoga"
            style="width:100%; border-radius:16px; margin-bottom:16px;">
       <h3 style="font-family:'Playfair Display', serif; margin:12px 0;">Lift</h3>
       <p style="font-size:0.95rem; color:#444; margin-bottom:16px;">
-        Energize your body with sculpt, yogalates, HIIT, and strength-based flows 
+        Energize your body with sculpt, yogalates, HIIT, and strength-based flows
         designed to leave you feeling strong, focused, and ready to take on your day.
       </p>
       <a href="lift.html" class="btn btn-pill btn-dark">Lift, Tone, and Burn</a>
     </article>
 
     <!-- Lull -->
-    <article class="theme-card" style="text-align:center;">
-      <img src="images/lull.jpg" alt="Lull Yoga" 
+    <article class="theme-card"
+             style="flex:0 0 clamp(260px, 32vw, 360px); scroll-snap-align:start; text-align:center;">
+      <img src="images/lull.jpg" alt="Lull Yoga"
            style="width:100%; border-radius:16px; margin-bottom:16px;">
       <h3 style="font-family:'Playfair Display', serif; margin:12px 0;">Lull</h3>
       <p style="font-size:0.95rem; color:#444; margin-bottom:16px;">
-        Slow down and reset with restorative flows, yin practices, and meditations 
+        Slow down and reset with restorative flows, yin practices, and meditations
         to calm your nervous system and bring peace to your mind and body.
       </p>
       <a href="lull.html" class="btn btn-pill btn-dark">Lull Your Nervous System</a>
     </article>
 
-    <!-- Level Up -->
-    <article class="theme-card" style="text-align:center;">
-      <img src="images/levelup.jpg" alt="Lustre Yoga" 
+    <!-- Level-Up -->
+    <article class="theme-card"
+             style="flex:0 0 clamp(260px, 32vw, 360px); scroll-snap-align:start; text-align:center;">
+      <img src="images/levelup.jpg" alt="Level Up Yoga"
            style="width:100%; border-radius:16px; margin-bottom:16px;">
-      <h3 style="font-family:'Playfair Display', serif; margin:12px 0;">Lustre</h3>
+      <h3 style="font-family:'Playfair Display', serif; margin:12px 0;">Level-Up</h3>
       <p style="font-size:0.95rem; color:#444; margin-bottom:16px;">
-        Glow from the inside out with cardio-based workouts, like jump rope and kickboxing, to keep you one lean, mean, fighting machine.
+        Glow from the inside out with cardio-based workouts like jump rope and kickboxing
+        to complement your practice and keep you strong, agile, & toned.
       </p>
-      <a href="lustre.html" class="btn btn-pill btn-dark">Browse Workouts to Level-Up Your Practice</a>
+      <a href="levelup.html" class="btn btn-pill btn-dark">Level-Up Your Practice</a>
     </article>
 
   </div>
 </section>
-
 
 <!-- =================== Feature Carousel =================== -->
 <section class="cards container" aria-label="Featured links">
@@ -172,72 +181,6 @@ From energizing flows to restful resets, we’ve got you covered. Join our free 
 </div>
 </section>
  
-<!-- =================== Member Library (carousel) =================== -->
-<section class="card-shelf member-reel container" aria-label="Member Library">
-  <div class="shelf-head">
-    <h2>Member Library Sneak Peek</h2>
-    <p class="sub">A peek at what’s inside — subscribe to unlock everything.</p>
-  </div>
-
-  <!-- Left/Right buttons -->
-  <button class="shelf-nav prev" type="button" aria-label="Previous" data-dir="prev">‹</button>
-  <button class="shelf-nav next" type="button" aria-label="Next" data-dir="next">›</button>
-
-  <!-- Track -->
-  <div class="card-track" tabindex="0">
-    <!-- Card 1 -->
-    <article class="mcard locked">
-      <a class="mcard-link"
-         href="login.html" 
-         aria-label="Unlock with membership">
-        <div class="mcard-media">
-          <img src="images/class-hip-mobility-thumb.jpg" alt="20-min Hip Mobility">
-          <span class="lock">🔒</span>
-        </div>
-        <div class="mcard-meta">
-          <h3>20-min Hip Mobility</h3>
-          <span class="pill">20:10</span>
-        </div>
-      </a>
-    </article>
-
-    <!-- Card 2 -->
-    <article class="mcard locked">
-      <a class="mcard-link" href="login.html" aria-label="Unlock with membership">
-        <div class="mcard-media">
-          <img src="images/class-full-body-thumb.jpg" alt="34-min Full Body Sculpt">
-          <span class="lock">🔒</span>
-        </div>
-        <div class="mcard-meta">
-          <h3>34-min Full Body Sculpt</h3>
-          <span class="pill">34:54</span>
-        </div>
-      </a>
-    </article>
-
-    <!-- Card 3 -->
-    <article class="mcard locked">
-      <a class="mcard-link" href="login.html" aria-label="Unlock with membership">
-        <div class="mcard-media">
-          <img src="images/class-abs-thumb.jpg" alt="12-min Abs">
-          <span class="lock">🔒</span>
-        </div>
-        <div class="mcard-meta">
-          <h3>12-min Abs</h3>
-          <span class="pill">12:43</span>
-        </div>
-      </a>
-    </article>
-
-  <!-- Duplicate/extend as needed -->
-  </div>
-
-  <!-- Inline upsell (optional) -->
-  <div class="shelf-cta">
-    <a class="btn btn-pill btn-dark" href="login.html">SUBSCRIBE FOR FULL ACCESS</a>
-
-  </div>
-</section>
 
 <footer class="site-footer">
     <div class="container">

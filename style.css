@@ -974,4 +974,16 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;       /* keep it tidy like the posters */
   overflow: hidden;
-}
+
+/* Hide scrollbar and add soft edge fade on horizontal carousels */
+.cards-row::-webkit-scrollbar { display: none; }
+.cards-row { scrollbar-width: none; }
+
+.yoga-cards {
+  mask-image: linear-gradient(to right,
+               rgba(0,0,0,0) 0, rgba(0,0,0,1) 24px,
+               rgba(0,0,0,1) calc(100% - 24px), rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to right,
+               rgba(0,0,0,0) 0, rgba(0,0,0,1) 24px,
+               rgba(0,0,0,1) calc(100% - 24px), rgba(0,0,0,0) 100%);
+}}
