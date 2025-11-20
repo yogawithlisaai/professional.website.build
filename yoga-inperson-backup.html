@@ -11,26 +11,26 @@
   <link rel="stylesheet" href="https://use.typekit.net/uwl6zhw.css">
   <title>Yoga with Lisa</title>
 
-<!-- Favicons -->
-<link rel="icon" href="/favicon.ico" sizes="any"> <!-- classic fallback -->
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#1a1a1a">
-<meta name="theme-color" content="#ffffff">
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#1a1a1a">
+  <meta name="theme-color" content="#ffffff">
 
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1...amily=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- Memberstack webflow package -->
-<script data-memberstack-app="app_cmfs64j5s00jl0wu4h1ee40in" src="https://static.memberstack.com/scripts/v1/memberstack.js" type="text/javascript"></script>
+  <!-- Memberstack webflow package -->
+  <script data-memberstack-app="app_cmfs64j5s00jl0wu4h1ee40in" src="https://static.memberstack.com/scripts/v1/memberstack.js" type="text/javascript"></script>
 
-<!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Class Schedule">
-<meta property="og:description" content="Personalized yoga, meditation, and nutrition meeting you where you are.">
-<meta property="og:image" content="https://www.yogawithlisa.ai/images/preview.jpg">
-<meta property="og:url" content="https://www.yogawithlisa.ai">
-<meta property="og:type" content="website">
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Class Schedule">
+  <meta property="og:description" content="Personalized yoga, meditation, and nutrition meeting you where you are.">
+  <meta property="og:image" content="https://www.yogawithlisa.ai/images/preview.jpg">
+  <meta property="og:url" content="https://www.yogawithlisa.ai">
+  <meta property="og:type" content="website">
 
   <!-- Schedule styles -->
   <style>
@@ -104,14 +104,11 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
-    .schedule-date-row th {
-      padding-top: 1.5rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border-bottom: 1px solid #eee;
+    .schedule-table tbody tr {
+      border-bottom: 1px solid #eee; /* subtle divider between classes */
     }
-    .schedule-table tbody tr:not(.schedule-date-row) {
-      border-bottom: 1px solid #eee;
+    .schedule-date {
+      white-space: nowrap;
     }
     .schedule-time,
     .schedule-duration {
@@ -128,6 +125,7 @@
       border-radius: 999px;
       text-transform: lowercase;
     }
+
     @media (max-width: 768px) {
       .schedule-card {
         padding: 1.75rem 1.25rem;
@@ -141,9 +139,6 @@
       .schedule-table td {
         display: block;
         width: 100%;
-      }
-      .schedule-date-row th {
-        display: block;
       }
       .schedule-table tr {
         border-bottom: 1px solid #eee;
@@ -165,7 +160,7 @@
   <!-- Header -->
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="index.html">yoga with lisa</a>     
+      <a class="brand" href="index.html">yoga with lisa</a>
       <nav class="main-nav" aria-label="Primary">
         <ul>
           <li><a href="login.html" class="login-btn">LOGIN</a></li>
@@ -182,7 +177,7 @@
 
     <div class="hero-inner">
       <h1 class="display">
-  	    <span class="nowrap">Meet me on the <em>mat</em>.</span><br/>
+        <span class="nowrap">Meet me on the <em>mat</em>.</span><br/>
       </h1>
       <div class="hero-ctas">
         <a class="btn btn-dark btn-pill" href="login.html">START YOUR FREE TRIAL TODAY</a>
@@ -233,10 +228,11 @@
       <header class="schedule-header">
         <h2 class="schedule-title">Find a Class</h2>
         <p class="schedule-subtitle">
-          From sunny vinyasa flows to grounding yin resets, our in-person pop-ups are
-          designed to lift your body and your mood. All times are in Pacific Time.
+          Join us in person to sweat, glow and grow. Designed to lift your body and your mood. All times are in Pacific Time.
         </p>
         <nav class="schedule-date-nav" aria-label="Upcoming dates">
+          <a href="#dec20" class="date-pill">Dec 20</a>
+	  <a href="#nov21" class="date-pill">Nov 21</a>
           <a href="#nov15" class="date-pill">Nov 15</a>
           <a href="#oct18" class="date-pill">Oct 18</a>
           <a href="#sept19" class="date-pill">Sept 19</a>
@@ -249,6 +245,7 @@
       <table class="schedule-table" aria-label="In-person yoga schedule">
         <thead>
           <tr>
+            <th scope="col">Date</th>
             <th scope="col">Time</th>
             <th scope="col">Duration</th>
             <th scope="col">Class</th>
@@ -258,15 +255,64 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Nov 15 -->
-          <tr class="schedule-date-row" id="nov15">
-            <th scope="rowgroup" colspan="6">Friday, Nov 15 – Berkeley Ballet Pop-Up</th>
+          <!-- Dec 20 -->
+          <tr id="dec20">
+            <td class="schedule-date">Saturday, Dec 20th</td>
+            <td class="schedule-time">11:00 AM</td>
+            <td class="schedule-duration">60 min</td>
+            <td class="schedule-class">Vinyasa Flow</td>
+            <td class="schedule-instructor">Lisa & Brynn</td>
+            <td class="schedule-location">Green Yogi Berkeley</td>
+            <td class="schedule-cta">
+              <a class="btn btn-dark btn-pill schedule-btn"
+                 href="https://www.mygreenyogi.com/telegraph-schedule"
+                 target="_blank" rel="noopener">
+                join us
+              </a>
+            </td>
           </tr>
-          <tr>
-            <td class="schedule-time">6:30 PM</td>
-            <td class="schedule-duration">75 min</td>
-            <td class="schedule-class">Berkeley Ballet – Evening Flow</td>
-            <td class="schedule-instructor">Lisa Eshun-Wilson</td>
+
+	  <!-- Nov 28 -->
+          <tr id="nov28">
+            <td class="schedule-date">Friday, Nov 28th</td>
+            <td class="schedule-time">1:00 PM</td>
+            <td class="schedule-duration">60 min</td>
+            <td class="schedule-class">Vinyasa Flow</td>
+            <td class="schedule-instructor">Lisa</td>
+            <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
+            <td class="schedule-cta">
+              <a class="btn btn-dark btn-pill schedule-btn"
+                 href="https://www.beachglasshyp.com/schedule"
+                 target="_blank" rel="noopener">
+                join us
+              </a>
+            </td>
+          </tr>
+
+          <!-- Nov 21 -->
+          <tr id="nov21">
+            <td class="schedule-date">Friday, Nov 21st</td>
+            <td class="schedule-time">1:00 PM</td>
+            <td class="schedule-duration">60 min</td>
+            <td class="schedule-class">Vinyasa Flow</td>
+            <td class="schedule-instructor">Lisa</td>
+            <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
+            <td class="schedule-cta">
+              <a class="btn btn-dark btn-pill schedule-btn"
+                 href="https://www.beachglasshyp.com/schedule"
+                 target="_blank" rel="noopener">
+                join us
+              </a>
+            </td>
+          </tr>
+
+          <!-- Nov 15 -->
+          <tr id="nov15">
+            <td class="schedule-date">Friday, Nov 15th</td>
+            <td class="schedule-time">3:00 PM</td>
+            <td class="schedule-duration">60 min</td>
+            <td class="schedule-class">Center & Flow</td>
+            <td class="schedule-instructor">Lisa & Brynn</td>
             <td class="schedule-location">Berkeley Ballet Theater</td>
             <td class="schedule-cta">
               <a class="btn btn-dark btn-pill schedule-btn"
@@ -278,14 +324,12 @@
           </tr>
 
           <!-- Oct 18 -->
-          <tr class="schedule-date-row" id="oct18">
-            <th scope="rowgroup" colspan="6">Friday, Oct 18 – Green Yogi Pop-Up</th>
-          </tr>
-          <tr>
-            <td class="schedule-time">6:30 PM</td>
-            <td class="schedule-duration">75 min</td>
-            <td class="schedule-class">Green Yogi – Center &amp; Flow</td>
-            <td class="schedule-instructor">Lisa Eshun-Wilson</td>
+          <tr id="oct18">
+            <td class="schedule-date">Friday, Oct 18th</td>
+            <td class="schedule-time">5:30 PM</td>
+            <td class="schedule-duration">60 min</td>
+            <td class="schedule-class">Evening Deep Flow</td>
+            <td class="schedule-instructor">Lisa & Brynn</td>
             <td class="schedule-location">Green Yogi Berkeley</td>
             <td class="schedule-cta">
               <a class="btn btn-dark btn-pill schedule-btn"
@@ -297,14 +341,12 @@
           </tr>
 
           <!-- Sept 19 -->
-          <tr class="schedule-date-row" id="sept19">
-            <th scope="rowgroup" colspan="6">Thursday, Sept 19 – Green Yogi Pop-Up</th>
-          </tr>
-          <tr>
-            <td class="schedule-time">6:30 PM</td>
-            <td class="schedule-duration">75 min</td>
-            <td class="schedule-class">Green Yogi – Sunset Flow</td>
-            <td class="schedule-instructor">Lisa Eshun-Wilson</td>
+          <tr id="sept19">
+            <td class="schedule-date">Thursday, Sept 19th</td>
+            <td class="schedule-time">5:30 PM</td>
+            <td class="schedule-duration">60 min</td>
+            <td class="schedule-class">Sunset Flow</td>
+            <td class="schedule-instructor">Lisa & Brynn</td>
             <td class="schedule-location">Green Yogi Berkeley</td>
             <td class="schedule-cta">
               <a class="btn btn-dark btn-pill schedule-btn"
@@ -316,14 +358,12 @@
           </tr>
 
           <!-- Aug 19 -->
-          <tr class="schedule-date-row" id="aug19">
-            <th scope="rowgroup" colspan="6">Monday, Aug 19 – Green Yogi Pop-Up</th>
-          </tr>
-          <tr>
-            <td class="schedule-time">6:30 PM</td>
-            <td class="schedule-duration">75 min</td>
-            <td class="schedule-class">Green Yogi – Power &amp; Restore</td>
-            <td class="schedule-instructor">Lisa Eshun-Wilson</td>
+          <tr id="aug19">
+            <td class="schedule-date">Monday, Aug 19th</td>
+            <td class="schedule-time">5:30 PM</td>
+            <td class="schedule-duration">60 min</td>
+            <td class="schedule-class">Core Restore</td>
+            <td class="schedule-instructor">Lisa</td>
             <td class="schedule-location">Green Yogi Berkeley</td>
             <td class="schedule-cta">
               <a class="btn btn-dark btn-pill schedule-btn"
