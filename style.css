@@ -1024,3 +1024,33 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   width: 100%;
   display: block;
 }
+
+.ugc-social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.icon-btn {
+  width: 62px;
+  height: 62px;
+  background-color: #3d3c3a;  /* dark gray like mockup */
+  border-radius: 50%;
+  border: 3px solid #e5e2dd;  /* light outline like Canva preview */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.icon-btn img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1); /* makes icons white */
+}
+
+.icon-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
