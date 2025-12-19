@@ -1205,3 +1205,42 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   }
 }
 
+.phone-shell{
+  position: relative;
+  width: 260px;                 /* tweak for your layout */
+  aspect-ratio: 705 / 1400;     /* MUST match the frame png */
+}
+.phone-frame{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  pointer-events:none;
+  z-index:2;
+}
+
+.phone-screen{
+  --inset-top: 9%;
+  --inset-right: 10%;
+  --inset-bottom: 10%;
+  --inset-left: 10%;
+
+  position:absolute;
+  top: var(--inset-top);
+  right: var(--inset-right);
+  bottom: var(--inset-bottom);
+  left: var(--inset-left);
+
+  border-radius: 28px;
+  overflow:hidden;
+  z-index:1;
+}
+
+.phone-screen video,
+.phone-screen img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
