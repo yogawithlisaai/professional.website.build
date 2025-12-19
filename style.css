@@ -1243,4 +1243,128 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   height:100%;
   object-fit:cover;
   display:block;
+
+/* ===== UGC Reel Strip with iPhone frame ===== */
+
+.ugc-reel-section {
+  padding: 4rem 0 3rem;
+  background: #faf7f1; /* match rest of page or tweak */
 }
+
+.ugc-reel-row {
+  display: flex;
+  gap: clamp(2rem, 4vw, 3rem);
+  padding-inline: clamp(1.5rem, 6vw, 4rem);
+  padding-bottom: 2.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.ugc-reel-row::-webkit-scrollbar {
+  height: 6px;
+}
+.ugc-reel-row::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 999px;
+}
+.ugc-reel-row::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ugc-reel {
+  scroll-snap-align: start;
+  flex: 0 0 min(260px, 70vw);
+}
+
+/* Phone container */
+
+.ugc-phone {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16; /* keeps shape consistent */
+}
+
+/* Frame image */
+
+.ugc-phone-frame {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none; /* don't block clicks on the video */
+}
+
+/* Video positioned inside the "glass" area */
+
+.ugc-video {
+  position: absolute;
+  z-index: 1;
+  /* These insets are tuned for your phone-frame.png */
+  top: 8%;
+  bottom: 7%;
+  left: 8%;
+  right: 8%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  border-radius: 28px;
+  background: #000;
+}
+
+/* Over-screen label pill */
+
+.ugc-tag {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 11%;
+  transform: translateX(-50%);
+  padding: 0.4rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  pointer-events: none; /* keep the video clickable */
+}
+
+.ugc-tag-title {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #111827;
+}
+
+.ugc-tag-sub {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+  color: #6b7280;
+}
+
+/* Small-screen tweaks */
+
+@media (max-width: 768px) {
+  .ugc-reel-section {
+    padding-top: 2.5rem;
+  }
+
+  .ugc-reel-row {
+    padding-inline: 1.25rem;
+  }
+
+  .ugc-reel {
+    flex: 0 0 70vw;
+  }
+
+  .ugc-tag {
+    bottom: 9%;
+    padding: 0.35rem 1.4rem;
+  }
+}}
