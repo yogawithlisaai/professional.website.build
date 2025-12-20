@@ -131,22 +131,30 @@
 <section class="ugc-reel-section" aria-label="UGC vertical samples">
   <h2 class="visually-hidden">UGC Video Examples</h2>
 
-    <!-- 1. TESTIMONIAL · LIP BUTTER -->
-    <article class="ugc-reel">
-      <div class="ugc-phone">
-        <video class="ugc-video"
-               src="videos/ugc-lipbutter.mp4"
-               poster="images/ugc-lipbutter-poster.jpg"
-               playsinline
-               muted
-               controls>
-        </video>
-          <button class="ugc-btn">testimonial</button>
-          <span class="ugc-tag-title">testimonial</span>
-        </button>
-      </div>
-    </article>
-  </div>
+  <!-- 1. TESTIMONIAL · LIP BUTTER -->
+  <article class="ugc-reel">
+    <div class="ugc-phone">
+      <!-- iPhone frame image -->
+      <img
+        src="images/phone-frame.png"
+        alt=""
+        class="ugc-phone-frame"
+        aria-hidden="true"
+      >
+
+      <!-- Video inside the frame -->
+      <video class="ugc-video"
+             src="videos/ugc-lipbutter.mp4"
+             poster="images/ugc-lipbutter-poster.jpg"
+             playsinline
+             muted
+             controls>
+      </video>
+
+      <!-- Over-screen label pill (non-clickable, like “Give Back”) -->
+      <div class="ugc-btn">testimonial</div>
+    </div>
+  </article>
 </section>
 
 <!-- =================== UGC Offer Banner =================== -->
