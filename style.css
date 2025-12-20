@@ -1469,3 +1469,60 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
     bottom: 9%;
   }
 }
+
+/* Container for each UGC card */
+.ugc-card {
+  display: inline-block;
+  margin: 2rem 1.5rem;
+}
+
+/* Phone shell – controls overall size */
+.ugc-phone {
+  position: relative;
+  width: 280px;          /* ⬅️ make this bigger/smaller to taste */
+  aspect-ratio: 9 / 16;  /* keeps a tall phone shape */
+  margin: 0 auto;
+}
+
+/* The phone frame PNG */
+.ugc-phone-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* fills the whole container */
+  pointer-events: none;  /* clicks go to the video, not the image */
+}
+
+/* The video inside the frame */
+.ugc-video {
+  position: absolute;
+  /* tweak these 4 numbers to snug the video inside the bezels */
+  top: 7%;
+  bottom: 6%;
+  left: 7%;
+  right: 7%;
+
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+/* The white pill button, like “Give Back” */
+.ugc-tag {
+  position: absolute;
+  left: 50%;
+  bottom: 7%;            /* moves pill up/down over the video */
+  transform: translateX(-50%);
+  padding: 0.45rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  background: #ffffff;
+  color: #111827;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
+  cursor: default;       /* or pointer if you want it clickable */
+}
