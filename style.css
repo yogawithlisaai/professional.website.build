@@ -1056,473 +1056,74 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   opacity: 0.85;
 }
 
-/* Container for phone frame + video */
-.ugc-phone {
-  position: relative;
-  width: 260px;                /* Adjust width as needed */
-  aspect-ratio: 9 / 19.5;      /* Matches modern iPhone proportions */
-  margin: 0 auto;
-  overflow: hidden;            /* Clips video to frame */
-}
-
-/* The video should fill the inside of the phone */
-.ugc-video {
-  position: absolute;
-  top: 7%;                     /* Adjust until video fills inner screen */
-  left: 6%;
-  width: 88%;                  /* Adjust to fit exactly inside screen */
-  height: 86%;
-  object-fit: cover;
-  border-radius: 38px;         /* optional—softens edges for realism */
-  z-index: 1;
-}
-
-/* The PNG phone frame sits on top */
-.ugc-phone-frame {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  z-index: 2;
-  pointer-events: none;        /* allows clicking the video under it */
-}
-
-/* Layout: 5 phones in a row */
-.ugc-reel-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 40px;
-  justify-items: center;
-  align-items: start;
-  padding: 40px 0;
-}
-
-/* Label (YOGA, SKIN, etc.) */
-.ugc-label {
-  text-align: center;
-  font-family: "Playfair Display", serif;
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
-}
-
-/* UGC Reel Section */
-.ugc-reel {
-  padding: 4rem 2rem;
-}
-
-.ugc-reel-row {
-  display: flex;
-  gap: 2.5rem;
-  justify-content: center;
-  align-items: flex-start;
-  overflow-x: auto;          /* horizontal scrolling on small screens */
-  padding-bottom: 1rem;
-  scroll-snap-type: x mandatory;
-}
-
-.ugc-reel-row::-webkit-scrollbar {
-  height: 6px;
-}
-.ugc-reel-row::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 999px;
-}
-
-.ugc-reel-item {
-  text-align: center;
-  scroll-snap-align: center;
-  flex: 0 0 auto;            /* don’t shrink in the row */
-}
-
-.ugc-reel-label {
-  font-family: "Playfair Display", serif;
-  letter-spacing: 0.08em;
-  font-size: 1.1rem;
-  margin-bottom: 0.75rem;
-}
-
-/* Phone framing */
-.phone-shell {
-  position: relative;
-  width: 260px;              /* tweak if needed */
-  margin: 0 auto;
-}
-
-.phone-frame {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: auto;
-  pointer-events: none;
-}
-
-/* Content inside the phone */
-.phone-screen {
-  position: absolute;
-  top: 10%;                  /* adjust these four values to fine-tune fit */
-  left: 9%;
-  width: 82%;
-  height: 80%;
-  overflow: hidden;
-  border-radius: 1.6rem;
-}
-
-.phone-screen video,
-.phone-screen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Responsive tweaks */
-@media (max-width: 900px) {
-  .ugc-reel {
-    padding: 3rem 1rem;
-  }
-
-  .ugc-reel-row {
-    justify-content: flex-start;
-  }
-
-  .phone-shell {
-    width: 220px;
-  }
-
-  .ugc-reel-label {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .phone-shell {
-    width: 190px;
-  }
-
-  .ugc-reel-row {
-    gap: 1.5rem;
-  }
-}
-
-.phone-shell{
-  position: relative;
-  width: 260px;                 /* tweak for your layout */
-  aspect-ratio: 705 / 1400;     /* MUST match the frame png */
-}
-.phone-frame{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  pointer-events:none;
-  z-index:2;
-}
-
-.phone-screen{
-  --inset-top: 9%;
-  --inset-right: 10%;
-  --inset-bottom: 10%;
-  --inset-left: 10%;
-
-  position:absolute;
-  top: var(--inset-top);
-  right: var(--inset-right);
-  bottom: var(--inset-bottom);
-  left: var(--inset-left);
-
-  border-radius: 28px;
-  overflow:hidden;
-  z-index:1;
-}
-
-.phone-screen video,
-.phone-screen img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-
-/* ===== UGC Reel Strip with iPhone frame ===== */
+/* ==================== UGC Reel Layout ==================== */
 
 .ugc-reel-section {
-  padding: 4rem 0 3rem;
-  background: #faf7f1; /* match rest of page or tweak */
+  padding: 4rem 1rem 6rem;
+  text-align: center;
 }
 
-.ugc-reel-row {
-  display: flex;
-  gap: clamp(2rem, 4vw, 3rem);
-  padding-inline: clamp(1.5rem, 6vw, 4rem);
-  padding-bottom: 2.5rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-}
-
-.ugc-reel-row::-webkit-scrollbar {
-  height: 6px;
-}
-.ugc-reel-row::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 999px;
-}
-.ugc-reel-row::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.ugc-reel {
-  scroll-snap-align: start;
-  flex: 0 0 min(260px, 70vw);
+.ugc-card {
+  display: inline-block;
+  margin-top: 3rem;
 }
 
 /* Phone container */
-
 .ugc-phone {
   position: relative;
-  width: 100%;
-  aspect-ratio: 9 / 16; /* keeps shape consistent */
+  width: 340px;
+  max-width: min(80vw, 380px);
+  margin: 0 auto;
 }
 
-/* Frame image */
-
+/* The phone frame image */
 .ugc-phone-frame {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
-  pointer-events: none; /* don't block clicks on the video */
+  width: 100%;
+  height: auto;
+  pointer-events: none; /* don’t block clicks on the video */
 }
 
-/* Video positioned inside the "glass" area */
-
+/* Video sitting inside the phone screen */
 .ugc-video {
   position: absolute;
-  z-index: 1;
-  /* These insets are tuned for your phone-frame.png */
+  /* these percentages control where the video sits inside the frame */
   top: 8%;
-  bottom: 7%;
-  left: 8%;
-  right: 8%;
-  width: auto;
-  height: auto;
+  left: 11%;
+  width: 78%;
+  height: 84%;
   object-fit: cover;
-  border-radius: 28px;
-  background: #000;
-}
-
-/* Over-screen label pill */
-
-.ugc-tag {
-  position: absolute;
-  z-index: 3;
-  left: 50%;
-  bottom: 11%;
-  transform: translateX(-50%);
-  padding: 0.4rem 1.6rem;
-  border-radius: 999px;
-  border: none;
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35);
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.1rem;
-  pointer-events: none; /* keep the video clickable */
-}
-
-.ugc-tag-title {
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: #111827;
-}
-
-.ugc-tag-sub {
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: lowercase;
-  color: #6b7280;
-}
-
-/* Small-screen tweaks */
-
-@media (max-width: 768px) {
-  .ugc-reel-section {
-    padding-top: 2.5rem;
-  }
-
-  .ugc-reel-row {
-    padding-inline: 1.25rem;
-  }
-
-  .ugc-reel {
-    flex: 0 0 70vw;
-  }
-
-  .ugc-tag {
-    bottom: 9%;
-    padding: 0.35rem 1.4rem;
-  }
-}
-
-/* UGC Button – matches the Give Back button style */
-.ugc-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 28px;
-  background-color: #ffffff;
-  border: none;
-  border-radius: 30px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #000;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  position: absolute;
-  top: 12px;       /* placement inside phone frame */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  user-select: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.ugc-btn:hover {
-  transform: translateX(-50%) scale(1.04);
-  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.25);
-}
-
-/* ===== Final UGC Reel Styles (with iPhone frame) ===== */
-
-.ugc-reel-section {
-  padding: 4rem 0 3rem;
-  background: #ffffff;
-}
-
-.ugc-reel {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.ugc-phone {
-  position: relative;
-  width: min(260px, 70vw);
-  aspect-ratio: 9 / 19.5;        /* tuned for your phone-frame.png */
-  margin: 0 auto;
-}
-
-/* Frame image */
-.ugc-phone-frame {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Video inside the “glass” area */
-.ugc-video {
-  position: absolute;
-  inset: 8% 8% 9%;
-  width: auto;
-  height: auto;
-  object-fit: cover;
-  border-radius: 28px;
-  background: #000;
+  border-radius: 28px; /* match the screen corners */
   z-index: 1;
 }
 
-/* Over-screen label pill – like the “Give Back” button */
-.ugc-btn {
-  position: absolute;
-  left: 50%;
-  bottom: 10%;
-  transform: translateX(-50%);
-  padding: 12px 28px;
-  background-color: #ffffff;
-  border-radius: 999px;
-  border: none;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-  pointer-events: none;          /* label only, doesn’t block video clicks */
-}
-
-/* Mobile tweaks */
-@media (max-width: 600px) {
-  .ugc-phone {
-    width: min(220px, 80vw);
-  }
-  .ugc-btn {
-    padding: 10px 22px;
-    font-size: 0.85rem;
-    bottom: 9%;
-  }
-}
-
-/* Container for each UGC card */
-.ugc-card {
-  display: inline-block;
-  margin: 2rem 1.5rem;
-}
-
-/* Phone shell – controls overall size */
-.ugc-phone {
-  position: relative;
-  width: 280px;          /* ⬅️ make this bigger/smaller to taste */
-  aspect-ratio: 9 / 16;  /* keeps a tall phone shape */
-  margin: 0 auto;
-}
-
-/* The phone frame PNG */
-.ugc-phone-frame {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;     /* fills the whole container */
-  pointer-events: none;  /* clicks go to the video, not the image */
-}
-
-/* The video inside the frame */
-.ugc-video {
-  position: absolute;
-  /* tweak these 4 numbers to snug the video inside the bezels */
-  top: 7%;
-  bottom: 6%;
-  left: 7%;
-  right: 7%;
-
-  width: auto;
-  height: auto;
-  object-fit: cover;
-  border-radius: 24px;
-}
-
-/* The white pill button, like “Give Back” */
+/* “testimonial” pill, styled like a “Give Back” button */
 .ugc-tag {
   position: absolute;
+  top: -2.4rem;
   left: 50%;
-  bottom: 7%;            /* moves pill up/down over the video */
   transform: translateX(-50%);
-  padding: 0.45rem 1.5rem;
+  z-index: 2;
+
+  padding: 0.55rem 1.6rem;
   border-radius: 999px;
-  border: none;
+
   background: #ffffff;
   color: #111827;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Helvetica Neue", Arial, sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
-  font-family: inherit;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
-  cursor: default;       /* or pointer if you want it clickable */
+
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+
+  cursor: default;        /* it’s just a label, not a real button */
+  pointer-events: none;   /* prevent it from blocking video clicks */
+}
+
+@media (min-width: 900px) {
+  .ugc-phone {
+    width: 380px;
+  }
 }
