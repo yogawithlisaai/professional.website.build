@@ -1108,8 +1108,8 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   padding: 0.55rem 1.6rem;
   border-radius: 999px;
 
-  background: #ffffff;
-  color: #111827;
+  background: #111827;
+  color: #ffffff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Helvetica Neue", Arial, sans-serif;
   font-size: 0.9rem;
