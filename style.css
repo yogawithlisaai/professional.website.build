@@ -987,7 +987,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   -webkit-mask-image: linear-gradient(to right,
                rgba(0,0,0,0) 0, rgba(0,0,0,1) 24px,
                rgba(0,0,0,1) calc(100% - 24px), rgba(0,0,0,0) 100%);
-}}
+}
 
 /* Horizontal carousel layout */
 .carousel {
@@ -1126,4 +1126,57 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   .ugc-phone {
     width: 380px;
   }
+}
+
+/* === Homepage cards carousel fix === */
+
+/* The row that holds all the cards */
+.cards .carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem 0;
+}
+
+.cards .carousel::-webkit-scrollbar {
+  display: none; /* hide scrollbar */
+}
+
+/* Each individual card */
+.cards .card {
+  flex: 0 0 260px;           /* fixed width like before */
+  scroll-snap-align: start;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f7f7f7;
+  transition: transform 0.3s ease;
+}
+
+.cards .card:hover {
+  transform: scale(1.03);
+}
+
+/* Images inside those cards */
+.cards .card-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 5;       /* keeps them card-shaped instead of huge */
+  object-fit: cover;
+}
+
+/* Keep the hover image positioned correctly */
+.cards .img-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+@media (hover:hover) {
+  .cards .card:hover .img-hover { opacity: 1; transform: scale(1); }
+  .cards .card:hover .img-default { opacity: 0; }
 }
