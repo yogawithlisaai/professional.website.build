@@ -1087,15 +1087,18 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 /* Video sitting inside the phone screen */
 .ugc-video {
   position: absolute;
-  /* these percentages control where the video sits inside the frame */
-  top: 8%;
-  left: 11%;
-  width: 78%;
-  height: 84%;
+
+  /* Pixel-perfect offsets for your phone-frame PNG */
+  top: 12.3%;
+  bottom: 8.1%;
+  left: 8.9%;
+  right: 8.9%;
+
   object-fit: cover;
-  border-radius: 28px; /* match the screen corners */
+  border-radius: 32px; /* perfect for your PNG’s corner curvature */
   z-index: 1;
 }
+
 
 /* “testimonial” pill, styled like a “Give Back” button */
 .ugc-tag {
@@ -1179,4 +1182,26 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 @media (hover:hover) {
   .cards .card:hover .img-hover { opacity: 1; transform: scale(1); }
   .cards .card:hover .img-default { opacity: 0; }
+}
+
+/* ===== UGC STRIP LAYOUT (ugc.html only) ===== */
+
+.ugc-reel-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem 4rem;
+
+  /* make the reels sit in a horizontal strip */
+  display: flex;
+  gap: 2.5rem;
+  overflow-x: auto;
+
+  scroll-snap-type: x mandatory;
+}
+
+.ugc-card {
+  flex: 0 0 360px;        /* width of each phone “card” */
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
 }
