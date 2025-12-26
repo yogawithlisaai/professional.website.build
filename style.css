@@ -1071,8 +1071,8 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 /* Phone container */
 .ugc-phone {
   position: relative;
-  width: 340px;
-  max-width: min(80vw, 380px);
+  width: 320px;
+  max-width: 90vw;
   margin: 0 auto;
 }
 
@@ -1087,18 +1087,14 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 /* Video sitting inside the phone screen */
 .ugc-video {
   position: absolute;
-
-  /* Pixel-perfect offsets for your phone-frame PNG */
-  top: 12.3%;
-  bottom: 8.1%;
-  left: 8.9%;
-  right: 8.9%;
-
+  top: 13%;
+  left: 9%;
+  width: 78%;
+  height: 84%;
   object-fit: cover;
-  border-radius: 32px; /* perfect for your PNG’s corner curvature */
+  border-radius: 28px;
   z-index: 1;
 }
-
 
 /* “testimonial” pill, styled like a “Give Back” button */
 .ugc-tag {
