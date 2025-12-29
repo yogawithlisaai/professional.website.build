@@ -1087,7 +1087,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 /* Video sitting inside the phone screen */
 .ugc-video {
   position: absolute;
-  top: 13%;
+  top: 5%;
   left: 9%;
   width: 78%;
   height: 84%;
