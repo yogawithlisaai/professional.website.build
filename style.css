@@ -1068,37 +1068,39 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   margin-top: 3rem;
 }
 
-/* Phone container */
+/* Container (still useful for sizing/centering) */
 .ugc-phone {
   position: relative;
   width: 100%;
-  max-width: 320px; /* change to whatever size you want */
-  aspect-ratio: 9 / 16; /* ensures proper phone shape */
-  overflow: hidden; /* THIS creates the mask */
-}
-/* The phone frame image */
-.ugc-phone-frame {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2; /* sits above video */
-  pointer-events: none; /* video still clickable */
+  max-width: 320px;
 }
 
-/* Video sitting inside the phone screen */
+/* ✅ Option B: video becomes the “phone” */
 .ugc-video {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* THIS makes it behave like Instagram Reels */
-  z-index: 1;
+  aspect-ratio: 9 / 16;
+  height: auto;
+  display: block;
+
+  object-fit: cover;
+  border-radius: 36px;
+
+  /* thick black iPhone-style border */
+  border: 10px solid #111;
+  box-sizing: border-box;
+  background: #111;
+
+  /* optional: tiny inner rim for polish */
+  outline: 2px solid rgba(255,255,255,0.18);
+  outline-offset: -6px;
 }
 
-/* “testimonial” pill, styled like a “Give Back” button */
+/* Hide the phone-frame overlay (we’re not using it in Option B) */
+.ugc-phone-frame {
+  display: none;
+}
+
+/* “testimonial” pill label */
 .ugc-tag {
   position: absolute;
   top: -2.4rem;
@@ -1119,13 +1121,13 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   border: 1px solid rgba(15, 23, 42, 0.08);
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
 
-  cursor: default;        /* it’s just a label, not a real button */
-  pointer-events: none;   /* prevent it from blocking video clicks */
+  cursor: default;
+  pointer-events: none;
 }
 
 @media (min-width: 900px) {
   .ugc-phone {
-    width: 380px;
+    max-width: 380px;
   }
 }
 
@@ -1182,24 +1184,3 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   .cards .card:hover .img-default { opacity: 0; }
 }
 
-/* ===== UGC STRIP LAYOUT (ugc.html only) ===== */
-
-.ugc-reel-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 1rem 4rem;
-
-  /* make the reels sit in a horizontal strip */
-  display: flex;
-  gap: 2.5rem;
-  overflow-x: auto;
-
-  scroll-snap-type: x mandatory;
-}
-
-.ugc-card {
-  flex: 0 0 360px;        /* width of each phone “card” */
-  scroll-snap-align: start;
-  display: flex;
-  justify-content: center;
-}
