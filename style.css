@@ -1184,3 +1184,45 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   .cards .card:hover .img-default { opacity: 0; }
 }
 
+/* ================================
+   UGC Intro Section (Scoped Only)
+   ================================ */
+
+.intro.container {
+  padding: 2.5rem 1rem;      /* reduces white space */
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro.container .intro-text {
+  margin: 1.25rem auto 2rem;
+  line-height: 1.6;
+  max-width: 680px;
+  color: #444;
+}
+
+/* CTA button — scoped, black with white text */
+.intro.container .cta-btn {
+  display: inline-block;
+  padding: 0.85rem 2.25rem;
+  border-radius: 999px;
+
+  background-color: #000;    /* black */
+  color: #fff;               /* white text */
+
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  border: none;
+  cursor: pointer;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.intro.container .cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
