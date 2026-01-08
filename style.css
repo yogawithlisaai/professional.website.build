@@ -1232,3 +1232,9 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
     text-align: left;
   }
 }
+
+/* Sticky taupe nav on scroll */
+.site-header.scrolled,
+.site-header[data-scrolled="true"] {
+  background-color: var(--taupe) !important;
+}
