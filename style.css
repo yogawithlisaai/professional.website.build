@@ -1211,7 +1211,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   background-color: #000;    /* black */
   color: #fff;               /* white text */
 
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
