@@ -1246,8 +1246,9 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 
 /* 1) Force sticky header to stay taupe on the UGC page */
 .page-ugc .site-header {
-  background: var(--taupe) !important;
-  background-color: var(--taupe) !important;
+  background-color: rgba(207, 219, 227, 0.10) !important;
+  backdrop-filter: saturate(120%) blur(6px);
+  -webkit-backdrop-filter: saturate(120%) blur(6px);
 }
 
 /* 2) Center the UGC reel cards (the 5-phone strip) */
@@ -1269,4 +1270,8 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 
 .page-ugc .ugc-card {
   margin-top: 0; /* avoid extra top gap since we're using flex + gap */
+}
+
+:root {
+  --baby-blue: #cfe7f5;
 }
