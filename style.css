@@ -1238,3 +1238,35 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 .site-header[data-scrolled="true"] {
   background-color: var(--taupe) !important;
 }
+
+/* =========================================================
+   UGC page-only fixes (won't affect other pages)
+   Add this to ugc.html:  <body class="page-ugc">
+   ========================================================= */
+
+/* 1) Force sticky header to stay taupe on the UGC page */
+.page-ugc .site-header {
+  background: var(--taupe) !important;
+  background-color: var(--taupe) !important;
+}
+
+/* 2) Center the UGC reel cards (the 5-phone strip) */
+.page-ugc .ugc-reel-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+
+  /* keep your existing spacing + centering */
+  text-align: center;
+}
+
+.page-ugc .ugc-reel-section > h2 {
+  flex: 0 0 100%;
+  margin: 0 0 1.25rem;
+}
+
+.page-ugc .ugc-card {
+  margin-top: 0; /* avoid extra top gap since we're using flex + gap */
+}
