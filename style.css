@@ -1276,22 +1276,3 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   --baby-blue: #cfe7f5;
 }
 
-/* UGC page only: center the reel cards row */
-.page-ugc .ugc-reel-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-/* UGC page only: remove the old inline-block behavior */
-.page-ugc .ugc-card {
-  display: block;
-  margin-top: 0;
-}
-
-@media (max-width: 1100px) {
-  .page-ugc .ugc-reel-section {
-    gap: 1.25rem;
-  }
-}
