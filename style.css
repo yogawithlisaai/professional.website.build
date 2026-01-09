@@ -1276,7 +1276,3 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   --baby-blue: #cfe7f5;
 }
 
-/* UGC page only: header title text in black */
-.page-ugc .site-header .brand {
-  color: #000000 !important;
-}
