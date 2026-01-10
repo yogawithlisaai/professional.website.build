@@ -1733,3 +1733,9 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
     font-weight: 600;       /* still strong, but not bulky */
   }
 }
+
+@media (min-width: 1024px) {
+  .page-ugc .ugc-social-icons {
+    margin-top: 0.75rem;
+  }
+}
