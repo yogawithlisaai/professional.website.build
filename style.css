@@ -1745,3 +1745,12 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
     font-size: clamp(4rem, 7vw, 6.5rem);
   }
 }
+
+/* ==================== UGC ONLY: Banner background images ==================== */
+.page-ugc .membership .membership-media{
+  background-image: url("images/ugc-whyworkwithme.jpg") !important;
+}
+
+.page-ugc .founder .founder-media{
+  background-image: url("images/ugc-meetthecreator.jpg") !important;
+}
