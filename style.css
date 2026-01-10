@@ -1685,22 +1685,24 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   border-radius: 999px;
 }
 
-/* ==================== UGC HERO INTRO VIDEO SCALE ==================== */
-
-.page-ugc .ugc-hero-video-el {
-  transform: scale(0.7);
-  transform-origin: top left;
-}
+/* ==================== UGC HERO INTRO VIDEO ==================== */
 
 .page-ugc .ugc-hero-video {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
+.page-ugc .ugc-hero-video-el {
+  transform: scale(0.7); /* 30% smaller */
+  transform-origin: center;
+}
+
+/* Desktop-only safety (keeps mobile natural) */
 @media (min-width: 1024px) {
   .page-ugc .ugc-hero-video-el {
     transform: scale(0.7);
-    transform-origin: top left;
+    transform-origin: center;
   }
 }
 
