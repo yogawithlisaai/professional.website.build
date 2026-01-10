@@ -1470,7 +1470,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 
   /* Name — MASSIVE */
   .page-ugc .ugc-hero-name{
-    font-size: clamp(6rem, 10vw, 9rem);
+    font-size: clamp(6rem, 9vw, 8.5rem);
     line-height: 1.05;
     margin-bottom: 1.5rem;
   }
