@@ -1542,3 +1542,23 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 .page-ugc .site-header .brand:visited{
   color: #000 !important;
 }
+
+/* ==================== UGC HERO SPACING FIX ==================== */
+.page-ugc .ugc-hero {
+  padding-top: 7.5rem;
+}
+
+/* ==================== UGC HEADER TEXT COLOR ==================== */
+.page-ugc .site-header .brand {
+  color: #000 !important;
+}
+
+/* ==================== UGC HERO SOCIAL ICON FIX ==================== */
+.page-ugc .ugc-social-icons .icon-btn {
+  background: #000;
+  border: none;
+}
+
+.page-ugc .ugc-social-icons .icon-btn img {
+  filter: invert(1);
+}
