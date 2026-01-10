@@ -1513,3 +1513,32 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
     height: 34px;
   }
 }
+
+/* ==========================================
+   UGC PAGE ONLY — Fix header overlap on hero
+   ========================================== */
+
+/* Make room for the fixed header so it doesn't cover the hero */
+.page-ugc .ugc-hero{
+  padding-top: 120px; /* adjust if needed */
+}
+
+/* Optional: if the hero still feels tight, add a bit more breathing room */
+@media (min-width: 981px){
+  .page-ugc .ugc-hero{
+    padding-top: 140px;
+  }
+}
+
+/* ==========================================
+   UGC PAGE ONLY — Make header title black
+   ========================================== */
+
+.page-ugc .site-header .brand{
+  color: #000 !important;
+  text-shadow: none !important;
+}
+
+.page-ugc .site-header .brand:visited{
+  color: #000 !important;
+}
