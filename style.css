@@ -1684,3 +1684,10 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   background: rgba(0,0,0,0.12);
   border-radius: 999px;
 }
+
+/* ==================== UGC HERO INTRO VIDEO SCALE ==================== */
+
+.page-ugc .ugc-hero-video-el {
+  transform: scale(0.7);
+  transform-origin: top left;
+}
