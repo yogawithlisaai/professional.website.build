@@ -1697,6 +1697,13 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   justify-content: center;
 }
 
+@media (min-width: 1024px) {
+  .page-ugc .ugc-hero-video-el {
+    transform: scale(0.7);
+    transform-origin: top left;
+  }
+}
+
 /* ==================== UGC VIDEO CAROUSEL: shrink by 30% ==================== */
 /* (UGC page only; affects both UGC video sections) */
 
