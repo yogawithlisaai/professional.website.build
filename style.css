@@ -1793,6 +1793,6 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
    ==================== */
 
 .page-ugc .ugc-reel-video {
-  transform: scale(0.6);   /* ← adjust this number */
+  transform: scale(0.78);   /* ← adjust this number */
   transform-origin: center;
 }
