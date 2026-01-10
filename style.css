@@ -1786,3 +1786,13 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 .page-ugc .meet-creator .btn {
   margin-top: 2.5rem;
 }
+
+/* ====================
+   UGC REEL VIDEO SIZE
+   (does NOT affect hero video)
+   ==================== */
+
+.page-ugc .ugc-reel-video {
+  transform: scale(0.6);   /* ← adjust this number */
+  transform-origin: center;
+}
