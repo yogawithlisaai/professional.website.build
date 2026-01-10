@@ -1461,3 +1461,55 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   max-width: 480px;
 }
 
+/* =====================================================
+   UGC HERO — OUTRAGEOUS SCALE TEST (DESKTOP ONLY)
+   TEMPORARY: for visual comparison
+   ===================================================== */
+
+@media (min-width: 981px){
+
+  /* Name — MASSIVE */
+  .page-ugc .ugc-hero-name{
+    font-size: clamp(6rem, 10vw, 9rem);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Title */
+  .page-ugc .ugc-hero-title{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Location */
+  .page-ugc .ugc-hero-location{
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Blurb */
+  .page-ugc .ugc-hero-blurb{
+    font-size: 2.1rem;
+    max-width: 60ch;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  /* Email line (if added as <div class="ugc-hero-email">) */
+  .page-ugc .ugc-hero-email{
+    font-size: 2rem;
+    margin-bottom: 2.25rem;
+  }
+
+  /* Social icons — bigger to match */
+  .page-ugc .ugc-social-icons .icon-btn{
+    width: 72px;
+    height: 72px;
+  }
+
+  .page-ugc .ugc-social-icons .icon-btn img{
+    width: 34px;
+    height: 34px;
+  }
+}
