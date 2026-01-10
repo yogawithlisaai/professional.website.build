@@ -1562,3 +1562,20 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 .page-ugc .ugc-social-icons .icon-btn img {
   filter: invert(1);
 }
+
+/* ==================== UGC HERO NAME – SCRIPT STYLE ==================== */
+
+.page-ugc .ugc-hero-name {
+  font-family: 'Great Vibes', cursive;
+  color: #ff5fa2; /* soft pink */
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+
+/* Desktop only – let it be dramatic */
+@media (min-width: 981px) {
+  .page-ugc .ugc-hero-name {
+    font-size: clamp(5rem, 7vw, 7.5rem);
+  }
+}
