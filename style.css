@@ -1796,3 +1796,35 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   transform: scale(0.85);   /* ← adjust this number */
   transform-origin: center;
 }
+
+/* ================================
+   UGC – Meet the Creator Spacing
+   ================================ */
+
+.page-ugc .meet-creator {
+  display: flex;
+  align-items: flex-start;   /* ⬅️ stop vertical centering */
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.page-ugc .meet-creator .membership-inner {
+  max-width: 760px;          /* ⬅️ wider text column */
+  margin-left: 6rem;         /* ⬅️ push off left edge like Why Work With Me */
+}
+
+/* Title spacing */
+.page-ugc .meet-creator h2 {
+  margin-bottom: 2.5rem;
+}
+
+/* Paragraph rhythm */
+.page-ugc .meet-creator p {
+  margin-bottom: 1.25rem;
+  line-height: 1.65;
+}
+
+/* Button breathing room */
+.page-ugc .meet-creator .btn {
+  margin-top: 2.5rem;
+}
