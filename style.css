@@ -1720,3 +1720,16 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
+/* ==================== UGC HERO TITLE ALIGNMENT TWEAK ==================== */
+
+/* Desktop only */
+@media (min-width: 1024px) {
+  .page-ugc .ugc-hero-title {
+    font-size: 1.6rem;      /* smaller than before */
+    line-height: 1.2;       /* tighter vertical rhythm */
+    margin-top: 0.5rem;     /* pull it closer to the name */
+    margin-bottom: 0.75rem;/* reduce push-down effect */
+    font-weight: 600;       /* still strong, but not bulky */
+  }
+}
