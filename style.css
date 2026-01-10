@@ -1579,3 +1579,108 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
     font-size: clamp(5rem, 7vw, 7.5rem);
   }
 }
+
+/* ==================== UGC VIDEO CAROUSEL (page-only) ==================== */
+.page-ugc .ugc-wrap{
+  position: relative;
+  margin-top: 1.25rem;
+}
+
+.page-ugc .ugc-track{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(320px, 78vw);
+  gap: 1.25rem;            /* ~ "1/4 inch" feel */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 3.25rem; /* room for the arrows */
+}
+
+.page-ugc .ugc-reel{
+  position: relative;
+  scroll-snap-align: start;
+}
+
+.page-ugc .ugc-reel-video{
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  height: auto;
+  display: block;
+  object-fit: cover;
+
+  border-radius: 36px;
+  border: 10px solid #111;
+  box-sizing: border-box;
+  background: #111;
+
+  outline: 2px solid rgba(255,255,255,0.18);
+  outline-offset: -6px;
+}
+
+/* White pill label (hides on hover so controls are easy to use) */
+.page-ugc .ugc-pill{
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  z-index: 3;
+
+  background: #fff;
+  color: #111;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 999px;
+
+  padding: 0.55rem 1.05rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.page-ugc .ugc-reel:hover .ugc-pill,
+.page-ugc .ugc-reel:focus-within .ugc-pill{
+  opacity: 0;
+  transform: translateX(-50%) translateY(6px);
+  pointer-events: none;
+}
+
+/* Carousel arrows */
+.page-ugc .ugc-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+
+  display: grid;
+  place-items: center;
+
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.page-ugc .ugc-prev{ left: 10px; }
+.page-ugc .ugc-next{ right: 10px; }
+
+.page-ugc .ugc-nav:hover{
+  background: #fff;
+}
+
+/* Optional: hide scrollbar for a cleaner look (still scrolls) */
+.page-ugc .ugc-track::-webkit-scrollbar{ height: 10px; }
+.page-ugc .ugc-track::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,0.12);
+  border-radius: 999px;
+}

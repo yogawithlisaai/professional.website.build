@@ -154,80 +154,80 @@
   })();
 </script>
 
-<!-- =================== UGC Reel Strip =================== -->
-<section class="ugc-reel-section" aria-label="UGC vertical samples">
+<!-- =================== UGC Video Examples Carousel =================== -->
+<section class="ugc-videos card" aria-label="UGC video examples">
+  <div class="ig-head">
+    <h3>ugc video examples</h3>
+    <a class="btn btn-pill btn-outline"
+       href="mailto:lisa@ugcwithlisaeshunwilson.com?subject=UGC%20Inquiry"
+       target="_blank" rel="noopener">
+      WORK WITH ME
+    </a>
+  </div>
 
-<!-- 1. SKIT · CADENCE -->
-  <article class="ugc-card">
-    <div class="ugc-phone">
-      <button type="button" class="ugc-tag">skit | cadence travel</button>
-      <video
-        class="ugc-video"
-        src="images/ugc-cadence.mp4"
-        poster="images/ugc-cadence-poster.jpg"
-        playsinline
-        muted
-        controls
-      ></video>
+  <div class="ugc-wrap" data-carousel="ugc-videos">
+    <button class="ugc-nav ugc-prev" aria-label="Previous">‹</button>
+
+    <div class="ugc-track">
+      <!-- Video 1 -->
+      <div class="ugc-reel" aria-label="UGC video 1">
+        <video class="ugc-reel-video"
+               src="videos/ugc-cadence.mp4"
+               playsinline
+               muted
+               controls
+               preload="metadata"></video>
+        <div class="ugc-pill">skit | travel</div>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="ugc-reel" aria-label="UGC video 2">
+        <video class="ugc-reel-video"
+               src="videos/ugc-crest.mp4"
+               playsinline
+               muted
+               controls
+               preload="metadata"></video>
+        <div class="ugc-pill">product demo</div>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="ugc-reel" aria-label="UGC video 3">
+        <video class="ugc-reel-video"
+               src="videos/ugc-lipbutter.mp4"
+               playsinline
+               muted
+               controls
+               preload="metadata"></video>
+        <div class="ugc-pill">testimonial</div>
+      </div>
+
+      <!-- Video 4 -->
+      <div class="ugc-reel" aria-label="UGC video 4">
+        <video class="ugc-reel-video"
+               src="videos/ugc-alo.mp4"
+               playsinline
+               muted
+               controls
+               preload="metadata"></video>
+        <div class="ugc-pill">broll w/VO</div>
+      </div>
+
+      <!-- Video 5 -->
+      <div class="ugc-reel" aria-label="UGC video 5">
+        <video class="ugc-reel-video"
+               src="videos/ugc-sprout.mp4"
+               playsinline
+               muted
+               controls
+               preload="metadata"></video>
+        <div class="ugc-pill">greenscreen</div>
+      </div>
     </div>
-  </article>
+
+    <button class="ugc-nav ugc-next" aria-label="Next">›</button>
+  </div>
 </section>
-
-<!-- 2. PRODUCT DEMO · CREST WHITENING STRIPS -->
-  <article class="ugc-card">
-    <div class="ugc-phone">
-      <button type="button" class="ugc-tag">product demo | crest whitening strips</button>
-      <video class="ugc-video"
-        src="images/ugc-crest.mp4"
-        poster="images/ugc-crest-poster.jpg"
-        playsinline
-        muted
-        controls
-      ></video>
-    </div>
-  </article>
-
-<!-- 3. TESTIMONIAL · LIP BUTTER -->
-  <article class="ugc-card">
-    <div class="ugc-phone">
-      <button type="button" class="ugc-tag">testimonial | rich lips butter</button>
-      <video class="ugc-video"
-        src="images/ugc-lipbutter.mp4"
-        poster="images/ugc-lipbutter-poster.jpg"
-        playsinline
-        muted
-        controls
-      ></video>
-    </div>
-  </article>
-
-<!-- 4. BROLL w VO · ALO -->
-  <article class="ugc-card">
-    <div class="ugc-phone">
-      <button type="button" class="ugc-tag">broll wVO | alo airlift</button>
-      <video class="ugc-video"
-        src="images/ugc-alo.mp4"
-        poster="images/ugc-alo-poster.jpg"
-        playsinline
-        muted
-        controls
-      ></video>
-    </div>
-  </article>
-
-<!-- 5. GREENSCREEN · SPROUT -->
-  <article class="ugc-card">
-    <div class="ugc-phone">
-      <button type="button" class="ugc-tag">greenscreen | sprout</button>
-      <video class="ugc-video"
-        src="images/ugc-prepAI-sprout.mp4"
-        poster="images/ugc-prepAI-sprout-poster.jpg"
-        playsinline
-        muted
-        controls
-      ></video>
-    </div>
-  </article>
 
 <!-- =================== UGC Offer Banner =================== -->
 <section class="membership" aria-label="membership">
@@ -399,6 +399,29 @@
     LISA@UGCWITHLISAESHUNWILSON.COM
   </a>
 </section>
+
+<script>
+  (function(){
+    function bindCarousel(wrap){
+      const track = wrap.querySelector('.ugc-track');
+      const prev = wrap.querySelector('.ugc-prev');
+      const next = wrap.querySelector('.ugc-next');
+      if (!track || !prev || !next) return;
+
+      const step = () => Math.max(280, Math.floor(track.clientWidth * 0.85));
+
+      prev.addEventListener('click', () => {
+        track.scrollBy({ left: -step(), behavior: 'smooth' });
+      });
+
+      next.addEventListener('click', () => {
+        track.scrollBy({ left: step(), behavior: 'smooth' });
+      });
+    }
+
+    document.querySelectorAll('.page-ugc .ugc-wrap[data-carousel]').forEach(bindCarousel);
+  })();
+</script>
 
   <footer class="site-footer">
     <div class="container">
