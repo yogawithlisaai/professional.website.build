@@ -1691,3 +1691,18 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   transform: scale(0.7);
   transform-origin: top left;
 }
+
+/* ==================== UGC VIDEO CAROUSEL: shrink by 30% ==================== */
+/* (UGC page only; affects both UGC video sections) */
+
+.page-ugc .ugc-videos .ugc-reel {
+  transform: scale(0.7);
+  transform-origin: top center;
+}
+
+/* keep spacing feeling intentional after scaling */
+.page-ugc .ugc-videos .ugc-track,
+.page-ugc .ugc-videos .ugc-wrap {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
