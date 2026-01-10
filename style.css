@@ -1739,3 +1739,9 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
     margin-top: 0.75rem;
   }
 }
+
+@media (min-width: 981px){
+  .page-ugc .ugc-hero-name{
+    font-size: clamp(4rem, 7vw, 6.5rem);
+  }
+}
