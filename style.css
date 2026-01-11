@@ -1829,34 +1829,6 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   margin-top: 2.5rem;
 }
 
-/* =====================================================
-   UGC REELS — SIZE OVERRIDES (DOES NOT AFFECT HERO INTRO)
-   Put at very bottom of style.css so it wins on iPad
-   ===================================================== */
-
-/* Default reel size (mobile) */
-.page-ugc .ugc-videos .ugc-phone{
-  width: 100% !important;
-  max-width: 360px !important;  /* <-- tweak this number up/down */
-}
-
-/* Tablet / iPad: make reels bigger */
-@media (min-width: 700px){
-  .page-ugc .ugc-videos .ugc-phone{
-    max-width: 440px !important;  /* <-- tweak this number up/down */
-  }
-}
-
-/* Desktop: slightly larger if you want */
-@media (min-width: 1100px){
-  .page-ugc .ugc-videos .ugc-phone{
-    max-width: 480px !important;  /* <-- tweak this number up/down */
-  }
-}
-
-/* Ensure the video fills the phone wrapper cleanly */
-.page-ugc .ugc-videos .ugc-phone video{
-  width: 100% !important;
-  height: auto !important;
-  display: block;
+.page-ugc .ugc-track {
+  grid-auto-columns: clamp(360px, 60vw, 540px);
 }
