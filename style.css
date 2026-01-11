@@ -1829,4 +1829,55 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   margin-top: 2.5rem;
 }
 
+/* =====================================================
+   UGC REELS — TIGHTER GRID + LESS WHITESPACE (PAGE ONLY)
+   - affects ONLY the reel carousels (.ugc-videos)
+   - does NOT touch the hero intro video (.ugc-hero-*)
+   ===================================================== */
 
+/* 0) Neutralize earlier scale experiments so sizing is driven by the track columns */
+.page-ugc .ugc-videos .ugc-reel,
+.page-ugc .ugc-videos .ugc-reel-video{
+  transform: none !important;
+}
+
+/* 1) Reduce vertical whitespace inside each UGC video card */
+.page-ugc section.ugc-videos.card{
+  margin: 1.75rem auto;              /* was larger */
+}
+
+.page-ugc section.ugc-videos.card .ig-head{
+  margin-bottom: 0.75rem;            /* tighten header-to-reels */
+}
+
+.page-ugc section.ugc-videos.card .ugc-wrap{
+  margin-top: 0.5rem;                /* was 1.25rem */
+}
+
+/* 2) Reduce horizontal whitespace between reels + reduce side padding */
+.page-ugc .ugc-videos .ugc-track{
+  gap: 0.75rem;                      /* tighter than 1.25rem */
+  padding: 0.25rem 1rem 0.75rem;     /* remove big arrow room */
+  grid-auto-columns: min(280px, 78vw); /* phone default */
+}
+
+/* Tablet: 3 reels visible more often */
+@media (min-width: 700px){
+  .page-ugc .ugc-videos .ugc-track{
+    grid-auto-columns: calc((100% - (2 * 0.75rem)) / 3);
+  }
+}
+
+/* Desktop: aim for 4 reels per row (still horizontally scrollable if more) */
+@media (min-width: 981px){
+  .page-ugc .ugc-videos .ugc-track{
+    grid-auto-columns: calc((100% - (3 * 0.75rem)) / 4);
+  }
+}
+
+/* 3) Optional: slightly smaller pill + closer to bottom */
+.page-ugc .ugc-videos .ugc-pill{
+  bottom: 12px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+}
