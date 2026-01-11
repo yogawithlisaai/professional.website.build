@@ -1829,6 +1829,4 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   margin-top: 2.5rem;
 }
 
-.page-ugc .ugc-track {
-  grid-auto-columns: clamp(360px, 60vw, 540px);
-}
+
