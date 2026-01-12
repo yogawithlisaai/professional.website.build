@@ -1232,4 +1232,703 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
     text-align: left;
   }
 }
-/* appended */
+
+/* Sticky taupe nav on scroll */
+.site-header.scrolled,
+.site-header[data-scrolled="true"] {
+  background-color: var(--taupe) !important;
+}
+
+/* =========================================================
+   UGC page-only fixes (won't affect other pages)
+   Add this to ugc.html:  <body class="page-ugc">
+   ========================================================= */
+
+/* 1) Force sticky header to stay taupe on the UGC page */
+.page-ugc .site-header {
+  background-color: rgba(207, 219, 227, 0.10) !important;
+  backdrop-filter: saturate(120%) blur(6px);
+  -webkit-backdrop-filter: saturate(120%) blur(6px);
+}
+
+/* 2) Center the UGC reel cards (the 5-phone strip) */
+.page-ugc .ugc-reel-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+
+  /* keep your existing spacing + centering */
+  text-align: center;
+}
+
+.page-ugc .ugc-reel-section > h2 {
+  flex: 0 0 100%;
+  margin: 0 0 1.25rem;
+}
+
+.page-ugc .ugc-card {
+  margin-top: 0; /* avoid extra top gap since we're using flex + gap */
+}
+
+:root {
+  --baby-blue: #cfe7f5;
+}
+
+/* ==================== UGC HERO (page-only) ==================== */
+.page-ugc .ugc-hero{
+  background: #fff;
+  padding: 3.25rem 1rem 2.25rem;
+}
+
+.page-ugc .ugc-hero-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 520px 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.page-ugc .ugc-hero-video-el{
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  display: block;
+  border-radius: 28px;
+  border: 10px solid #111;
+  background: #111;
+  object-fit: cover;
+}
+
+.page-ugc .ugc-hero-name{
+  margin: 0 0 .35rem;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1.02;
+}
+
+.page-ugc .ugc-hero-title{
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: .65rem;
+}
+
+.page-ugc .ugc-hero-location{
+  font-size: 1.05rem;
+  opacity: .9;
+  margin-bottom: 1rem;
+}
+
+.page-ugc .ugc-hero-blurb{
+  margin: 0 0 1.25rem;
+  max-width: 44ch;
+  line-height: 1.6;
+}
+
+.page-ugc .ugc-social-icons{
+  display: flex;
+  gap: .9rem;
+  align-items: center;
+}
+
+.page-ugc .ugc-social-icons .icon-btn{
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(0,0,0,.12);
+  background: #fff;
+}
+
+.page-ugc .ugc-social-icons .icon-btn img{
+  width: 26px;
+  height: 26px;
+}
+
+/* Mobile */
+@media (max-width: 980px){
+  .page-ugc .ugc-hero-inner{
+    grid-template-columns: 1fr;
+  }
+  .page-ugc .ugc-hero-video{
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .page-ugc .ugc-hero-copy{
+    text-align: center;
+  }
+  .page-ugc .ugc-social-icons{
+    justify-content: center;
+  }
+  .page-ugc .ugc-hero-blurb{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ==================== UGC CONNECT (page-only) ==================== */
+.page-ugc .ugc-connect{
+  background: #111;
+  color: #fff;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.page-ugc .ugc-connect-title{
+  margin: 0 0 1.5rem;
+  letter-spacing: .12em;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.page-ugc .ugc-connect-card{
+  max-width: 520px;
+  margin: 0 auto 1.25rem;
+}
+
+.page-ugc .ugc-connect-photo{
+  width: 100%;
+  border-radius: 18px;
+  display: block;
+}
+
+.page-ugc .ugc-connect-icons{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.page-ugc .ugc-connect-icon{
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+}
+
+.page-ugc .ugc-connect-icon img{
+  width: 28px;
+  height: 28px;
+}
+
+.page-ugc .ugc-connect-email{
+  display: inline-block;
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+/* =========================
+   UGC HERO — VIDEO SIZING
+   ========================= */
+
+.page-ugc .hero-intro-video {
+  max-width: 340px;        /* was visually too dominant */
+}
+
+.page-ugc .hero-intro-video video {
+  width: 100%;
+  border-radius: 28px;
+}
+
+/* =========================
+   UGC HERO — TEXT HIERARCHY
+   ========================= */
+
+.page-ugc .hero-inner h1 {
+  font-size: clamp(3.2rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  margin-bottom: 0.75rem;
+}
+
+.page-ugc .hero-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.page-ugc .hero-location {
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.page-ugc .hero-blurb {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+/* =====================================================
+   UGC HERO — OUTRAGEOUS SCALE TEST (DESKTOP ONLY)
+   TEMPORARY: for visual comparison
+   ===================================================== */
+
+@media (min-width: 981px){
+
+  /* Name — MASSIVE */
+  .page-ugc .ugc-hero-name{
+    font-size: clamp(6rem, 9vw, 8.5rem);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Title */
+  .page-ugc .ugc-hero-title{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Location */
+  .page-ugc .ugc-hero-location{
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Blurb */
+  .page-ugc .ugc-hero-blurb{
+    font-size: 2.1rem;
+    max-width: 60ch;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  /* Email line (if added as <div class="ugc-hero-email">) */
+  .page-ugc .ugc-hero-email{
+    font-size: 2rem;
+    margin-bottom: 2.25rem;
+  }
+
+  /* Social icons — bigger to match */
+  .page-ugc .ugc-social-icons .icon-btn{
+    width: 72px;
+    height: 72px;
+  }
+
+  .page-ugc .ugc-social-icons .icon-btn img{
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* ==========================================
+   UGC PAGE ONLY — Fix header overlap on hero
+   ========================================== */
+
+/* Make room for the fixed header so it doesn't cover the hero */
+.page-ugc .ugc-hero{
+  padding-top: 120px; /* adjust if needed */
+}
+
+/* Optional: if the hero still feels tight, add a bit more breathing room */
+@media (min-width: 981px){
+  .page-ugc .ugc-hero{
+    padding-top: 140px;
+  }
+}
+
+/* ==========================================
+   UGC PAGE ONLY — Make header title black
+   ========================================== */
+
+.page-ugc .site-header .brand{
+  color: #000 !important;
+  text-shadow: none !important;
+}
+
+.page-ugc .site-header .brand:visited{
+  color: #000 !important;
+}
+
+/* ==================== UGC HERO SPACING FIX ==================== */
+.page-ugc .ugc-hero {
+  padding-top: 7.5rem;
+}
+
+/* ==================== UGC HEADER TEXT COLOR ==================== */
+.page-ugc .site-header .brand {
+  color: #000 !important;
+}
+
+/* ==================== UGC HERO SOCIAL ICON FIX ==================== */
+.page-ugc .ugc-social-icons .icon-btn {
+  background: #000;
+  border: none;
+}
+
+.page-ugc .ugc-social-icons .icon-btn img {
+  filter: invert(1);
+}
+
+/* ==================== UGC HERO NAME – SCRIPT STYLE ==================== */
+
+.page-ugc .ugc-hero-name {
+  font-family: 'Great Vibes', cursive;
+  color: #ff5fa2; /* soft pink */
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+
+/* Desktop only – let it be dramatic */
+@media (min-width: 981px) {
+  .page-ugc .ugc-hero-name {
+    font-size: clamp(5rem, 7vw, 7.5rem);
+  }
+}
+
+/* ==================== UGC VIDEO CAROUSEL (page-only) ==================== */
+.page-ugc .ugc-wrap{
+  position: relative;
+  margin-top: 1.25rem;
+}
+
+.page-ugc .ugc-track{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(320px, 78vw);
+  gap: 1.25rem;            /* ~ "1/4 inch" feel */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 3.25rem; /* room for the arrows */
+}
+
+.page-ugc .ugc-reel{
+  position: relative;
+  scroll-snap-align: start;
+}
+
+.page-ugc .ugc-reel-video{
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  height: auto;
+  display: block;
+  object-fit: cover;
+
+  border-radius: 36px;
+  border: 10px solid #111;
+  box-sizing: border-box;
+  background: #111;
+
+  outline: 2px solid rgba(255,255,255,0.18);
+  outline-offset: -6px;
+}
+
+/* White pill label (hides on hover so controls are easy to use) */
+.page-ugc .ugc-pill{
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  z-index: 3;
+
+  background: #fff;
+  color: #111;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 999px;
+
+  padding: 0.55rem 1.05rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.page-ugc .ugc-reel:hover .ugc-pill,
+.page-ugc .ugc-reel:focus-within .ugc-pill{
+  opacity: 0;
+  transform: translateX(-50%) translateY(6px);
+  pointer-events: none;
+}
+
+/* Carousel arrows */
+.page-ugc .ugc-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+
+  display: grid;
+  place-items: center;
+
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.page-ugc .ugc-prev{ left: 10px; }
+.page-ugc .ugc-next{ right: 10px; }
+
+.page-ugc .ugc-nav:hover{
+  background: #fff;
+}
+
+/* Optional: hide scrollbar for a cleaner look (still scrolls) */
+.page-ugc .ugc-track::-webkit-scrollbar{ height: 10px; }
+.page-ugc .ugc-track::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,0.12);
+  border-radius: 999px;
+}
+
+/* ==================== UGC HERO INTRO VIDEO ==================== */
+
+.page-ugc .ugc-hero-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-ugc .ugc-hero-video-el {
+  transform: scale(0.7); /* 30% smaller */
+  transform-origin: center;
+}
+
+/* Desktop-only safety (keeps mobile natural) */
+@media (min-width: 1024px) {
+  .page-ugc .ugc-hero-video-el {
+    transform: scale(0.7);
+    transform-origin: center;
+  }
+}
+
+/* ==================== UGC VIDEO CAROUSEL: shrink by 30% ==================== */
+/* (UGC page only; affects both UGC video sections) */
+
+.page-ugc .ugc-videos .ugc-reel {
+  transform: scale(0.7);
+  transform-origin: top center;
+}
+
+/* keep spacing feeling intentional after scaling */
+.page-ugc .ugc-videos .ugc-track,
+.page-ugc .ugc-videos .ugc-wrap {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* ==================== UGC HERO TITLE ALIGNMENT TWEAK ==================== */
+
+/* Desktop only */
+@media (min-width: 1024px) {
+  .page-ugc .ugc-hero-title {
+    font-size: 1.6rem;      /* smaller than before */
+    line-height: 1.2;       /* tighter vertical rhythm */
+    margin-top: 0.5rem;     /* pull it closer to the name */
+    margin-bottom: 0.75rem;/* reduce push-down effect */
+    font-weight: 600;       /* still strong, but not bulky */
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-ugc .ugc-social-icons {
+    margin-top: 0.75rem;
+  }
+}
+
+@media (min-width: 981px){
+  .page-ugc .ugc-hero-name{
+    font-size: clamp(4rem, 7vw, 6.5rem);
+  }
+}
+
+/* ==================== UGC ONLY: Banner background images ==================== */
+.page-ugc .membership .membership-media{
+  background-image: url("images/ugc-whyworkwithme.jpg") !important;
+}
+
+.page-ugc .founder .founder-media{
+  background-image: url("images/ugc-meetthecreator.jpg") !important;
+}
+
+/* ================================
+   UGC – Meet the Creator Spacing
+   ================================ */
+
+.page-ugc .meet-creator {
+  display: flex;
+  align-items: flex-start;   /* ⬅️ stop vertical centering */
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.page-ugc .meet-creator .membership-inner {
+  max-width: 760px;          /* ⬅️ wider text column */
+  margin-left: 6rem;         /* ⬅️ push off left edge like Why Work With Me */
+}
+
+/* Title spacing */
+.page-ugc .meet-creator h2 {
+  margin-bottom: 2.5rem;
+}
+
+/* Paragraph rhythm */
+.page-ugc .meet-creator p {
+  margin-bottom: 1.25rem;
+  line-height: 1.65;
+}
+
+/* Button breathing room */
+.page-ugc .meet-creator .btn {
+  margin-top: 2.5rem;
+}
+
+/* ====================
+   UGC REEL VIDEO SIZE
+   (does NOT affect hero video)
+   ==================== */
+
+.page-ugc .ugc-reel-video {
+  transform: scale(0.85);   /* ← adjust this number */
+  transform-origin: center;
+}
+
+/* ================================
+   UGC – Meet the Creator Spacing
+   ================================ */
+
+.page-ugc .meet-creator {
+  display: flex;
+  align-items: flex-start;   /* ⬅️ stop vertical centering */
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.page-ugc .meet-creator .membership-inner {
+  max-width: 760px;          /* ⬅️ wider text column */
+  margin-left: 6rem;         /* ⬅️ push off left edge like Why Work With Me */
+}
+
+/* Title spacing */
+.page-ugc .meet-creator h2 {
+  margin-bottom: 2.5rem;
+}
+
+/* Paragraph rhythm */
+.page-ugc .meet-creator p {
+  margin-bottom: 1.25rem;
+  line-height: 1.65;
+}
+
+/* Button breathing room */
+.page-ugc .meet-creator .btn {
+  margin-top: 2.5rem;
+}
+
+/* =====================================================
+   UGC REELS — TIGHTER GRID + LESS WHITESPACE (PAGE ONLY)
+   - affects ONLY the reel carousels (.ugc-videos)
+   - does NOT touch the hero intro video (.ugc-hero-*)
+   ===================================================== */
+
+/* 0) Neutralize earlier scale experiments so sizing is driven by the track columns */
+.page-ugc .ugc-videos .ugc-reel,
+.page-ugc .ugc-videos .ugc-reel-video{
+  transform: none !important;
+}
+
+/* 1) Reduce vertical whitespace inside each UGC video card */
+.page-ugc section.ugc-videos.card{
+  margin: 1.75rem auto;              /* was larger */
+}
+
+.page-ugc section.ugc-videos.card .ig-head{
+  margin-bottom: 0.75rem;            /* tighten header-to-reels */
+}
+
+.page-ugc section.ugc-videos.card .ugc-wrap{
+  margin-top: 0.5rem;                /* was 1.25rem */
+}
+
+/* 2) Reduce horizontal whitespace between reels + reduce side padding */
+.page-ugc .ugc-videos .ugc-track{
+  gap: 0.95 rem;                      /* tighter than 1.25rem */
+  padding: 0.25rem 1rem 0.75rem;     /* remove big arrow room */
+  grid-auto-columns: min(280px, 78vw); /* phone default */
+}
+
+/* Tablet: 3 reels visible more often */
+@media (min-width: 700px){
+  .page-ugc .ugc-videos .ugc-track{
+    grid-auto-columns: calc((100% - (2 * 0.75rem)) / 3);
+  }
+}
+
+/* Desktop: aim for 4 reels per row (still horizontally scrollable if more) */
+@media (min-width: 981px){
+  .page-ugc .ugc-videos .ugc-track{
+    grid-auto-columns: calc((100% - (3 * 0.75rem)) / 4);
+  }
+}
+
+/* 3) Optional: slightly smaller pill + closer to bottom */
+.page-ugc .ugc-videos .ugc-pill{
+  bottom: 15px;
+  padding: 0.45rem 0.9rem;
+  font-size: 1.25rem;
+}
+
+/* ================================
+   UGC REEL — VIDEO TYPE PILL (TOP)
+   ================================ */
+
+   .page-ugc .ugc-type{
+    position: absolute;
+    top: -3.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  
+    padding: 0.6rem 1.8rem;
+    border-radius: 999px;
+  
+    background: #000;
+    color: #fff;
+  
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  
+    box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+    pointer-events: none;
+  }
+
+  /* ====================
+   UGC REEL — SIZE TWEAK
+   ==================== */
+
+.page-ugc .ugc-phone{
+  padding-top: 0.75rem; /* creates breathing room for top pill */
+}
+
+.page-ugc .ugc-video{
+  transform: scale(0.9);          /* ← 10% smaller */
+  transform-origin: center top;
+}
+
+/* ================================
+   UGC REELS — VERTICAL TIGHTENING
+   ================================ */
+
+   .page-ugc .ugc-card{
+    margin-top: 2.2rem;   /* was larger */
+  }
+  
+  .page-ugc .ugc-wrap{
+    margin-top: 0.75rem;
+  }
