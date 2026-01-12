@@ -1477,14 +1477,15 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 
   /* Title */
   .page-ugc .ugc-hero-title{
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1.25rem;
+    font-size: 2.1rem;   /* match blurb */
+    font-weight: 600;    /* slightly stronger than body */
+    line-height: 1.35;
+    margin-bottom: 1rem;
   }
 
   /* Location */
   .page-ugc .ugc-hero-location{
-    font-size: 2.25rem;
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
   }
 
