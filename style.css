@@ -1856,7 +1856,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 
 /* 2) Reduce horizontal whitespace between reels + reduce side padding */
 .page-ugc .ugc-videos .ugc-track{
-  gap: 0.75rem;                      /* tighter than 1.25rem */
+  gap: 0.95 rem;                      /* tighter than 1.25rem */
   padding: 0.25rem 1rem 0.75rem;     /* remove big arrow room */
   grid-auto-columns: min(280px, 78vw); /* phone default */
 }
@@ -1877,7 +1877,58 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 
 /* 3) Optional: slightly smaller pill + closer to bottom */
 .page-ugc .ugc-videos .ugc-pill{
-  bottom: 12px;
+  bottom: 15px;
   padding: 0.45rem 0.9rem;
-  font-size: 0.9rem;
+  font-size: 1.25rem;
 }
+
+/* ================================
+   UGC REEL — VIDEO TYPE PILL (TOP)
+   ================================ */
+
+   .page-ugc .ugc-type{
+    position: absolute;
+    top: -3.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  
+    padding: 0.6rem 1.8rem;
+    border-radius: 999px;
+  
+    background: #000;
+    color: #fff;
+  
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  
+    box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+    pointer-events: none;
+  }
+
+  /* ====================
+   UGC REEL — SIZE TWEAK
+   ==================== */
+
+.page-ugc .ugc-phone{
+  padding-top: 0.75rem; /* creates breathing room for top pill */
+}
+
+.page-ugc .ugc-video{
+  transform: scale(0.9);          /* ← 10% smaller */
+  transform-origin: center top;
+}
+
+/* ================================
+   UGC REELS — VERTICAL TIGHTENING
+   ================================ */
+
+   .page-ugc .ugc-card{
+    margin-top: 2.2rem;   /* was larger */
+  }
+  
+  .page-ugc .ugc-wrap{
+    margin-top: 0.75rem;
+  }
