@@ -1883,3 +1883,34 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   font-size: 1.25rem;
 }
 
+/* ================================
+   UGC REEL — TOP TYPE PILL (BLACK)
+   ================================ */
+
+   .page-ugc .ugc-reel {
+    position: relative; /* ensures absolute pills anchor correctly */
+  }
+  
+  .page-ugc .ugc-type {
+    position: absolute;
+    top: -2.75rem;                 /* sits above the phone */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+  
+    background: #000;
+    color: #fff;
+  
+    border-radius: 999px;
+    padding: 0.7rem 1.4rem;        /* ⬆️ ~30% bigger than bottom pill */
+    font-size: 1.25rem;            /* ⬆️ visual weight like your mockup */
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: none;          /* keep “Skit”, “Product Demo” natural */
+  
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                 "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  
+    box-shadow: 0 14px 36px rgba(0,0,0,0.35);
+    pointer-events: none;          /* purely informational */
+  }
