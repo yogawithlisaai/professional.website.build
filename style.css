@@ -1903,8 +1903,8 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   
     border-radius: 999px;
     padding: 0.7rem 1.4rem;        /* ⬆️ ~30% bigger than bottom pill */
-    font-size: 1.25rem;            /* ⬆️ visual weight like your mockup */
-    font-weight: 700;
+    font-size: 0.9rem;            /* ⬆️ visual weight like your mockup */
+    font-weight: 550;
     letter-spacing: 0.02em;
     text-transform: none;          /* keep “Skit”, “Product Demo” natural */
   
