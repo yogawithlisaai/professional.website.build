@@ -1909,7 +1909,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
     min-width: 140px;
     
     font-size: 1.21rem;            /* ⬆️ visual weight like your mockup */
-    font-weight: 450;
+    font-weight: 525;
     letter-spacing: 0.02em;
     text-transform: none;          /* keep “Skit”, “Product Demo” natural */
   
