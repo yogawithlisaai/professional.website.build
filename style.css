@@ -1982,7 +1982,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   border-radius: 28px;
   min-height: 360px;
   margin: 56px auto;
-  max-width: 1300px; /* adjust to match your site width */
+  max-width: 1200px; /* adjust to match your site width */
 }
 
 .connect-banner__media {
