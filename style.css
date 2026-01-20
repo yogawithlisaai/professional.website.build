@@ -2215,7 +2215,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   text-decoration: none;
   padding: 10px 18px;
   border-radius: 999px;
-  font-weight: 600;
+  font-weight: 300;
   font-size: 13px;
   letter-spacing: 0.6px;
 }
@@ -2233,7 +2233,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 .nav-btn.nav-primary {
   background: #000;
   color: #fff !important;        /* 🔑 prevents scroll color bug */
-  font-weight: 400;              /* thinner than before */
+  font-weight: 300;              /* thinner than before */
   letter-spacing: 0.6px;
 }
 
