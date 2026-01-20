@@ -1946,3 +1946,32 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   z-index: 9999; /* front of banner/card */
 }
 
+.hero-social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.icon-btn img {
+  width: 18px;
+  height: 18px;
+  filter: invert(1); /* makes icons white */
+}
+
+.icon-btn:hover {
+  background: rgba(0, 0, 0, 0.75);
+  transform: translateY(-1px);
+}
+
