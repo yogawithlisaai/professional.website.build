@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>View Plans | Yoga with Lisa</title>
+
+  <style>
+    :root{
+      --bg: #efe9dd;              /* warm cream like your sign-in page */
+      --card: #ffffff;
+      --text: #141414;
+      --muted: rgba(0,0,0,0.62);
+      --border: rgba(0,0,0,0.10);
+
+      --purple-bg: #eef0ff;       /* soft lavender */
+      --yellow-bg: #fbf1da;       /* warm sand */
+      --shadow: 0 22px 50px rgba(0,0,0,0.10);
+
+      --radius-lg: 26px;
+      --radius-md: 18px;
+
+      --btn: #0b0b0b;
+      --btn-hover: #1a1a1a;
+      --btn-text: #ffffff;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* Centered layout like the sign-in page */
+    .page{
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 36px 18px;
+    }
+
+    .shell{
+      width: min(980px, 100%);
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+      padding: 0 8px;
+    }
+
+    .brand{
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 20px;
+      letter-spacing: 0.3px;
+      text-decoration:none;
+      color: var(--text);
+      opacity: 0.9;
+    }
+
+    .toplinks{
+      display:flex;
+      align-items:center;
+      gap: 14px;
+      font-size: 13px;
+    }
+
+    .toplinks a{
+      color: rgba(0,0,0,0.72);
+      text-decoration:none;
+    }
+    .toplinks a:hover{ text-decoration: underline; }
+
+    .panel{
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 34px 34px 26px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .header{
+      text-align:center;
+      margin-bottom: 20px;
+      padding: 0 10px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.55);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 10px;
+      margin-bottom: 12px;
+      background: rgba(255,255,255,0.6);
+    }
+
+    h1{
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.05;
+      margin: 0 0 10px;
+      letter-spacing: 0.2px;
+    }
+
+    .sub{
+      margin: 0 auto;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .plan{
+      border-radius: 22px;
+      padding: 22px 22px 18px;
+      border: 1px solid rgba(0,0,0,0.06);
+      display:flex;
+      flex-direction:column;
+      min-height: 340px;
+    }
+
+    .plan--monthly{ background: var(--purple-bg); }
+    .plan--yearly{ background: var(--yellow-bg); }
+
+    .plan-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .plan-title{
+      font-weight: 700;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .badge{
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.10);
+      background: rgba(255,255,255,0.55);
+      color: rgba(0,0,0,0.75);
+      white-space: nowrap;
+    }
+
+    .price{
+      display:flex;
+      align-items:baseline;
+      gap: 8px;
+      margin: 6px 0 12px;
+    }
+
+    .price-amount{
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      line-height: 1;
+    }
+    .price-unit{
+      color: rgba(0,0,0,0.62);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .plan-desc{
+      margin: 0 0 14px;
+      color: rgba(0,0,0,0.65);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .features-label{
+      font-size: 12px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.55);
+      margin: 8px 0 10px;
+      font-weight: 700;
+    }
+
+    .features{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+
+    .features li{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      color: rgba(0,0,0,0.78);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .check{
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.86);
+      color: #fff;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size: 12px;
+      flex: 0 0 18px;
+      margin-top: 1px;
+    }
+
+    .plan-actions{
+      margin-top: auto;
+      padding-top: 16px;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 12px 16px;
+      border-radius: 999px;
+      text-decoration:none;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.6px;
+      border: 1px solid rgba(0,0,0,0.10);
+      cursor: pointer;
+      user-select:none;
+      transition: transform 0.12s ease, background 0.12s ease, opacity 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary{
+      background: var(--btn);
+      color: var(--btn-text);
+      border-color: rgba(0,0,0,0.25);
+    }
+    .btn-primary:hover{
+      background: var(--btn-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost{
+      background: rgba(255,255,255,0.55);
+      color: rgba(0,0,0,0.75);
+    }
+    .btn-ghost:hover{
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    .fineprint{
+      text-align:center;
+      margin-top: 18px;
+      color: rgba(0,0,0,0.55);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .fineprint a{
+      color: rgba(0,0,0,0.70);
+      text-decoration: underline;
+    }
+
+    .footer-links{
+      margin-top: 18px;
+      text-align:center;
+      font-size: 12.5px;
+      color: rgba(0,0,0,0.55);
+    }
+    .footer-links a{
+      color: rgba(0,0,0,0.65);
+      text-decoration:none;
+      margin: 0 10px;
+    }
+    .footer-links a:hover{ text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .panel{ padding: 28px 18px 22px; }
+      .grid{ grid-template-columns: 1fr; }
+      .plan{ min-height: unset; }
+      .topbar{ flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <div class="shell">
+
+      <div class="topbar">
+        <a class="brand" href="index.html">yoga with lisa</a>
+        <div class="toplinks">
+          <a href="login.html">Sign in</a>
+          <a href="index.html">Back to Home</a>
+        </div>
+      </div>
+
+      <section class="panel" aria-label="Plans">
+
+        <div class="header">
+          <div class="eyebrow">Pricing</div>
+          <h1>Simple &amp; transparent membership</h1>
+          <p class="sub">
+            Choose a plan that fits your lifestyle. Your membership unlocks the on-demand library,
+            monthly drops, and guided programs designed to help you practice consistently and feel your best.
+          </p>
+        </div>
+
+        <div class="grid">
+
+          <!-- Monthly -->
+          <article class="plan plan--monthly" aria-label="Monthly plan">
+            <div class="plan-top">
+              <h2 class="plan-title">Monthly Plan</h2>
+              <span class="badge">Flexible</span>
+            </div>
+
+            <div class="price">
+              <div class="price-amount">$16.99</div>
+              <div class="price-unit">per month</div>
+            </div>
+
+            <p class="plan-desc">
+              Best for trying it out or keeping things month-to-month.
+              Cancel anytime.
+            </p>
+
+            <div class="features-label">Includes</div>
+            <ul class="features">
+              <li><span class="check">✓</span> Full access to the on-demand class library (Hatha, Vinyasa, Ashtanga)</li>
+              <li><span class="check">✓</span> Meditation + mindfulness series to regulate your nervous system</li>
+              <li><span class="check">✓</span> New videos published every month</li>
+              <li><span class="check">✓</span> Member-only programs + saved plans</li>
+              <li><span class="check">✓</span> Email support &amp; studio-style guidance from Lisa</li>
+            </ul>
+
+            <div class="plan-actions">
+              <!-- Link this to your monthly Stripe checkout / Memberstack checkout -->
+              <a class="btn btn-primary" href="signin.html">Start Free Trial</a>
+              <a class="btn btn-ghost" href="index.html#testimonials">See Reviews</a>
+            </div>
+          </article>
+
+          <!-- Yearly -->
+          <article class="plan plan--yearly" aria-label="Yearly plan">
+            <div class="plan-top">
+              <h2 class="plan-title">Yearly Plan</h2>
+              <span class="badge">2 months free</span>
+            </div>
+
+            <div class="price">
+              <div class="price-amount">$169.99</div>
+              <div class="price-unit">per year</div>
+            </div>
+
+            <p class="plan-desc">
+              Best value if you’re ready to commit and build consistency.
+              Save ~2 months compared to monthly.
+            </p>
+
+            <div class="features-label">Includes</div>
+            <ul class="features">
+              <li><span class="check">✓</span> Everything in the Monthly Plan</li>
+              <li><span class="check">✓</span> Priority access to new program drops</li>
+              <li><span class="check">✓</span> Best value: consistent practice for less</li>
+              <li><span class="check">✓</span> Early invites to pop-ups / events (as available)</li>
+              <li><span class="check">✓</span> Bonus member perks as the platform grows</li>
+            </ul>
+
+            <div class="plan-actions">
+              <!-- Link this to your yearly Stripe checkout / Memberstack checkout -->
+              <a class="btn btn-primary" href="signin.html">Start Free Trial</a>
+              <a class="btn btn-ghost" href="mailto:lisa@yogawithlisa.ai?subject=Yearly%20Plan%20Question">Ask a Question</a>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="fineprint">
+          Already a member? <a href="login.html">Sign in</a>.
+          Questions about plans or corporate wellness? <a href="mailto:lisa@yogawithlisa.ai?subject=Yoga%20with%20Lisa%20Membership%20Question">Email Lisa</a>.
+        </p>
+
+        <div class="footer-links">
+          <a href="index.html">Back to Home</a> •
+          <a href="privacy.html">Privacy Policy</a> •
+          <a href="terms.html">Terms</a>
+        </div>
+
+      </section>
+    </div>
+  </main>
+</body>
+</html>
