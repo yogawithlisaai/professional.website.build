@@ -2228,3 +2228,23 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 .nav-primary:hover {
   background: #222;
 }
+
+/* ==================== Header Primary CTA Fix ==================== */
+.nav-btn.nav-primary {
+  background: #000;
+  color: #fff !important;        /* 🔑 prevents scroll color bug */
+  font-weight: 400;              /* thinner than before */
+  letter-spacing: 0.6px;
+}
+
+/* Ensure hover state stays readable */
+.nav-btn.nav-primary:hover {
+  background: #111;
+  color: #fff !important;
+}
+
+/* If you have a sticky / scrolled header state */
+.site-header.scrolled .nav-btn.nav-primary {
+  background: #000;
+  color: #fff !important;
+}
