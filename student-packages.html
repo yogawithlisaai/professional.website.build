@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Packages | Yoga with Lisa</title>
+
+  <!-- Fonts (match your vibe) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #efe9dd;          /* warm cream */
+      --panel: rgba(255,255,255,0.60);
+      --card: #ffffff;
+
+      --text: #141414;
+      --muted: rgba(0,0,0,0.62);
+      --border: rgba(0,0,0,0.10);
+
+      --cream: #FBF8F4;
+      --mocha: #8B6A58;
+
+      --shadow: 0 22px 50px rgba(0,0,0,0.10);
+
+      --radius-lg: 26px;
+      --radius-md: 18px;
+
+      --btn: #0b0b0b;
+      --btn-hover: #1a1a1a;
+      --btn-text: #ffffff;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .page{ min-height: 100vh; padding: 42px 16px; }
+    .shell{ max-width: 1080px; margin: 0 auto; }
+
+    /* topbar (simple / consistent with your other pages) */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom: 18px;
+      gap: 12px;
+    }
+    .brand{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      text-decoration:none;
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .toplinks a{
+      color: rgba(0,0,0,0.65);
+      text-decoration:none;
+      margin-left: 12px;
+      font-size: 13px;
+    }
+    .toplinks a:hover{ text-decoration: underline; }
+
+    .panel{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 34px 28px 24px;
+      backdrop-filter: blur(6px);
+    }
+
+    .header{
+      text-align:center;
+      margin-bottom: 22px;
+    }
+    .eyebrow{
+      display:inline-block;
+      font-size: 12px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.55);
+      margin-bottom: 14px;
+      color: rgba(0,0,0,0.65);
+    }
+    h1{
+      font-family: "Playfair Display", serif;
+      font-size: clamp(30px, 4vw, 46px);
+      margin: 0 0 8px;
+      line-height: 1.05;
+    }
+    .sub{
+      margin: 0 auto;
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .plan{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px 22px 20px;
+      display:flex;
+      flex-direction: column;
+      min-height: 420px;
+      position: relative;
+      overflow: hidden;
+    }
+    .plan--cream{ background: var(--cream); }
+    .plan--mocha{
+      background: var(--mocha);
+      color: #111;
+    }
+    .plan--mocha .muted,
+    .plan--mocha .features-label{ color: rgba(0,0,0,0.70); }
+    .plan--mocha .features{ color: rgba(0,0,0,0.82); }
+
+    .plan-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .plan-title{
+      font-size: 18px;
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+    .badge{
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.55);
+      color: rgba(0,0,0,0.70);
+      white-space: nowrap;
+      font-weight: 700;
+    }
+
+    .price{
+      display:flex;
+      align-items:baseline;
+      gap: 10px;
+      margin: 8px 0 10px;
+    }
+    .price-amount{
+      font-size: 40px;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+    }
+    .price-unit{
+      color: rgba(0,0,0,0.62);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .plan-desc{
+      margin: 0 0 14px;
+      color: rgba(0,0,0,0.70);
+      line-height: 1.45;
+      font-size: 14px;
+    }
+    .muted{ color: rgba(0,0,0,0.62); }
+
+    .features-label{
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      margin: 10px 0 8px;
+      color: rgba(0,0,0,0.60);
+    }
+
+    .features{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap: 9px;
+      font-size: 14px;
+      line-height: 1.35;
+      color: rgba(0,0,0,0.80);
+    }
+    .features li{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+    }
+    .check{
+      display:inline-flex;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      align-items:center;
+      justify-content:center;
+      background: rgba(0,0,0,0.85);
+      color: #fff;
+      font-size: 12px;
+      flex: 0 0 auto;
+      margin-top: 1px;
+    }
+
+    /* buttons (mirrors your viewplans button styles) */
+    .plan-actions{
+      margin-top: auto;
+      padding-top: 16px;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 12px 16px;
+      border-radius: 999px;
+      text-decoration:none;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.6px;
+      border: 1px solid rgba(0,0,0,0.10);
+      cursor: pointer;
+      user-select:none;
+      transition: transform 0.12s ease, background 0.12s ease, opacity 0.12s ease;
+      white-space: nowrap;
+    }
+    .btn-primary{
+      background: var(--btn);
+      color: var(--btn-text);
+      border-color: rgba(0,0,0,0.25);
+    }
+    .btn-primary:hover{
+      background: var(--btn-hover);
+      transform: translateY(-1px);
+    }
+    .btn-ghost{
+      background: rgba(255,255,255,0.55);
+      color: rgba(0,0,0,0.75);
+    }
+    .btn-ghost:hover{
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    .fineprint{
+      text-align:center;
+      margin-top: 18px;
+      color: rgba(0,0,0,0.55);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .fineprint a{
+      color: rgba(0,0,0,0.70);
+      text-decoration: underline;
+    }
+    .footer-links{
+      margin-top: 18px;
+      text-align:center;
+      font-size: 12.5px;
+      color: rgba(0,0,0,0.55);
+    }
+    .footer-links a{
+      color: rgba(0,0,0,0.65);
+      text-decoration:none;
+      margin: 0 10px;
+    }
+    .footer-links a:hover{ text-decoration: underline; }
+
+    @media (max-width: 900px){
+      .panel{ padding: 28px 18px 22px; }
+      .grid{ grid-template-columns: 1fr; }
+      .plan{ min-height: unset; }
+      .topbar{ flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <div class="shell">
+
+      <div class="topbar">
+        <a class="brand" href="index.html">Yoga with Lisa</a>
+        <div class="toplinks">
+          <a href="login.html">Sign in</a>
+          <a href="viewplans.html">Membership</a>
+          <a href="index.html">Home</a>
+        </div>
+      </div>
+
+      <section class="panel" aria-label="Student Packages">
+
+        <div class="header">
+          <div class="eyebrow">Student wellness partnership</div>
+          <h1>Grinnell students, meet your semester reset.</h1>
+          <p class="sub">
+            Not just videos — a <strong>curated 9-class library + guided usage plan</strong> built specifically for 18–22 year-old bodies
+            under academic and athletic stress. Think: tech-neck relief, posture repair, nervous system regulation, and
+            a healthier relationship with your body — with Lisa (a Grinnell alum) supporting students live.
+          </p>
+        </div>
+
+        <div class="grid">
+
+          <!-- 7,000 -->
+          <article class="plan plan--cream" aria-label="Starter package">
+            <div class="plan-top">
+              <h2 class="plan-title">Starter Semester Library</h2>
+              <span class="badge">Great pilot</span>
+            </div>
+
+            <div class="price">
+              <div class="price-amount">$7,000</div>
+              <div class="price-unit">per semester</div>
+            </div>
+
+            <p class="plan-desc">
+              A high-quality foundation: an on-demand mini curriculum students can actually follow (not random classes).
+            </p>
+
+            <div class="features-label">Includes</div>
+            <ul class="features">
+              <li><span class="check">✓</span> <strong>9 x 30-minute</strong> pre-recorded classes (Hatha + restorative emphasis)</li>
+              <li><span class="check">✓</span> <strong>Guided usage plan</strong> (exactly what to take, when, + why)</li>
+              <li><span class="check">✓</span> Themes: posture + tech neck, stress relief, sleep support, study breaks</li>
+              <li><span class="check">✓</span> Unlimited access for students for the semester</li>
+              <li><span class="check">✓</span> Simple launch toolkit (email copy + 1 promo graphic)</li>
+            </ul>
+
+            <div class="plan-actions">
+              <a class="btn btn-primary"
+                 href="mailto:lisa@yogawithlisa.ai?subject=Grinnell%20Student%20Package%20-%20Starter%20%247000&body=Hi%20Lisa%2C%0A%0AWe%27d%20like%20to%20move%20forward%20with%20the%20Starter%20Semester%20Library%20(%247%2C000).%20Can%20you%20send%20an%20agreement%20and%20timeline%3F%0A%0AThank%20you%2C">
+                select
+              </a>
+              <a class="btn btn-ghost"
+                 href="mailto:lisa@yogawithlisa.ai?subject=Question%20-%20Starter%20%247000%20Package">
+                ask a question
+              </a>
+            </div>
+          </article>
+
+          <!-- 7,500 -->
+          <article class="plan" aria-label="Plus package">
+            <div class="plan-top">
+              <h2 class="plan-title">Library + Live Kickoff</h2>
+              <span class="badge">More engagement</span>
+            </div>
+
+            <div class="price">
+              <div class="price-amount">$7,500</div>
+              <div class="price-unit">per semester</div>
+            </div>
+
+            <p class="plan-desc">
+              Adds live momentum so students actually use the plan (and the campus can market a real event).
+            </p>
+
+            <div class="features-label">Includes</div>
+            <ul class="features">
+              <li><span class="check">✓</span> Everything in Starter</li>
+              <li><span class="check">✓</span> <strong>1 live kickoff class</strong> (30 minutes) + intro to the guided plan</li>
+              <li><span class="check">✓</span> <strong>30-minute live Q&amp;A</strong> with Lisa right after the kickoff</li>
+              <li><span class="check">✓</span> Optional athlete-focused framing during kickoff (resilience + recovery)</li>
+            </ul>
+
+            <div class="plan-actions">
+              <a class="btn btn-primary"
+                 href="mailto:lisa@yogawithlisa.ai?subject=Grinnell%20Student%20Package%20-%20Library%20%2B%20Kickoff%20%247500&body=Hi%20Lisa%2C%0A%0AWe%27d%20like%20to%20move%20forward%20with%20Library%20%2B%20Live%20Kickoff%20(%247%2C500).%20Can%20you%20send%20an%20agreement%20and%20timeline%3F%0A%0AThank%20you%2C">
+                select
+              </a>
+              <a class="btn btn-ghost"
+                 href="mailto:lisa@yogawithlisa.ai?subject=Question%20-%20Library%20%2B%20Kickoff%20%247500%20Package">
+                ask a question
+              </a>
+            </div>
+          </article>
+
+          <!-- 10,000 (recommended) -->
+          <article class="plan plan--mocha" aria-label="Recommended package">
+            <div class="plan-top">
+              <h2 class="plan-title">Full Semester Program</h2>
+              <span class="badge">Recommended</span>
+            </div>
+
+            <div class="price">
+              <div class="price-amount">$10,000</div>
+              <div class="price-unit">per semester</div>
+            </div>
+
+            <p class="plan-desc">
+              Your complete “signature” offer: on-demand curriculum + weekly live support + weekly Q&amp;A time with an alum.
+            </p>
+
+            <div class="features-label">Includes</div>
+            <ul class="features">
+              <li><span class="check">✓</span> <strong>9-class</strong> curated library + guided plan</li>
+              <li><span class="check">✓</span> <strong>Weekly live 30-min class</strong> (for the semester)</li>
+              <li><span class="check">✓</span> <strong>Weekly 30-min “Life with Lisa” Q&amp;A</strong> after each class</li>
+              <li><span class="check">✓</span> Athlete thread woven in: resilience, recovery, performance-calm</li>
+              <li><span class="check">✓</span> Theme coverage: <em>Redefining Rest</em> + <em>Mindful body relationship</em> + posture</li>
+            </ul>
+
+            <div class="plan-actions">
+              <a class="btn btn-primary"
+                 href="mailto:lisa@yogawithlisa.ai?subject=Grinnell%20Student%20Package%20-%20Full%20Semester%20Program%20%2410000&body=Hi%20Lisa%2C%0A%0AWe%27d%20like%20to%20move%20forward%20with%20the%20Full%20Semester%20Program%20(%2410%2C000).%20Can%20you%20send%20an%20agreement%2C%20proposed%20weekly%20schedule%2C%20and%20launch%20plan%3F%0A%0AThank%20you%2C">
+                select
+              </a>
+              <a class="btn btn-ghost"
+                 href="mailto:lisa@yogawithlisa.ai?subject=Question%20-%20Full%20Semester%20%2410000%20Program">
+                ask a question
+              </a>
+            </div>
+          </article>
+
+          <!-- 12,500 -->
+          <article class="plan" aria-label="Athlete plus package">
+            <div class="plan-top">
+              <h2 class="plan-title">Athlete + Media Boost</h2>
+              <span class="badge">Most impact</span>
+            </div>
+
+            <div class="price">
+              <div class="price-amount">$12,500</div>
+              <div class="price-unit">per semester</div>
+            </div>
+
+            <p class="plan-desc">
+              Everything in Full Semester — plus a ready-to-release content series to drive adoption and support athlete funding.
+            </p>
+
+            <div class="features-label">Includes</div>
+            <ul class="features">
+              <li><span class="check">✓</span> Everything in Full Semester Program</li>
+              <li><span class="check">✓</span> <strong>10-part short-form video series</strong> (1/week for 10 weeks)</li>
+              <li><span class="check">✓</span> Athlete emphasis: mental health + resilience (for athletic budget alignment)</li>
+              <li><span class="check">✓</span> Optional guest specialist session (e.g., athlete-focused w/ Pete)</li>
+              <li><span class="check">✓</span> Optional embodiment / body gratitude add-on (e.g., Lucid Dawn-inspired)</li>
+            </ul>
+
+            <div class="plan-actions">
+              <a class="btn btn-primary"
+                 href="mailto:lisa@yogawithlisa.ai?subject=Grinnell%20Student%20Package%20-%20Athlete%20%2B%20Media%20Boost%20%2412500&body=Hi%20Lisa%2C%0A%0AWe%27d%20like%20to%20move%20forward%20with%20Athlete%20%2B%20Media%20Boost%20(%2412%2C500).%20Can%20you%20send%20an%20agreement%2C%20timeline%2C%20and%20the%2010-week%20content%20release%20plan%3F%0A%0AThank%20you%2C">
+                select
+              </a>
+              <a class="btn btn-ghost"
+                 href="mailto:lisa@yogawithlisa.ai?subject=Question%20-%20Athlete%20%2B%20Media%20Boost%20%2412500">
+                ask a question
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="fineprint">
+          Want this to be a <strong>repeatable semester program</strong>? I can include an end-of-semester impact summary (engagement + feedback)
+          and a renewal-ready plan. Email <a href="mailto:lisa@yogawithlisa.ai?subject=Grinnell%20Renewal%20%2F%20Impact%20Summary">Lisa</a>.
+        </p>
+
+        <div class="footer-links">
+          <a href="index.html">Back to Home</a> •
+          <a href="privacy.html">Privacy Policy</a> •
+          <a href="terms.html">Terms</a>
+        </div>
+
+      </section>
+    </div>
+  </main>
+</body>
+</html>
