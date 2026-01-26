@@ -2324,4 +2324,114 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   display: block;
 }
 
+/* =========================
+   AUTH PAGES (Sign in / Create account)
+   ========================= */
 
+body.auth-page {
+  background: #f0e9d8;
+}
+
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.auth-card {
+  max-width: 480px;
+  width: 100%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 48px 40px;
+}
+
+.auth-title {
+  font-size: 3.2rem;
+  line-height: 1;
+  margin: 0 0 12px;
+}
+
+.auth-subtitle {
+  margin: 0 0 28px;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: 1.5px solid #d0c7ba;
+  font-size: 1rem;
+  outline: none;
+}
+
+.btn-primary {
+  margin-top: 8px;
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 16px 18px;
+  background: #111;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.checks {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.check {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.check input {
+  transform: translateY(3px);
+}
+
+.auth-meta {
+  margin-top: 18px;
+  text-align: center;
+  color: #666;
+}
+
+.auth-meta a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.back-links {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.back-links a {
+  margin: 0 0.5rem;
+  color: #333;
+  text-decoration: none;
+}
