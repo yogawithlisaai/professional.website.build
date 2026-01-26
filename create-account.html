@@ -34,11 +34,11 @@
 
   .auth-card{
     width: 100%;
-    max-width: 560px;
+    max-width: 480px;
     margin: 0 auto;
     background: var(--card);
     border-radius: var(--radius);
-    padding: 34px 22px 22px;
+    padding: 32px 28px 36px;
     box-shadow: 0 8px 30px rgba(0,0,0,.06);
   }
 
@@ -170,19 +170,18 @@
 </head>
 
 <body>
-  <main class="card">
-    <h1>Create account</h1>
-    <p class="sub">Create an account to access our yoga and meditation content library and progress tracking tools.</p>
-
+  <div class="auth-wrap">
+    <div class="auth-card">
+<h1 class="auth-title">Create account</h1>
+<p class="auth-subtitle">
+  Create an account to access our yoga and meditation content library and progress tracking tools.
+</p>
     <!-- Memberstack SIGNUP form -->
     <form data-ms-form="signup">
-      <label for="name">Name</label>
       <input id="name" type="text" autocomplete="name" placeholder="Your name" data-ms-member="name" required />
 
-      <label for="email">Email</label>
       <input id="email" type="email" autocomplete="email" placeholder="Email address" data-ms-member="email" required />
 
-      <label for="password">Password</label>
       <input id="password" type="password" autocomplete="new-password" placeholder="Password" data-ms-member="password" required />
 
       <div class="checks">
@@ -201,7 +200,7 @@
       </div>
 
       <button class="btn-primary" type="submit">Create account</button>
-
+</form>
 <!-- Divider -->
 <div class="auth-divider">
   <span>OR</span>
@@ -229,8 +228,9 @@
   <a href="privacy.html">Privacy Policy</a> &nbsp; • &nbsp;
   <a href="terms.html">Terms</a>
 </div>
-
-  </main>
+</div>
+</div>
+ 
 
 </body>
 </html>
