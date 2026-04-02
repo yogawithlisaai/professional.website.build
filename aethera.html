@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>#aethera — Costa Rica Yoga Retreat | Yoga with Lisa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/uwl6zhw.css">
+
+  <meta property="og:title" content="#aethera — Costa Rica Yoga Retreat">
+  <meta property="og:description" content="5 days of surf, yoga, art, and transformation in Costa Rica. Join Lisa, Sandra & Sara.">
+  <meta property="og:image" content="Costa_Rica-Beach.webp">
+
+  <style>
+    /* ── Reset & Base ───────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0a1a2a;
+      --navy-mid:   #0f2336;
+      --blue-dark:  #1e3a5f;
+      --baby-blue:  #89cff0;
+      --baby-blue2: #a8ddf5;
+      --sand:       #c9a96e;
+      --white:      #ffffff;
+      --off-white:  #f5f2ee;
+      --text-dim:   #a0b4c5;
+      --text-body:  #d4e4ef;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans:  'Inter', sans-serif;
+      --max:        1100px;
+      --ease:       cubic-bezier(.25,.46,.45,.94);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── Typography ─────────────────────────────────── */
+    h1, h2, h3 { font-family: var(--font-serif); font-weight: 500; line-height: 1.2; }
+
+    em { font-style: italic; color: var(--baby-blue); }
+
+    /* ── Site Header ────────────────────────────────── */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.2rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background .4s var(--ease), backdrop-filter .4s;
+    }
+    .site-header.scrolled {
+      background: rgba(10,26,42,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(137,207,240,.12);
+    }
+    .brand {
+      font-family: var(--font-serif);
+      font-size: 1.1rem; font-style: italic;
+      color: var(--white); text-decoration: none;
+      letter-spacing: .03em;
+    }
+    .brand span { color: var(--baby-blue); }
+    .nav-back {
+      font-family: var(--font-sans); font-size: .72rem;
+      font-weight: 600; letter-spacing: .12em;
+      color: var(--text-dim); text-decoration: none;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--baby-blue); }
+
+    /* ── Hero ───────────────────────────────────────── */
+    .hero {
+      position: relative; height: 100vh; min-height: 640px;
+      display: flex; align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('Costa_Rica-Beach.webp') center center / cover no-repeat;
+      transform: scale(1.04);
+      animation: heroScale 12s ease forwards;
+    }
+    @keyframes heroScale {
+      to { transform: scale(1); }
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,26,42,.25) 0%,
+        rgba(10,26,42,.1)  40%,
+        rgba(10,26,42,.72) 75%,
+        rgba(10,26,42,.97) 100%
+      );
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      width: 100%; max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem 4.5rem;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-family: var(--font-sans); font-size: .7rem;
+      font-weight: 700; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--baby-blue);
+      background: rgba(137,207,240,.1);
+      border: 1px solid rgba(137,207,240,.3);
+      border-radius: 2rem; padding: .4rem 1.1rem;
+      margin-bottom: 1.2rem;
+      animation: fadeUp .8s .2s var(--ease) both;
+    }
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      font-weight: 700; line-height: 1.05;
+      letter-spacing: -.02em;
+      animation: fadeUp .8s .35s var(--ease) both;
+    }
+    .hero h1 em { color: var(--baby-blue); font-style: italic; }
+    .hero-sub {
+      margin-top: 1rem;
+      font-size: clamp(.95rem, 1.8vw, 1.15rem);
+      color: var(--text-body); font-weight: 300;
+      max-width: 520px;
+      animation: fadeUp .8s .5s var(--ease) both;
+    }
+    .hero-ctas {
+      margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .9rem;
+      animation: fadeUp .8s .65s var(--ease) both;
+    }
+
+    /* ── Buttons ────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-family: var(--font-sans); font-size: .72rem;
+      font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+      text-decoration: none; cursor: pointer; border: none;
+      transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-pill { border-radius: 2rem; padding: .85rem 2rem; }
+
+    .btn-primary {
+      background: var(--baby-blue); color: var(--navy);
+      box-shadow: 0 4px 24px rgba(137,207,240,.35);
+    }
+    .btn-primary:hover { box-shadow: 0 8px 32px rgba(137,207,240,.5); }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid rgba(137,207,240,.5);
+      color: var(--baby-blue);
+    }
+    .btn-outline:hover {
+      background: rgba(137,207,240,.08);
+      border-color: var(--baby-blue);
+    }
+
+    /* ── Scroll hint ────────────────────────────────── */
+    .scroll-hint {
+      position: absolute; bottom: 1.8rem; left: 50%; transform: translateX(-50%);
+      z-index: 2; display: flex; flex-direction: column; align-items: center; gap: .4rem;
+      font-size: .65rem; letter-spacing: .16em; text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+      animation: fadeUp .8s .9s var(--ease) both;
+    }
+    .scroll-hint-line {
+      width: 1px; height: 48px;
+      background: linear-gradient(to bottom, rgba(137,207,240,.7), transparent);
+      animation: scrollPulse 2s 1.5s infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: .5; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.1); }
+    }
+
+    /* ── Section utility ────────────────────────────── */
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+    section { padding: 5rem 0; }
+
+    .section-label {
+      font-size: .68rem; font-weight: 700; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--baby-blue);
+      margin-bottom: .8rem;
+    }
+    .section-rule {
+      width: 48px; height: 1.5px;
+      background: var(--baby-blue); margin: 1.2rem 0 2rem;
+    }
+
+    /* ── Intro strip ────────────────────────────────── */
+    .intro-strip {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(137,207,240,.12);
+      border-bottom: 1px solid rgba(137,207,240,.12);
+    }
+    .intro-strip .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0;
+    }
+    .stat-item {
+      padding: 2.2rem 2rem;
+      border-right: 1px solid rgba(137,207,240,.1);
+      text-align: center;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--font-serif); font-size: 2.2rem;
+      color: var(--baby-blue); display: block; line-height: 1;
+    }
+    .stat-label {
+      font-size: .7rem; letter-spacing: .15em; text-transform: uppercase;
+      color: var(--text-dim); margin-top: .4rem;
+    }
+
+    /* ── About section ──────────────────────────────── */
+    .about .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .about-text h2 {
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    }
+    .about-text p {
+      color: var(--text-body); font-size: .97rem;
+      margin-top: 1.2rem; max-width: 480px;
+    }
+    .about-text .btn { margin-top: 2rem; }
+    .about-visual {
+      position: relative; aspect-ratio: 3/4; border-radius: 4px; overflow: hidden;
+    }
+    .about-visual img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 6s var(--ease);
+    }
+    .about-visual:hover img { transform: scale(1.04); }
+    .about-visual-badge {
+      position: absolute; bottom: 1.5rem; left: 1.5rem;
+      background: rgba(10,26,42,.88);
+      border: 1px solid rgba(137,207,240,.3);
+      backdrop-filter: blur(8px);
+      border-radius: 8px; padding: 1rem 1.4rem;
+    }
+    .about-visual-badge p {
+      font-size: .75rem; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--baby-blue);
+      margin: 0; font-weight: 600;
+    }
+    .about-visual-badge span {
+      font-family: var(--font-serif); font-size: 1.05rem;
+      color: var(--white); display: block; margin-top: .2rem;
+    }
+
+    /* ── Schedule ───────────────────────────────────── */
+    .schedule { background: var(--navy-mid); }
+    .schedule h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: .5rem;
+    }
+    .schedule-intro { color: var(--text-dim); margin-bottom: 3rem; max-width: 560px; }
+
+    .days-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1.2rem;
+    }
+    .day-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(137,207,240,.1);
+      border-radius: 8px; padding: 1.6rem 1.4rem;
+      transition: border-color .25s, background .25s, transform .25s;
+      cursor: default;
+    }
+    .day-card:hover {
+      background: rgba(137,207,240,.06);
+      border-color: rgba(137,207,240,.35);
+      transform: translateY(-3px);
+    }
+    .day-num {
+      font-family: var(--font-serif); font-size: 2.4rem;
+      color: var(--baby-blue); line-height: 1;
+    }
+    .day-title {
+      font-family: var(--font-serif); font-size: 1rem;
+      font-style: italic; margin: .4rem 0 1rem;
+      color: var(--white);
+    }
+    .day-activities { list-style: none; }
+    .day-activities li {
+      display: flex; align-items: flex-start; gap: .6rem;
+      font-size: .78rem; color: var(--text-body);
+      padding: .35rem 0;
+      border-bottom: 1px solid rgba(137,207,240,.07);
+    }
+    .day-activities li:last-child { border-bottom: none; }
+    .day-activities li::before {
+      content: ''; display: block; flex-shrink: 0;
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--baby-blue); margin-top: .45rem;
+    }
+    .day-activities .act-time {
+      color: var(--baby-blue); font-size: .7rem;
+      font-weight: 600; white-space: nowrap;
+      margin-left: auto; padding-left: .5rem;
+    }
+
+    /* ── Instructors ────────────────────────────────── */
+    .instructors h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: .5rem;
+    }
+    .instructors-sub { color: var(--text-dim); margin-bottom: 3rem; }
+
+    .instructors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .instructor-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(137,207,240,.1);
+      border-radius: 10px; overflow: hidden;
+      transition: border-color .25s, transform .3s;
+    }
+    .instructor-card:hover {
+      border-color: rgba(137,207,240,.35);
+      transform: translateY(-4px);
+    }
+    .instructor-photo {
+      aspect-ratio: 4/3; overflow: hidden;
+    }
+    .instructor-photo img {
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: top center;
+      transition: transform 5s var(--ease);
+    }
+    .instructor-card:hover .instructor-photo img { transform: scale(1.05); }
+    .instructor-body { padding: 1.6rem; }
+    .instructor-name {
+      font-family: var(--font-serif); font-size: 1.45rem;
+      color: var(--white);
+    }
+    .instructor-creds {
+      font-size: .7rem; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--baby-blue);
+      margin: .4rem 0 .2rem;
+    }
+    .instructor-tagline {
+      font-size: .78rem; color: var(--text-dim); font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .instructor-bio {
+      font-size: .85rem; color: var(--text-body);
+      line-height: 1.7;
+    }
+    .instructor-bio p + p { margin-top: .8rem; }
+
+    /* ── Pricing ────────────────────────────────────── */
+    .pricing { background: var(--navy-mid); }
+    .pricing h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: .5rem;
+    }
+    .pricing-sub { color: var(--text-dim); margin-bottom: 3rem; }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem; max-width: 680px;
+    }
+    .price-card {
+      border-radius: 10px; padding: 2rem 1.8rem;
+      position: relative; overflow: hidden;
+    }
+    .price-card.early {
+      background: var(--blue-dark);
+      border: 1.5px solid var(--baby-blue);
+    }
+    .price-card.regular {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(137,207,240,.15);
+    }
+    .price-card-label {
+      font-size: .68rem; font-weight: 700; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--baby-blue);
+      margin-bottom: 1.2rem;
+    }
+    .price-badge {
+      position: absolute; top: 1rem; right: 1rem;
+      background: var(--baby-blue); color: var(--navy);
+      font-size: .6rem; font-weight: 800; letter-spacing: .1em;
+      text-transform: uppercase; padding: .25rem .7rem; border-radius: 2rem;
+    }
+    .price-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: .7rem 0;
+      border-bottom: 1px solid rgba(137,207,240,.1);
+    }
+    .price-row:last-child { border-bottom: none; }
+    .price-row-label { font-size: .85rem; color: var(--text-body); }
+    .price-row-amount {
+      font-family: var(--font-serif); font-size: 1.3rem;
+      color: var(--white); font-weight: 700;
+    }
+
+    /* ── Info blocks ────────────────────────────────── */
+    .travel { }
+    .travel h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: .5rem;
+    }
+    .travel-sub { color: var(--text-dim); margin-bottom: 3rem; }
+    .travel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+    }
+    .travel-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(137,207,240,.1);
+      border-radius: 8px; padding: 1.6rem;
+      transition: border-color .2s, transform .2s;
+    }
+    .travel-card:hover {
+      border-color: rgba(137,207,240,.3);
+      transform: translateY(-2px);
+    }
+    .travel-icon { font-size: 1.6rem; margin-bottom: .8rem; }
+    .travel-card h3 {
+      font-family: var(--font-sans); font-size: .78rem;
+      font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--baby-blue);
+      margin-bottom: .7rem;
+    }
+    .travel-card p { font-size: .85rem; color: var(--text-body); line-height: 1.65; }
+
+    /* ── Cancellation ───────────────────────────────── */
+    .cancellation {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(137,207,240,.1);
+      border-bottom: 1px solid rgba(137,207,240,.1);
+    }
+    .cancellation .container { max-width: 680px; text-align: center; }
+    .cancellation h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 1rem;
+    }
+    .cancellation p { color: var(--text-body); font-size: .93rem; }
+
+    /* ── CTA Banner ─────────────────────────────────── */
+    .cta-banner {
+      position: relative; overflow: hidden;
+      padding: 6rem 0;
+      background: var(--blue-dark);
+      text-align: center;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(137,207,240,.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(137,207,240,.06) 0%, transparent 60%);
+    }
+    .cta-banner h2 {
+      position: relative; z-index: 1;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+    }
+    .cta-banner p {
+      position: relative; z-index: 1;
+      color: var(--text-body); margin: 1rem auto 2.5rem; max-width: 480px;
+    }
+    .cta-banner .btn { position: relative; z-index: 1; }
+
+    /* ── Footer ─────────────────────────────────────── */
+    .site-footer {
+      background: var(--navy); padding: 2.5rem 0;
+      border-top: 1px solid rgba(137,207,240,.1);
+    }
+    .site-footer .container {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      align-items: center; justify-content: space-between;
+    }
+    .footer-brand {
+      font-family: var(--font-serif); font-style: italic;
+      font-size: .95rem; color: var(--text-dim); text-decoration: none;
+    }
+    .footer-note {
+      font-size: .72rem; color: rgba(160,180,197,.5);
+      letter-spacing: .05em;
+    }
+
+    /* ── Animations ─────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── Responsive ─────────────────────────────────── */
+    @media (max-width: 768px) {
+      .about .container { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-visual { aspect-ratio: 4/3; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(137,207,240,.1); }
+      .stat-item:last-child { border-bottom: none; }
+      .days-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Header ───────────────────────────────────────── -->
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="index.html">yoga with <span>lisa</span></a>
+    <a class="nav-back" href="index.html">← Back to home</a>
+  </header>
+
+  <!-- ── Hero ─────────────────────────────────────────── -->
+  <section class="hero" role="banner">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Costa Rica · 5-Day Yoga Retreat</div>
+      <h1>
+        Find your<br/>
+        <em>flow</em> in<br/>
+        paradise.
+      </h1>
+      <p class="hero-sub">
+        Five transformative days of surf, yoga, art therapy, and deep rest — 
+        set against the wild beauty of Costa Rica's Pacific coast.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-pill btn-primary" href="#pricing">RESERVE YOUR SPOT</a>
+        <a class="btn btn-pill btn-outline" href="#schedule">VIEW SCHEDULE</a>
+      </div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>scroll</span>
+      <div class="scroll-hint-line"></div>
+    </div>
+  </section>
+
+  <!-- ── Stats strip ───────────────────────────────────── -->
+  <div class="intro-strip reveal">
+    <div class="container">
+      <div class="stat-item">
+        <span class="stat-num">5</span>
+        <div class="stat-label">Days</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">3</span>
+        <div class="stat-label">Instructors</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">1500+</span>
+        <div class="stat-label">Hrs Certified</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">∞</span>
+        <div class="stat-label">Pura Vida</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── About / Intro ─────────────────────────────────── -->
+  <section class="about">
+    <div class="container">
+      <div class="about-text reveal">
+        <p class="section-label">#aethera retreat</p>
+        <h2>A reset for your<br/><em>body, mind,</em><br/>and spirit.</h2>
+        <div class="section-rule"></div>
+        <p>
+          Nestled on the Pacific coast of Costa Rica, this retreat is an invitation to step out of your daily rhythm and drop into something deeper. Mornings begin with practice — Ashtanga, Kundalini, breathwork, or aerial flow. Afternoons open into surf, art therapy, massage, and free time at the beach.
+        </p>
+        <p>
+          This is not a performance retreat. It's a space to soften, to explore, and to remember what your body already knows. Three 500-HR certified instructors — Lisa, Sandra, and Sara — hold the space together with care, creativity, and joy.
+        </p>
+        <a class="btn btn-pill btn-outline" href="#pricing" style="margin-top:2rem;">SECURE YOUR PLACE</a>
+      </div>
+      <div class="about-visual reveal">
+        <img src="Costa_Rica-Beach.webp" alt="Aerial view of Costa Rica beach with jungle and waves" />
+        <div class="about-visual-badge">
+          <p>Breakfast &amp; dinner included</p>
+          <span>All 5 days</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Schedule ──────────────────────────────────────── -->
+  <section class="schedule" id="schedule">
+    <div class="container">
+      <p class="section-label reveal">Daily Schedule</p>
+      <h2 class="reveal">Five days of <em>intentional living.</em></h2>
+      <div class="section-rule reveal"></div>
+      <p class="schedule-intro reveal">Every day has its own theme and rhythm — a balance of practice, play, nourishment, and rest.</p>
+
+      <div class="days-grid">
+
+        <!-- Day 1 -->
+        <div class="day-card reveal">
+          <div class="day-num">01</div>
+          <div class="day-title">Arrival</div>
+          <ul class="day-activities">
+            <li><span>Check-in + Welcome</span><span class="act-time">3 PM</span></li>
+            <li><span>Opening Circle</span><span class="act-time">5:30 PM</span></li>
+            <li><span>Guided Journaling</span><span class="act-time">6:15 PM</span></li>
+            <li><span>Gentle Vinyasa Flow</span><span class="act-time">6:45 PM</span></li>
+            <li><span>Dinner</span><span class="act-time">7:45 PM</span></li>
+            <li><span>Live Music</span><span class="act-time">8:45 PM</span></li>
+          </ul>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-card reveal">
+          <div class="day-num">02</div>
+          <div class="day-title">Root + Strength</div>
+          <ul class="day-activities">
+            <li><span>Tea + Silence</span><span class="act-time">6:30 AM</span></li>
+            <li><span>Ashtanga Practice</span><span class="act-time">7:00 AM</span></li>
+            <li><span>Surf Lesson</span><span class="act-time">10:30 AM</span></li>
+            <li><span>Workshop: Arm Balances</span><span class="act-time">3:30 PM</span></li>
+            <li><span>Dinner</span><span class="act-time">7:00 PM</span></li>
+            <li><span>Group Sharing Circle</span><span class="act-time">8:30 PM</span></li>
+          </ul>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-card reveal">
+          <div class="day-num">03</div>
+          <div class="day-title">Flow + Creativity</div>
+          <ul class="day-activities">
+            <li><span>Breathwork + Meditation</span><span class="act-time">6:30 AM</span></li>
+            <li><span>Power Vinyasa</span><span class="act-time">7:00 AM</span></li>
+            <li><span>Surf / Beach Time</span><span class="act-time">10:30 AM</span></li>
+            <li><span>Art Therapy Session</span><span class="act-time">3:00 PM</span></li>
+            <li><span>Workshop: Inversions</span><span class="act-time">4:30 PM</span></li>
+            <li><span>Music + Chill Night</span><span class="act-time">8:45 PM</span></li>
+          </ul>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="day-card reveal">
+          <div class="day-num">04</div>
+          <div class="day-title">Expansion + Heart</div>
+          <ul class="day-activities">
+            <li><span>Kundalini Practice</span><span class="act-time">7:00 AM</span></li>
+            <li><span>Surf Lesson</span><span class="act-time">10:30 AM</span></li>
+            <li><span>Complimentary Massages</span><span class="act-time">2:30 PM</span></li>
+            <li><span>Workshop: Backbends</span><span class="act-time">3:30 PM</span></li>
+            <li><span>Sound Bath</span><span class="act-time">5:45 PM</span></li>
+            <li><span>Bonfire + Music</span><span class="act-time">8:45 PM</span></li>
+          </ul>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="day-card reveal">
+          <div class="day-num">05</div>
+          <div class="day-title">Integration</div>
+          <ul class="day-activities">
+            <li><span>Meditation + Journaling</span><span class="act-time">6:30 AM</span></li>
+            <li><span>Mandala Flow</span><span class="act-time">7:00 AM</span></li>
+            <li><span>Free Surf / Beach</span><span class="act-time">10:30 AM</span></li>
+            <li><span>Breathwork Integration</span><span class="act-time">3:00 PM</span></li>
+            <li><span>Closing Circle</span><span class="act-time">5:30 PM</span></li>
+            <li><span>Celebration Dinner</span><span class="act-time">7:00 PM</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Instructors ────────────────────────────────────── -->
+  <section class="instructors" id="instructors">
+    <div class="container">
+      <p class="section-label reveal">Your Teachers</p>
+      <h2 class="reveal">Meet your <em>instructors.</em></h2>
+      <div class="section-rule reveal"></div>
+      <p class="instructors-sub reveal">Three 500-HR certified teachers. One unforgettable retreat.</p>
+
+      <div class="instructors-grid">
+
+        <!-- Sandra -->
+        <div class="instructor-card reveal">
+          <div class="instructor-photo">
+            <img src="Screenshot_2026-04-01_at_1_30_37_PM.png" alt="Sandra — Aerial Yoga, Madrid" />
+          </div>
+          <div class="instructor-body">
+            <div class="instructor-name">Sandra</div>
+            <div class="instructor-creds">500-HR YTT · 50H Aerial Yoga · 50H Barre Pilates</div>
+            <div class="instructor-tagline">Aerial Yoga · Mandala Vinyasa · Meditation · Madrid, Spain · Leading Days 1 & 2</div>
+            <div class="instructor-bio">
+              <p>I'm a yoga teacher based in Madrid, where I guide aerial yoga, mandala vinyasa flow, and meditation. My teaching is rooted in movement as a form of exploration and beauty — inviting creativity, fluidity, and connection through the body.</p>
+              <p>Teaching is much more than a job for me; it's a passion that comes from the need to share with others everything that yoga once transformed in my life.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lisa -->
+        <div class="instructor-card reveal">
+          <div class="instructor-photo">
+            <img src="Screenshot_2026-03-30_at_10_22_29_PM.png" alt="Lisa — Ashtanga Vinyasa, San Francisco" />
+          </div>
+          <div class="instructor-body">
+            <div class="instructor-name">Lisa</div>
+            <div class="instructor-creds">500-HR YTT · House of Om, Bali</div>
+            <div class="instructor-tagline">Ashtanga Vinyasa · San Francisco, CA · Originally from Los Angeles</div>
+            <div class="instructor-bio">
+              <p>I specialize in Ashtanga-style Vinyasa: precise, breath-led, and deeply personal. My classes meet students exactly where they are, weaving together strength, alignment, and stillness.</p>
+              <p>This Costa Rica retreat is an invitation — to slow down, to feel, and to remember what your body already knows.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sara -->
+        <div class="instructor-card reveal">
+          <div class="instructor-photo">
+            <img src="WhatsApp_Image_2026-03-31_at_14_08_16__1_.jpeg" alt="Sara — Kundalini Yoga, Spain" />
+          </div>
+          <div class="instructor-body">
+            <div class="instructor-name">Sara</div>
+            <div class="instructor-creds">500-HR YTT · 7 Years Kundalini Practice</div>
+            <div class="instructor-tagline">Kundalini Yoga & Energy Work · From Spain</div>
+            <div class="instructor-bio">
+              <p>I've been deeply devoted to Kundalini yoga for seven years, exploring the powerful world of energy and inner transformation. I'm passionate about holding space for others — gently guiding them back to their light.</p>
+              <p>Beyond yoga, I love painting, surfing, traveling, and capturing beautiful moments. Let's go to Costa Rica! 🦋✨</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pricing ────────────────────────────────────────── -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <p class="section-label reveal">Investment</p>
+      <h2 class="reveal">Choose your <em>experience.</em></h2>
+      <div class="section-rule reveal"></div>
+      <p class="pricing-sub reveal">All prices per person in USD. Breakfast &amp; dinner included every day.</p>
+
+      <div class="pricing-grid reveal">
+
+        <div class="price-card early">
+          <div class="price-badge">BEST VALUE</div>
+          <div class="price-card-label">🌿 Early Bird</div>
+          <div class="price-row">
+            <span class="price-row-label">Shared Room</span>
+            <span class="price-row-amount">$1,500</span>
+          </div>
+          <div class="price-row">
+            <span class="price-row-label">Private Room</span>
+            <span class="price-row-amount">$2,000</span>
+          </div>
+        </div>
+
+        <div class="price-card regular">
+          <div class="price-card-label">Regular Price</div>
+          <div class="price-row">
+            <span class="price-row-label">Shared Room</span>
+            <span class="price-row-amount">$1,750</span>
+          </div>
+          <div class="price-row">
+            <span class="price-row-label">Private Room</span>
+            <span class="price-row-amount">$2,250</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Travel Info ────────────────────────────────────── -->
+  <section class="travel" id="travel">
+    <div class="container">
+      <p class="section-label reveal">Before You Go</p>
+      <h2 class="reveal">What you need to <em>know.</em></h2>
+      <div class="section-rule reveal"></div>
+      <p class="travel-sub reveal">Everything you need to prepare for your Costa Rica adventure.</p>
+
+      <div class="travel-grid">
+
+        <div class="travel-card reveal">
+          <div class="travel-icon">✈️</div>
+          <h3>Airport</h3>
+          <p>Fly into <strong>Juan Santamaría International (SJO)</strong> in San José. A shared shuttle or private transfer brings you to the retreat center (~3–4 hrs). Transfer details sent after booking.</p>
+        </div>
+
+        <div class="travel-card reveal">
+          <div class="travel-icon">🛂</div>
+          <h3>Entry Visa</h3>
+          <p>US and most EU citizens don't need a visa for stays up to 90 days — just a valid passport (6+ months validity) and a return or onward ticket. Check requirements with your country's foreign affairs office.</p>
+        </div>
+
+        <div class="travel-card reveal">
+          <div class="travel-icon">💉</div>
+          <h3>Vaccinations</h3>
+          <p>No vaccinations are legally required. The CDC recommends staying current on routine vaccines plus Hepatitis A &amp; B, and Typhoid. Speak with your doctor about dengue or malaria precautions.</p>
+        </div>
+
+        <div class="travel-card reveal">
+          <div class="travel-icon">🎒</div>
+          <h3>What to Pack</h3>
+          <p>Light yoga wear, a rain jacket (it's a rainforest!), reef-safe sunscreen, insect repellent, and personal medications. A full packing list is sent after registration.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Cancellation ───────────────────────────────────── -->
+  <section class="cancellation">
+    <div class="container reveal">
+      <p class="section-label" style="text-align:center;">Cancellation Policy</p>
+      <h2>All sales are <em>final.</em></h2>
+      <div class="section-rule" style="margin:1.2rem auto 1.8rem;"></div>
+      <p>We do not offer refunds for any reason, including illness, injury, travel disruptions, or personal circumstances. We strongly recommend purchasing comprehensive <strong>travel insurance</strong> to protect your investment before booking.</p>
+    </div>
+  </section>
+
+  <!-- ── CTA Banner ─────────────────────────────────────── -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2 class="reveal">Ready to <em>go?</em></h2>
+      <p class="reveal">Spots are limited. Secure yours while early bird pricing is available.</p>
+      <a class="btn btn-pill btn-primary reveal" href="mailto:lisa@yogawithlisa.ai?subject=Costa Rica Retreat — Booking Inquiry">
+        BOOK YOUR SPOT
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <a class="footer-brand" href="index.html">yoga with lisa</a>
+      <p class="footer-note">© <span id="yr"></span> Yoga with Lisa by Lisa Eshun-Wilson &amp; Associates, LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Sticky header
+    const header = document.getElementById('siteHeader');
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 60);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          // Stagger children in same parent
+          const siblings = [...e.target.parentElement.querySelectorAll('.reveal:not(.visible)')];
+          const idx = siblings.indexOf(e.target);
+          e.target.style.transitionDelay = (idx * 0.08) + 's';
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
