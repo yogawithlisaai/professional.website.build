@@ -411,6 +411,48 @@
       color: var(--white); font-weight: 700;
     }
 
+/* ── Payment Plan ───────────────────────────────── */
+.payment-plan {
+  margin-top: 2.5rem; max-width: 680px;
+  background: rgba(137,207,240,.06);
+  border: 1px solid rgba(137,207,240,.25);
+  border-radius: 10px; padding: 2rem 2.2rem;
+}
+.payment-plan-title {
+  font-family: var(--font-serif); font-size: 1.3rem;
+  color: var(--white); margin-bottom: .5rem;
+}
+.payment-plan-intro {
+  font-size: .88rem; color: var(--text-body);
+  line-height: 1.7; margin-bottom: 1.8rem;
+}
+.payment-item {
+  padding: 1.2rem 0;
+  border-top: 1px solid rgba(137,207,240,.12);
+}
+.payment-item:last-of-type { border-bottom: 1px solid rgba(137,207,240,.12); margin-bottom: 1.4rem; }
+.payment-item-label {
+  font-size: .72rem; font-weight: 700; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--baby-blue); margin-bottom: .5rem;
+}
+.payment-item p {
+  font-size: .86rem; color: var(--text-body); line-height: 1.65; margin: 0;
+}
+.payment-item strong { color: var(--white); }
+.payment-methods {
+  font-size: .8rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--baby-blue); margin-bottom: .6rem;
+}
+.payment-method-list {
+  list-style: none; display: flex; flex-wrap: wrap; gap: .7rem;
+}
+.payment-method-list li {
+  background: rgba(137,207,240,.1);
+  border: 1px solid rgba(137,207,240,.2);
+  border-radius: 2rem; padding: .35rem 1rem;
+  font-size: .78rem; color: var(--text-body);
+}
+
     /* ── Info blocks ────────────────────────────────── */
     .travel { }
     .travel h2 {
@@ -782,6 +824,36 @@
         </div>
 
       </div>
+
+<div class="payment-plan reveal">
+  <h3 class="payment-plan-title">Investment &amp; Payment</h3>
+  <p class="payment-plan-intro">
+    Your journey to Costa Rica is an investment in deep rest, renewal, and reconnection. 
+    To honor both your commitment and the intimate nature of this experience, we offer a 
+    simple and supportive payment structure.
+  </p>
+
+  <div class="payment-item">
+    <div class="payment-item-label">✧ Reservation Deposit (50%)</div>
+    <p>A <strong>50% non-refundable deposit</strong> is required to secure your space. This offering is intentionally limited to create a more personal and meaningful experience, and your place is confirmed once your deposit is received.</p>
+  </div>
+
+  <div class="payment-item">
+    <div class="payment-item-label">✧ Final Balance (50%)</div>
+    <p>The remaining 50% is due by <strong>June 1st</strong>, one month prior to our retreat beginning on <strong>July 1st</strong>. This allows you to arrive feeling prepared, grounded, and fully open to the experience ahead.</p>
+  </div>
+
+  <div class="payment-item">
+    <div class="payment-item-label">✧ Payment Methods</div>
+    <p>Payments are accepted via:</p>
+    <ul class="payment-method-list" style="margin-top:.7rem;">
+      <li>💳 Credit or Debit Card</li>
+      <li>🏦 Bank Transfer</li>
+    </ul>
+  </div>
+</div>
+
+
     </div>
   </section>
 
