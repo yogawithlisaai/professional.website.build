@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MindShift · Yoga with Lisa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --sage: #5C7A5C;
+    --sage-light: #8FAF8F;
+    --sage-pale: #EEF3EE;
+    --sage-dark: #3A4F3A;
+    --clay: #C4855A;
+    --clay-light: #F0D5C0;
+    --cream: #FAF8F4;
+    --warm-white: #FFFEF9;
+    --ink: #1E1E1A;
+    --ink-muted: #6B6860;
+    --ink-faint: #B8B5AD;
+    --border: rgba(92,122,92,0.18);
+    --shadow: 0 2px 24px rgba(60,79,58,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; display: flex; flex-direction: column; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2rem; border-bottom: 0.5px solid var(--border); background: var(--warm-white); }
+  .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; letter-spacing: 0.08em; color: var(--ink-muted); text-decoration: none; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--sage-dark); letter-spacing: -0.01em; }
+  .nav-logo span { color: var(--clay); }
+  .nav-badge { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; background: var(--clay-light); color: var(--clay); padding: 3px 10px; border-radius: 20px; }
+  .hero { text-align: center; padding: 3.5rem 2rem 2rem; max-width: 560px; margin: 0 auto; }
+  .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; font-weight: 500; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 6vw, 3.2rem); font-weight: 300; line-height: 1.15; color: var(--ink); margin-bottom: 1rem; }
+  .hero h1 em { font-style: italic; color: var(--sage); }
+  .hero p { font-size: 0.95rem; font-weight: 300; color: var(--ink-muted); line-height: 1.75; max-width: 400px; margin: 0 auto; }
+  .progress-wrap { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 1.5rem 0 0.5rem; }
+  .pdot { width: 6px; height: 6px; border-radius: 50%; background: var(--ink-faint); transition: all 0.3s ease; }
+  .pdot.done { background: var(--sage); }
+  .pdot.active { background: var(--sage); width: 22px; border-radius: 3px; }
+  .app-wrap { flex: 1; max-width: 640px; width: 100%; margin: 0 auto; padding: 1rem 1.5rem 4rem; }
+  .step { display: none; }
+  .step.active { display: block; }
+  .card { background: var(--warm-white); border: 0.5px solid var(--border); border-radius: 16px; padding: 1.75rem; margin-bottom: 1rem; box-shadow: var(--shadow); }
+  .card-label { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 1.25rem; font-weight: 500; }
+  input[type="text"] { width: 100%; padding: 0.85rem 1rem; border: 0.5px solid var(--border); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 300; background: var(--cream); color: var(--ink); outline: none; transition: border-color 0.2s; margin-bottom: 0.75rem; }
+  input[type="text"]:focus { border-color: var(--sage-light); background: var(--warm-white); }
+  .slider-row { display: flex; align-items: center; gap: 14px; margin-bottom: 1.1rem; }
+  .slider-label { font-size: 0.85rem; font-weight: 300; color: var(--ink-muted); min-width: 130px; }
+  .slider-val { font-size: 0.9rem; font-weight: 500; color: var(--sage-dark); min-width: 18px; text-align: right; }
+  input[type="range"] { flex: 1; -webkit-appearance: none; height: 3px; background: var(--sage-pale); border-radius: 2px; outline: none; }
+  input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: var(--sage); cursor: pointer; border: 2px solid var(--warm-white); box-shadow: 0 1px 6px rgba(92,122,92,0.3); transition: transform 0.15s; }
+  input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+  .pill-group { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0.5rem; }
+  .pill { padding: 7px 16px; border-radius: 24px; border: 0.5px solid var(--border); font-size: 0.8rem; font-weight: 400; cursor: pointer; color: var(--ink-muted); background: var(--cream); transition: all 0.15s ease; user-select: none; }
+  .pill:hover { border-color: var(--sage-light); color: var(--sage-dark); }
+  .pill.active { background: var(--sage-pale); color: var(--sage-dark); border-color: var(--sage-light); font-weight: 500; }
+  hr { border: none; border-top: 0.5px solid var(--border); margin: 1.25rem 0; }
+  .btn { display: block; width: 100%; padding: 0.95rem; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.18s ease; border: 0.5px solid var(--sage-light); background: var(--sage); color: white; letter-spacing: 0.02em; margin-top: 0.5rem; }
+  .btn:hover { background: var(--sage-dark); }
+  .btn:active { transform: scale(0.99); }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  .btn-ghost { background: transparent; color: var(--sage); border-color: var(--border); }
+  .btn-ghost:hover { background: var(--sage-pale); }
+  .chat-window { display: flex; flex-direction: column; gap: 14px; min-height: 140px; }
+  .bubble { padding: 14px 18px; border-radius: 18px; font-size: 0.9rem; line-height: 1.7; font-weight: 300; max-width: 88%; animation: fadeUp 0.3s ease; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  .bubble.coach { background: var(--sage-pale); color: var(--sage-dark); border-bottom-left-radius: 4px; align-self: flex-start; border: 0.5px solid rgba(92,122,92,0.15); }
+  .bubble.user { background: var(--clay-light); color: #5C3A20; border-bottom-right-radius: 4px; align-self: flex-end; }
+  .bubble.thinking { color: var(--ink-faint); font-style: italic; background: none; padding-left: 0; align-self: flex-start; font-size: 0.85rem; }
+  .chat-input-row { display: flex; gap: 8px; margin-top: 1rem; }
+  .chat-input-row input { flex: 1; margin-bottom: 0; }
+  .chat-send { padding: 0 1.2rem; border-radius: 10px; border: 0.5px solid var(--sage-light); background: var(--sage); color: white; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+  .chat-send:hover { background: var(--sage-dark); }
+  .chat-send:disabled { opacity: 0.5; cursor: not-allowed; }
+  footer { text-align: center; padding: 1.5rem; font-size: 0.72rem; color: var(--ink-faint); border-top: 0.5px solid var(--border); letter-spacing: 0.04em; }
+  footer a { color: var(--sage); text-decoration: none; }
+  .section-note { font-size: 0.82rem; color: var(--ink-muted); font-weight: 300; line-height: 1.6; margin-bottom: 1.25rem; }
+  @media (max-width: 480px) {
+    nav { padding: 1rem; }
+    .hero { padding: 2rem 1rem 1.5rem; }
+    .app-wrap { padding: 0.75rem 1rem 3rem; }
+    .card { padding: 1.25rem; }
+    .slider-label { min-width: 110px; font-size: 0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="https://www.yogawithlisa.ai">yogawithlisa.ai</a>
+  <div class="nav-logo">Mind<span>Shift</span></div>
+  <span class="nav-badge">Beta</span>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Yoga with Lisa</p>
+  <h1>Track the <em>shift</em><br>beyond the mat</h1>
+  <p>A daily 3-minute check-in that connects your Ashtanga practice to your focus and mental clarity — with an AI coach who notices what you can't.</p>
+</div>
+
+<div class="progress-wrap">
+  <div class="pdot active" id="d0"></div>
+  <div class="pdot" id="d1"></div>
+  <div class="pdot" id="d2"></div>
+</div>
+
+<div class="app-wrap">
+
+  <div class="step active" id="step0">
+    <div class="card">
+      <div class="card-label">Welcome, yogi</div>
+      <p class="section-note">Each check-in takes about 3 minutes. Your AI coach reads your data and reflects back how your practice is shaping your life off the mat.</p>
+      <input type="text" id="userName" placeholder="What's your first name?" maxlength="40"/>
+      <button class="btn" onclick="startCheckin()">Begin today's check-in →</button>
+    </div>
+    <div class="card" style="background: var(--sage-pale); border-color: rgba(92,122,92,0.2);">
+      <div class="card-label" style="color: var(--sage-dark);">About MindShift</div>
+      <p style="font-size:0.85rem; color: var(--sage-dark); line-height:1.75; font-weight:300;">
+        This is a beta from <strong style="font-weight:500">Yoga with Lisa</strong>. I created MindShift because we talk a lot about <em>why</em> we should shift our mindset — but rarely track <em>how</em> the practice is actually doing it. Your feedback shapes what this becomes. Thank you for being here. 🌿
+      </p>
+    </div>
+  </div>
+
+  <div class="step" id="step1">
+    <div class="card">
+      <div class="card-label">On the mat today</div>
+      <p style="font-size:0.85rem; color:var(--ink-muted); margin-bottom:10px; font-weight:300;">Did you practice today?</p>
+      <div class="pill-group" id="practicedPills">
+        <div class="pill" onclick="selectPill('practiced','yes',this)">Full practice</div>
+        <div class="pill" onclick="selectPill('practiced','short',this)">Short practice</div>
+        <div class="pill" onclick="selectPill('practiced','rest',this)">Rest day</div>
+      </div>
+      <hr/>
+      <div class="slider-row">
+        <span class="slider-label">Practice quality</span>
+        <input type="range" min="1" max="10" value="7" step="1" id="qualitySlider" oninput="document.getElementById('qv').textContent=this.value"/>
+        <span class="slider-val" id="qv">7</span>
+      </div>
+      <div class="slider-row">
+        <span class="slider-label">Presence on mat</span>
+        <input type="range" min="1" max="10" value="7" step="1" id="presenceSlider" oninput="document.getElementById('pv').textContent=this.value"/>
+        <span class="slider-val" id="pv">7</span>
+      </div>
+      <hr/>
+      <p style="font-size:0.85rem; color:var(--ink-muted); margin-bottom:10px; font-weight:300;">Notable moments on the mat?</p>
+      <div class="pill-group" id="matPills">
+        <div class="pill" onclick="togglePill('mat',this)">Breakthrough pose</div>
+        <div class="pill" onclick="togglePill('mat',this)">Struggled to focus</div>
+        <div class="pill" onclick="togglePill('mat',this)">Felt strong</div>
+        <div class="pill" onclick="togglePill('mat',this)">Mind was quiet</div>
+        <div class="pill" onclick="togglePill('mat',this)">Physical challenge</div>
+        <div class="pill" onclick="togglePill('mat',this)">Deep breath work</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Focus &amp; clarity today</div>
+      <div class="slider-row">
+        <span class="slider-label">Mental clarity</span>
+        <input type="range" min="1" max="10" value="7" step="1" id="claritySlider" oninput="document.getElementById('cv').textContent=this.value"/>
+        <span class="slider-val" id="cv">7</span>
+      </div>
+      <div class="slider-row">
+        <span class="slider-label">Focus quality</span>
+        <input type="range" min="1" max="10" value="7" step="1" id="focusSlider" oninput="document.getElementById('fv').textContent=this.value"/>
+        <span class="slider-val" id="fv">7</span>
+      </div>
+      <hr/>
+      <p style="font-size:0.85rem; color:var(--ink-muted); margin-bottom:10px; font-weight:300;">Mental state off the mat today?</p>
+      <div class="pill-group" id="offmatPills">
+        <div class="pill" onclick="togglePill('offmat',this)">Laser focused</div>
+        <div class="pill" onclick="togglePill('offmat',this)">Scattered thoughts</div>
+        <div class="pill" onclick="togglePill('offmat',this)">Clear decisions</div>
+        <div class="pill" onclick="togglePill('offmat',this)">Easily distracted</div>
+        <div class="pill" onclick="togglePill('offmat',this)">Creative flow</div>
+        <div class="pill" onclick="togglePill('offmat',this)">Mentally tired</div>
+      </div>
+    </div>
+
+    <button class="btn" onclick="goToCoach()">Talk to my coach →</button>
+  </div>
+
+  <div class="step" id="step2">
+    <div class="card">
+      <div class="card-label">Your AI coach</div>
+      <div class="chat-window" id="chatWindow"></div>
+      <hr/>
+      <div class="chat-input-row">
+        <input type="text" id="userMsg" placeholder="Reply to your coach..." onkeydown="if(event.key==='Enter')sendMsg()"/>
+        <button class="chat-send" onclick="sendMsg()" id="sendBtn">Send</button>
+      </div>
+    </div>
+    <button class="btn btn-ghost" onclick="resetApp()">↺ Start a new check-in</button>
+  </div>
+
+</div>
+
+<footer>
+  MindShift Beta · <a href="https://www.yogawithlisa.ai">yogawithlisa.ai</a> · Built with love for the Ashtanga community
+</footer>
+
+<script>
+  const API_KEY = 'REDACTED_API_KEY';
+  const state = { name:'', practiced:'yes', matTags:[], offmatTags:[], quality:7, presence:7, clarity:7, focus:7, history:[] };
+
+  function setStep(n) {
+    document.querySelectorAll('.step').forEach((s,i) => s.classList.toggle('active', i===n));
+    ['d0','d1','d2'].forEach((id,i) => {
+      const d = document.getElementById(id);
+      d.className = 'pdot' + (i<n?' done':i===n?' active':'');
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function selectPill(key, val, el) {
+    state[key] = val;
+    el.closest('.pill-group').querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  function togglePill(group, el) {
+    const arr = group === 'mat' ? state.matTags : state.offmatTags;
+    el.classList.toggle('active');
+    const t = el.textContent.trim();
+    const i = arr.indexOf(t);
+    if (i === -1) arr.push(t); else arr.splice(i, 1);
+  }
+
+  function startCheckin() {
+    state.name = document.getElementById('userName').value.trim() || 'Yogi';
+    setStep(1);
+  }
+
+  function goToCoach() {
+    state.quality   = parseInt(document.getElementById('qualitySlider').value);
+    state.presence  = parseInt(document.getElementById('presenceSlider').value);
+    state.clarity   = parseInt(document.getElementById('claritySlider').value);
+    state.focus     = parseInt(document.getElementById('focusSlider').value);
+    setStep(2);
+    document.getElementById('chatWindow').innerHTML = '';
+    addBubble('thinking', 'Your coach is reflecting on your practice...');
+    callCoach(buildInitialPrompt(), true);
+  }
+
+  function buildInitialPrompt() {
+    const p = state.practiced==='yes'?'a full practice':state.practiced==='short'?'a short practice':'a rest day';
+    const mat = state.matTags.length ? state.matTags.join(', ') : 'nothing specific noted';
+    const off = state.offmatTags.length ? state.offmatTags.join(', ') : 'nothing specific noted';
+    return `The yogi's name is ${state.name}. Today's check-in:\n- Practice: ${p}\n- Practice quality (1-10): ${state.quality}\n- Presence on mat (1-10): ${state.presence}\n- Mat moments: ${mat}\n- Mental clarity (1-10): ${state.clarity}\n- Focus quality (1-10): ${state.focus}\n- Off-mat mental state: ${off}\n\nOpen with a warm greeting using their name. Give a 2-3 sentence reflection connecting what happened ON the mat to what they reported OFF the mat — specifically around focus and mental clarity. Be specific to their numbers and tags. End with ONE open question. Tone: warm, grounded, wise. Under 120 words.`;
+  }
+
+  function addBubble(type, text) {
+    const cw = document.getElementById('chatWindow');
+    const old = cw.querySelector('.thinking');
+    if (old) old.remove();
+    const d = document.createElement('div');
+    d.className = `bubble ${type}`;
+    d.textContent = text;
+    cw.appendChild(d);
+    cw.scrollTop = cw.scrollHeight;
+  }
+
+  async function callCoach(content, isInitial=false) {
+    const btn = document.getElementById('sendBtn');
+    if (btn) btn.disabled = true;
+    if (!isInitial) state.history.push({ role:'user', content });
+    const system = `You are MindShift — a warm, grounded Ashtanga yoga coach created by Lisa of Yoga with Lisa (yogawithlisa.ai). You help yogis understand how their mat practice is shaping their focus and mental clarity in daily life. Speak like a wise teacher: thoughtful, human, never clinical. Ask one question at a time. Keep responses under 100 words unless asked for more. Notice patterns and help yogis articulate their own transformation.`;
+    const messages = isInitial ? [{role:'user',content}] : state.history;
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': API_KEY,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true'
+        },
+        body: JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:300, system, messages })
+      });
+      const data = await res.json();
+      const reply = data.content?.map(c=>c.text||'').join('') || 'Something went quiet — please try again.';
+      addBubble('coach', reply);
+      state.history.push({ role:'assistant', content:reply });
+    } catch(e) {
+      addBubble('coach', 'Something went quiet on my end — please try again. 🌿');
+    }
+    if (btn) btn.disabled = false;
+  }
+
+  async function sendMsg() {
+    const inp = document.getElementById('userMsg');
+    const msg = inp.value.trim();
+    if (!msg) return;
+    inp.value = '';
+    addBubble('user', msg);
+    addBubble('thinking', '...');
+    await callCoach(msg, false);
+  }
+
+  function resetApp() {
+    state.history=[]; state.matTags=[]; state.offmatTags=[];
+    document.getElementById('userName').value = '';
+    document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
+    ['qualitySlider','presenceSlider','claritySlider','focusSlider'].forEach(id=>{
+      document.getElementById(id).value=7;
+    });
+    ['qv','pv','cv','fv'].forEach(id=>document.getElementById(id).textContent='7');
+    setStep(0);
+  }
+</script>
+</body>
+</html>
