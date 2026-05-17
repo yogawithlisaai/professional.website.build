@@ -75,6 +75,8 @@
       transition: color .2s;
     }
     .nav-back:hover { color: var(--baby-blue); }
+    /* Keep hamburger bars white — aethera header is always dark */
+    .site-header.scrolled .hamburger-btn span { background: #fff; }
 
     /* ── Hero ───────────────────────────────────────── */
     .hero {
@@ -564,8 +566,31 @@
   <!-- ── Header ───────────────────────────────────────── -->
   <header class="site-header" id="siteHeader">
     <a class="brand" href="index.html">aethera yoga <span>retreats</span></a>
-    <a class="nav-back" href="index.html">← Back to home</a>
+    <div style="display:flex;align-items:center;gap:20px;">
+      <a class="nav-back" href="index.html">← Back to home</a>
+      <button class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
+
+<!-- Navigation Dropdown -->
+<div class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
+  <ul class="nav-dropdown__list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="yoga-inperson.html">Class Schedule</a></li>
+    <li><a href="yoga-ondemand.html">On Demand</a></li>
+    <li><a href="mindshift.html">MindShift</a></li>
+    <li><a href="yoga-oneonone.html">Private Sessions</a></li>
+    <li><a href="wellness.html">Wellness</a></li>
+    <li><a href="corporate.html">Corporate</a></li>
+    <li><a href="aethera.html">Retreats</a></li>
+    <li><a href="founder.html">About</a></li>
+    <li><a href="giveback.html">Give Back</a></li>
+    <li><a href="viewplans.html">Membership</a></li>
+    <li><a href="student-packages.html">Students</a></li>
+  </ul>
+</div>
 
   <!-- ── Hero ─────────────────────────────────────────── -->
   <section class="hero" role="banner">
@@ -951,5 +976,6 @@
     revealEls.forEach(el => observer.observe(el));
   </script>
 
+<script src="nav.js"></script>
 </body>
 </html>
