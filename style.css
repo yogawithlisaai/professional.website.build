@@ -2625,3 +2625,15 @@ body.auth-page {
 .legal-content a:hover {
   color: #111;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .legal-content {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .legal-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
