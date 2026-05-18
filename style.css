@@ -2556,3 +2556,42 @@ body.auth-page {
   color: #333;
   text-decoration: none;
 }
+
+/* Legal pages (privacy, terms, data-deletion, accessibility) */
+.legal-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 0 80px;
+}
+.legal-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #333;
+  margin: 0 0 18px;
+}
+.legal-content h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #111;
+  margin: 48px 0 16px;
+  padding-top: 32px;
+  border-top: 1px solid #e8e3dd;
+}
+.legal-content h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: .9rem;
+  font-weight: 600;
+  color: #333;
+  margin: 28px 0 10px;
+}
+.legal-content a {
+  color: #7c6525;
+  text-decoration: underline;
+}
+.legal-content a:hover {
+  color: #111;
+}
