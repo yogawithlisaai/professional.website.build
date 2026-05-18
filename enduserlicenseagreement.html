@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yoga with Lisa</title>
+  <link rel="icon" href="images/favicon.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Adobe Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/uwl6zhw.css">
+  <title>Yoga with Lisa</title>
+
+ <!-- Favicons -->
+<link rel="icon" href="/favicon.ico" sizes="any"> <!-- classic fallback -->
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#1a1a1a">
+<meta name="theme-color" content="#ffffff">
+ 
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Memberstack webflow package -->
+<script data-memberstack-app="app_cmfs64j5s00jl0wu4h1ee40in" src="https://static.memberstack.com/scripts/v1/memberstack.js" type="text/javascript"></script>
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Terms of Service">
+<meta property="og:description" content="Personalized yoga, meditation, and nutrition meeting you where you are.">
+<meta property="og:image" content="https://www.yogawithlisa.ai/images/preview.jpg">
+<meta property="og:url" content="https://www.yogawithlisa.ai">
+<meta property="og:type" content="website">
+
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">yoga with lisa</a>     
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="login.html" class="login-btn">LOGIN</a></li>
+          <li>
+            <button class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+<!-- Navigation Dropdown -->
+<div class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
+  <div class="nav-dropdown__grid">
+
+    <div class="nav-dropdown__group">
+      <p class="nav-dropdown__group-head">Practice</p>
+      <ul>
+        <li><a href="yoga-inperson.html">Class Schedule</a></li>
+        <li><a href="yoga-ondemand.html">On Demand</a></li>
+        <li><a href="yoga-oneonone.html">Private Sessions</a></li>
+        <li><a href="viewplans.html">Membership</a></li>
+        <li><a href="student-packages.html">Students</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown__group">
+      <p class="nav-dropdown__group-head">Explore</p>
+      <ul>
+        <li><a href="mindshift.html">MindShift</a></li>
+        <li><a href="https://aetherayoga.com/costa-rica.html" target="_blank" rel="noopener">Retreats</a></li>
+        <li><a href="corporate.html">Corporate</a></li>
+        <li><a href="wellness.html">Wellness</a></li>
+        <li><a href="giveback.html">Give Back</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown__group">
+      <p class="nav-dropdown__group-head">Connect</p>
+      <ul>
+        <li><a href="founder.html">About</a></li>
+        <li><a href="ugc-iteration1.html">Work With Me</a></li>
+        <li><a href="mailto:lisa@yogawithlisa.ai">Email Me</a></li>
+        <li><a href="https://calendly.com/lisaeshunwilson/30min" target="_blank" rel="noopener">Book a Call</a></li>
+        <li><a href="https://meet.yogawithlisa.ai" target="_blank" rel="noopener">Meet with Me</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-dropdown__group">
+      <p class="nav-dropdown__group-head">Official</p>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="data-protection.html">Data Protection Policy</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+  <!-- Hero (image) -->
+  <section class="hero hero--image" role="banner" aria-label="Hero">
+    <!-- Set your image at images/yoga-inperson.jpg -->
+    <div class="hero-media" style="background-image:url('images/yoga-inperson.jpg');" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <h1 class="display">
+  	<span class="nowrap">It's time to get SaaSy.</span><br/>
+      </h1>
+    </div>
+  </section>
+
+<!-- Sticky taupe nav on scroll (diagnostic version) -->
+<script>
+  (function () {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+
+    const getY = () =>
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop || 0;
+
+    const apply = (y) => {
+      const on = y > 50;
+      header.classList.toggle('scrolled', on);
+      header.dataset.scrolled = on; // handy for inspecting
+    };
+
+    const onScroll = () => apply(getY());
+    window.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+
+    let last = -1;
+    (function tick(){
+      const y = getY();
+      if (y !== last) { apply(y); last = y; }
+      requestAnimationFrame(tick);
+    })();
+
+    apply(getY());
+  })();
+</script>
+
+<!-- =================== Legal Content =================== -->
+<section class="cards container" aria-label="Terms of Service">
+<div class="in-person-classes-head">
+  <h2 style="text-align:center; font-family:'Playfair Display', serif; font-size:2.2rem; margin-bottom:8px;">
+    Terms of Service
+  </h2>
+  <p style="text-align:center; font-family:'Inter', sans-serif; font-size:.85rem; color:#888; margin:0 0 48px; letter-spacing:.04em;">Effective Date: May 18, 2026</p>
+
+  <div class="legal-content">
+
+<p>This End User License Agreement ("EULA" or "Agreement") is a legal agreement between you ("User," "you," or "your") and Yoga with Lisa by Lisa Eshun-Wilson &amp; Associates, LLC ("Yoga with Lisa," "we," "us," or "our") governing your download, installation, and use of any software, mobile application, or downloadable content made available by Yoga with Lisa (collectively, the "Software").</p>
+
+<p>BY DOWNLOADING, INSTALLING, OR USING THE SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, UNDERSTAND IT, AND AGREE TO BE BOUND BY ITS TERMS. IF YOU DO NOT AGREE TO THESE TERMS, DO NOT DOWNLOAD, INSTALL, OR USE THE SOFTWARE.</p>
+
+<p>Your use of the Yoga with Lisa website and online Services is separately governed by our <a href="https://www.yogawithlisa.ai/terms.html">Terms of Service</a> and <a href="https://www.yogawithlisa.ai/privacy.html">Privacy Policy</a>, which are incorporated into this Agreement by reference. In the event of any conflict between this EULA and the Terms of Service, this EULA will control with respect to the Software.</p>
+
+<h2>1. Grant of License</h2>
+<p>Subject to your compliance with this Agreement, Yoga with Lisa grants you a limited, non-exclusive, non-transferable, revocable license to download, install, and use the Software solely for your personal, non-commercial use in connection with your authorized access to Yoga with Lisa's yoga, wellness, and related services. This license does not include the right to sublicense, modify, adapt, translate, reverse engineer, decompile, disassemble, or create derivative works based on the Software.</p>
+
+<h2>2. Restrictions</h2>
+<p>You agree that you will NOT:</p>
+<p>Copy, reproduce, or distribute the Software or any portion thereof without our prior written consent; sell, rent, lease, sublicense, or transfer the Software or any rights therein to any third party; modify, adapt, translate, or create derivative works from the Software; reverse engineer, decompile, disassemble, or attempt to derive the source code of the Software; remove, alter, or obscure any proprietary notices, labels, or marks on the Software; use the Software for any unlawful purpose or in violation of any applicable laws or regulations; use the Software to record, capture, or redistribute any class content, guided meditations, or other proprietary content without our express written consent; share your account credentials or Software access with any unauthorized user; or use the Software in any manner that could damage, disable, overburden, or impair our systems or servers.</p>
+
+<h2>3. Ownership and Intellectual Property</h2>
+<p>The Software and all content accessible through it, including class videos, guided meditations, written materials, graphics, logos, and program names (including MindShift), are and shall remain the exclusive property of Yoga with Lisa by Lisa Eshun-Wilson &amp; Associates, LLC and its licensors. This Agreement does not transfer to you any title or ownership interest in the Software or any intellectual property rights therein. All rights not expressly granted herein are reserved by Yoga with Lisa.</p>
+
+<h2>4. Updates and Modifications</h2>
+<p>We may from time to time develop and provide updates to the Software, which may include upgrades, bug fixes, patches, and other error corrections and/or new features (collectively, "Updates"). Updates may also modify or delete features. You agree that we have no obligation to provide any Updates or to continue to provide or enable any particular features or functionality. You agree that all Updates will be deemed part of the Software and subject to this Agreement.</p>
+
+<h2>5. Wellness Disclaimer</h2>
+<p>The Software and any content accessible through it are intended for general wellness and educational purposes only and are not a substitute for professional medical advice, diagnosis, or treatment. Always consult your physician or qualified healthcare provider before beginning any yoga, movement, or wellness program, particularly if you have a pre-existing medical or mental health condition. By using the Software, you acknowledge that yoga involves physical activity and that you assume all associated risks. IF YOU ARE EXPERIENCING A MEDICAL OR MENTAL HEALTH EMERGENCY, CALL 911 OR YOUR HEALTHCARE PROVIDER IMMEDIATELY.</p>
+
+<h2>6. Privacy</h2>
+<p>Your use of the Software is subject to our Privacy Policy, available at <a href="https://www.yogawithlisa.ai/privacy.html">https://www.yogawithlisa.ai/privacy.html</a>, which is incorporated into this Agreement by reference. By using the Software, you consent to the collection and use of your information as described in the Privacy Policy.</p>
+
+<h2>7. Third-Party Services</h2>
+<p>The Software may integrate with or link to third-party platforms or services, including but not limited to payment processors, video hosting platforms, and social media platforms. Yoga with Lisa does not endorse or control these third-party services and is not responsible for their content, privacy practices, or terms. Your use of any third-party service is subject to that service's own terms and privacy policy.</p>
+
+<h2>8. Term and Termination</h2>
+<p>This Agreement is effective from the date you first download, install, or use the Software and shall remain in effect until terminated. We may terminate this Agreement and your license to use the Software at any time, with or without cause, and without notice to you, if we believe you have violated any term of this Agreement. Upon termination, you must immediately cease all use of the Software and delete all copies in your possession. Termination of this Agreement shall not limit any of our rights or remedies at law or in equity. The following sections shall survive termination: Ownership and Intellectual Property, Disclaimers, Limitation of Liability, Indemnification, and Governing Law and Dispute Resolution.</p>
+
+<h2>9. Disclaimers</h2>
+<p>THE SOFTWARE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, YOGA WITH LISA AND ITS OWNERS, EMPLOYEES, AND AFFILIATES (THE "LEWA PARTIES") EXPRESSLY DISCLAIM ALL WARRANTIES, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING WITHOUT LIMITATION: (A) WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT; (B) WARRANTIES THAT THE SOFTWARE WILL MEET YOUR REQUIREMENTS OR BE AVAILABLE ON AN UNINTERRUPTED, SECURE, OR ERROR-FREE BASIS; AND (C) WARRANTIES AS TO THE ACCURACY, RELIABILITY, TIMELINESS, OR COMPLETENESS OF ANY CONTENT ACCESSIBLE THROUGH THE SOFTWARE.</p>
+
+<h2>10. Limitation of Liability</h2>
+<p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE LEWA PARTIES BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING WITHOUT LIMITATION DAMAGES FOR LOSS OF PROFITS, LOSS OF DATA, LOSS OF USE, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT OR YOUR USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR AGGREGATE LIABILITY TO YOU FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THIS AGREEMENT OR THE SOFTWARE SHALL NOT EXCEED ONE HUNDRED DOLLARS ($100).</p>
+
+<h2>11. Indemnification</h2>
+<p>You agree to indemnify, defend, and hold harmless the LEWA Parties from and against any and all claims, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or relating to: (i) your use of or access to the Software; (ii) your violation of this Agreement; (iii) your violation of any applicable law or the rights of any third party; or (iv) any content you submit, post, or transmit through the Software.</p>
+
+<h2>12. Children</h2>
+<p>The Software is not directed at children under the age of 18. No one under age 18 may download, install, or use the Software unless supervised by a parent or legal guardian who has agreed to this Agreement on their behalf. Software used in connection with student wellness programs for minors is administered through institutional partnerships such as schools and is subject to applicable educational privacy laws including FERPA and COPPA. Parents or guardians with questions may contact us at <a href="mailto:lisa@yogawithlisa.ai">lisa@yogawithlisa.ai</a>.</p>
+
+<h2>13. Governing Law and Dispute Resolution</h2>
+<p>This Agreement shall be construed in accordance with the laws of the State of Delaware without regard to its conflict of laws rules. Any dispute, claim, or controversy arising out of or relating to this Agreement or the Software shall be resolved exclusively by final, binding arbitration administered by JAMS (Judicial Arbitration &amp; Mediation Services) on an individual basis, pursuant to the JAMS Arbitration Rules and Procedures then in effect. YOU AGREE THAT ANY DISPUTE RESOLUTION PROCEEDINGS WILL BE CONDUCTED ONLY ON AN INDIVIDUAL BASIS AND NOT IN A CLASS, CONSOLIDATED, OR REPRESENTATIVE ACTION. If an in-person hearing is required, it will take place in Alameda County, California, unless otherwise agreed. Each party retains the right to seek injunctive or other equitable relief in a court of competent jurisdiction to prevent the infringement of intellectual property rights.</p>
+
+<h2>14. Export Compliance</h2>
+<p>You agree to comply with all applicable export and re-export control laws and regulations, including the Export Administration Regulations maintained by the U.S. Department of Commerce. You represent that you are not located in, under the control of, or a national or resident of any country to which the United States has embargoed goods or services.</p>
+
+<h2>15. Entire Agreement and Severability</h2>
+<p>This Agreement, together with our <a href="https://www.yogawithlisa.ai/terms.html">Terms of Service</a> and <a href="https://www.yogawithlisa.ai/privacy.html">Privacy Policy</a>, constitutes the entire agreement between you and Yoga with Lisa with respect to the Software and supersedes all prior or contemporaneous understandings and agreements. If any provision of this Agreement is found to be invalid or unenforceable, that provision shall be modified to the minimum extent necessary to make it enforceable, and the remaining provisions shall remain in full force and effect. Our failure to enforce any right or provision of this Agreement shall not constitute a waiver of that right or provision.</p>
+
+<h2>16. Changes to This Agreement</h2>
+<p>We reserve the right to modify this Agreement at any time. If we make material changes, we will notify you by email or by posting a revised version on the Site. Your continued use of the Software after any such changes constitutes your acceptance of the new terms. We encourage you to review this Agreement periodically.</p>
+
+<h2>17. Contact Us</h2>
+<p>If you have any questions about this End User License Agreement, please contact us at:</p>
+<p>Yoga with Lisa by Lisa Eshun-Wilson &amp; Associates, LLC<br>
+Email: <a href="mailto:lisa@yogawithlisa.ai">lisa@yogawithlisa.ai</a><br>
+Website: <a href="https://yogawithlisa.ai">yogawithlisa.ai</a></p>
+
+  </div>
+</div>
+</section>
+
+<!-- ==================== Footer Nav ==================== -->
+<div class="footer-nav" aria-label="Site footer">
+  <div class="footer-nav__inner container">
+
+    <!-- Brand -->
+    <div class="footer-nav__col">
+      <p class="footer-nav__site-name">Yoga with Lisa</p>
+      <p class="footer-nav__tagline">Live and on-demand yoga to help you find stillness in a loud world.</p>
+    </div>
+
+    <!-- Practice -->
+    <div class="footer-nav__col">
+      <p class="footer-nav__heading">Practice</p>
+      <ul>
+        <li><a href="yoga-inperson.html">Class Schedule</a></li>
+        <li><a href="yoga-ondemand.html">On Demand</a></li>
+        <li><a href="yoga-oneonone.html">Private Sessions</a></li>
+        <li><a href="viewplans.html">Membership</a></li>
+        <li><a href="student-packages.html">Students</a></li>
+      </ul>
+    </div>
+
+    <!-- Explore -->
+    <div class="footer-nav__col">
+      <p class="footer-nav__heading">Explore</p>
+      <ul>
+        <li><a href="mindshift.html">MindShift</a></li>
+        <li><a href="https://aetherayoga.com/costa-rica.html" target="_blank" rel="noopener">Retreats</a></li>
+        <li><a href="corporate.html">Corporate</a></li>
+        <li><a href="wellness.html">Wellness</a></li>
+        <li><a href="giveback.html">Give Back</a></li>
+      </ul>
+    </div>
+
+    <!-- Connect -->
+    <div class="footer-nav__col">
+      <p class="footer-nav__heading">Connect</p>
+      <ul>
+        <li><a href="founder.html">About</a></li>
+        <li><a href="ugc-iteration1.html">Work With Me</a></li>
+        <li><a href="mailto:lisa@yogawithlisa.ai">lisa@yogawithlisa.ai</a></li>
+      </ul>
+    </div>
+
+    <!-- Official -->
+    <div class="footer-nav__col">
+      <p class="footer-nav__heading">Official</p>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="data-protection.html">Data Protection Policy</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+      <p>© <span id="y"></span> YOGA WITH LISA BY LISA ESHUN-WILSON & ASSOCIATES,LLC. / ALL RIGHTS RESERVED</p>
+    </div>
+  </footer>
+
+<script src="nav.js"></script>
+</body>
+</html>
