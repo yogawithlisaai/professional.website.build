@@ -669,7 +669,7 @@ html, body { overflow-x: hidden; }
 }
 .footer-nav__inner{
   display:grid;
-  grid-template-columns:2fr 1fr 1fr 1fr;
+  grid-template-columns:2fr 1fr 1fr 1fr 1fr;
   gap:48px;
 }
 .footer-nav__site-name{
@@ -706,6 +706,14 @@ html, body { overflow-x: hidden; }
   transition:color .2s;
 }
 .footer-nav__col ul a:hover{ color:#f5f0eb; }
+
+/* Divider in hamburger dropdown */
+.nav-dropdown__divider{
+  border:none;
+  border-top:1px solid #e8e3dd;
+  margin:8px 0;
+  pointer-events:none;
+}
 
 @media(max-width:860px){
   .footer-nav__inner{ grid-template-columns:1fr 1fr; gap:40px 32px; }
