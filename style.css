@@ -63,6 +63,8 @@ h1,h2,h3{
 .display{
   font-size:clamp(2.2rem, 5.5vw + .5rem, 5.2rem);
   font-weight:700; line-height:1.1; letter-spacing:-.5px;
+  text-wrap:balance; word-break:keep-all; overflow-wrap:normal;
+  max-width:16ch; margin:0 auto;
 }
 .display em{font-style:italic}
 
@@ -155,16 +157,6 @@ footer {
   white-space: nowrap;          /* keeps 'yoga with lisa' on one line */
 }
 
-/* Hero heading */
-.display {
-  text-wrap: balance;           /* evens out line breaks */
-  word-break: keep-all;         /* don’t break inside words */
-  overflow-wrap: normal;
-  line-height: 1.15;
-  max-width: 16ch;              /* ~16 characters per line feels elegant */
-  margin: 0 auto;               /* centers within hero */
-}
-
 /* Keep specific words together */
 .nowrap {
   white-space: nowrap;
@@ -174,24 +166,9 @@ footer {
 @media (max-width: 430px) {
   .display {
     font-size: clamp(1.8rem, 7vw, 2.6rem);
-    max-width: 18ch;           /* allow a bit more width on small screens */
+    max-width: 18ch;
     letter-spacing: -0.3px;
   }
-}
-
-/* Brand name top-right */
-.brand-text {
-  white-space: nowrap;          /* keeps 'yoga with lisa' on one line */
-}
-
-/* Hero heading */
-.display {
-  text-wrap: balance;           /* evens out line breaks */
-  word-break: keep-all;         /* don’t break inside words */
-  overflow-wrap: normal;
-  line-height: 1.15;
-  max-width: 16ch;              /* tighter column width for desktop */
-  margin: 0 auto;
 }
 
 /* Keep specific phrases together */
@@ -227,35 +204,6 @@ footer {
 
 }
 
-/* Login Button in Header */
-.login-btn {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 200; /* Thin */
-  border: 1px solid #000;   /* black outline */
-  background: transparent;  /* see-through background */
-  color: #000;              /* black text */
-  padding: 6px 18px;
-  border-radius: 20px;      /* pill style */
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.login-btn:hover {
-  background: #000;   /* black fill on hover */
-  color: #fff;        /* invert to white text */
-}
-
-/* CTA Button (Hero Section) */
-.btn {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 200; /* Thin */
-  border-radius: 25px;
-  padding: 12px 28px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.9rem;
-}
-
 .btn-dark {
   background: #000;
   color: #fff;
@@ -267,120 +215,7 @@ footer {
   color: #000;
 }
 
-.login-btn {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 200; /* Thin */
-  border: 1px solid #000;   /* Black outline */
-  background: transparent;  
-  color: #000;
-  padding: 6px 16px;
-  border-radius: 20px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  margin-left: 12px;
-}
-
-.login-btn:hover {
-  background: #000;
-  color: #fff;
-}
-
-/* LOGIN button (force over nav link styles) */
-.main-nav a.login-btn{
-  display:inline-block;         /* needed so padding + border form a pill */
-  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight:150;
-  border:1px solid #000;
-  background:000;
-  color:#fff !important;        /* override white nav link color */
-  padding:6px 16px;
-  border-radius:20px;
-  text-decoration:none;
-  letter-spacing:.5px;
-  transition:all .25s ease;
-  margin-left:12px;             /* little gap from last nav link */
-}
-.main-nav a.login-btn:hover{
-  background:#fff;
-  color:#000 !important;
-  border-color:#000;
-}
-
-/* Hero headline */
-.display{
-  text-wrap: balance;       /* balances lines nicely */
-  word-break: keep-all;
-  overflow-wrap: normal;
-  line-height:1.15;
-  max-width:24ch;           /* wider column -> 2 lines on desktop */
-  margin:0 auto;
-}
-
-/* Mobile: allow a touch more width so it doesn't stack */
-@media (max-width:430px){
-  .display{
-    font-size:clamp(1.9rem, 7vw, 2.6rem);
-    max-width:26ch;         /* still likely 2 lines on small phones */
-    letter-spacing:-0.2px;
-  }
-}
-
-/* Large desktop: slightly tighter */
-@media (min-width:1200px){
-  .display{
-    max-width:22ch;
-    font-size:clamp(2.8rem, 4vw, 4.2rem);
-    line-height:1.12;
-  }
-}
-
-/* LOGIN button in header */
-.main-nav a.login-btn {
-  display: inline-block;         
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  background: #000;              /* black fill */
-  color: #fff !important;        /* white text */
-  padding: 10px 22px;            /* a bit more padding for balance */
-  border-radius: 9999px;         /* full pill */
-  text-decoration: none;
-  letter-spacing: .5px;
-  transition: all .25s ease;
-  margin-left: 12px;             /* small gap */
-}
-.main-nav a.login-btn:hover {
-  background: #fff;              /* invert on hover */
-  color: #000 !important;        /* black text */
-  border: 1px solid #000;
-}
-
-/* Force LOGIN to look like CTA button */
-.main-nav .login-btn {
-  background: #000 !important;
-  color: #fff !important;
-  border: 1px solid #000;
-  padding: 10px 22px;
-  border-radius: 9999px;
-}
-.main-nav .login-btn:hover {
-  background: #fff !important;
-  color: #000 !important;
-}
-
-.main-nav .login-btn{
-  background:#000 !important;
-  color:#fff !important;
-  border:1px solid #000 !important;
-  border-radius:9999px !important;
-  padding:10px 22px !important;
-  display:inline-block !important;
-}
-.main-nav .login-btn:hover{
-  background:#fff !important;
-  color:#000 !important;
-}
-
-/* ===== LOGIN button – must be at the very end to win specificity ===== */
+/* === LOGIN pill button — single authoritative definition === */
 .site-header .main-nav a.login-btn {
   display: inline-block;
   padding: 12px 24px;
@@ -914,13 +749,6 @@ html, body { overflow-x: hidden; }
 }
 .btn-outline:hover { background: #fff; color: #000; }
 
-/* ==== Card wrapper for carousel (rounded + shadow, like rhode) ==== */
-.card {
-  max-width: 1200px; margin: 48px auto;
-  background: #fff; border-radius: 24px; overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,.08);
-}
-
 /* Header row: title left, CTA right */
 .ig-head {
   display: flex; align-items: center; justify-content: space-between;
@@ -1154,28 +982,6 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   display: none; /* hide scrollbar for cleaner look */
 }
 
-.card {
-  flex: 0 0 260px; /* fixed width for each card */
-  scroll-snap-align: start;
-  border-radius: 1rem;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: scale(1.03);
-}
-
-.card-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-
-.card-img {
-  width: 100%;
-  display: block;
-}
 
 .ugc-social-icons {
   display: flex;
@@ -2636,4 +2442,138 @@ body.auth-page {
     padding-left: 20px;
     padding-right: 20px;
   }
+}
+
+/* =================== Upcoming Classes Preview (index.html) =================== */
+.upcoming-preview {
+  max-width: 1120px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+.upcoming-preview__card {
+  background: #f5eee4;
+  border-radius: 24px;
+  padding: 2.5rem 2rem 2rem;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.05);
+}
+.upcoming-preview__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+}
+.upcoming-preview__subtitle {
+  max-width: 640px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+}
+.upcoming-preview__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.upcoming-preview__table th,
+.upcoming-preview__table td {
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: middle;
+}
+.upcoming-preview__table thead th {
+  border-bottom: 1px solid #ddd;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.upcoming-preview__table tbody tr {
+  border-bottom: 1px solid #eee;
+}
+.upcoming-preview__more {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+}
+.upcoming-preview__more a {
+  color: var(--text);
+  text-decoration: underline;
+}
+.upcoming-preview .schedule-btn {
+  font-size: 0.9rem;
+  padding: 0.6rem 1.6rem;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .upcoming-preview__table thead { display: none; }
+  .upcoming-preview__table,
+  .upcoming-preview__table tbody,
+  .upcoming-preview__table tr,
+  .upcoming-preview__table td { display: block; width: 100%; }
+  .upcoming-preview__table tr {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .upcoming-preview__table td { padding: 0.25rem 0; }
+}
+
+/* =================== Class Signup Modal =================== */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.active { display: flex; }
+.modal-box {
+  background: #f5eee4;
+  border-radius: 24px;
+  padding: 2.5rem;
+  max-width: 560px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+.modal-close {
+  position: absolute; top: 1rem; right: 1.25rem;
+  background: none; border: none; font-size: 1.5rem; cursor: pointer; line-height: 1;
+}
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; margin: 0 0 1.5rem;
+}
+.modal-label {
+  display: block; font-size: 0.85rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 0.3rem; color: var(--text);
+}
+.modal-input {
+  width: 100%; padding: 0.6rem 0.9rem;
+  border: 1px solid #ccc; border-radius: 8px;
+  font-size: 0.95rem; margin-bottom: 1rem;
+  background: #fff; box-sizing: border-box;
+  font-family: inherit;
+}
+.modal-textarea { resize: vertical; }
+.modal-waiver-text {
+  font-size: 0.85rem; color: var(--muted);
+  line-height: 1.5; margin-bottom: 0.5rem;
+  font-style: italic;
+}
+.modal-check-row {
+  display: flex; align-items: flex-start;
+  gap: 0.6rem; margin-bottom: 1rem; font-size: 0.9rem;
+}
+.modal-check-row input[type="checkbox"] { margin-top: 3px; flex-shrink: 0; }
+.modal-submit { width: 100%; margin-top: 0.5rem; cursor: pointer; border: none; }
+.modal-success {
+  text-align: center; padding: 2rem 1rem;
+  font-size: 1.05rem; color: #2a6a2a; font-weight: 500;
+}
+.modal-error {
+  text-align: center; padding: 1rem;
+  font-size: 0.9rem; color: #a33;
 }
