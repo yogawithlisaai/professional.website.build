@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Share Your Experience | Yoga with Lisa</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root{
+      --bg: #efe9dd;
+      --card: #ffffff;
+      --text: #141414;
+      --muted: rgba(0,0,0,0.62);
+      --border: rgba(0,0,0,0.10);
+
+      --purple-bg: #FBF8F4;
+      --yellow-bg: #8B6A58;
+      --shadow: 0 22px 50px rgba(0,0,0,0.10);
+
+      --radius-lg: 26px;
+      --radius-md: 18px;
+
+      --btn: #0b0b0b;
+      --btn-hover: #1a1a1a;
+      --btn-text: #ffffff;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .page{
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 36px 18px;
+    }
+
+    .shell{
+      width: min(560px, 100%);
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+      padding: 0 8px;
+    }
+
+    .brand{
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: 20px;
+      letter-spacing: 0.3px;
+      text-decoration:none;
+      color: var(--text);
+      opacity: 0.9;
+    }
+
+    .toplinks{
+      display:flex;
+      align-items:center;
+      gap: 14px;
+      font-size: 13px;
+    }
+
+    .toplinks a{
+      color: rgba(0,0,0,0.72);
+      text-decoration:none;
+    }
+    .toplinks a:hover{ text-decoration: underline; }
+
+    .panel{
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 34px 34px 26px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .header{
+      text-align:center;
+      margin-bottom: 20px;
+      padding: 0 10px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.55);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 10px;
+      margin-bottom: 12px;
+      background: rgba(255,255,255,0.6);
+    }
+
+    h1{
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(24px, 3.5vw, 36px);
+      line-height: 1.05;
+      margin: 0 0 10px;
+      letter-spacing: 0.2px;
+    }
+
+    .sub{
+      margin: 0 auto;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 12px 16px;
+      border-radius: 999px;
+      text-decoration:none;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.6px;
+      border: 1px solid rgba(0,0,0,0.10);
+      cursor: pointer;
+      user-select:none;
+      transition: transform 0.12s ease, background 0.12s ease, opacity 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary{
+      background: var(--btn);
+      color: var(--btn-text);
+      border-color: rgba(0,0,0,0.25);
+    }
+    .btn-primary:hover{
+      background: var(--btn-hover);
+      transform: translateY(-1px);
+    }
+
+    .fineprint{
+      text-align:center;
+      margin-top: 18px;
+      color: rgba(0,0,0,0.55);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .fineprint a{
+      color: rgba(0,0,0,0.70);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 860px){
+      .panel{ padding: 28px 18px 22px; }
+      .topbar{ flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <div class="shell">
+
+      <div class="topbar">
+        <a class="brand" href="index.html">yoga with lisa</a>
+        <div class="toplinks"></div>
+      </div>
+
+      <div class="panel">
+
+        <div class="header">
+          <div class="eyebrow">✨ You showed up</div>
+          <h1>How was class?</h1>
+          <p class="sub">Your words help others find their practice. Take 60 seconds to share how it went.</p>
+        </div>
+
+        <!-- Review form -->
+        <form id="review-form">
+
+          <label style="display:block; font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.3rem; color:#141414;">Your Name</label>
+          <input type="text" name="name" required placeholder="First name or full name"
+            style="width:100%; padding:0.65rem 1rem; border:1px solid rgba(0,0,0,0.15); border-radius:12px; font-size:0.95rem; margin-bottom:1rem; background:#fff; box-sizing:border-box; font-family:inherit;">
+
+          <label style="display:block; font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.3rem; color:#141414;">Star Rating</label>
+          <div id="star-rating" style="display:flex; gap:10px; margin-bottom:1rem; font-size:2rem; cursor:pointer;">
+            <span data-val="1">☆</span>
+            <span data-val="2">☆</span>
+            <span data-val="3">☆</span>
+            <span data-val="4">☆</span>
+            <span data-val="5">☆</span>
+          </div>
+          <input type="hidden" name="rating" id="rating-value" required>
+
+          <label style="display:block; font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.3rem; color:#141414;">Which class did you attend?</label>
+          <select name="class_attended" required
+            style="width:100%; padding:0.65rem 1rem; border:1px solid rgba(0,0,0,0.15); border-radius:12px; font-size:0.95rem; margin-bottom:1rem; background:#fff; box-sizing:border-box; font-family:inherit; appearance:none;">
+            <option value="" disabled selected>Select a class</option>
+            <option>Ashtanga Vinyasa — Sports Basement Berkeley</option>
+            <option>Hatha Vinyasa + Sound Bath — Beach Glass Hot Yoga &amp; Pilates</option>
+            <option>Ashtanga Vinyasa — Beach Glass Hot Yoga &amp; Pilates</option>
+            <option>Private Session</option>
+            <option>Other</option>
+          </select>
+
+          <label style="display:block; font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.3rem; color:#141414;">Your Review</label>
+          <textarea name="review" required rows="4" placeholder="Tell us what you loved, what surprised you, or how you felt after class..."
+            style="width:100%; padding:0.65rem 1rem; border:1px solid rgba(0,0,0,0.15); border-radius:12px; font-size:0.95rem; margin-bottom:1rem; background:#fff; box-sizing:border-box; font-family:inherit; resize:vertical;"></textarea>
+
+          <label style="display:block; font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.3rem; color:#141414;">Email Address <span style="font-weight:400; text-transform:none; font-size:0.8rem; color:rgba(0,0,0,0.5);">(optional — only used to send you a thank-you)</span></label>
+          <input type="email" name="email" placeholder="you@example.com"
+            style="width:100%; padding:0.65rem 1rem; border:1px solid rgba(0,0,0,0.15); border-radius:12px; font-size:0.95rem; margin-bottom:1.5rem; background:#fff; box-sizing:border-box; font-family:inherit;">
+
+          <!-- Hidden Formspree fields -->
+          <input type="hidden" name="_subject" value="New Class Review — Yoga with Lisa">
+          <input type="hidden" name="_replyto" id="review-replyto">
+
+          <button type="submit" class="btn btn-primary" style="width:100%; font-size:14px; padding:14px;">Submit My Review</button>
+        </form>
+
+        <!-- Success state -->
+        <div id="review-success" style="display:none; text-align:center; padding:2.5rem 1rem;">
+          <div style="font-size:2.5rem; margin-bottom:1rem;">🙏🏾</div>
+          <h2 style="font-family: ui-serif, Georgia, serif; margin:0 0 10px;">Thank you!</h2>
+          <p style="color:rgba(0,0,0,0.65); font-size:15px; line-height:1.5;">Your review means the world. See you on the mat again soon.</p>
+          <a href="index.html" class="btn btn-primary" style="margin-top:1.5rem; display:inline-block;">Back to Home</a>
+        </div>
+
+        <!-- Error state -->
+        <div id="review-error" style="display:none; text-align:center; padding:1rem; color:#a33; font-size:0.9rem;">
+          Something went wrong — please email <a href="mailto:lisa@yogawithlisa.ai">lisa@yogawithlisa.ai</a> directly.
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+<!-- ==================== Footer Nav ==================== -->
+<div class="footer-nav" aria-label="Site footer">
+  <div class="footer-nav__inner container">
+
+    <!-- Brand -->
+    <div class="footer-nav__col">
+      <p class="footer-nav__site-name">Yoga with Lisa</p>
+      <p class="footer-nav__tagline">Live and on-demand yoga to help you find stillness in a loud world.</p>
+    </div>
+
+    <!-- Practice -->
+    <div class="footer-nav__col">
+      <p class="footer-nav__heading">Practice</p>
+      <ul>
+        <li><a href="yoga-inperson.html">Class Schedule</a></li>
+        <li><a href="yoga-oneonone.html">Private Sessions</a></li>
+        <li><a href="yoga-ondemand.html">On Demand</a></li>
+        <li><a href="viewplans.html">Membership</a></li>
+      </ul>
+    </div>
+
+    <!-- Explore -->
+    <div class="footer-nav__col">
+      <p class="footer-nav__heading">Explore</p>
+      <ul>
+        <li><a href="mindshift.html">MindShift AI</a></li>
+        <li><a href="https://www.aetherayoga.com/" target="_blank" rel="noopener">Aethera</a></li>
+        <li><a href="corporate.html">Corporate Wellness</a></li>
+        <li><a href="student-packages.html">Student Wellness</a></li>
+      </ul>
+    </div>
+
+    <!-- Connect -->
+    <div class="footer-nav__col">
+      <p class="footer-nav__heading">Connect</p>
+      <ul>
+        <li><a href="founder.html">About</a></li>
+        <li><a href="mailto:lisa@yogawithlisa.ai">Email Me</a></li>
+        <li><a href="https://calendly.com/lisaeshunwilson/30min" target="_blank" rel="noopener">Book a Call</a></li>
+        <li><a href="https://meet.yogawithlisa.ai" target="_blank" rel="noopener">Meet with Me</a></li>
+        <li><a href="ugc-iteration1.html">Work With Me</a></li>
+        <li><a href="submit-review.html">Leave a Review</a></li>
+      </ul>
+    </div>
+
+    <!-- Official -->
+    <div class="footer-nav__col">
+      <p class="footer-nav__heading">Official</p>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="data-protection.html">Data Protection Policy</a></li>
+        <li><a href="enduserlicenseagreement.html">End User License Agreement</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Star rating interaction
+  const stars = document.querySelectorAll('#star-rating span');
+  const ratingInput = document.getElementById('rating-value');
+
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      const val = parseInt(star.dataset.val);
+      ratingInput.value = val + ' stars';
+      stars.forEach((s, i) => {
+        s.textContent = i < val ? '★' : '☆';
+        s.style.color = i < val ? '#c8a64b' : '#ccc';
+      });
+    });
+    star.addEventListener('mouseenter', () => {
+      const val = parseInt(star.dataset.val);
+      stars.forEach((s, i) => {
+        s.textContent = i < val ? '★' : '☆';
+        s.style.color = i < val ? '#c8a64b' : '#ccc';
+      });
+    });
+  });
+
+  document.getElementById('star-rating').addEventListener('mouseleave', () => {
+    const current = parseInt(ratingInput.value);
+    stars.forEach((s, i) => {
+      s.textContent = i < current ? '★' : '☆';
+      s.style.color = i < current ? '#c8a64b' : '#ccc';
+    });
+  });
+
+  // Form submission
+  document.getElementById('review-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const emailVal = this.querySelector('[name="email"]').value;
+    if (emailVal) document.getElementById('review-replyto').value = emailVal;
+
+    const data = Object.fromEntries(new FormData(this).entries());
+
+    try {
+      const res = await fetch('https://formspree.io/f/mlgvlore', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        document.getElementById('review-form').style.display = 'none';
+        document.getElementById('review-success').style.display = 'block';
+      } else {
+        document.getElementById('review-error').style.display = 'block';
+      }
+    } catch {
+      document.getElementById('review-error').style.display = 'block';
+    }
+  });
+</script>
+
+</body>
+</html>
