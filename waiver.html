@@ -335,8 +335,9 @@
         Thank you for completing your waiver. You are now ready to
         join class. Click below to reserve your spot.
       </p>
-      <a href="yoga-inperson.html"
+      <a href="signup.html"
          class="sig-btn"
+         id="waiver-reserve-btn"
          style="display:inline-block; text-decoration:none;
                 text-align:center; max-width:320px;">
         Reserve My Spot →
@@ -425,6 +426,16 @@
       'Date: ' + dateStr;
     document.getElementById('signed-date').value = dateStr;
     document.getElementById('y').textContent = now.getFullYear();
+
+    // Pass class parameter from waiver URL through to signup URL
+    const waiverParams = new URLSearchParams(window.location.search);
+    const waiverClassParam = waiverParams.get('class');
+    if (waiverClassParam) {
+      const reserveBtn = document.getElementById('waiver-reserve-btn');
+      if (reserveBtn) {
+        reserveBtn.href = 'signup.html?class=' + waiverClassParam;
+      }
+    }
 
     async function submitWaiver() {
       const name = document.getElementById('sig-name').value.trim();

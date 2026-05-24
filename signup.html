@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reserve Your Spot | Yoga with Lisa</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/uwl6zhw.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <meta name="theme-color" content="#f0e9d8">
+
+  <style>
+    body {
+      background: #f0e9d8;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #141414;
+    }
+
+    .waiver-topbar {
+      width: 100%;
+      padding: 28px 40px;
+      box-sizing: border-box;
+    }
+
+    .waiver-brand {
+      font-family: "amandine", sans-serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      text-decoration: none;
+      color: #141414;
+      letter-spacing: 0.02em;
+    }
+
+    .signup-main {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 20px 24px 80px;
+    }
+
+    .signup-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 36px 32px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+    }
+
+    .signup-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.5);
+      margin-bottom: 16px;
+    }
+
+    .signup-headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 500;
+      line-height: 1.2;
+      margin: 0 0 8px;
+    }
+
+    .signup-sub {
+      font-size: 0.92rem;
+      color: rgba(0,0,0,0.55);
+      line-height: 1.6;
+      margin: 0 0 28px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+      color: #141414;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid rgba(0,0,0,0.15);
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      background: #faf9f7;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      transition: border-color 0.2s ease;
+      color: #141414;
+      appearance: none;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: rgba(0,0,0,0.4);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-divider {
+      border: none;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      margin: 8px 0 24px;
+    }
+
+    .form-waiver-text {
+      font-size: 0.85rem;
+      color: rgba(0,0,0,0.55);
+      line-height: 1.6;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+
+    .form-check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .form-check-row input[type="checkbox"] {
+      margin-top: 3px;
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s ease, transform 0.15s ease;
+      letter-spacing: 0.04em;
+    }
+
+    .form-submit:hover {
+      background: #2a2a2a;
+      transform: translateY(-1px);
+    }
+
+    .signup-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .signup-success-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    .signup-success h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin: 0 0 12px;
+    }
+
+    .signup-success p {
+      color: rgba(0,0,0,0.6);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .signup-error {
+      display: none;
+      color: #a33;
+      font-size: 0.88rem;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .class-badge {
+      display: inline-block;
+      background: #f0e9d8;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #141414;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 480px) {
+      .waiver-topbar { padding: 20px 24px; }
+      .signup-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="waiver-topbar">
+    <a class="waiver-brand" href="index.html">yoga with lisa</a>
+  </div>
+
+  <main class="signup-main">
+
+    <p class="signup-eyebrow">Reserve Your Spot</p>
+    <h1 class="signup-headline">You're almost on the mat.</h1>
+    <p class="signup-sub">
+      Fill in your details below and we'll send you a confirmation.
+      See you in class!
+    </p>
+
+    <!-- Class badge — filled by JS if URL param present -->
+    <div class="class-badge" id="classBadge" style="display:none;"></div>
+
+    <div class="signup-card" id="signupCard">
+      <form id="signup-form">
+
+        <label class="form-label" for="f-class">Class</label>
+        <select class="form-select" id="f-class" name="class_selection" required>
+          <option value="" disabled selected>Select a class</option>
+          <option value="Thursday, May 28th — Vinyasa Flow, Sports Basement Berkeley, 5:00 PM">
+            Thursday, May 28th — Vinyasa Flow, Sports Basement Berkeley, 5:00 PM
+          </option>
+          <option value="Thursday, June 5th — Vinyasa Flow, Sports Basement Berkeley, 5:00 PM">
+            Thursday, June 5th — Vinyasa Flow, Sports Basement Berkeley, 5:00 PM
+          </option>
+          <option value="Thursday, June 12th — Vinyasa Flow, Sports Basement Berkeley, 5:00 PM">
+            Thursday, June 12th — Vinyasa Flow, Sports Basement Berkeley, 5:00 PM
+          </option>
+          <option value="Thursday, June 19th — Vinyasa Flow, Sports Basement Berkeley, 5:00 PM">
+            Thursday, June 19th — Vinyasa Flow, Sports Basement Berkeley, 5:00 PM
+          </option>
+          <option value="Thursday, June 26th — Vinyasa Flow, Sports Basement Berkeley, 5:00 PM">
+            Thursday, June 26th — Vinyasa Flow, Sports Basement Berkeley, 5:00 PM
+          </option>
+          <option value="Private Session — Yoga with Lisa">
+            Private Session — Yoga with Lisa
+          </option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label class="form-label" for="f-name">Full Name</label>
+        <input class="form-input" type="text" id="f-name"
+               name="name" placeholder="Your full name" required>
+
+        <label class="form-label" for="f-email">Email Address</label>
+        <input class="form-input" type="email" id="f-email"
+               name="email" placeholder="your@email.com" required>
+
+        <label class="form-label" for="f-notes">
+          Health Notes / Comments
+          <span style="font-weight:400; text-transform:none;
+                       font-size:0.78rem; color:rgba(0,0,0,0.45);">
+            (optional)
+          </span>
+        </label>
+        <textarea class="form-textarea" id="f-notes" name="comments"
+          placeholder="e.g. I have knee pain, I have lower back pain, I'd like to share my emergency contact info, or any other notes for your instructor"></textarea>
+
+        <hr class="form-divider">
+
+        <p class="form-waiver-text">
+          I understand that yoga involves physical activity and I
+          participate at my own risk. I release Yoga with Lisa,
+          Lisa Eshun-Wilson, and their associates from any liability
+          for injury or damages.
+        </p>
+
+        <div class="form-check-row">
+          <input type="checkbox" id="f-waiver"
+                 name="liability_waiver" required>
+          <label for="f-waiver">
+            I agree to the liability waiver
+          </label>
+        </div>
+
+        <div class="form-check-row">
+          <input type="checkbox" id="f-adjustments"
+                 name="consent_adjustments">
+          <label for="f-adjustments">
+            I consent to hands-on adjustments during class
+          </label>
+        </div>
+
+        <div class="form-check-row">
+          <input type="checkbox" id="f-media"
+                 name="consent_media">
+          <label for="f-media">
+            I consent to being photographed or filmed during class
+            for Yoga with Lisa marketing and promotional materials
+          </label>
+        </div>
+
+        <!-- Hidden fields -->
+        <input type="hidden" name="_subject"
+               value="New Class Signup — Yoga with Lisa">
+        <input type="hidden" id="f-replyto" name="_replyto">
+
+        <button type="submit" class="form-submit">
+          Reserve My Spot
+        </button>
+
+      </form>
+
+      <div class="signup-success" id="signup-success">
+        <div class="signup-success-icon">🙏🏾</div>
+        <h2>You're registered!</h2>
+        <p>
+          Check your email for confirmation. We can't wait to
+          see you on the mat!
+        </p>
+        <a href="yoga-inperson.html"
+           style="display:inline-block; margin-top:24px;
+                  padding:14px 32px; background:#111; color:#fff;
+                  border-radius:999px; text-decoration:none;
+                  font-weight:700; font-size:0.95rem;">
+          See Full Schedule
+        </a>
+      </div>
+
+      <div class="signup-error" id="signup-error">
+        Something went wrong — please email
+        <a href="mailto:lisa@yogawithlisa.ai">lisa@yogawithlisa.ai</a>
+        directly.
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== Footer Nav ==================== -->
+  <div class="footer-nav" aria-label="Site footer">
+    <div class="footer-nav__inner container">
+
+      <!-- Brand -->
+      <div class="footer-nav__col">
+        <p class="footer-nav__site-name">Yoga with Lisa</p>
+        <p class="footer-nav__tagline">Live and on-demand yoga to help you find stillness in a loud world.</p>
+      </div>
+
+      <!-- Practice -->
+      <div class="footer-nav__col">
+        <p class="footer-nav__heading">Practice</p>
+        <ul>
+          <li><a href="yoga-inperson.html">Class Schedule</a></li>
+          <li><a href="waiver.html">Sign Waiver</a></li>
+          <li><a href="yoga-oneonone.html">Private Sessions</a></li>
+          <li><a href="yoga-ondemand.html">On Demand</a></li>
+          <li><a href="viewplans.html">Membership</a></li>
+        </ul>
+      </div>
+
+      <!-- Explore -->
+      <div class="footer-nav__col">
+        <p class="footer-nav__heading">Explore</p>
+        <ul>
+          <li><a href="mindshift.html">MindShift AI</a></li>
+          <li><a href="https://www.aetherayoga.com/" target="_blank" rel="noopener">Aethera</a></li>
+          <li><a href="corporate.html">Corporate Wellness</a></li>
+          <li><a href="student-packages.html">Student Wellness</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect -->
+      <div class="footer-nav__col">
+        <p class="footer-nav__heading">Connect</p>
+        <ul>
+          <li><a href="founder.html">About</a></li>
+          <li><a href="mailto:lisa@yogawithlisa.ai">Email Me</a></li>
+          <li><a href="https://calendly.com/lisaeshunwilson/30min" target="_blank" rel="noopener">Book a Call</a></li>
+          <li><a href="https://meet.yogawithlisa.ai" target="_blank" rel="noopener">Meet with Me</a></li>
+          <li><a href="ugc-iteration1.html">Work With Me</a></li>
+          <li><a href="submit-review.html">Leave a Review</a></li>
+          <li><a href="waitlist.html">Join the Waitlist</a></li>
+        </ul>
+      </div>
+
+      <!-- Official -->
+      <div class="footer-nav__col">
+        <p class="footer-nav__heading">Official</p>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="data-protection.html">Data Protection Policy</a></li>
+          <li><a href="enduserlicenseagreement.html">End User License Agreement</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="y"></span> YOGA WITH LISA BY LISA ESHUN-WILSON
+      &amp; ASSOCIATES,LLC. / ALL RIGHTS RESERVED</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    const params = new URLSearchParams(window.location.search);
+    const classParam = params.get('class');
+
+    const classMap = {
+      'May28': 'Thursday, May 28th — Vinyasa Flow, Sports Basement Berkeley, 5:00 PM',
+      'Jun5':  'Thursday, June 5th — Vinyasa Flow, Sports Basement Berkeley, 5:00 PM',
+      'Jun12': 'Thursday, June 12th — Vinyasa Flow, Sports Basement Berkeley, 5:00 PM',
+      'Jun19': 'Thursday, June 19th — Vinyasa Flow, Sports Basement Berkeley, 5:00 PM',
+      'Jun26': 'Thursday, June 26th — Vinyasa Flow, Sports Basement Berkeley, 5:00 PM'
+    };
+
+    if (classParam && classMap[classParam]) {
+      const select = document.getElementById('f-class');
+      const fullClass = classMap[classParam];
+
+      for (let opt of select.options) {
+        if (opt.value === fullClass) {
+          opt.selected = true;
+          break;
+        }
+      }
+
+      const badge = document.getElementById('classBadge');
+      badge.textContent = classMap[classParam];
+      badge.style.display = 'inline-block';
+    }
+
+    document.getElementById('signup-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      document.getElementById('f-replyto').value =
+        document.getElementById('f-email').value;
+
+      const data = Object.fromEntries(new FormData(this).entries());
+
+      const btn = this.querySelector('.form-submit');
+      btn.textContent = 'Submitting...';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch('https://formspree.io/f/xnjrzzro', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+          document.getElementById('signup-form').style.display = 'none';
+          document.getElementById('signup-success').style.display = 'block';
+          document.getElementById('signup-success').scrollIntoView({
+            behavior: 'smooth'
+          });
+        } else {
+          document.getElementById('signup-error').style.display = 'block';
+          btn.textContent = 'Reserve My Spot';
+          btn.disabled = false;
+        }
+      } catch {
+        document.getElementById('signup-error').style.display = 'block';
+        btn.textContent = 'Reserve My Spot';
+        btn.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>
