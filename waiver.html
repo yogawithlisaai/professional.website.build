@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liability Waiver | Yoga with Lisa</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/uwl6zhw.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <meta name="theme-color" content="#f0e9d8">
+
+  <style>
+    body {
+      background: #f0e9d8;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #141414;
+    }
+
+    .waiver-topbar {
+      width: 100%;
+      padding: 28px 40px;
+      box-sizing: border-box;
+    }
+
+    .waiver-brand {
+      font-family: "amandine", sans-serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      text-decoration: none;
+      color: #141414;
+      letter-spacing: 0.02em;
+    }
+
+    .waiver-main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 20px 24px 80px;
+    }
+
+    .waiver-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.5);
+      margin-bottom: 16px;
+    }
+
+    .waiver-headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 500;
+      line-height: 1.15;
+      margin: 0 0 12px;
+    }
+
+    .waiver-sub {
+      font-size: 0.95rem;
+      color: rgba(0,0,0,0.6);
+      line-height: 1.6;
+      margin: 0 0 32px;
+    }
+
+    .waiver-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 36px 32px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+      margin-bottom: 28px;
+    }
+
+    .waiver-section-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.45);
+      margin: 0 0 16px;
+    }
+
+    .waiver-text {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: #333;
+    }
+
+    .waiver-text p {
+      margin: 0 0 14px;
+    }
+
+    .waiver-text p:last-child {
+      margin: 0;
+    }
+
+    .waiver-text strong {
+      color: #141414;
+      font-weight: 600;
+    }
+
+    .sig-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 36px 32px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+    }
+
+    .sig-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+      color: #141414;
+    }
+
+    .sig-input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid rgba(0,0,0,0.15);
+      border-radius: 12px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #faf9f7;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      transition: border-color 0.2s ease;
+    }
+
+    .sig-input:focus {
+      outline: none;
+      border-color: rgba(0,0,0,0.4);
+    }
+
+    .sig-date {
+      font-size: 0.85rem;
+      color: rgba(0,0,0,0.5);
+      margin-bottom: 24px;
+    }
+
+    .sig-check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .sig-check-row input[type="checkbox"] {
+      margin-top: 3px;
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .sig-btn {
+      width: 100%;
+      padding: 16px;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+      letter-spacing: 0.04em;
+    }
+
+    .sig-btn:hover {
+      background: #2a2a2a;
+      transform: translateY(-1px);
+    }
+
+    .waiver-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .waiver-success-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    .waiver-success h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin: 0 0 12px;
+    }
+
+    .waiver-success p {
+      color: rgba(0,0,0,0.6);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0 0 28px;
+    }
+
+    .waiver-error {
+      display: none;
+      color: #a33;
+      font-size: 0.88rem;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      .waiver-topbar { padding: 20px 24px; }
+      .waiver-card, .sig-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="waiver-topbar">
+    <a class="waiver-brand" href="index.html">yoga with lisa</a>
+  </div>
+
+  <main class="waiver-main">
+
+    <p class="waiver-eyebrow">Before Your First Class</p>
+    <h1 class="waiver-headline">Liability Waiver &amp; Release</h1>
+    <p class="waiver-sub">
+      Please read carefully and sign before attending class.
+      This only needs to be completed once.
+    </p>
+
+    <!-- Waiver Text Card -->
+    <div class="waiver-card">
+      <p class="waiver-section-title">Terms of Participation</p>
+      <div class="waiver-text">
+
+        <p><strong>Assumption of Risk.</strong> I understand that yoga
+        and related physical activities involve inherent risks of injury,
+        including but not limited to muscle strains, sprains, and other
+        physical injuries. I voluntarily assume all risks associated with
+        participation in classes, workshops, retreats, or any other
+        activities offered by Yoga with Lisa.</p>
+
+        <p><strong>Release of Liability.</strong> In consideration of
+        being permitted to participate in Yoga with Lisa classes and
+        activities, I hereby release, waive, and discharge Yoga with Lisa,
+        Lisa Eshun-Wilson, and their associates, employees, agents, and
+        representatives from any and all liability, claims, demands, or
+        causes of action arising out of or related to any loss, damage,
+        or injury that may be sustained by me during participation.</p>
+
+        <p><strong>Medical Acknowledgment.</strong> I confirm that I am
+        physically fit to participate in yoga classes and that I have no
+        medical conditions that would prevent safe participation, or that
+        I have consulted with a physician and received clearance to
+        participate. I agree to inform my instructor of any injuries,
+        health conditions, or physical limitations prior to class.</p>
+
+        <p><strong>Instructor Authority.</strong> I agree to follow the
+        reasonable instructions of Yoga with Lisa instructors and
+        understand that I may be asked to modify or stop an activity
+        if an instructor deems it necessary for my safety.</p>
+
+        <p><strong>Photo &amp; Media Release.</strong> I understand that
+        classes may be photographed or filmed for Yoga with Lisa marketing
+        and promotional materials. I will indicate my consent or
+        non-consent for media use separately during class registration.</p>
+
+        <p><strong>Governing Law.</strong> This waiver shall be governed
+        by the laws of the State of California. If any provision of this
+        waiver is found to be unenforceable, the remaining provisions
+        shall continue in full force and effect.</p>
+
+        <p>I have read this waiver carefully, understand its contents,
+        and sign it of my own free will.</p>
+
+      </div>
+    </div>
+
+    <!-- Signature Card -->
+    <div class="sig-card" id="sigCard">
+
+      <label class="sig-label" for="sig-name">Full Legal Name</label>
+      <input class="sig-input" type="text" id="sig-name"
+             name="full_name" placeholder="Type your full name as your digital signature" required>
+
+      <label class="sig-label" for="sig-email">Email Address</label>
+      <input class="sig-input" type="email" id="sig-email"
+             name="email" placeholder="your@email.com" required>
+
+      <p class="sig-date" id="sig-date-display"></p>
+
+      <div class="sig-check-row">
+        <input type="checkbox" id="sig-confirm" required>
+        <label for="sig-confirm">
+          I confirm that I have read and understood the liability waiver
+          above, and I agree to its terms. I understand that typing my
+          name above constitutes my legal digital signature.
+        </label>
+      </div>
+
+      <!-- Hidden Formspree fields -->
+      <input type="hidden" name="_subject"
+             value="New Waiver Signed — Yoga with Lisa">
+      <input type="hidden" name="_replyto" id="waiver-replyto">
+      <input type="hidden" name="signed_date" id="signed-date">
+      <input type="hidden" name="waiver_version" value="v1.0 — May 2026">
+
+      <button class="sig-btn" id="sig-submit-btn" type="button"
+              onclick="submitWaiver()">
+        I Agree &amp; Sign
+      </button>
+
+      <div class="waiver-error" id="waiver-error">
+        Something went wrong — please email
+        <a href="mailto:lisa@yogawithlisa.ai">lisa@yogawithlisa.ai</a>
+        directly.
+      </div>
+    </div>
+
+    <!-- Success state -->
+    <div class="waiver-success" id="waiver-success">
+      <div class="waiver-success-icon">✍🏾</div>
+      <h2>Waiver signed!</h2>
+      <p>
+        Thank you for completing your waiver. You are now ready to
+        join class. Click below to reserve your spot.
+      </p>
+      <a href="yoga-inperson.html"
+         class="sig-btn"
+         style="display:inline-block; text-decoration:none;
+                text-align:center; max-width:320px;">
+        Reserve My Spot →
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ==================== Footer Nav ==================== -->
+  <div class="footer-nav" aria-label="Site footer">
+    <div class="footer-nav__inner container">
+
+      <!-- Brand -->
+      <div class="footer-nav__col">
+        <p class="footer-nav__site-name">Yoga with Lisa</p>
+        <p class="footer-nav__tagline">Live and on-demand yoga to help you find stillness in a loud world.</p>
+      </div>
+
+      <!-- Practice -->
+      <div class="footer-nav__col">
+        <p class="footer-nav__heading">Practice</p>
+        <ul>
+          <li><a href="yoga-inperson.html">Class Schedule</a></li>
+          <li><a href="waiver.html">Sign Waiver</a></li>
+          <li><a href="yoga-oneonone.html">Private Sessions</a></li>
+          <li><a href="yoga-ondemand.html">On Demand</a></li>
+          <li><a href="viewplans.html">Membership</a></li>
+        </ul>
+      </div>
+
+      <!-- Explore -->
+      <div class="footer-nav__col">
+        <p class="footer-nav__heading">Explore</p>
+        <ul>
+          <li><a href="mindshift.html">MindShift AI</a></li>
+          <li><a href="https://www.aetherayoga.com/" target="_blank" rel="noopener">Aethera</a></li>
+          <li><a href="corporate.html">Corporate Wellness</a></li>
+          <li><a href="student-packages.html">Student Wellness</a></li>
+        </ul>
+      </div>
+
+      <!-- Connect -->
+      <div class="footer-nav__col">
+        <p class="footer-nav__heading">Connect</p>
+        <ul>
+          <li><a href="founder.html">About</a></li>
+          <li><a href="mailto:lisa@yogawithlisa.ai">Email Me</a></li>
+          <li><a href="https://calendly.com/lisaeshunwilson/30min" target="_blank" rel="noopener">Book a Call</a></li>
+          <li><a href="https://meet.yogawithlisa.ai" target="_blank" rel="noopener">Meet with Me</a></li>
+          <li><a href="ugc-iteration1.html">Work With Me</a></li>
+          <li><a href="submit-review.html">Leave a Review</a></li>
+          <li><a href="waitlist.html">Join the Waitlist</a></li>
+        </ul>
+      </div>
+
+      <!-- Official -->
+      <div class="footer-nav__col">
+        <p class="footer-nav__heading">Official</p>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="data-protection.html">Data Protection Policy</a></li>
+          <li><a href="enduserlicenseagreement.html">End User License Agreement</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="y"></span> YOGA WITH LISA BY LISA ESHUN-WILSON
+      &amp; ASSOCIATES,LLC. / ALL RIGHTS RESERVED</p>
+    </div>
+  </footer>
+
+  <script>
+    // Auto-fill today's date
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-US', {
+      weekday: 'long', year: 'numeric',
+      month: 'long', day: 'numeric'
+    });
+    document.getElementById('sig-date-display').textContent =
+      'Date: ' + dateStr;
+    document.getElementById('signed-date').value = dateStr;
+    document.getElementById('y').textContent = now.getFullYear();
+
+    async function submitWaiver() {
+      const name = document.getElementById('sig-name').value.trim();
+      const email = document.getElementById('sig-email').value.trim();
+      const confirmed = document.getElementById('sig-confirm').checked;
+
+      if (!name) {
+        alert('Please type your full name as your digital signature.');
+        return;
+      }
+      if (!email || !email.includes('@')) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+      if (!confirmed) {
+        alert('Please check the confirmation box to agree to the waiver.');
+        return;
+      }
+
+      document.getElementById('waiver-replyto').value = email;
+
+      const data = {
+        full_name: name,
+        email: email,
+        signed_date: document.getElementById('signed-date').value,
+        waiver_version: 'v1.0 — May 2026',
+        _subject: 'New Waiver Signed — Yoga with Lisa',
+        _replyto: email
+      };
+
+      const btn = document.getElementById('sig-submit-btn');
+      btn.textContent = 'Submitting...';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch('https://formspree.io/f/xwvznovn', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+          document.getElementById('sigCard').style.display = 'none';
+          document.getElementById('waiver-success').style.display = 'block';
+          document.getElementById('waiver-success').scrollIntoView({
+            behavior: 'smooth'
+          });
+        } else {
+          document.getElementById('waiver-error').style.display = 'block';
+          btn.textContent = 'I Agree & Sign';
+          btn.disabled = false;
+        }
+      } catch {
+        document.getElementById('waiver-error').style.display = 'block';
+        btn.textContent = 'I Agree & Sign';
+        btn.disabled = false;
+      }
+    }
+  </script>
+
+</body>
+</html>
