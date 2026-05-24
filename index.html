@@ -347,54 +347,103 @@
       Real people, real practice. Here's what our community has to share.
     </p>
 
-    <div class=”student-testimonials__grid”>
+    <div class=”student-testimonials__carousel” id=”studentCarousel”>
+      <div class=”student-testimonials__track” id=”studentTrack”>
 
-      <!-- Student 1 -->
-      <article class=”scard”>
-        <div class=”scard__avatar” aria-label=”Student photo”>
-          <div class=”scard__initials”>AM</div>
-        </div>
-        <div class=”scard__stars”>★★★★★</div>
-        <p class=”scard__text”>
-          “I came in nervous as a complete beginner and left feeling
-          strong, calm, and so welcomed. Lisa meets you exactly where
-          you are — no judgment, just great teaching.”
-        </p>
-        <p class=”scard__name”>— Alex M., Berkeley CA</p>
-        <p class=”scard__class”>Vinyasa Flow · Sports Basement Berkeley</p>
-      </article>
+        <!-- Student 1 -->
+        <article class=”scard”>
+          <div class=”scard__avatar” aria-label=”Student photo”>
+            <div class=”scard__initials”>AM</div>
+          </div>
+          <div class=”scard__stars”>★★★★★</div>
+          <p class=”scard__text”>
+            “I came in nervous as a complete beginner and left feeling
+            strong, calm, and so welcomed. Lisa meets you exactly where
+            you are — no judgment, just great teaching.”
+          </p>
+          <p class=”scard__name”>— Alex M., Berkeley CA</p>
+          <p class=”scard__class”>Vinyasa Flow · Sports Basement Berkeley</p>
+        </article>
 
-      <!-- Student 2 -->
-      <article class=”scard”>
-        <div class=”scard__avatar” aria-label=”Student photo”>
-          <div class=”scard__initials”>JR</div>
-        </div>
-        <div class=”scard__stars”>★★★★★</div>
-        <p class=”scard__text”>
-          “The sound bath at the end of class was incredible. I've
-          never felt that relaxed after a workout. Will absolutely
-          be back every week.”
-        </p>
-        <p class=”scard__name”>— Jordan R., Oakland CA</p>
-        <p class=”scard__class”>Hatha Vinyasa + Sound Bath · Beach Glass</p>
-      </article>
+        <!-- Student 2 -->
+        <article class=”scard”>
+          <div class=”scard__avatar” aria-label=”Student photo”>
+            <div class=”scard__initials”>JR</div>
+          </div>
+          <div class=”scard__stars”>★★★★★</div>
+          <p class=”scard__text”>
+            “The sound bath at the end of class was incredible. I've
+            never felt that relaxed after a workout. Will absolutely
+            be back every week.”
+          </p>
+          <p class=”scard__name”>— Jordan R., Oakland CA</p>
+          <p class=”scard__class”>Hatha Vinyasa + Sound Bath · Beach Glass</p>
+        </article>
 
-      <!-- Student 3 -->
-      <article class=”scard”>
-        <div class=”scard__avatar” aria-label=”Student photo”>
-          <div class=”scard__initials”>TK</div>
-        </div>
-        <div class=”scard__stars”>★★★★★</div>
-        <p class=”scard__text”>
-          “I have lower back pain and Lisa was incredibly thoughtful
-          about offering modifications throughout. I felt safe and
-          supported the entire class. Highly recommend.”
-        </p>
-        <p class=”scard__name”>— Taylor K., San Francisco CA</p>
-        <p class=”scard__class”>Vinyasa Flow · Sports Basement Berkeley</p>
-      </article>
+        <!-- Student 3 -->
+        <article class=”scard”>
+          <div class=”scard__avatar” aria-label=”Student photo”>
+            <div class=”scard__initials”>TK</div>
+          </div>
+          <div class=”scard__stars”>★★★★★</div>
+          <p class=”scard__text”>
+            “I have lower back pain and Lisa was incredibly thoughtful
+            about offering modifications throughout. I felt safe and
+            supported the entire class. Highly recommend.”
+          </p>
+          <p class=”scard__name”>— Taylor K., San Francisco CA</p>
+          <p class=”scard__class”>Vinyasa Flow · Sports Basement Berkeley</p>
+        </article>
 
-    </div>
+        <!-- Student 4 — Vivian E. -->
+        <article class=”scard”>
+          <div class=”scard__avatar” aria-label=”Student photo”>
+            <div class=”scard__initials”>VE</div>
+          </div>
+          <div class=”scard__stars”>★★★★★</div>
+          <p class=”scard__text”>
+            “I came to Lisa's classes dealing with chronic lower back stiffness
+            that made everyday movement uncomfortable. After practicing with her
+            consistently, twice a week for six months, I went from barely being
+            able to touch my toes to building the foundation for wheel pose. I
+            can now move into it without assistance and with significantly less
+            pain. Lisa's teaching is precise, patient, and genuinely
+            transformative.”
+          </p>
+          <p class=”scard__name”>— Vivian E., Berkeley CA</p>
+          <p class=”scard__class”>Vinyasa Flow · Sports Basement Berkeley</p>
+        </article>
+
+        <!-- Student 5 — Catherine B. -->
+        <article class=”scard”>
+          <div class=”scard__avatar” aria-label=”Student photo”>
+            <div class=”scard__initials”>CB</div>
+          </div>
+          <div class=”scard__stars”>★★★★★</div>
+          <p class=”scard__text”>
+            “I brought my five-year-old son to sessions with Lisa because he
+            was struggling with anxiety and attention difficulties. What happened
+            next surprised me. Lisa met him exactly where he was, playful,
+            patient, and age-appropriate, and something clicked. He started
+            asking to do yoga on his own. Now when he feels overwhelmed,
+            stressed, or upset, he references yoga as his tool to calm down.
+            Watching a five-year-old self-regulate through breathwork and
+            movement is something I never expected. Lisa gave him that gift.”
+          </p>
+          <p class=”scard__name”>— Catherine B., Oakland CA</p>
+          <p class=”scard__class”>Private Sessions · Yoga with Lisa</p>
+        </article>
+
+      </div><!-- end track -->
+
+      <!-- Carousel controls -->
+      <button class=”stc-prev” id=”stcPrev” aria-label=”Previous testimonial”>‹</button>
+      <button class=”stc-next” id=”stcNext” aria-label=”Next testimonial”>›</button>
+
+      <!-- Dot indicators -->
+      <div class=”stc-dots” id=”stcDots” aria-label=”Testimonial navigation”></div>
+
+    </div><!-- end carousel -->
 
     <p class=”student-testimonials__cta”>
       Attended a class?
@@ -735,6 +784,98 @@ document.getElementById('class-signup-form').addEventListener('submit', async fu
     document.getElementById('modal-error').style.display = 'block';
   }
 });
+</script>
+
+<script>
+(function () {
+  const track     = document.getElementById('studentTrack');
+  const prevBtn   = document.getElementById('stcPrev');
+  const nextBtn   = document.getElementById('stcNext');
+  const dotsWrap  = document.getElementById('stcDots');
+  if (!track) return;
+
+  const cards     = Array.from(track.querySelectorAll('.scard'));
+  let current     = 0;
+
+  // How many cards visible at once
+  function visibleCount() {
+    const w = window.innerWidth;
+    if (w <= 580) return 1;
+    if (w <= 900) return 2;
+    return 3;
+  }
+
+  function totalSlides() {
+    return Math.ceil(cards.length / visibleCount());
+  }
+
+  // Build dots
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    const n = totalSlides();
+    for (let i = 0; i < n; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'stc-dot' + (i === current ? ' active' : '');
+      btn.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      btn.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(btn);
+    }
+  }
+
+  function updateDots() {
+    dotsWrap.querySelectorAll('.stc-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function goTo(idx) {
+    const slides = totalSlides();
+    current = Math.max(0, Math.min(idx, slides - 1));
+    const vis = visibleCount();
+    const cardW = cards[0].getBoundingClientRect().width;
+    const gap = 28;
+    track.style.transform =
+      'translateX(-' + (current * vis * (cardW + gap)) + 'px)';
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current >= slides - 1;
+    updateDots();
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // Touch/drag support
+  let startX = 0;
+  let isDragging = false;
+
+  track.addEventListener('mousedown', e => {
+    startX = e.clientX; isDragging = true;
+  });
+  track.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+  });
+  track.addEventListener('mouseup', e => {
+    if (!isDragging) return;
+    isDragging = false;
+    const diff = startX - e.clientX;
+    if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+  });
+  track.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+  }, { passive: true });
+
+  // Init
+  buildDots();
+  goTo(0);
+  window.addEventListener('resize', () => {
+    buildDots();
+    goTo(0);
+  });
+})();
 </script>
 </body>
 </html>
