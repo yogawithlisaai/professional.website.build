@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join the Waitlist | Yoga with Lisa</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/uwl6zhw.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script data-memberstack-app="app_cmfs64j5s00jl0wu4h1ee40in"
+    src="https://static.memberstack.com/scripts/v1/memberstack.js"
+    type="text/javascript"></script>
+  <style>
+    body {
+      background: #f0e9d8;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #141414;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .waitlist-topbar {
+      width: 100%;
+      padding: 28px 40px;
+      box-sizing: border-box;
+    }
+
+    .waitlist-brand {
+      font-family: "amandine", sans-serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      text-decoration: none;
+      color: #141414;
+      letter-spacing: 0.02em;
+    }
+
+    .waitlist-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px 80px;
+      max-width: 680px;
+      width: 100%;
+    }
+
+    .waitlist-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.5);
+      margin-bottom: 20px;
+    }
+
+    .waitlist-headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.3px;
+      margin: 0 0 20px;
+      color: #141414;
+    }
+
+    .waitlist-headline em {
+      font-style: italic;
+    }
+
+    .waitlist-sub {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: rgba(0,0,0,0.62);
+      max-width: 480px;
+      margin: 0 auto 40px;
+    }
+
+    .waitlist-form-row {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto 16px;
+    }
+
+    .waitlist-input {
+      flex: 1;
+      padding: 14px 20px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(0,0,0,0.15);
+      background: #fff;
+      font-size: 1rem;
+      font-family: inherit;
+      color: #141414;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .waitlist-input:focus {
+      border-color: rgba(0,0,0,0.4);
+    }
+
+    .waitlist-input::placeholder {
+      color: rgba(0,0,0,0.38);
+    }
+
+    .waitlist-btn {
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: #111;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: inherit;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .waitlist-btn:hover {
+      background: #2a2a2a;
+      transform: translateY(-1px);
+    }
+
+    .waitlist-note {
+      font-size: 0.82rem;
+      color: rgba(0,0,0,0.45);
+      margin-top: 10px;
+    }
+
+    .waitlist-success {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .waitlist-success-icon {
+      font-size: 2.8rem;
+      margin-bottom: 16px;
+    }
+
+    .waitlist-success h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin: 0 0 10px;
+    }
+
+    .waitlist-success p {
+      color: rgba(0,0,0,0.62);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .waitlist-error {
+      display: none;
+      color: #a33;
+      font-size: 0.88rem;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 480px) {
+      .waitlist-topbar { padding: 20px 24px; }
+      .waitlist-form-row { flex-direction: column; }
+      .waitlist-btn { width: 100%; padding: 14px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="waitlist-topbar">
+    <a class="waitlist-brand" href="index.html">yoga with lisa</a>
+  </div>
+
+  <main class="waitlist-main">
+
+    <p class="waitlist-eyebrow">Coming Soon</p>
+
+    <h1 class="waitlist-headline">
+      Let the practice<br>transform your <em>mind.</em>
+    </h1>
+
+    <p class="waitlist-sub">
+      Access to an extensive on-demand library of yoga and meditation classes —
+      with built-in AI-first tools to help you track your practice.
+    </p>
+
+    <!-- Signup form -->
+    <form id="waitlist-form">
+      <div class="waitlist-form-row">
+        <input
+          class="waitlist-input"
+          type="email"
+          id="waitlist-email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        >
+        <button class="waitlist-btn" type="submit">Join</button>
+      </div>
+      <input type="hidden" name="_subject"
+        value="New Waitlist Signup — Yoga with Lisa">
+      <input type="hidden" name="_replyto" id="waitlist-replyto">
+      <p class="waitlist-note">
+        No spam, ever. Just updates on the launch and free content in the meantime.
+      </p>
+    </form>
+
+    <!-- Success state -->
+    <div class="waitlist-success" id="waitlist-success">
+      <div class="waitlist-success-icon">🙏🏾</div>
+      <h2>You're on the list!</h2>
+      <p>
+        Thank you for joining. We'll be in touch with updates, free classes,
+        and early access when we launch.<br><br>
+        In the meantime — <a href="yoga-inperson.html"
+        style="color:#141414; font-weight:600;">come to a free class in person</a>.
+      </p>
+    </div>
+
+    <!-- Error state -->
+    <div class="waitlist-error" id="waitlist-error">
+      Something went wrong — please try again or email
+      <a href="mailto:lisa@yogawithlisa.ai">lisa@yogawithlisa.ai</a>.
+    </div>
+
+  </main>
+
+<!-- ==================== Footer Nav ==================== -->
+<div class="footer-nav" aria-label="Site footer">
+  <div class="footer-nav__inner container">
+
+    <!-- Brand -->
+    <div class="footer-nav__col">
+      <p class="footer-nav__site-name">Yoga with Lisa</p>
+      <p class="footer-nav__tagline">Live and on-demand yoga to help you find stillness in a loud world.</p>
+    </div>
+
+    <!-- Practice -->
+    <div class="footer-nav__col">
+      <p class="footer-nav__heading">Practice</p>
+      <ul>
+        <li><a href="yoga-inperson.html">Class Schedule</a></li>
+        <li><a href="yoga-oneonone.html">Private Sessions</a></li>
+        <li><a href="yoga-ondemand.html">On Demand</a></li>
+        <li><a href="viewplans.html">Membership</a></li>
+      </ul>
+    </div>
+
+    <!-- Explore -->
+    <div class="footer-nav__col">
+      <p class="footer-nav__heading">Explore</p>
+      <ul>
+        <li><a href="mindshift.html">MindShift AI</a></li>
+        <li><a href="https://www.aetherayoga.com/" target="_blank" rel="noopener">Aethera</a></li>
+        <li><a href="corporate.html">Corporate Wellness</a></li>
+        <li><a href="student-packages.html">Student Wellness</a></li>
+      </ul>
+    </div>
+
+    <!-- Connect -->
+    <div class="footer-nav__col">
+      <p class="footer-nav__heading">Connect</p>
+      <ul>
+        <li><a href="founder.html">About</a></li>
+        <li><a href="mailto:lisa@yogawithlisa.ai">Email Me</a></li>
+        <li><a href="https://calendly.com/lisaeshunwilson/30min" target="_blank" rel="noopener">Book a Call</a></li>
+        <li><a href="https://meet.yogawithlisa.ai" target="_blank" rel="noopener">Meet with Me</a></li>
+        <li><a href="ugc-iteration1.html">Work With Me</a></li>
+        <li><a href="submit-review.html">Leave a Review</a></li>
+        <li><a href="waitlist.html">Join the Waitlist</a></li>
+      </ul>
+    </div>
+
+    <!-- Official -->
+    <div class="footer-nav__col">
+      <p class="footer-nav__heading">Official</p>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="data-protection.html">Data Protection Policy</a></li>
+        <li><a href="enduserlicenseagreement.html">End User License Agreement</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="y"></span> YOGA WITH LISA BY LISA ESHUN-WILSON &amp; ASSOCIATES,LLC. / ALL RIGHTS RESERVED</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      document.getElementById('waitlist-replyto').value =
+        document.getElementById('waitlist-email').value;
+
+      const data = Object.fromEntries(new FormData(this).entries());
+
+      try {
+        const res = await fetch('https://formspree.io/f/xjgzopne', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+          document.getElementById('waitlist-form').style.display = 'none';
+          document.getElementById('waitlist-success').style.display = 'block';
+        } else {
+          document.getElementById('waitlist-error').style.display = 'block';
+        }
+      } catch {
+        document.getElementById('waitlist-error').style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>

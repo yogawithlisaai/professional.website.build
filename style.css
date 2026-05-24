@@ -2577,3 +2577,135 @@ body.auth-page {
   text-align: center; padding: 1rem;
   font-size: 0.9rem; color: #a33;
 }
+
+/* =================== On Demand Video Library =================== */
+
+.video-library {
+  padding: 80px 0 100px;
+}
+
+.video-library__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.video-library__title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  margin: 0 0 12px;
+}
+
+.video-library__sub {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.video-library__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.vcard {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.vcard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.11);
+}
+
+.vcard__thumb {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f0ebe3;
+}
+
+.vcard__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.vcard:hover .vcard__thumb img {
+  transform: scale(1.04);
+}
+
+.vcard__body {
+  padding: 18px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.vcard__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.vcard__desc {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0 0 16px;
+  flex: 1;
+}
+
+.vcard__btn {
+  font-size: 0.82rem;
+  padding: 10px 20px;
+  align-self: flex-start;
+  text-transform: none;
+  letter-spacing: 0.2px;
+}
+
+.video-library__cta {
+  text-align: center;
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.video-library__cta p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .video-library__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .video-library__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .vcard__body {
+    padding: 14px 14px 16px;
+  }
+  .vcard__title {
+    font-size: 0.95rem;
+  }
+  .vcard__desc {
+    font-size: 0.82rem;
+  }
+}
