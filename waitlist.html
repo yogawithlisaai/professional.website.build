@@ -26,6 +26,9 @@
       width: 100%;
       padding: 28px 40px;
       box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .waitlist-brand {
@@ -169,12 +172,28 @@
       .waitlist-form-row { flex-direction: column; }
       .waitlist-btn { width: 100%; padding: 14px; }
     }
+
+    /* Waitlist page footer overrides */
+    .waitlist-page .footer-nav {
+      margin: 0;
+      border-radius: 0;
+      width: 100%;
+    }
+
+    .waitlist-page .site-footer {
+      margin-top: 0;
+    }
   </style>
 </head>
 
-<body>
+<body class="waitlist-page">
   <div class="waitlist-topbar">
     <a class="waitlist-brand" href="index.html">yoga with lisa</a>
+    <a href="index.html"
+       style="font-size: 0.85rem; color: rgba(0,0,0,0.5);
+              text-decoration: none; letter-spacing: 0.05em;">
+      &larr; Back to Home
+    </a>
   </div>
 
   <main class="waitlist-main">
@@ -232,7 +251,8 @@
   </main>
 
 <!-- ==================== Footer Nav ==================== -->
-<div class="footer-nav" aria-label="Site footer">
+<div class="footer-nav" aria-label="Site footer"
+     style="margin-left: 0; margin-right: 0; border-radius: 0; width: 100%;">
   <div class="footer-nav__inner container">
 
     <!-- Brand -->
@@ -293,7 +313,7 @@
   </div>
 </div>
 
-  <footer class="site-footer">
+  <footer class="site-footer" style="margin-top: 0;">
     <div class="container">
       <p>© <span id="y"></span> YOGA WITH LISA BY LISA ESHUN-WILSON &amp; ASSOCIATES,LLC. / ALL RIGHTS RESERVED</p>
     </div>
