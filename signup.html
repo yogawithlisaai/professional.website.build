@@ -168,6 +168,39 @@
       transform: translateY(-1px);
     }
 
+    .form-donate {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .form-donate p {
+      font-size: 0.85rem;
+      color: rgba(0,0,0,0.55);
+      line-height: 1.5;
+      margin: 0 0 12px;
+    }
+
+    .form-donate-link {
+      display: inline-block;
+      padding: 11px 26px;
+      border: 1.5px solid rgba(0,0,0,0.45);
+      border-radius: 999px;
+      background: transparent;
+      color: #111;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      font-family: inherit;
+      letter-spacing: 0.02em;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .form-donate-link:hover {
+      background: #111;
+      border-color: #111;
+      color: #fff;
+    }
+
     .signup-success {
       display: none;
       text-align: center;
@@ -284,19 +317,9 @@
         <hr class="form-divider">
 
         <p class="form-waiver-text">
-          I understand that yoga involves physical activity and I
-          participate at my own risk. I release Yoga with Lisa,
-          Lisa Eshun-Wilson, and their associates from any liability
-          for injury or damages.
+          Haven't signed our liability waiver yet?
+          <a id="waiverLink" href="waiver.html" target="_blank" rel="noopener">Sign it here →</a>
         </p>
-
-        <div class="form-check-row">
-          <input type="checkbox" id="f-waiver"
-                 name="liability_waiver" required>
-          <label for="f-waiver">
-            I agree to the liability waiver
-          </label>
-        </div>
 
         <div class="form-check-row">
           <input type="checkbox" id="f-adjustments"
@@ -323,6 +346,21 @@
         <button type="submit" class="form-submit">
           Reserve My Spot
         </button>
+
+        <div class="form-donate">
+          <p>
+            Love this class? Consider supporting Yoga with Lisa
+            <span style="font-weight:400; text-transform:none;
+                         font-size:0.78rem; color:rgba(0,0,0,0.45);">
+              (optional — not required to reserve your spot)
+            </span>
+          </p>
+          <a class="form-donate-link"
+             href="https://www.paypal.com/ncp/payment/4RPRDYNM3L252"
+             target="_blank" rel="noopener">
+            Support Yoga with Lisa
+          </a>
+        </div>
 
       </form>
 
@@ -425,6 +463,14 @@
 
     const params = new URLSearchParams(window.location.search);
     const classParam = params.get('class');
+
+    // Carry the class context over to the waiver link if present
+    if (classParam) {
+      const waiverLink = document.getElementById('waiverLink');
+      if (waiverLink) {
+        waiverLink.href = 'waiver.html?class=' + encodeURIComponent(classParam);
+      }
+    }
 
     const classMap = {
       'May28': 'Thursday, May 28th — Vinyasa Flow, Sports Basement Berkeley, 5:00 PM',
