@@ -201,6 +201,13 @@
       color: #fff;
     }
 
+    .form-donate-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
     .signup-success {
       display: none;
       text-align: center;
@@ -350,16 +357,17 @@
         <div class="form-donate">
           <p>
             Love this class? Consider supporting Yoga with Lisa
-            <span style="font-weight:400; text-transform:none;
-                         font-size:0.78rem; color:rgba(0,0,0,0.45);">
-              (optional — not required to reserve your spot)
-            </span>
           </p>
-          <a class="form-donate-link"
-             href="https://www.paypal.com/ncp/payment/4RPRDYNM3L252"
-             target="_blank" rel="noopener">
-            Support Yoga with Lisa
-          </a>
+          <div class="form-donate-actions">
+            <a class="form-donate-link" href="submit-review.html">
+              Leave a Review
+            </a>
+            <a class="form-donate-link"
+               href="https://www.paypal.com/ncp/payment/4RPRDYNM3L252"
+               target="_blank" rel="noopener">
+              Send a Donation
+            </a>
+          </div>
         </div>
 
       </form>
