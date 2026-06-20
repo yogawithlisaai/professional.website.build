@@ -1201,7 +1201,8 @@ document.getElementById('class-signup-form').addEventListener('submit', async fu
   // The list runs furthest-future first, descending in time. Start at the
   // current year for the top group; when a month sits later in the calendar
   // than the one above it, we've crossed back into the previous year.
-  let year = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
+  let year = currentYear;
   let prevIdx = null;
   groups.forEach(function (g) {
     const idx = ORDER.indexOf(g.abbr);
@@ -1210,7 +1211,25 @@ document.getElementById('class-signup-form').addEventListener('submit', async fu
     g.year = year;
   });
 
-  // Rebuild the nav as a stack of collapsible month sections.
+  // Current-year months stay as individual month sections; any past year is
+  // merged into a single section labeled with just the year. Multiple past
+  // years each get their own merged section (years are not merged together).
+  const sections = [];
+  let pastYearSection = null;
+  groups.forEach(function (g) {
+    if (g.year < currentYear) {
+      if (!pastYearSection || pastYearSection.year !== g.year) {
+        pastYearSection = { label: String(g.year), year: g.year, pills: [] };
+        sections.push(pastYearSection);
+      }
+      g.pills.forEach(function (p) { pastYearSection.pills.push(p); });
+    } else {
+      sections.push({ label: g.name + ' ' + g.year, pills: g.pills });
+      pastYearSection = null;
+    }
+  });
+
+  // Rebuild the nav as a stack of collapsible sections.
   nav.classList.add('is-accordion');
   nav.textContent = '';
 
@@ -1219,8 +1238,8 @@ document.getElementById('class-signup-form').addEventListener('submit', async fu
     '<path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" ' +
     'stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
-  groups.forEach(function (g, i) {
-    const open = i === 0; // only the first (most upcoming) month starts open
+  sections.forEach(function (g, i) {
+    const open = i === 0; // only the first (most upcoming) section starts open
     const panelId = 'month-panel-' + i;
     const headerId = 'month-header-' + i;
 
@@ -1234,7 +1253,7 @@ document.getElementById('class-signup-form').addEventListener('submit', async fu
     header.setAttribute('aria-expanded', open ? 'true' : 'false');
     header.setAttribute('aria-controls', panelId);
     header.innerHTML =
-      '<span class="month-header__label">' + g.name + ' ' + g.year + '</span>' + chevron;
+      '<span class="month-header__label">' + g.label + '</span>' + chevron;
 
     const panel = document.createElement('div');
     panel.className = 'month-panel';
