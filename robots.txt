@@ -1,4 +1,101 @@
-User-agent: *
+# robots.txt for yogawithlisa.ai
+# Optimized for AEO — AI Search Engine Discoverability
+# Last updated: June 2025
+
+# ——————————————————————————————
+# STANDARD SEARCH ENGINES
+# ——————————————————————————————
+User-agent: Googlebot
 Allow: /
 
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ——————————————————————————————
+# AI ANSWER ENGINE CRAWLERS
+# Explicitly allowed so Lisa's content is cited in AI search results
+# ——————————————————————————————
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic / Claude
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Google — Allow Gemini AI training and AI Overviews
+User-agent: Google-Extended
+Allow: /
+
+# Meta AI (correct crawler name)
+User-agent: meta-externalagent
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# TikTok / ByteDance AI
+User-agent: Bytespider
+Allow: /
+
+# Common Crawl — used to train most major LLMs
+User-agent: CCBot
+Allow: /
+
+# Diffbot — used by AI knowledge graphs
+User-agent: Diffbot
+Allow: /
+
+# ——————————————————————————————
+# ALL OTHER BOTS — BLOCK PRIVATE PAGES ONLY
+# ——————————————————————————————
+User-agent: *
+Allow: /
+Disallow: /signin.html
+Disallow: /waiver.html
+Disallow: /signup.html
+Disallow: /create-account.html
+Disallow: /submit-review.html
+Disallow: /privacy.html
+Disallow: /terms.html
+Disallow: /data-protection.html
+Disallow: /enduserlicenseagreement.html
+Disallow: /accessibility.html
+Disallow: /viewplans.html
+
+# ——————————————————————————————
+# SITEMAP
+# ——————————————————————————————
 Sitemap: https://www.yogawithlisa.ai/sitemap.xml
