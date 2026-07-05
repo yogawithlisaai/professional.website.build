@@ -93,7 +93,7 @@ Disallow: /terms.html
 Disallow: /data-protection.html
 Disallow: /enduserlicenseagreement.html
 Disallow: /accessibility.html
-Disallow: /viewplans.html
+Disallow: /membership.html
 
 # ——————————————————————————————
 # SITEMAP

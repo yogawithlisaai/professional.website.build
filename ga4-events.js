@@ -36,8 +36,8 @@
 
   /* ══════════════════════════════════════════════════════════
      3. MEMBERSHIP CLICK
-     Fires when any membership/waitlist CTA on viewplans.html is clicked
-     Pages: viewplans.html
+     Fires when any membership/waitlist CTA on membership.html is clicked
+     Pages: membership.html
   ══════════════════════════════════════════════════════════ */
   document.querySelectorAll('.plan-actions .btn-primary').forEach(function (el) {
     el.addEventListener('click', function () {
@@ -62,7 +62,7 @@
   /* ══════════════════════════════════════════════════════════
      5. CLASS BOOKING CLICK
      Fires when "join" button on class schedule is clicked
-     Pages: index.html, yoga-inperson.html
+     Pages: index.html, class-schedule.html
   ══════════════════════════════════════════════════════════ */
   document.querySelectorAll('.schedule-btn, a[href*="signup.html"]').forEach(function (el) {
     el.addEventListener('click', function () {
@@ -73,7 +73,7 @@
   /* ══════════════════════════════════════════════════════════
      6. VIDEO PLAY
      Fires when any YouTube video link is clicked
-     Pages: yoga-ondemand.html
+     Pages: on-demand.html
   ══════════════════════════════════════════════════════════ */
   document.querySelectorAll('a[href*="youtube.com"], a[href*="youtu.be"]').forEach(function (el) {
     el.addEventListener('click', function () {
@@ -88,7 +88,7 @@
   /* ══════════════════════════════════════════════════════════
      7. ON DEMAND CLASS CLICK
      Fires when any on-demand class card button is clicked
-     Pages: yoga-ondemand.html
+     Pages: on-demand.html
   ══════════════════════════════════════════════════════════ */
   document.querySelectorAll('.vcard__btn').forEach(function (el) {
     el.addEventListener('click', function () {
@@ -147,8 +147,8 @@
 
   /* ══════════════════════════════════════════════════════════
      11. ABOUT PAGE VIEW
-     Fires on founder.html page load
-     Pages: founder.html
+     Fires on about.html page load
+     Pages: about.html
   ══════════════════════════════════════════════════════════ */
   if (window.location.pathname.indexOf('founder') !== -1) {
     sendEvent('about_page_view');
@@ -221,8 +221,8 @@
 
   /* ══════════════════════════════════════════════════════════
      16. MINDSHIFT PAGE VIEW
-     Fires on mindshift.html page load
-     Pages: mindshift.html
+     Fires on mindshift-ai.html page load
+     Pages: mindshift-ai.html
   ══════════════════════════════════════════════════════════ */
   if (window.location.pathname.indexOf('mindshift') !== -1) {
     sendEvent('mindshift_page_view');
@@ -240,8 +240,8 @@
 
   /* ══════════════════════════════════════════════════════════
      18. FOUNDER SCHEMA VIEW
-     Fires on founder.html page load (schema/structured data view)
-     Pages: founder.html
+     Fires on about.html page load (schema/structured data view)
+     Pages: about.html
   ══════════════════════════════════════════════════════════ */
   if (window.location.pathname.indexOf('founder') !== -1) {
     sendEvent('founder_schema_view');
