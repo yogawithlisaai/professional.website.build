@@ -629,6 +629,90 @@ html, body { overflow-x: hidden; }
   .mission-inner{padding:72px 18px}
 }
 
+/* =================== Bali Retreat Banner =================== */
+.bali-retreat {
+  position: relative;
+  min-height: 480px;
+  max-width: 1200px;
+  margin: 48px auto;
+  border-radius: 24px;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.bali-retreat-media {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+  z-index: 0;
+}
+
+.bali-retreat-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0,0,0,0.62) 0%,
+    rgba(0,0,0,0.28) 100%
+  );
+  z-index: 1;
+}
+
+.bali-retreat-inner {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: clamp(32px, 6vw, 72px);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.bali-retreat-inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: #fff;
+  margin: 0 0 20px;
+  font-weight: 600;
+  text-transform: lowercase;
+  letter-spacing: 0.2px;
+}
+
+.bali-retreat-inner p {
+  color: rgba(255,255,255,0.92);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 6px 0;
+  max-width: 600px;
+}
+
+.bali-retreat-inner .btn-outline {
+  margin-top: 28px;
+  border-color: #fff;
+  color: #fff;
+  display: inline-block;
+}
+
+.bali-retreat-inner .btn-outline:hover {
+  background: #fff;
+  color: #000;
+}
+
+@media (max-width: 600px) {
+  .bali-retreat {
+    min-height: 360px;
+    margin: 32px auto;
+    border-radius: 16px;
+    width: calc(100% - 32px);
+  }
+  .bali-retreat-inner {
+    padding: 40px 24px;
+  }
+}
+
 /* =================== Membership Banner =================== */
 .membership {
   position: relative;
