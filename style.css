@@ -138,7 +138,7 @@ footer {
   font-weight: 300;
 }
 
-/* Your HTML uses .btn-dark / .btn-pill — target those, not .btn */
+/* Your HTML uses .btn-dark / .btn-pill - target those, not .btn */
 .hero .btn-dark,
 .hero .btn-pill,
 .hero .btn-dark.btn-pill{
@@ -174,7 +174,7 @@ footer {
 /* Keep specific phrases together */
 .nowrap { white-space: nowrap; }
 
-/* ——— Mobile headline comfort ——— */
+/* --- Mobile headline comfort --- */
 @media (max-width: 430px){
   .hero .display,
   .display {
@@ -215,7 +215,7 @@ footer {
   color: #000;
 }
 
-/* === LOGIN pill button — single authoritative definition === */
+/* === LOGIN pill button - single authoritative definition === */
 .site-header .main-nav a.login-btn {
   display: inline-block;
   padding: 12px 24px;
@@ -295,7 +295,7 @@ html, body { overflow-x: hidden; }
   font-weight:400;        
 }
 
-/* ==== Sticky taupe header — final, authoritative ==== */
+/* ==== Sticky taupe header - final, authoritative ==== */
 
 /* Base header: fixed and transparent over the hero */
 .site-header{
@@ -542,7 +542,7 @@ html, body { overflow-x: hidden; }
 }
 .footer-nav__col ul a:hover{ color:#f5f0eb; }
 
-/* Nav Dropdown — grouped grid layout */
+/* Nav Dropdown - grouped grid layout */
 .nav-dropdown__grid{
   max-width:860px;
   margin:0 auto;
@@ -1534,7 +1534,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   color: #444;
 }
 
-/* CTA button — scoped, black with white text */
+/* CTA button - scoped, black with white text */
 .intro.container .cta-btn {
   display: inline-block;
   padding: 0.85rem 2.25rem;
@@ -1754,7 +1754,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 }
 
 /* =========================
-   UGC HERO — VIDEO SIZING
+   UGC HERO - VIDEO SIZING
    ========================= */
 
 .page-ugc .hero-intro-video {
@@ -1767,7 +1767,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 }
 
 /* =========================
-   UGC HERO — TEXT HIERARCHY
+   UGC HERO - TEXT HIERARCHY
    ========================= */
 
 .page-ugc .hero-inner h1 {
@@ -1794,13 +1794,13 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 }
 
 /* =====================================================
-   UGC HERO — OUTRAGEOUS SCALE TEST (DESKTOP ONLY)
+   UGC HERO - OUTRAGEOUS SCALE TEST (DESKTOP ONLY)
    TEMPORARY: for visual comparison
    ===================================================== */
 
 @media (min-width: 981px){
 
-  /* Name — MASSIVE */
+  /* Name - MASSIVE */
   .page-ugc .ugc-hero-name{
     font-size: clamp(6rem, 9vw, 8.5rem);
     line-height: 1.05;
@@ -1835,7 +1835,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
     margin-bottom: 2.25rem;
   }
 
-  /* Social icons — bigger to match */
+  /* Social icons - bigger to match */
   .page-ugc .ugc-social-icons .icon-btn{
     width: 72px;
     height: 72px;
@@ -1848,7 +1848,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 }
 
 /* ==========================================
-   UGC PAGE ONLY — Fix header overlap on hero
+   UGC PAGE ONLY - Fix header overlap on hero
    ========================================== */
 
 /* Make room for the fixed header so it doesn't cover the hero */
@@ -1864,7 +1864,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 }
 
 /* ==========================================
-   UGC PAGE ONLY — Make header title black
+   UGC PAGE ONLY - Make header title black
    ========================================== */
 
 .page-ugc .site-header .brand{
@@ -2163,7 +2163,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 }
 
 /* =====================================================
-   UGC REELS — TIGHTER GRID + LESS WHITESPACE (PAGE ONLY)
+   UGC REELS - TIGHTER GRID + LESS WHITESPACE (PAGE ONLY)
    - affects ONLY the reel carousels (.ugc-videos)
    - does NOT touch the hero intro video (.ugc-hero-*)
    ===================================================== */
@@ -2216,7 +2216,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 }
 
 /* ================================
-   UGC REEL — TOP TYPE PILL (BLACK)
+   UGC REEL - TOP TYPE PILL (BLACK)
    ================================ */
 
    .page-ugc .ugc-reel {
@@ -2253,7 +2253,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   }
 
   /* ================================
-   UGC REEL — TOP PILL NOT CLIPPED
+   UGC REEL - TOP PILL NOT CLIPPED
    ================================ */
 
 /* 1) Stop the carousel containers from clipping the pill */

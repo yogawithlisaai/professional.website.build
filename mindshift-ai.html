@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>MindShift AI — Your AI Yoga Instructor | Lisa</title>
-<meta name="description" content="Meet MindShift AI — Lisa's intelligent yoga companion. Get personalized AI-powered yoga guidance, class recommendations, and mindfulness support 24/7.">
+<title>MindShift AI - Your AI Yoga Instructor | Lisa</title>
+<meta name="description" content="Meet MindShift AI, Lisa's intelligent yoga companion. Get personalized AI-powered yoga guidance, class recommendations, and mindfulness support 24/7.">
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="style.css" />
@@ -105,7 +105,7 @@
       "@id": "https://www.yogawithlisa.ai/mindshift-ai.html#app",
       "name": "MindShift AI",
       "alternateName": "MindShift AI Yoga Instructor",
-      "description": "MindShift AI is an intelligent AI yoga instructor created by Dr. Lisa Eshun-Wilson, PhD. It delivers personalized yoga guidance, class recommendations, breathwork exercises, and mindfulness support 24/7 — tailored to your goals, fitness level, and schedule.",
+      "description": "MindShift AI is an intelligent AI yoga instructor created by Dr. Lisa Eshun-Wilson, PhD. It delivers personalized yoga guidance, class recommendations, breathwork exercises, and mindfulness support 24/7, tailored to your goals, fitness level, and schedule.",
       "url": "https://www.yogawithlisa.ai/mindshift-ai.html",
       "applicationCategory": "HealthApplication",
       "applicationSubCategory": "Yoga & Wellness",
@@ -160,8 +160,8 @@
 
 <div class="hero">
   <p class="hero-eyebrow">Yoga with Lisa</p>
-  <h1>MindShift AI — Personalized Yoga Guidance from Your AI Yoga Instructor</h1>
-  <p>A daily 3-minute check-in that connects your Ashtanga practice to your focus and mental clarity — with an AI coach who notices what you can't.</p>
+  <h1>MindShift AI: Personalized Yoga Guidance from Your AI Yoga Instructor</h1>
+  <p>A daily 3-minute check-in that connects your Ashtanga practice to your focus and mental clarity, with an AI coach who notices what you can't.</p>
 </div>
 
 <div class="progress-wrap">
@@ -182,7 +182,7 @@
     <div class="card" style="background: var(--sage-pale); border-color: rgba(92,122,92,0.2);">
       <div class="card-label" style="color: var(--sage-dark);">About MindShift</div>
       <p style="font-size:0.85rem; color: var(--sage-dark); line-height:1.75; font-weight:300;">
-        This is a beta from <strong style="font-weight:500">Yoga with Lisa</strong>. I created MindShift because we talk a lot about <em>why</em> we should shift our mindset — but rarely track <em>how</em> the practice is actually doing it. Your feedback shapes what this becomes. Thank you for being here. 🌿
+        This is a beta from <strong style="font-weight:500">Yoga with Lisa</strong>. I created MindShift because we talk a lot about <em>why</em> we should shift our mindset, but rarely track <em>how</em> the practice is actually doing it. Your feedback shapes what this becomes. Thank you for being here. 🌿
       </p>
     </div>
   </div>
@@ -312,7 +312,7 @@
     const p = state.practiced==='yes'?'a full practice':state.practiced==='short'?'a short practice':'a rest day';
     const mat = state.matTags.length ? state.matTags.join(', ') : 'nothing specific noted';
     const off = state.offmatTags.length ? state.offmatTags.join(', ') : 'nothing specific noted';
-    return `The yogi's name is ${state.name}. Today's check-in:\n- Practice: ${p}\n- Practice quality (1-10): ${state.quality}\n- Presence on mat (1-10): ${state.presence}\n- Mat moments: ${mat}\n- Mental clarity (1-10): ${state.clarity}\n- Focus quality (1-10): ${state.focus}\n- Off-mat mental state: ${off}\n\nOpen with a warm greeting using their name. Give a 2-3 sentence reflection connecting what happened ON the mat to what they reported OFF the mat — specifically around focus and mental clarity. Be specific to their numbers and tags. End with ONE open question. Tone: warm, grounded, wise. Under 120 words.`;
+    return `The yogi's name is ${state.name}. Today's check-in:\n- Practice: ${p}\n- Practice quality (1-10): ${state.quality}\n- Presence on mat (1-10): ${state.presence}\n- Mat moments: ${mat}\n- Mental clarity (1-10): ${state.clarity}\n- Focus quality (1-10): ${state.focus}\n- Off-mat mental state: ${off}\n\nOpen with a warm greeting using their name. Give a 2-3 sentence reflection connecting what happened ON the mat to what they reported OFF the mat - specifically around focus and mental clarity. Be specific to their numbers and tags. End with ONE open question. Tone: warm, grounded, wise. Under 120 words.`;
   }
 
   function addBubble(type, text) {
@@ -330,7 +330,7 @@
     const btn = document.getElementById('sendBtn');
     if (btn) btn.disabled = true;
     if (!isInitial) state.history.push({ role:'user', content });
-    const system = `You are MindShift — a warm, grounded Ashtanga yoga coach created by Lisa of Yoga with Lisa (yogawithlisa.ai). You help yogis understand how their mat practice is shaping their focus and mental clarity in daily life. Speak like a wise teacher: thoughtful, human, never clinical. Ask one question at a time. Keep responses under 100 words unless asked for more. Notice patterns and help yogis articulate their own transformation.`;
+    const system = `You are MindShift, a warm, grounded Ashtanga yoga coach created by Lisa of Yoga with Lisa (yogawithlisa.ai). You help yogis understand how their mat practice is shaping their focus and mental clarity in daily life. Speak like a wise teacher: thoughtful, human, never clinical. Ask one question at a time. Keep responses under 100 words unless asked for more. Notice patterns and help yogis articulate their own transformation.`;
     const messages = isInitial ? [{role:'user',content}] : state.history;
     try {
       const res = await fetch('https://api.anthropic.com/v1/messages', {
@@ -344,11 +344,11 @@
         body: JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:300, system, messages })
       });
       const data = await res.json();
-      const reply = data.content?.map(c=>c.text||'').join('') || 'Something went quiet — please try again.';
+      const reply = data.content?.map(c=>c.text||'').join('') || 'Something went quiet. Please try again.';
       addBubble('coach', reply);
       state.history.push({ role:'assistant', content:reply });
     } catch(e) {
-      addBubble('coach', 'Something went quiet on my end — please try again. 🌿');
+      addBubble('coach', 'Something went quiet on my end. Please try again. 🌿');
     }
     if (btn) btn.disabled = false;
   }

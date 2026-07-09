@@ -1,10 +1,10 @@
 # robots.txt for yogawithlisa.ai
-# Optimized for AEO — AI Search Engine Discoverability
+# Optimized for AEO - AI Search Engine Discoverability
 # Last updated: June 2025
 
-# ——————————————————————————————
+# ------------------------------
 # STANDARD SEARCH ENGINES
-# ——————————————————————————————
+# ------------------------------
 User-agent: Googlebot
 Allow: /
 
@@ -17,10 +17,10 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# ——————————————————————————————
+# ------------------------------
 # AI ANSWER ENGINE CRAWLERS
 # Explicitly allowed so Lisa's content is cited in AI search results
-# ——————————————————————————————
+# ------------------------------
 
 # OpenAI / ChatGPT
 User-agent: GPTBot
@@ -43,7 +43,7 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-# Google — Allow Gemini AI training and AI Overviews
+# Google - Allow Gemini AI training and AI Overviews
 User-agent: Google-Extended
 Allow: /
 
@@ -70,17 +70,17 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-# Common Crawl — used to train most major LLMs
+# Common Crawl - used to train most major LLMs
 User-agent: CCBot
 Allow: /
 
-# Diffbot — used by AI knowledge graphs
+# Diffbot - used by AI knowledge graphs
 User-agent: Diffbot
 Allow: /
 
-# ——————————————————————————————
-# ALL OTHER BOTS — BLOCK PRIVATE PAGES ONLY
-# ——————————————————————————————
+# ------------------------------
+# ALL OTHER BOTS - BLOCK PRIVATE PAGES ONLY
+# ------------------------------
 User-agent: *
 Allow: /
 Disallow: /signin.html
@@ -95,7 +95,7 @@ Disallow: /enduserlicenseagreement.html
 Disallow: /accessibility.html
 Disallow: /membership.html
 
-# ——————————————————————————————
+# ------------------------------
 # SITEMAP
-# ——————————————————————————————
+# ------------------------------
 Sitemap: https://www.yogawithlisa.ai/sitemap.xml
