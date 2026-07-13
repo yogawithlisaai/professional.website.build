@@ -1171,6 +1171,29 @@ document.getElementById('class-signup-form').addEventListener('submit', async fu
 </script>
 
   <script src="ga4-events.js"></script>
+
+  <!-- =================== Floating Membership CTA =================== -->
+<a href="membership.html" class="btn btn-dark btn-pill floating-cta" aria-label="Join Membership">
+  Join Membership <span aria-hidden="true">&rarr;</span>
+</a>
+
+<style>
+  .floating-cta{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    z-index:900;
+    box-shadow:0 4px 16px rgba(0,0,0,0.25);
+  }
+  @media (max-width:600px){
+    .floating-cta{
+      bottom:16px;
+      right:16px;
+      padding:12px 20px;
+      font-size:0.85rem;
+    }
+  }
+</style>
   
 </body>
 </html>
