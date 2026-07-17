@@ -3084,11 +3084,3 @@ body.auth-page {
     font-size: 0.82rem;
   }
 }
-
-/* Blog temporarily hidden per client request — files/links kept intact, just visually hidden */
-a[href="blog.html"]{
-  display:none !important;
-}
-.blog-grid{
-  display:none !important;
-}
