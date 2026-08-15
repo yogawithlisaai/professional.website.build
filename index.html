@@ -411,35 +411,44 @@ Start your free session today!">
   <div class="testimonials-inner">
     <h2 class="testimonials-title">partner testimonials</h2>
 
-    <div class="testimonials-grid">
+    <div class="testimonials-carousel">
+      <div class="testimonials-grid" id="partnerTrack">
 
-      <!-- Testimonial Card 1 -->
-      <article class="testimonial-card">
-        <div class="testimonial-stars">
-          ★★★★★
-        </div>
-        <p class="testimonial-text">
-          "Lisa is a dedicated, kind and communicative yogi. I've had the pleasure of working with her both when she has volunteered at the studio and when she took our 200-hour teacher training. She has also rented space from the studio to offer her own yoga classes and each time has been easy to communicate and coordinate with, flexible around scheduling needs."
-        </p>
-        <p class="testimonial-author">
-          Antonia Blumberg, Studio Manager, Green Yogi, Berkeley, CA
-        </p>
-      </article>
+        <!-- Testimonial Card 1 -->
+        <article class="testimonial-card">
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+          <p class="testimonial-text">
+            "Lisa is a dedicated, kind and communicative yogi. I've had the pleasure of working with her both when she has volunteered at the studio and when she took our 200-hour teacher training. She has also rented space from the studio to offer her own yoga classes and each time has been easy to communicate and coordinate with, flexible around scheduling needs."
+          </p>
+          <p class="testimonial-author">
+            Antonia Blumberg, Studio Manager, Green Yogi, Berkeley, CA
+          </p>
+        </article>
 
-      <!-- Testimonial Card 2 -->
-      <article class="testimonial-card">
-        <div class="testimonial-stars">
-          ★★★★★
-        </div>
-        <p class="testimonial-text">
-          "Lisa taught Yoga classes at a recent 4 day silent meditation retreat at Urban Adamah. Working with her was an absolute pleasure. She was positive, organized, and responsive in the lead up to the retreat, and she was able to tailor her teachings to the needs of our retreat and its participants with ease. I highly recommend working with her."
-        </p>
-        <p class="testimonial-author">
-          Tyler Sinclair, Director of Retreats and Celebrations, Urban Adamah, Berkeley, CA
-        </p>
-      </article>
+        <!-- Testimonial Card 2 -->
+        <article class="testimonial-card">
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+          <p class="testimonial-text">
+            "Lisa taught Yoga classes at a recent 4 day silent meditation retreat at Urban Adamah. Working with her was an absolute pleasure. She was positive, organized, and responsive in the lead up to the retreat, and she was able to tailor her teachings to the needs of our retreat and its participants with ease. I highly recommend working with her."
+          </p>
+          <p class="testimonial-author">
+            Tyler Sinclair, Director of Retreats and Celebrations, Urban Adamah, Berkeley, CA
+          </p>
+        </article>
 
-    </div>
+      </div><!-- end partnerTrack -->
+
+      <!-- Carousel controls (mobile only) -->
+      <button class="ptc-prev" id="ptcPrev" aria-label="Previous testimonial">‹</button>
+      <button class="ptc-next" id="ptcNext" aria-label="Next testimonial">›</button>
+    </div><!-- end testimonials-carousel -->
+
+    <!-- Dot indicators (mobile only) -->
+    <div class="ptc-dots" id="ptcDots" aria-label="Testimonial navigation"></div>
   </div>
 
 </section>
@@ -473,8 +482,8 @@ Start your free session today!">
     <p>+ New videos every month.</p>
     <p>+ Meditation &amp; mindfulness series.</p>
     <p>+ Gluten-free meal plans.</p>
-    <p><strong>Monthly pricing: $16.99 USD | Yearly pricing $169.99</strong>
-    <em>(2 Months Free!)</em></p>
+    <p><strong>Monthly pricing: $16.99 USD</strong></p>
+    <p><strong>Yearly pricing: $169.99</strong> <em>(2 Months Free!)</em></p>
     <a class="btn btn-pill btn-outline" href="waitlist.html">JOIN THE WAITLIST</a>
   </div>
 </section>
@@ -1040,92 +1049,121 @@ document.getElementById('class-signup-form').addEventListener('submit', async fu
 
 <script>
 (function () {
-  const track     = document.getElementById('studentTrack');
-  const prevBtn   = document.getElementById('stcPrev');
-  const nextBtn   = document.getElementById('stcNext');
-  const dotsWrap  = document.getElementById('stcDots');
-  if (!track) return;
+  function initCardCarousel(opts) {
+    const track    = document.getElementById(opts.trackId);
+    const prevBtn  = document.getElementById(opts.prevId);
+    const nextBtn  = document.getElementById(opts.nextId);
+    const dotsWrap = document.getElementById(opts.dotsId);
+    if (!track) return;
 
-  const cards     = Array.from(track.querySelectorAll('.scard'));
-  let current     = 0;
+    const cards  = Array.from(track.querySelectorAll(opts.cardSelector));
+    const gap    = opts.gap;
+    let current  = 0;
 
-  // How many cards visible at once
-  function visibleCount() {
-    const w = window.innerWidth;
-    if (w <= 580) return 1;
-    if (w <= 900) return 2;
-    return 3;
-  }
-
-  function totalSlides() {
-    return Math.ceil(cards.length / visibleCount());
-  }
-
-  // Build dots
-  function buildDots() {
-    dotsWrap.innerHTML = '';
-    const n = totalSlides();
-    for (let i = 0; i < n; i++) {
-      const btn = document.createElement('button');
-      btn.className = 'stc-dot' + (i === current ? ' active' : '');
-      btn.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-      btn.addEventListener('click', () => goTo(i));
-      dotsWrap.appendChild(btn);
+    function totalSlides() {
+      return Math.ceil(cards.length / opts.visibleCount());
     }
-  }
 
-  function updateDots() {
-    dotsWrap.querySelectorAll('.stc-dot').forEach((d, i) => {
-      d.classList.toggle('active', i === current);
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      const n = totalSlides();
+      for (let i = 0; i < n; i++) {
+        const btn = document.createElement('button');
+        btn.className = opts.dotClass + (i === current ? ' active' : '');
+        btn.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        btn.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(btn);
+      }
+    }
+
+    function updateDots() {
+      dotsWrap.querySelectorAll('.' + opts.dotClass).forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    function goTo(idx) {
+      const slides = totalSlides();
+      current = Math.max(0, Math.min(idx, slides - 1));
+      const vis = opts.visibleCount();
+      const cardW = cards[0].getBoundingClientRect().width;
+      track.style.transform =
+        'translateX(-' + (current * vis * (cardW + gap)) + 'px)';
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current >= slides - 1;
+      updateDots();
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    // Touch/drag support
+    let startX = 0;
+    let isDragging = false;
+
+    track.addEventListener('mousedown', e => {
+      startX = e.clientX; isDragging = true;
+    });
+    track.addEventListener('mousemove', e => {
+      if (!isDragging) return;
+    });
+    track.addEventListener('mouseup', e => {
+      if (!isDragging) return;
+      isDragging = false;
+      const diff = startX - e.clientX;
+      if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+    });
+    track.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+    }, { passive: true });
+
+    // Init
+    buildDots();
+    goTo(0);
+    window.addEventListener('resize', () => {
+      buildDots();
+      goTo(0);
     });
   }
 
-  function goTo(idx) {
-    const slides = totalSlides();
-    current = Math.max(0, Math.min(idx, slides - 1));
-    const vis = visibleCount();
-    const cardW = cards[0].getBoundingClientRect().width;
-    const gap = 28;
-    track.style.transform =
-      'translateX(-' + (current * vis * (cardW + gap)) + 'px)';
-    prevBtn.disabled = current === 0;
-    nextBtn.disabled = current >= slides - 1;
-    updateDots();
-  }
-
-  prevBtn.addEventListener('click', () => goTo(current - 1));
-  nextBtn.addEventListener('click', () => goTo(current + 1));
-
-  // Touch/drag support
-  let startX = 0;
-  let isDragging = false;
-
-  track.addEventListener('mousedown', e => {
-    startX = e.clientX; isDragging = true;
+  // Student testimonials: 1/2/3 cards visible depending on width
+  initCardCarousel({
+    trackId: 'studentTrack',
+    prevId: 'stcPrev',
+    nextId: 'stcNext',
+    dotsId: 'stcDots',
+    cardSelector: '.scard',
+    dotClass: 'stc-dot',
+    gap: 28,
+    visibleCount: function () {
+      const w = window.innerWidth;
+      if (w <= 580) return 1;
+      if (w <= 900) return 2;
+      return 3;
+    }
   });
-  track.addEventListener('mousemove', e => {
-    if (!isDragging) return;
-  });
-  track.addEventListener('mouseup', e => {
-    if (!isDragging) return;
-    isDragging = false;
-    const diff = startX - e.clientX;
-    if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
-  });
-  track.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-  }, { passive: true });
-  track.addEventListener('touchend', e => {
-    const diff = startX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
-  }, { passive: true });
 
-  // Init
-  buildDots();
-  goTo(0);
-  window.addEventListener('resize', () => {
-    buildDots();
-    goTo(0);
+  // Partner testimonials: swipeable carousel on mobile only.
+  // Above 600px this resolves to a single "slide" containing every card
+  // (visibleCount === cards.length), so the transform stays at 0 and the
+  // existing .testimonials-grid layout is untouched.
+  initCardCarousel({
+    trackId: 'partnerTrack',
+    prevId: 'ptcPrev',
+    nextId: 'ptcNext',
+    dotsId: 'ptcDots',
+    cardSelector: '.testimonial-card',
+    dotClass: 'ptc-dot',
+    gap: 20,
+    visibleCount: function () {
+      const track = document.getElementById('partnerTrack');
+      if (window.innerWidth <= 600) return 1;
+      return track ? track.querySelectorAll('.testimonial-card').length : 1;
+    }
   });
 })();
 </script>

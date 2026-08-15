@@ -2534,6 +2534,104 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
   }
 }
 
+/* Partner testimonials: swipeable carousel on mobile only.
+   Above 600px, .testimonials-carousel/.ptc-* have no effect and
+   .testimonials-grid keeps its existing stacked/side-by-side layout. */
+.testimonials-carousel {
+  position: relative;
+}
+
+.ptc-prev,
+.ptc-next {
+  display: none;
+}
+
+.ptc-dots {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .testimonials-carousel {
+    overflow: hidden;
+  }
+
+  .testimonials-grid {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    cursor: grab;
+    user-select: none;
+  }
+
+  .testimonials-grid:active {
+    cursor: grabbing;
+  }
+
+  .testimonials-grid .testimonial-card {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+
+  .ptc-prev,
+  .ptc-next {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.12);
+    color: #333;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+    z-index: 2;
+    line-height: 1;
+  }
+
+  .ptc-prev { left: 0; }
+  .ptc-next { right: 0; }
+
+  .ptc-prev:hover,
+  .ptc-next:hover {
+    background: rgba(0,0,0,0.16);
+  }
+
+  .ptc-prev:disabled,
+  .ptc-next:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .ptc-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .ptc-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.18);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, width 0.2s ease;
+    padding: 0;
+  }
+
+  .ptc-dot.active {
+    background: #c8a64b;
+    width: 24px;
+  }
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
