@@ -799,6 +799,17 @@ html, body { overflow-x: hidden; }
   .membership-inner, .teach-banner-inner, .corporate-banner-inner {
     padding: 40px 24px;
   }
+  .membership-inner p,
+  .teach-banner-inner p,
+  .corporate-banner-inner p,
+  .bali-retreat-inner p {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    margin: 12px 0;
+    padding-left: 1em;
+    text-indent: -1em;
+    text-wrap: pretty;
+  }
 }
 
 /* =================== Founder Banner =================== */
