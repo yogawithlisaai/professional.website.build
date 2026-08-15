@@ -2499,8 +2499,8 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 
 .testimonial-logo{
   display:block;
-  width:72px;
-  height:72px;
+  width:94px;
+  height:94px;
   border-radius:50%;
   overflow:hidden;
   margin:0 0 18px;
@@ -2555,7 +2555,7 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
     grid-template-columns: 1fr;
   }
 
-  .testimonial-logo{ width:60px; height:60px; margin-bottom:14px; }
+  .testimonial-logo{ width:78px; height:78px; margin-bottom:14px; }
 }
 
 @media (max-width: 600px) {
