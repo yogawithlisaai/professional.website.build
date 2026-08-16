@@ -2517,11 +2517,11 @@ body[data-ms-member="true"] .mcard.locked .lock { display: none; }
 .testimonial-logo:hover{ transform:scale(1.05); }
 
 .testimonial-logo--contain{
-  background:#ffffff;
+  background:#0e1c19;
 }
 .testimonial-logo--contain img{
   object-fit:contain;
-  padding:8px;
+  padding:0;
   box-sizing:border-box;
 }
 
