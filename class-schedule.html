@@ -216,6 +216,18 @@
         text-align: left;
       }
     }
+
+    /* Fix hero title centering: the nowrap heading is wider than
+       .display's ch-based max-width, so the overflowing text was
+       rendering left-aligned instead of centered. Widen the box so
+       the (unbreakable) heading always fits and can be truly centered.
+       Scoped to widths above the mobile breakpoint, where the heading
+       already wraps onto two lines and centers correctly. */
+    @media (min-width: 431px) {
+      .hero .display {
+        max-width: none;
+      }
+    }
   </style>
 
 	<!-- Google tag (gtag.js) -->
