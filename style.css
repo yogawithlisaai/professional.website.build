@@ -3231,3 +3231,21 @@ body.auth-page {
     font-size: 0.82rem;
   }
 }
+
+/* ---------- WhatsApp button ---------- */
+.whatsapp-btn {
+  background: #ffffff;
+  color: #0c0c0c;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  transition: background 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  background: #f0ede6;
+  color: #0c0c0c;
+}
