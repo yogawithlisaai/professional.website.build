@@ -1299,9 +1299,6 @@ html, body { overflow-x: hidden; }
   gap: 12px;
 }
 
-/* Unlock state: when logged in, hide lock & remove "locked" pointer behavior */
-body[data-ms-member="true"] .mcard.locked .lock { display: none; }
-
 /* Wellness poster cards (match pop-up look) */
 .wellness-row {
   display: flex;
