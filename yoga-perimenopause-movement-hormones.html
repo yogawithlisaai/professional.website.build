@@ -6,17 +6,45 @@
   <title>Yoga for Perimenopause: What No One Tells You About Movement and Hormones | Yoga with Lisa</title>
   <meta name="description" content="A science-informed guide to yoga during perimenopause. Dr. Lisa Eshun-Wilson explains how movement, breathwork, and the right practice can ease symptoms and support hormonal balance." />
   <link rel="icon" href="images/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Yoga for Perimenopause: What No One Tells You About Movement and Hormones | Yoga with Lisa">
+  <meta property="og:description" content="A science-informed guide to yoga during perimenopause: how movement, breathwork, and the right practice can ease symptoms and support hormonal balance.">
+  <meta property="og:image" content="https://www.yogawithlisa.ai/images/blog-perimenopause.jpg">
+  <meta property="og:url" content="https://www.yogawithlisa.ai/yoga-perimenopause-movement-hormones.html">
+  <meta property="og:type" content="article">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    .post-hero {
-      width: 100%;
-      height: 60vh;
-      min-height: 320px;
+    /* Sticky taupe header, sampled from favicon-light.png (#c5ae98) */
+    .site-header {
+      position: sticky !important;
+      background: #c5ae98 !important;
+    }
+
+    .site-header .brand,
+    .site-header .main-nav a {
+      color: #1f231b !important;
+    }
+
+    .site-header .hamburger-btn span {
+      background: #1f231b !important;
+    }
+
+    /* Small circular mark above the title, replacing the old hero image */
+    .post-logo {
+      display: flex;
+      justify-content: center;
+      margin: 0 0 40px;
+    }
+
+    .post-logo img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
       object-fit: cover;
       display: block;
-      filter: brightness(0.8);
     }
 
     .post-wrap {
@@ -198,24 +226,38 @@
       margin: 0;
     }
 
+    /* Compact author block */
     .post-bio {
-      margin-top: 64px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 56px 0 0;
+      padding-top: 32px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .post-bio-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .post-bio-text p {
+      margin: 0;
+      line-height: 1.4;
     }
 
     .post-bio-name {
-      font-weight: 500;
-      color: #f0ede6;
-      font-size: 0.85rem;
-      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
     }
 
-    .post-bio p {
+    .post-bio-credential {
       font-size: 0.82rem;
-      color: #888;
-      line-height: 1.65;
-      font-weight: 300;
+      color: var(--muted);
     }
 
     .post-back {
@@ -248,7 +290,7 @@
       "url": "https://www.yogawithlisa.ai"
     },
     "datePublished": "2026-09-22",
-    "image": "https://www.yogawithlisa.ai/images/blog-perimenopause-hero.jpg",
+    "image": "https://www.yogawithlisa.ai/images/blog-perimenopause.jpg",
     "url": "https://www.yogawithlisa.ai/yoga-perimenopause-movement-hormones.html"
   }
   </script>
@@ -270,18 +312,16 @@
     </div>
   </header>
 
-  <img
-    src="images/blog-perimenopause-hero.jpg"
-    alt="Woman in a peaceful, grounded yoga pose in soft natural light"
-    class="post-hero"
-  >
-
   <article class="post-wrap">
 
     <div class="post-meta">
       <span class="post-category">Burnout &amp; Resilience</span>
       <span>September 22, 2026</span>
       <span>9 min read</span>
+    </div>
+
+    <div class="post-logo">
+      <img src="favicon-light.png" alt="Yoga with Lisa" width="72" height="72">
     </div>
 
     <h1 class="post-title">Yoga for Perimenopause: What No One Tells You About Movement and Hormones</h1>
@@ -411,8 +451,11 @@
     </div>
 
     <div class="post-bio">
-      <p class="post-bio-name">Dr. Lisa Eshun-Wilson</p>
-      <p>Molecular Cell Biologist (PhD, UC Berkeley) and 500-hour certified yoga instructor. Founder of Yoga with Lisa and Genoma Institute. Writing at the intersection of movement, science, and human resilience.</p>
+      <img class="post-bio-avatar" src="favicon-light.png" alt="Lisa Eshun-Wilson, PhD" width="48" height="48">
+      <div class="post-bio-text">
+        <p class="post-bio-name">Lisa Eshun-Wilson, PhD</p>
+        <p class="post-bio-credential">Molecular Cell Biologist &amp; 500-hour certified yoga instructor</p>
+      </div>
     </div>
 
     <a href="blog.html" class="post-back">← Back to the journal</a>

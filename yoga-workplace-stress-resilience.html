@@ -6,17 +6,45 @@
   <title>How to Stop Absorbing Other People's Stress at Work | Yoga with Lisa</title>
   <meta name="description" content="A science-backed yoga practice for professional women dealing with workplace stress, difficult colleagues, and burnout. Dr. Lisa Eshun-Wilson shares what actually works." />
   <link rel="icon" href="images/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="How to Stop Absorbing Other People's Stress at Work | Yoga with Lisa">
+  <meta property="og:description" content="A science-backed yoga practice for professional women dealing with workplace stress, difficult colleagues, and burnout.">
+  <meta property="og:image" content="https://www.yogawithlisa.ai/images/blog-workplace-stress.jpg">
+  <meta property="og:url" content="https://www.yogawithlisa.ai/yoga-workplace-stress-resilience.html">
+  <meta property="og:type" content="article">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    .post-hero {
-      width: 100%;
-      height: 60vh;
-      min-height: 320px;
+    /* Sticky taupe header, sampled from favicon-light.png (#c5ae98) */
+    .site-header {
+      position: sticky !important;
+      background: #c5ae98 !important;
+    }
+
+    .site-header .brand,
+    .site-header .main-nav a {
+      color: #1f231b !important;
+    }
+
+    .site-header .hamburger-btn span {
+      background: #1f231b !important;
+    }
+
+    /* Small circular mark above the title, replacing the old hero image */
+    .post-logo {
+      display: flex;
+      justify-content: center;
+      margin: 0 0 40px;
+    }
+
+    .post-logo img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
       object-fit: cover;
       display: block;
-      filter: brightness(0.8);
     }
 
     .post-wrap {
@@ -146,24 +174,38 @@
       margin: 0;
     }
 
+    /* Compact author block */
     .post-bio {
-      margin-top: 64px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255,255,255,0.07);
       display: flex;
-      gap: 20px;
-      align-items: flex-start;
+      align-items: center;
+      gap: 16px;
+      margin: 56px 0 0;
+      padding-top: 32px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .post-bio-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      display: block;
     }
 
     .post-bio-text p {
-      font-size: 0.82rem;
-      margin-bottom: 6px;
+      margin: 0;
+      line-height: 1.4;
     }
 
     .post-bio-name {
-      font-weight: 500;
-      color: #f0ede6;
-      font-size: 0.85rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .post-bio-credential {
+      font-size: 0.82rem;
+      color: var(--muted);
     }
 
     .post-back {
@@ -197,7 +239,7 @@
       "url": "https://www.yogawithlisa.ai"
     },
     "datePublished": "2026-09-15",
-    "image": "https://www.yogawithlisa.ai/images/blog-workplace-stress-hero.jpg",
+    "image": "https://www.yogawithlisa.ai/images/blog-workplace-stress.jpg",
     "url": "https://www.yogawithlisa.ai/yoga-workplace-stress-resilience.html"
   }
   </script>
@@ -220,13 +262,6 @@
     </div>
   </header>
 
-  <!-- Hero Image -->
-  <img
-    src="images/blog-workplace-stress-hero.jpg"
-    alt="Woman practicing yoga in a calm space, releasing tension from the workday"
-    class="post-hero"
-  >
-
   <!-- Article -->
   <article class="post-wrap">
 
@@ -234,6 +269,10 @@
       <span class="post-category">Burnout &amp; Resilience</span>
       <span>September 15, 2026</span>
       <span>7 min read</span>
+    </div>
+
+    <div class="post-logo">
+      <img src="favicon-light.png" alt="Yoga with Lisa" width="72" height="72">
     </div>
 
     <h1 class="post-title">How to Stop Absorbing Other People's Stress at Work</h1>
@@ -322,9 +361,10 @@
 
     <!-- Bio -->
     <div class="post-bio">
+      <img class="post-bio-avatar" src="favicon-light.png" alt="Lisa Eshun-Wilson, PhD" width="48" height="48">
       <div class="post-bio-text">
-        <p class="post-bio-name">Dr. Lisa Eshun-Wilson</p>
-        <p>Molecular Cell Biologist (PhD, UC Berkeley) and 500-hour certified yoga instructor. Founder of Yoga with Lisa and Genoma Institute. Writing at the intersection of movement, science, and human resilience.</p>
+        <p class="post-bio-name">Lisa Eshun-Wilson, PhD</p>
+        <p class="post-bio-credential">Molecular Cell Biologist &amp; 500-hour certified yoga instructor</p>
       </div>
     </div>
 

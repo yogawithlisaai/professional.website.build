@@ -85,12 +85,6 @@
       text-align:center;
       margin-bottom:1.75rem;
     }
-    .post-cover{
-      width:100%;
-      border-radius:8px;
-      margin-bottom:2rem;
-      display:block;
-    }
     .post-body p{
       margin-bottom:1.5em;
       line-height:1.7;
@@ -109,22 +103,68 @@
       text-decoration:none;
     }
     .post-back:hover{ text-decoration:underline; }
-/* Blog pages header background */
-.single-post .site-header,
-.blog .site-header {
-    background: #cfdbe3 !important; /* apna desired color */
+/* Sticky taupe header, sampled from favicon-light.png (#c5ae98) */
+.site-header {
+    position: sticky !important;
+    background: #c5ae98 !important;
 }
 
-/* Blog pages logo visibility */
-.single-post .site-header .brand,
-.blog .site-header .brand {
-    color: #fff !important;
+.site-header .brand,
+.site-header .main-nav a {
+    color: #1f231b !important;
 }
 
-/* Menu text */
-.single-post .site-header .main-nav a,
-.blog .site-header .main-nav a {
-    color: #fff !important;
+.site-header .hamburger-btn span {
+    background: #1f231b !important;
+}
+
+/* Small circular mark above the title, replacing the old hero image */
+.post-logo {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 40px;
+}
+
+.post-logo img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Compact author block */
+.post-bio {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 56px 0 0;
+    padding-top: 32px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.post-bio-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    display: block;
+}
+
+.post-bio-text p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.post-bio-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.post-bio-credential {
+    font-size: 0.82rem;
+    color: var(--muted);
 }
   </style>
 </head>
@@ -206,11 +246,12 @@
     <!-- EDIT: date -->
     <span class="post-date">July 10, 2026</span>
 
+    <div class="post-logo">
+      <img src="favicon-light.png" alt="Yoga with Lisa" width="72" height="72">
+    </div>
+
     <!-- EDIT: title -->
     <h1 class="post-title">The Science Behind Burnout: What Chronic Stress Does to Women Over 30 (and How Yoga Fixes It)</h1>
-
-    <!-- EDIT: cover image path -->
-    <img class="post-cover" src="images/burnout-cover.JPG" alt="Woman practicing restorative yoga to relieve chronic stress and burnout">
 
     <!-- EDIT: body content. Use <p> for paragraphs and <h2> for section headings -->
     <div class="post-body">
@@ -412,11 +453,13 @@ The goal shifts from fitness or flexibility to nervous-system regulation: slower
 </p>
 
 
-<h2>About the Author</h2>
-
-<p>
-This article was reviewed by Dr. Lisa Eshun-Wilson, founder of Yoga with Lisa and holder of a PhD in Molecular and Cell Biology from UC Berkeley. Lisa combines a science background with over a decade of teaching experience to build yoga programs specifically designed around the physiology of stress for the women navigating deadlines, caregiving, and everything in between.
-</p>
+<div class="post-bio">
+  <img class="post-bio-avatar" src="favicon-light.png" alt="Lisa Eshun-Wilson, PhD" width="48" height="48">
+  <div class="post-bio-text">
+    <p class="post-bio-name">Lisa Eshun-Wilson, PhD</p>
+    <p class="post-bio-credential">Molecular Cell Biologist &amp; 500-hour certified yoga instructor</p>
+  </div>
+</div>
 
 <p>
 Feeling the effects of chronic stress right now? Start with a guided practice from our On Demand library, or book a call to talk through whether private sessions or corporate wellness is the right fit for where you're at.
