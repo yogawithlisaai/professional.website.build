@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- EDIT: title -->
+  <title>POST TITLE HERE | Yoga with Lisa</title>
+  <!-- EDIT: description (150-160 characters, used for search results and previews) -->
+  <meta name="description" content="ONE OR TWO SENTENCES SUMMARIZING THE POST." />
+
+  <link rel="icon" href="images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="post.css" />
+
+  <!-- Open Graph: EDIT title/description/image/url to match this post -->
+  <meta property="og:title" content="POST TITLE HERE | Yoga with Lisa">
+  <meta property="og:description" content="ONE OR TWO SENTENCES SUMMARIZING THE POST.">
+  <meta property="og:image" content="https://www.yogawithlisa.ai/images/POST-COVER-IMAGE.jpg">
+  <meta property="og:url" content="https://www.yogawithlisa.ai/POST-FILENAME.html">
+  <meta property="og:type" content="article">
+
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YT9T9B22FR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YT9T9B22FR');
+  </script>
+
+  <!-- Article Schema: EDIT headline/description/author/datePublished/image/url -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "POST TITLE HERE",
+    "description": "ONE OR TWO SENTENCES SUMMARIZING THE POST.",
+    "author": {
+      "@type": "Person",
+      "name": "Dr. Lisa Eshun-Wilson",
+      "url": "https://www.yogawithlisa.ai/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Yoga with Lisa",
+      "url": "https://www.yogawithlisa.ai"
+    },
+    "datePublished": "YYYY-MM-DD",
+    "image": "https://www.yogawithlisa.ai/images/POST-COVER-IMAGE.jpg",
+    "url": "https://www.yogawithlisa.ai/POST-FILENAME.html"
+  }
+  </script>
+
+  <style>
+    /* Fix nav dropdown */
+    .nav-dropdown[aria-hidden="true"] { display: none !important; }
+
+    /* ---- Page-specific layout. Shared header/logo/author-bio rules live
+       in post.css; only this article's own layout needs to live here. ---- */
+
+    .post-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 56px 28px 100px;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    .post-category {
+      color: #4a6142;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.68rem;
+    }
+
+    .post-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: #1f231b;
+      margin-bottom: 28px;
+    }
+
+    .post-intro {
+      font-size: 1.08rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .post-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+      font-weight: 400;
+      font-style: italic;
+      color: #1f231b;
+      margin: 48px 0 16px;
+      line-height: 1.25;
+    }
+
+    .post-body p {
+      font-size: 0.97rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .post-body strong {
+      color: #1f231b;
+      font-weight: 500;
+    }
+
+    .post-body ul {
+      margin: 0 0 24px 0;
+      padding-left: 20px;
+    }
+
+    .post-body ul li {
+      font-size: 0.97rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    /* Pull-quote callout. Use sparingly, for one memorable line per post. */
+    .post-callout {
+      background: rgba(157, 184, 144, 0.07);
+      border-left: 2px solid #4a6142;
+      padding: 24px 28px;
+      margin: 40px 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .post-callout p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: #1f231b;
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    /* Boxed how-to step. Repeat as needed for a sequence of practices. */
+    .practice-block {
+      background: rgba(0,0,0,0.02);
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 28px;
+      margin: 32px 0;
+      border-radius: 4px;
+    }
+
+    .practice-block h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: #1f231b;
+      margin-bottom: 10px;
+    }
+
+    .practice-block .timing {
+      font-size: 0.68rem;
+      color: #4a6142;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .practice-block p {
+      margin: 0;
+    }
+
+    .post-back {
+      display: inline-block;
+      margin-top: 48px;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: #4a6142;
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .post-back:hover { color: #1f231b; }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">yoga with lisa</a>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li>
+            <button class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Navigation Dropdown -->
+  <div class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
+    <div class="nav-dropdown__grid">
+
+      <div class="nav-dropdown__group">
+        <p class="nav-dropdown__group-head">Practice</p>
+        <ul>
+          <li><a href="class-schedule.html">Class Schedule</a></li>
+          <li><a href="waiver.html">Sign Waiver</a></li>
+          <li><a href="private-sessions.html">Private Sessions</a></li>
+          <li><a href="on-demand.html">On Demand</a></li>
+          <li><a href="membership.html">Membership</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-dropdown__group">
+        <p class="nav-dropdown__group-head">Explore</p>
+        <ul>
+          <li><a href="mindshift-ai.html">MindShift AI</a></li>
+          <li><a href="https://www.aetherayoga.com/" target="_blank" rel="noopener">Aethera</a></li>
+          <li><a href="corporate-wellness.html">Corporate Wellness</a></li>
+          <li><a href="student-wellness.html">Student Wellness</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-dropdown__group">
+        <p class="nav-dropdown__group-head">Connect</p>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="mailto:contact@yogawithlisa.ai">Email Me</a></li>
+          <li><a href="https://calendly.com/contact-yogawithlisa/30min" target="_blank" rel="noopener">Book a Call</a></li>
+          <li><a href="https://meet.yogawithlisa.ai" target="_blank" rel="noopener">Meet with Me</a></li>
+          <li><a href="ugc-iteration1.html">Work With Me</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-dropdown__group">
+        <p class="nav-dropdown__group-head">Official</p>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="data-protection.html">Data Protection Policy</a></li>
+          <li><a href="enduserlicenseagreement.html">End User License Agreement</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       ARTICLE CONTENT
+       Everything you need to edit for a new post is inside post-wrap.
+  ============================================================= -->
+  <article class="post-wrap">
+
+    <div class="post-meta">
+      <!-- EDIT: category, date, read time -->
+      <span class="post-category">CATEGORY</span>
+      <span>Month DD, YYYY</span>
+      <span>X min read</span>
+    </div>
+
+    <div class="post-logo">
+      <img src="favicon-light.png" alt="Yoga with Lisa" width="72" height="72">
+    </div>
+
+    <!-- EDIT: title -->
+    <h1 class="post-title">POST TITLE HERE</h1>
+
+    <!-- EDIT: intro paragraph — the hook, 2-4 sentences -->
+    <p class="post-intro">
+      INTRO PARAGRAPH GOES HERE. Set up the problem or question this post answers before the reader commits to the full piece.
+    </p>
+
+    <div class="post-body">
+
+      <!-- EDIT: body content below. Delete any components (callout,
+           practice-block) you don't need for this post. -->
+
+      <h2>FIRST SECTION HEADING</h2>
+
+      <p>
+        BODY PARAGRAPH. Use <code>&lt;strong&gt;</code> for the one or two phrases per section that most deserve emphasis, not for whole sentences.
+      </p>
+
+      <ul>
+        <li>LIST ITEM ONE</li>
+        <li>LIST ITEM TWO</li>
+        <li>LIST ITEM THREE</li>
+      </ul>
+
+      <!-- Optional: one memorable pull-quote per post -->
+      <div class="post-callout">
+        <p>"A ONE-SENTENCE QUOTE THAT SUMMARIZES THE POST'S CENTRAL IDEA."</p>
+      </div>
+
+      <h2>SECOND SECTION HEADING</h2>
+
+      <p>
+        BODY PARAGRAPH.
+      </p>
+
+      <!-- Optional: repeat this block for a sequence of practices/steps -->
+      <div class="practice-block">
+        <span class="timing">WHEN — HOW LONG</span>
+        <h3>STEP NAME</h3>
+        <p>Step instructions.</p>
+      </div>
+
+      <h2>CLOSING SECTION HEADING</h2>
+
+      <p>
+        CLOSING PARAGRAPH with a call to action, e.g. a link to <a href="on-demand.html">On Demand</a> or <a href="class-schedule.html">the class schedule</a>.
+      </p>
+
+    </div>
+
+    <!-- Author block: only the credential line should ever need editing -->
+    <div class="post-bio">
+      <img class="post-bio-avatar" src="favicon-light.png" alt="Lisa Eshun-Wilson, PhD" width="48" height="48">
+      <div class="post-bio-text">
+        <p class="post-bio-name">Lisa Eshun-Wilson, PhD</p>
+        <p class="post-bio-credential">Molecular Cell Biologist &amp; 500-hour certified yoga instructor</p>
+      </div>
+    </div>
+
+    <a href="blog.html" class="post-back">← Back to the journal</a>
+
+  </article>
+
+  <!-- Footer Nav -->
+  <div class="footer-nav" aria-label="Site footer">
+    <div class="footer-nav__inner container">
+      <div class="footer-nav__col">
+        <p class="footer-nav__site-name">Yoga with Lisa</p>
+        <p class="footer-nav__tagline">Live and on-demand yoga classes to help you find stillness in a loud world.</p>
+        <a href="https://wa.me/18582481198" target="_blank" rel="noopener" class="btn btn-pill whatsapp-btn">
+          <img src="images/icons/whatsapp.svg" alt="" aria-hidden="true" width="16" height="16" onerror="this.style.display='none'">
+          Chat on WhatsApp
+        </a>
+        <p class="footer-nav__tagline" style="margin-top:12px;font-size:0.78rem;opacity:0.6;">
+          28 Geary St, Suite 650<br>San Francisco, CA 94108
+        </p>
+      </div>
+      <div class="footer-nav__col">
+        <p class="footer-nav__heading">Practice</p>
+        <ul>
+          <li><a href="class-schedule.html">Class Schedule</a></li>
+          <li><a href="waiver.html">Sign Waiver</a></li>
+          <li><a href="private-sessions.html">Private Sessions</a></li>
+          <li><a href="on-demand.html">On Demand</a></li>
+          <li><a href="membership.html">Membership</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav__col">
+        <p class="footer-nav__heading">Explore</p>
+        <ul>
+          <li><a href="mindshift-ai.html">MindShift AI</a></li>
+          <li><a href="https://www.aetherayoga.com/" target="_blank" rel="noopener">Aethera</a></li>
+          <li><a href="corporate-wellness.html">Corporate Wellness</a></li>
+          <li><a href="student-wellness.html">Student Wellness</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav__col">
+        <p class="footer-nav__heading">Connect</p>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="mailto:contact@yogawithlisa.ai">Email Me</a></li>
+          <li><a href="https://calendly.com/contact-yogawithlisa/30min" target="_blank" rel="noopener">Book a Call</a></li>
+          <li><a href="submit-review.html">Leave a Review</a></li>
+          <li><a href="waitlist.html">Join the Waitlist</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav__col">
+        <p class="footer-nav__heading">Official</p>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="data-protection.html">Data Protection Policy</a></li>
+          <li><a href="enduserlicenseagreement.html">End User License Agreement</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="y"></span> YOGA WITH LISA BY LISA ESHUN-WILSON &amp; ASSOCIATES, LLC. / ALL RIGHTS RESERVED</p>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <a href="waitlist.html" class="btn btn-dark btn-pill floating-cta" aria-label="Join Waitlist">
+    Join Waitlist <span aria-hidden="true">&rarr;</span>
+  </a>
+  <style>
+    .floating-cta { position:fixed; bottom:24px; right:24px; z-index:900; box-shadow:0 4px 16px rgba(0,0,0,0.25); }
+    @media (max-width:600px) { .floating-cta { bottom:16px; right:16px; padding:12px 20px; font-size:0.85rem; } }
+  </style>
+</body>
+</html>
