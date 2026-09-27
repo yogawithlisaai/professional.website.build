@@ -1,5 +1,5 @@
 /* ============================================================
-   GA4 Events Tracking - Yoga with Lisa
+   GA4 Events Tracking - Yoga with Lisa Rose
    Paste this script just before </body> on every HTML page
    ============================================================ */
 

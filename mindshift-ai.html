@@ -159,7 +159,7 @@
 </nav>
 
 <div class="hero">
-  <p class="hero-eyebrow">Yoga with Lisa</p>
+  <p class="hero-eyebrow">Yoga with Lisa Rose</p>
   <h1>MindShift AI: Personalized Yoga Guidance from Your AI Yoga Instructor</h1>
   <p>A daily 3-minute check-in that connects your Ashtanga practice to your focus and mental clarity, with an AI coach who notices what you can't.</p>
 </div>
@@ -182,7 +182,7 @@
     <div class="card" style="background: var(--sage-pale); border-color: rgba(92,122,92,0.2);">
       <div class="card-label" style="color: var(--sage-dark);">About MindShift</div>
       <p style="font-size:0.85rem; color: var(--sage-dark); line-height:1.75; font-weight:300;">
-        This is a beta from <strong style="font-weight:500">Yoga with Lisa</strong>. I created MindShift because we talk a lot about <em>why</em> we should shift our mindset, but rarely track <em>how</em> the practice is actually doing it. Your feedback shapes what this becomes. Thank you for being here. 🌿
+        This is a beta from <strong style="font-weight:500">Yoga with Lisa Rose</strong>. I created MindShift because we talk a lot about <em>why</em> we should shift our mindset, but rarely track <em>how</em> the practice is actually doing it. Your feedback shapes what this becomes. Thank you for being here. 🌿
       </p>
     </div>
   </div>
@@ -330,7 +330,7 @@
     const btn = document.getElementById('sendBtn');
     if (btn) btn.disabled = true;
     if (!isInitial) state.history.push({ role:'user', content });
-    const system = `You are MindShift, a warm, grounded Ashtanga yoga coach created by Lisa of Yoga with Lisa (yogawithlisa.ai). You help yogis understand how their mat practice is shaping their focus and mental clarity in daily life. Speak like a wise teacher: thoughtful, human, never clinical. Ask one question at a time. Keep responses under 100 words unless asked for more. Notice patterns and help yogis articulate their own transformation.`;
+    const system = `You are MindShift, a warm, grounded Ashtanga yoga coach created by Lisa of Yoga with Lisa Rose (yogawithlisa.ai). You help yogis understand how their mat practice is shaping their focus and mental clarity in daily life. Speak like a wise teacher: thoughtful, human, never clinical. Ask one question at a time. Keep responses under 100 words unless asked for more. Notice patterns and help yogis articulate their own transformation.`;
     const messages = isInitial ? [{role:'user',content}] : state.history;
     try {
       const res = await fetch('https://api.anthropic.com/v1/messages', {
@@ -380,7 +380,7 @@
 
     <!-- Brand -->
     <div class="footer-nav__col">
-      <p class="footer-nav__site-name">Yoga with Lisa</p>
+      <p class="footer-nav__site-name">Yoga with Lisa Rose</p>
       <p class="footer-nav__tagline">Live and on-demand yoga classes to help you find stillness in a loud world.</p>
       <a href="https://wa.me/18582481198" target="_blank" rel="noopener" class="btn btn-pill whatsapp-btn">
         <img src="images/icons/whatsapp.svg" alt="" aria-hidden="true" width="16" height="16" onerror="this.style.display='none'">
