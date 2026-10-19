@@ -4,12 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Yoga Class Schedule - Vinyasa & More | San Francisco, CA</title>
-  <meta name="description" content="Browse Lisa's weekly yoga class schedule in San Francisco, CA. Vinyasa, sound bath, and specialty classes available. Reserve your spot online in seconds.">
+  <meta name="description" content="How to practice with Lisa Rose right now: a weekly in-studio class in Berkeley, private sessions, on-demand video, and in-person pop-ups around the Bay Area.">
+  <link rel="canonical" href="https://www.yogawithlisarose.com/class-schedule.html">
   <link rel="icon" href="images/favicon.png">
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Adobe Fonts -->
-  <link rel="stylesheet" href="https://use.typekit.net/uwl6zhw.css">
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="/favicon-light.png" media="(prefers-color-scheme: light)" />
@@ -18,204 +15,19 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#1a1a1a">
   <meta name="theme-color" content="#ffffff">
 
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Class Schedule">
-  <meta property="og:description" content="Personalized yoga, meditation, and nutrition meeting you where you are.">
+  <meta property="og:title" content="Yoga Class Schedule | Yoga with Lisa Rose">
+  <meta property="og:description" content="How to practice with Lisa Rose right now: a weekly in-studio class in Berkeley, private sessions, on-demand video, and in-person pop-ups around the Bay Area.">
   <meta property="og:image" content="https://www.yogawithlisarose.com/images/og-linen.jpg">
-  <meta property="og:url" content="https://www.yogawithlisarose.com">
+  <meta property="og:url" content="https://www.yogawithlisarose.com/class-schedule.html">
   <meta property="og:type" content="website">
 
-  <!-- Schedule styles -->
   <style>
-    .schedule-wrapper {
-      max-width: 1120px;
-      margin: 4rem auto;
-      padding: 0 1.5rem;
-    }
-    .schedule-card {
-      background: #f5eee4; /* beige card */
-      border-radius: 24px;
-      padding: 2.5rem 2rem 2rem;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.05);
-    }
-    .schedule-header {
-      margin-bottom: 1.75rem;
-    }
-    .schedule-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin: 0 0 0.5rem;
-    }
-    .schedule-subtitle {
-      max-width: 640px;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin: 0 0 1rem;
-    }
-    .schedule-date-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      font-size: 0.9rem;
-      margin-top: 0.25rem;
-    }
-    .date-pill {
-      padding: 0.35rem 0.95rem;
-      border-radius: 999px;
-      border: 1px solid var(--black);
-      background: var(--black);
-      text-decoration: none;
-      color: #fff;
-      transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
-    }
-    .date-pill:hover,
-    .date-pill:focus-visible {
-      background: #8b6c5c;
-      border-color: #8b6c5c;
-      color: #fff;
-    }
-    .schedule-month-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #555;
-      margin-bottom: 0.75rem;
-    }
-    /* Month-grouped accordion for the date nav (built by JS) */
-    .schedule-date-nav.is-accordion {
-      display: block;
-      margin-top: 0.5rem;
-    }
-    .month-group {
-      border: 1px solid #000;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 0.6rem;
-      background: #fff;
-    }
-    .month-header {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      min-height: 48px;
-      padding: 0.75rem 1.1rem;
-      background: var(--black);
-      border: none;
-      font-family: inherit;
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      color: #fff;
-      text-align: left;
-      cursor: pointer;
-      transition: background 0.18s ease;
-    }
-    .month-header:hover,
-    .month-header:focus-visible {
-      background: #2a2a2a;
-    }
-    .month-header__chevron {
-      flex-shrink: 0;
-      width: 1.1em;
-      height: 1.1em;
-      transition: transform 0.2s ease;
-    }
-    .month-header[aria-expanded="true"] .month-header__chevron {
-      transform: rotate(180deg);
-    }
-    .month-panel {
-      padding: 0.9rem 1.1rem 1.05rem;
-    }
-    .month-panel[aria-hidden="true"] {
-      display: none;
-    }
-    .month-panel__pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      font-size: 0.9rem;
-    }
-    @media (max-width: 480px) {
-      .month-header { min-height: 52px; padding: 0.85rem 1rem; }
-    }
-    .schedule-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-    }
-    .schedule-table th,
-    .schedule-table td {
-      padding: 0.75rem 0.75rem;
-      text-align: left;
-      vertical-align: middle;
-    }
-    .schedule-table thead th {
-      border-bottom: 1px solid #ddd;
-      font-weight: 600;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-    .schedule-table tbody tr {
-      border-bottom: 1px solid #eee; /* subtle divider between classes */
-    }
-    .schedule-date {
-      white-space: nowrap;
-    }
-    .schedule-time,
-    .schedule-duration {
-      white-space: nowrap;
-    }
-    .schedule-join-col,
-    .schedule-cta {
-      text-align: right;
-      width: 120px; /* give buttons room so text stays on one line */
-    }
-    .schedule-btn {
-      display: inline-block;
-      font-size: 0.9rem;
-      padding: 0.6rem 1.6rem;
-      border-radius: 999px;
-      text-transform: lowercase;
-      white-space: nowrap; /* keep 'join' on a single line */
-    }
-
-    @media (max-width: 768px) {
-      .schedule-card {
-        padding: 1.75rem 1.25rem;
-      }
-      .schedule-table thead {
-        display: none;
-      }
-      .schedule-table,
-      .schedule-table tbody,
-      .schedule-table tr,
-      .schedule-table td {
-        display: block;
-        width: 100%;
-      }
-      .schedule-table tr {
-        border-bottom: 1px solid #eee;
-        padding-bottom: 0.75rem;
-        margin-bottom: 0.75rem;
-      }
-      .schedule-table td {
-        padding: 0.25rem 0;
-      }
-      .schedule-cta {
-        margin-top: 0.5rem;
-        text-align: left;
-      }
-    }
-
     /* Fix hero title centering: the nowrap heading is wider than
        .display's ch-based max-width, so the overflowing text was
        rendering left-aligned instead of centered. Widen the box so
@@ -226,6 +38,44 @@
       .hero .display {
         max-width: none;
       }
+    }
+
+    .practice-options {
+      max-width: 1120px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+    .practice-options h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin: 0 0 0.5rem;
+      text-align: center;
+    }
+    .practice-options .sub {
+      max-width: 640px;
+      margin: 0 auto 2.5rem;
+      text-align: center;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: rgba(0,0,0,0.65);
+    }
+    .recurring-class {
+      max-width: 1120px;
+      margin: 0 auto 4rem;
+      padding: 2rem 1.5rem;
+      background: #f5eee4;
+      border-radius: 24px;
+      text-align: center;
+    }
+    .recurring-class h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin: 0 0 0.5rem;
+    }
+    .recurring-class p {
+      margin: 0 0 1.25rem;
+      font-size: 0.95rem;
+      color: rgba(0,0,0,0.65);
     }
   </style>
 
@@ -238,39 +88,6 @@
   gtag('config', 'G-YT9T9B22FR');
 </script>
 
-	<script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "Thursday Vinyasa Yoga Class with Lisa - Berkeley CA",
-    "description": "Join Dr. Lisa Eshun-Wilson for an in-person vinyasa yoga class every Thursday in Berkeley, CA. All experience levels are welcome. Build strength, flexibility, and mindfulness in a welcoming studio environment.",
-    "url": "https://www.yogawithlisarose.com/class-schedule.html",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "location": {
-      "@type": "Place",
-      "name": "Sports Basement Berkeley",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Berkeley",
-        "addressRegion": "CA",
-        "addressCountry": "US"
-      }
-    },
-    "organizer": {
-      "@type": "Person",
-      "name": "Dr. Lisa Eshun-Wilson",
-      "url": "https://www.yogawithlisarose.com/about-lisa-eshun-wilson.html"
-    },
-    "performer": {
-      "@type": "Person",
-      "name": "Dr. Lisa Eshun-Wilson"
-    }
-  }
-]
-</script>
-	
 </head>
 
 <body>
@@ -297,7 +114,7 @@
       <p class="nav-dropdown__group-head">Practice</p>
       <ul>
         <li><a href="class-schedule.html">Class Schedule</a></li>
-        <li><a href="yoga.html">In-Person Pop-Ups</a></li>
+        <li><a href="class-schedule.html">In-Person Pop-Ups</a></li>
           <li><a href="waiver.html">Sign Waiver</a></li>
         <li><a href="private-sessions.html">Private Sessions</a></li>
         <li><a href="on-demand.html">On Demand</a></li>
@@ -342,8 +159,7 @@
 
   <!-- Hero (image) -->
   <section class="hero hero--image" role="banner" aria-label="Hero">
-    <!-- Set your image at images/yoga-inperson.jpg -->
-    <div class="hero-media" style="background-image:url('images/yoga-inperson.jpg');" aria-hidden="true"></div>
+    <img class="hero-media hero-media--img" src="images/yoga-inperson-1.jpg" alt="Lisa Rose practicing yoga">
     <div class="hero-overlay" aria-hidden="true"></div>
 
 <div class="hero-inner">
@@ -385,849 +201,42 @@
     })();
   </script>
 
-  <!-- =================== Find a Class (Schedule) =================== -->
-  <section class="schedule-wrapper">
-    <div class="schedule-card">
-      <header class="schedule-header">
-        <h2 class="schedule-title">Find a Class</h2>
-        <p class="schedule-subtitle">
-          Join us in person to sweat, glow and grow. Designed to lift your body and your mood. All times are in Pacific Time.
-        </p>
-        <nav class="schedule-date-nav" aria-label="Upcoming dates">
-          <a href="#oct29" class="date-pill">Oct 29</a>
-          <a href="#oct22" class="date-pill">Oct 22</a>
-          <a href="#oct15" class="date-pill">Oct 15</a>
-          <a href="#oct8" class="date-pill">Oct 8</a>
-          <a href="#oct1" class="date-pill">Oct 1</a>
-          <a href="#sept24" class="date-pill">Sept 24</a>
-          <a href="#jul30" class="date-pill">Jul 30</a>
-          <a href="#jul23" class="date-pill">Jul 23</a>
-          <a href="#jul16" class="date-pill">Jul 16</a>
-          <a href="#jul9" class="date-pill">Jul 9</a>
-          <a href="#jul2" class="date-pill">Jul 2</a>
-          <a href="#jun25" class="date-pill">Jun 25</a>
-          <a href="#jun18" class="date-pill">Jun 18</a>
-          <a href="#jun12" class="date-pill">Jun 12</a>
-          <a href="#jun5" class="date-pill">Jun 5</a>
-          <a href="#may28" class="date-pill">May 28</a>
-          <a href="#may21" class="date-pill">May 21</a>
-          <a href="#may14" class="date-pill">May 14</a>
-	  <a href="#may9" class="date-pill">May 9</a>
-          <a href="#may7" class="date-pill">May 7</a>
-          <a href="#feb13" class="date-pill">Feb 13</a>
-	  <a href="#feb12" class="date-pill">Feb 12</a>
-	  <a href="#feb10" class="date-pill">Feb 10</a>
-	  <a href="#feb6" class="date-pill">Feb 6</a>
-	  <a href="#feb5" class="date-pill">Feb 5</a>
-          <a href="#feb3" class="date-pill">Feb 3</a>
-          <a href="#jan30" class="date-pill">Jan 30</a>
-          <a href="#jan29" class="date-pill">Jan 29</a>
-          <a href="#jan27" class="date-pill">Jan 27</a>
-	  <a href="#jan23" class="date-pill">Jan 23</a>
-	  <a href="#jan16" class="date-pill">Jan 16</a>
-	  <a href="#jan9" class="date-pill">Jan 9</a>
-	  <a href="#jan8" class="date-pill">Jan 8</a>
-          <a href="#jan6" class="date-pill">Jan 6</a>
-	  <a href="#jan5" class="date-pill">Jan 3</a>
-          <a href="#jan2" class="date-pill">Jan 2</a>
-	  <a href="#dec23" class="date-pill">Dec 23</a>
-          <a href="#dec13" class="date-pill">Dec 13</a>
-	  <a href="#dec12" class="date-pill">Dec 12</a>
-	  <a href="#dec5" class="date-pill">Dec 5</a>
-          <a href="#nov21" class="date-pill">Nov 21</a>
-          <a href="#nov15" class="date-pill">Nov 15</a>
-          <a href="#oct18" class="date-pill">Oct 18</a>
-          <a href="#sept19" class="date-pill">Sept 19</a>
-          <a href="#aug19" class="date-pill">Aug 19</a>
-        </nav>
-      </header>
+  <!-- =================== How to Practice =================== -->
+  <section class="practice-options">
+    <h2>How to practice with Lisa, right now</h2>
+    <p class="sub">Four ways to get on the mat, whether you're in the Bay Area or anywhere else.</p>
 
-      <div class="schedule-month-label">Upcoming Classes</div>
+    <div class="cards-row" tabindex="0">
 
-      <table class="schedule-table" aria-label="In-person yoga schedule">
-        <thead>
-          <tr>
-            <th scope="col">Date</th>
-            <th scope="col">Time</th>
-            <th scope="col">Duration</th>
-            <th scope="col">Class</th>
-            <th scope="col">Instructor</th>
-            <th scope="col">Location</th>
-            <th scope="col" class="schedule-join-col">Sign Up</th>
-          </tr>
-        </thead>
-        <tbody>
+      <article class="card">
+        <a class="card-link" href="on-demand.html">
+          <img class="card-img" src="images/yoga-ondemand.jpg" alt="On-demand online yoga classes">
+          <span class="card-tag">Online Classes</span>
+        </a>
+      </article>
 
-<!-- October 29th -->
-        <tr id="oct29">
-        <td class="schedule-date">Thursday, October 29th</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="signup.html?class=Oct29">
-            join
-          </a>
-        </td>
-</tr>
+      <article class="card">
+        <a class="card-link" href="private-sessions.html">
+          <img class="card-img" src="images/oneonone-hero.jpg" alt="Private one-on-one yoga sessions">
+          <span class="card-tag">Private Sessions</span>
+        </a>
+      </article>
 
-<!-- October 22nd -->
-        <tr id="oct22">
-        <td class="schedule-date">Thursday, October 22nd</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="signup.html?class=Oct22">
-            join
-          </a>
-        </td>
-</tr>
+      <article class="card">
+        <a class="card-link" href="class-schedule.html">
+          <img class="card-img" src="images/yoga-inperson-1.jpg" alt="In-person yoga pop-ups in the Bay Area">
+          <span class="card-tag">In-Person Pop-Ups</span>
+        </a>
+      </article>
 
-<!-- October 15th -->
-        <tr id="oct15">
-        <td class="schedule-date">Thursday, October 15th</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="signup.html?class=Oct15">
-            join
-          </a>
-        </td>
-</tr>
-
-<!-- October 8th -->
-        <tr id="oct8">
-        <td class="schedule-date">Thursday, October 8th</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="signup.html?class=Oct8">
-            join
-          </a>
-        </td>
-</tr>
-
-<!-- October 1st -->
-        <tr id="oct1">
-        <td class="schedule-date">Thursday, October 1st</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="signup.html?class=Oct1">
-            join
-          </a>
-        </td>
-</tr>
-
-<!-- September 24th -->
-        <tr id="sept24">
-        <td class="schedule-date">Thursday, September 24th</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="signup.html?class=Sept24">
-            join
-          </a>
-        </td>
-</tr>
-
-<!-- July 30th -->
-        <tr id="jul30">
-        <td class="schedule-date">Thursday, July 30th</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="signup.html?class=Jul30">
-            join
-          </a>
-        </td>
-</tr>
-
-<!-- July 23rd -->
-        <tr id="jul23">
-        <td class="schedule-date">Thursday, July 23rd</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="signup.html?class=Jul23">
-            join
-          </a>
-        </td>
-</tr>
-
-<!-- July 16th -->
-        <tr id="jul16">
-        <td class="schedule-date">Thursday, July 16th</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="signup.html?class=Jul16">
-            join
-          </a>
-        </td>
-</tr>
-
-<!-- July 9th -->
-        <tr id="jul9">
-        <td class="schedule-date">Thursday, July 9th</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="signup.html?class=Jul9">
-            join
-          </a>
-        </td>
-</tr>
-
-<!-- July 2nd -->
-        <tr id="jul2">
-        <td class="schedule-date">Thursday, July 2nd</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="signup.html?class=Jul2">
-            join
-          </a>
-        </td>
-</tr>
-
-<!-- June 25th -->
-        <tr id="jun25">
-        <td class="schedule-date">Thursday, June 25th</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="signup.html?class=Jun25">
-            join
-          </a>
-        </td>
-</tr>
-
-<!-- June 18th -->
-        <tr id="jun18">
-        <td class="schedule-date">Thursday, June 18th</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="signup.html?class=Jun18">
-            join
-          </a>
-        </td>
-</tr>
-
-<!-- June 12th -->
-        <tr id="jun12">
-        <td class="schedule-date">Thursday, June 12th</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="signup.html?class=Jun12">
-            join
-          </a>
-        </td>
-</tr>
-
-<!-- June 5th -->
-        <tr id="jun5">
-        <td class="schedule-date">Thursday, June 5th</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="signup.html?class=Jun5">
-            join
-          </a>
-        </td>
-</tr>
-
-<!-- May 28th -->
-        <tr id="may28">
-        <td class="schedule-date">Thursday, May 28th</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="signup.html?class=May28">
-            join
-          </a>
-        </td>
-</tr>
-
-<!-- May 21st -->
-        <tr id="may21">
-        <td class="schedule-date">Thursday, May 21st</td>
-        <td class="schedule-time">5:00 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-          <a class="btn btn-dark btn-pill schedule-btn" href="#"
-             onclick="openClassModal('Vinyasa Flow', 'Thursday, May 21st', '5:00 PM', 'Sports Basement Berkeley'); return false;">
-            join
-          </a>
-        </td>
-</tr>
-
-<!-- May 14th -->
-        <tr id="may14">
-        <td class="schedule-date">Thursday, May 14th</td>
-        <td class="schedule-time">4:30 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-        <a class="btn btn-dark btn-pill schedule-btn"
-       href="https://shop.sportsbasement.com/blogs/community-spaces/community-room-1?srsltid=AfmBOop6RwgBJOVRhL-YJSWCV4j3HMgC6K4FyqqtrUtuEIL3VxScBP44"
-       target="_blank" rel="noopener">
-      join
-    </a>
-  </td>
-</tr>
-
-<!-- May 9 -->
-<tr id="may9-3pm">
-  <td class="schedule-date">Saturday, May 9th</td>
-  <td class="schedule-time">3:00 PM</td>
-  <td class="schedule-duration">60 min</td>
-  <td class="schedule-class">Ashtanga Vinyasa</td>
-  <td class="schedule-instructor">Lisa</td>
-  <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
-  <td class="schedule-cta">
-    <a class="btn btn-dark btn-pill schedule-btn"
-       href="https://www.beachglasshyp.com/schedule"
-       target="_blank" rel="noopener">
-      join
-    </a>
-  </td>
-</tr>
-
-<tr id="may9-430pm">
-  <td class="schedule-date">Saturday, May 9th</td>
-  <td class="schedule-time">4:30 PM</td>
-  <td class="schedule-duration">60 min</td>
-  <td class="schedule-class">Hatha Vinyasa + Sound Bath</td>
-  <td class="schedule-instructor">Lisa</td>
-  <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
-  <td class="schedule-cta">
-    <a class="btn btn-dark btn-pill schedule-btn"
-       href="https://www.beachglasshyp.com/schedule"
-       target="_blank" rel="noopener">
-      join
-    </a>
-  </td>
-</tr>
-
- <!-- May 7th -->
-        <tr id="may7th">
-        <td class="schedule-date">Thursday, May 7th</td>
-        <td class="schedule-time">4:30 PM</td>
-        <td class="schedule-duration">60 min</td>
-        <td class="schedule-class">Vinyasa Flow</td>
-        <td class="schedule-instructor">Lisa</td>
-        <td class="schedule-location">Sports Basement Berkeley</td>
-        <td class="schedule-cta">
-        <a class="btn btn-dark btn-pill schedule-btn"
-       href="https://shop.sportsbasement.com/blogs/community-spaces/community-room-1?srsltid=AfmBOop6RwgBJOVRhL-YJSWCV4j3HMgC6K4FyqqtrUtuEIL3VxScBP44"
-       target="_blank" rel="noopener">
-      join
-    </a>
-  </td>
-</tr>
-
-
-
-	<!-- Feb 13 -->
-          <tr id="feb13">
-            <td class="schedule-date">Friday, Feb 13th</td>
-            <td class="schedule-time">1:00 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://www.beachglasshyp.com/schedule"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-
-	<!-- Feb 12 -->
-	<tr id="feb12">
-  	<td class="schedule-date">Thursday, Feb 12th</td>
-  	<td class="schedule-time">12:00 PM</td>
-  	<td class="schedule-duration">60 min</td>
-  	<td class="schedule-class">Power Vinyasa Flow</td>
-  	<td class="schedule-instructor">Lisa</td>
-  	<td class="schedule-location">Sports Basement Berkeley</td>
-  	<td class="schedule-cta">
-    	<a class="btn btn-dark btn-pill schedule-btn"
-       href="https://shop.sportsbasement.com/blogs/community-spaces/community-room-1?srsltid=AfmBOop6RwgBJOVRhL-YJSWCV4j3HMgC6K4FyqqtrUtuEIL3VxScBP44"
-       target="_blank" rel="noopener">
-      join
-    </a>
-  </td>
-</tr>
-
-	<!-- Feb 10 -->
-	<tr id="feb10">
-  	<td class="schedule-date">Tuesday, Feb 10th</td>
-  	<td class="schedule-time">12:00 PM</td>
-  	<td class="schedule-duration">60 min</td>
-  	<td class="schedule-class">Power Vinyasa Flow</td>
-  	<td class="schedule-instructor">Lisa</td>
-  	<td class="schedule-location">Sports Basement Berkeley</td>
-  	<td class="schedule-cta">
-    	<a class="btn btn-dark btn-pill schedule-btn"
-       href="https://shop.sportsbasement.com/blogs/community-spaces/community-room-1?srsltid=AfmBOop6RwgBJOVRhL-YJSWCV4j3HMgC6K4FyqqtrUtuEIL3VxScBP44"
-       target="_blank" rel="noopener">
-      join
-    </a>
-  </td>
-</tr>
-
-	  <!-- Feb 6 -->
-          <tr id="feb6">
-            <td class="schedule-date">Friday, Feb 6th</td>
-            <td class="schedule-time">1:00 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://www.beachglasshyp.com/schedule"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-
-	<!-- Feb 5 -->
-	<tr id="feb5">
-  	<td class="schedule-date">Thursday, Feb 5th</td>
-  	<td class="schedule-time">12:00 PM</td>
-  	<td class="schedule-duration">60 min</td>
-  	<td class="schedule-class">Power Vinyasa Flow</td>
-  	<td class="schedule-instructor">Lisa</td>
-  	<td class="schedule-location">Sports Basement Berkeley</td>
-  	<td class="schedule-cta">
-    	<a class="btn btn-dark btn-pill schedule-btn"
-       	href="https://shop.sportsbasement.com/blogs/community-spaces/community-room-1?srsltid=AfmBOop6RwgBJOVRhL-YJSWCV4j3HMgC6K4FyqqtrUtuEIL3VxScBP44"
-       target="_blank" rel="noopener">
-      join
-    </a>
-  </td>
-</tr>
-
-	<!-- Feb 3 -->
-	<tr id="feb3">
-  	<td class="schedule-date">Tuesday, Feb 3rd</td>
-  	<td class="schedule-time">12:00 PM</td>
-  	<td class="schedule-duration">60 min</td>
-  	<td class="schedule-class">Power Vinyasa Flow</td>
-  	<td class="schedule-instructor">Lisa</td>
-  	<td class="schedule-location">Sports Basement Berkeley</td>
-  	<td class="schedule-cta">
-    	<a class="btn btn-dark btn-pill schedule-btn"
-       	href="https://shop.sportsbasement.com/blogs/community-spaces/community-room-1?srsltid=AfmBOop6RwgBJOVRhL-YJSWCV4j3HMgC6K4FyqqtrUtuEIL3VxScBP44"
-       target="_blank" rel="noopener">
-      join
-    </a>
-  </td>
-</tr>
-
-          <!-- Jan 30 -->
-          <tr id="jan30">
-            <td class="schedule-date">Friday, Jan 30th</td>
-            <td class="schedule-time">1:00 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://www.beachglasshyp.com/schedule"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-	<!-- Jan 29 -->
-	<tr id="jan29">
-  	<td class="schedule-date">Thursday, Jan 29th</td>
-  	<td class="schedule-time">12:00 PM</td>
-  	<td class="schedule-duration">60 min</td>
-  	<td class="schedule-class">Power Vinyasa Flow</td>
-  	<td class="schedule-instructor">Lisa</td>
-  	<td class="schedule-location">Sportsbasement Berkeley</td>
-  	<td class="schedule-cta">
-    	<a class="btn btn-dark btn-pill schedule-btn"
-       href="https://shop.sportsbasement.com/blogs/community-spaces/community-room-1?srsltid=AfmBOop6RwgBJOVRhL-YJSWCV4j3HMgC6K4FyqqtrUtuEIL3VxScBP44"
-       target="_blank" rel="noopener">
-      join
-    </a>
-  </td>
-</tr>
-
-	  <!-- Jan 27 -->
-	<tr id="jan27">
-  	<td class="schedule-date">Tuesday, Jan 27th</td>
-  	<td class="schedule-time">12:00 PM</td>
-  	<td class="schedule-duration">60 min</td>
-  	<td class="schedule-class">Power Vinyasa Flow</td>
-  	<td class="schedule-instructor">Lisa</td>
-  	<td class="schedule-location">Sportsbasement Berkeley</td>
-  	<td class="schedule-cta">
-    	<a class="btn btn-dark btn-pill schedule-btn"
-       href="https://shop.sportsbasement.com/blogs/community-spaces/community-room-1?srsltid=AfmBOop6RwgBJOVRhL-YJSWCV4j3HMgC6K4FyqqtrUtuEIL3VxScBP44"
-       target="_blank" rel="noopener">
-      join
-    </a>
-  </td>
-</tr>
-          <!-- Jan 23 -->
-          <tr id="jan23">
-            <td class="schedule-date">Friday, Jan 23rd</td>
-            <td class="schedule-time">1:00 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://www.beachglasshyp.com/schedule"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-          <!-- Jan 16 -->
-          <tr id="jan16">
-            <td class="schedule-date">Friday, Jan 16th</td>
-            <td class="schedule-time">1:00 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://www.beachglasshyp.com/schedule"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-	  <!-- Jan 9 -->
-          <tr id="jan9">
-            <td class="schedule-date">Friday, Jan 9th</td>
-            <td class="schedule-time">1:00 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://www.beachglasshyp.com/schedule"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-	  <!-- Jan 8 -->
-          <tr id="jan8">
-            <td class="schedule-date">Thursday, Jan 8th</td>
-            <td class="schedule-time">7:45 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://www.beachglasshyp.com/schedule"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>          
-
-          <!-- Jan 6 -->
-          <tr id="jan6">
-            <td class="schedule-date">Tuesday, Jan 6th</td>
-            <td class="schedule-time">4:30 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Green Yogi Telegraph</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://partiful.com/e/bMY1KIJ8QG5wCGZ3VtnM"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-	  <!-- Jan 3 -->
-          <tr id="jan3">
-            <td class="schedule-date">Saturday, Jan 3rd</td>
-            <td class="schedule-time">11:00 AM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Beginner Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Urban Adamah Silent Retreat</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://www.urbanadamah.org"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-	  <!-- Jan 2 -->
-          <tr id="jan2">
-            <td class="schedule-date">Friday, Jan 2nd</td>
-            <td class="schedule-time">11:00 AM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Beginner Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Urban Adamah Silent Retreat</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://www.urbanadamah.org"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-<!-- Dec 23 -->
-          <tr id="dec13">
-            <td class="schedule-date">Tuesday, Dec 23rd</td>
-            <td class="schedule-time">11:00 AM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Deep Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Hermosa Beach Pier</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://partiful.com/e/1sBlxZltNg9ss1PobRjF"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>	  
-
-<!-- Dec 13 -->
-          <tr id="dec13">
-            <td class="schedule-date">Saturday, Dec 13th</td>
-            <td class="schedule-time">1:00 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa & Brynn</td>
-            <td class="schedule-location">Green Yogi Berkeley</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://partiful.com/e/2aidGxGBVlRF2Q5FaXpf"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-          <!-- Dec 12 -->
-          <tr id="dec12">
-            <td class="schedule-date">Friday, Dec 12th</td>
-            <td class="schedule-time">1:00 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://www.beachglasshyp.com/schedule"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-<!-- Dec 5 -->
-          <tr id="dec5">
-            <td class="schedule-date">Friday, Dec 5th</td>
-            <td class="schedule-time">1:00 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://www.beachglasshyp.com/schedule"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-          <!-- Nov 28 -->
-          <tr id="nov28">
-            <td class="schedule-date">Friday, Nov 28th</td>
-            <td class="schedule-time">1:00 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://www.beachglasshyp.com/schedule"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-          <!-- Nov 21 -->
-          <tr id="nov21">
-            <td class="schedule-date">Friday, Nov 21st</td>
-            <td class="schedule-time">1:00 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://www.beachglasshyp.com/schedule"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-          <!-- Nov 15 -->
-          <tr id="nov15">
-            <td class="schedule-date">Friday, Nov 15th</td>
-            <td class="schedule-time">3:00 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Center & Flow</td>
-            <td class="schedule-instructor">Lisa & Brynn</td>
-            <td class="schedule-location">Berkeley Ballet Theater</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://partiful.com/e/DHUxfV9lVuVZHBs4idoE"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-          <!-- Oct 18 -->
-          <tr id="oct18">
-            <td class="schedule-date">Friday, Oct 18th</td>
-            <td class="schedule-time">5:30 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Evening Deep Flow</td>
-            <td class="schedule-instructor">Lisa & Brynn</td>
-            <td class="schedule-location">Green Yogi Berkeley</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://partiful.com/e/TCEOyAKeVyFvav9ayY30?"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-          <!-- Sept 19 -->
-          <tr id="sept19">
-            <td class="schedule-date">Thursday, Sept 19th</td>
-            <td class="schedule-time">5:30 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Sunset Flow</td>
-            <td class="schedule-instructor">Lisa & Brynn</td>
-            <td class="schedule-location">Green Yogi Berkeley</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://partiful.com/e/KKvYNm7SQLW4SXslqEhJ"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-          <!-- Aug 19 -->
-          <tr id="aug19">
-            <td class="schedule-date">Monday, Aug 19th</td>
-            <td class="schedule-time">5:30 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Core Restore</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Green Yogi Berkeley</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://partiful.com/e/TCEOyAKeVyFvav9ayY30?"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
+  </section>
+
+  <!-- =================== Recurring Studio Class =================== -->
+  <section class="recurring-class">
+    <h3>Weekly in-studio class</h3>
+    <p>Vinyasa Flow &middot; Thursdays, 5:00 PM &middot; Sports Basement Berkeley</p>
+    <a class="btn btn-dark btn-pill" href="signup.html?class=SportsBasementThursday">Reserve your spot</a>
   </section>
 
   <!-- ==================== Footer Nav ==================== -->
@@ -1307,215 +316,6 @@
 
 <script src="nav.js"></script>
 
-<!-- Class Signup Modal -->
-<div id="class-signup-modal" class="modal-overlay" aria-modal="true" role="dialog" aria-label="Class sign up">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeClassModal()" aria-label="Close">&times;</button>
-    <h2 class="modal-title" id="modal-class-title">Class Sign Up</h2>
-    <form id="class-signup-form" class="modal-form">
-      <label class="modal-label" for="f-name">Full Name</label>
-      <input class="modal-input" type="text" id="f-name" name="name" required>
-
-      <label class="modal-label" for="f-email">Email Address</label>
-      <input class="modal-input" type="email" id="f-email" name="email" required>
-
-      <label class="modal-label" for="f-notes">Health Notes / Comments</label>
-      <textarea class="modal-input modal-textarea" id="f-notes" name="comments" rows="3"
-        placeholder="e.g. I have knee pain, I have lower back pain, I'd like to share my emergency contact info, or any other notes for your instructor"></textarea>
-
-      <div class="modal-waiver-text">
-        I understand that yoga involves physical activity and I participate at my own risk. I release Yoga with Lisa Rose, Lisa Eshun-Wilson, and their associates from any liability for injury or damages.
-      </div>
-      <div class="modal-check-row">
-        <input type="checkbox" id="f-waiver" name="liability_waiver" required>
-        <label for="f-waiver">I agree to the liability waiver</label>
-      </div>
-      <div class="modal-check-row">
-        <input type="checkbox" id="f-adjustments" name="consent_adjustments">
-        <label for="f-adjustments">I consent to hands-on adjustments during class</label>
-      </div>
-      <div class="modal-check-row">
-        <input type="checkbox" id="f-media" name="consent_media">
-        <label for="f-media">I consent to being photographed or filmed during class for use on the Yoga with Lisa Rose website</label>
-      </div>
-
-      <input type="hidden" id="field-class_name" name="class_name">
-      <input type="hidden" id="field-class_date" name="class_date">
-      <input type="hidden" id="field-class_time" name="class_time">
-      <input type="hidden" id="field-class_location" name="class_location">
-      <input type="hidden" name="_subject" value="New Class Signup - Yoga with Lisa Rose">
-      <input type="hidden" id="field-replyto" name="_replyto">
-
-      <button type="submit" class="btn btn-dark btn-pill modal-submit">Reserve My Spot</button>
-    </form>
-    <div id="modal-success" class="modal-success" style="display:none;">
-      ✓ You're registered! Check your email for confirmation.
-    </div>
-    <div id="modal-error" class="modal-error" style="display:none;">
-      Something went wrong. Please email <a href="mailto:contact@yogawithlisa.ai">contact@yogawithlisa.ai</a> directly.
-    </div>
-  </div>
-</div>
-
-<script>
-function openClassModal(className, date, time, location) {
-  document.getElementById('modal-class-title').textContent = className + ' - ' + date + ' at ' + time;
-  document.getElementById('field-class_name').value = className;
-  document.getElementById('field-class_date').value = date;
-  document.getElementById('field-class_time').value = time;
-  document.getElementById('field-class_location').value = location;
-  document.getElementById('class-signup-modal').classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeClassModal() {
-  document.getElementById('class-signup-modal').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-document.getElementById('class-signup-modal').addEventListener('click', function(e) {
-  if (e.target === this) closeClassModal();
-});
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeClassModal();
-});
-
-document.getElementById('class-signup-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  document.getElementById('field-replyto').value = document.getElementById('f-email').value;
-  const formData = new FormData(this);
-  const data = Object.fromEntries(formData.entries());
-  try {
-    const res = await fetch('https://formspree.io/f/xnjrzzro', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-    if (res.ok) {
-      document.getElementById('class-signup-form').style.display = 'none';
-      document.getElementById('modal-success').style.display = 'block';
-    } else {
-      document.getElementById('modal-error').style.display = 'block';
-    }
-  } catch {
-    document.getElementById('modal-error').style.display = 'block';
-  }
-});
-</script>
-
-<!-- Month-grouped accordion for the schedule date nav -->
-<script>
-(function () {
-  const nav = document.querySelector('.schedule-date-nav');
-  if (!nav) return;
-  const pills = Array.from(nav.querySelectorAll('.date-pill'));
-  if (!pills.length) return;
-
-  // Month abbreviations already used in the existing href hashes.
-  const MONTHS = {
-    jan: 'January', feb: 'February', mar: 'March', apr: 'April',
-    may: 'May', jun: 'June', jul: 'July', aug: 'August',
-    sept: 'September', oct: 'October', nov: 'November', dec: 'December'
-  };
-  const ORDER = ['jan','feb','mar','apr','may','jun','jul','aug','sept','oct','nov','dec'];
-
-  // Group pills by the month parsed from their href hash, preserving order.
-  const groups = [];
-  let current = null;
-  pills.forEach(function (pill) {
-    const hash = (pill.getAttribute('href') || '').replace('#', '');
-    const match = hash.match(/^[a-z]+/i);
-    const abbr = match ? match[0].toLowerCase() : '';
-    if (!current || current.abbr !== abbr) {
-      current = { abbr: abbr, name: MONTHS[abbr] || abbr, pills: [] };
-      groups.push(current);
-    }
-    current.pills.push(pill);
-  });
-
-  // The list runs furthest-future first, descending in time. Start at the
-  // current year for the top group; when a month sits later in the calendar
-  // than the one above it, we've crossed back into the previous year.
-  const currentYear = new Date().getFullYear();
-  let year = currentYear;
-  let prevIdx = null;
-  groups.forEach(function (g) {
-    const idx = ORDER.indexOf(g.abbr);
-    if (prevIdx !== null && idx > prevIdx) year -= 1;
-    prevIdx = idx;
-    g.year = year;
-  });
-
-  // Current-year months stay as individual month sections; any past year is
-  // merged into a single section labeled with just the year. Multiple past
-  // years each get their own merged section (years are not merged together).
-  const sections = [];
-  let pastYearSection = null;
-  groups.forEach(function (g) {
-    if (g.year < currentYear) {
-      if (!pastYearSection || pastYearSection.year !== g.year) {
-        pastYearSection = { label: String(g.year), year: g.year, pills: [] };
-        sections.push(pastYearSection);
-      }
-      g.pills.forEach(function (p) { pastYearSection.pills.push(p); });
-    } else {
-      sections.push({ label: g.name + ' ' + g.year, pills: g.pills });
-      pastYearSection = null;
-    }
-  });
-
-  // Rebuild the nav as a stack of collapsible sections.
-  nav.classList.add('is-accordion');
-  nav.textContent = '';
-
-  const chevron =
-    '<svg class="month-header__chevron" viewBox="0 0 16 16" aria-hidden="true" focusable="false">' +
-    '<path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" ' +
-    'stroke-linecap="round" stroke-linejoin="round"/></svg>';
-
-  sections.forEach(function (g, i) {
-    const open = i === 0; // only the first (most upcoming) section starts open
-    const panelId = 'month-panel-' + i;
-    const headerId = 'month-header-' + i;
-
-    const groupEl = document.createElement('div');
-    groupEl.className = 'month-group';
-
-    const header = document.createElement('button');
-    header.type = 'button';
-    header.className = 'month-header';
-    header.id = headerId;
-    header.setAttribute('aria-expanded', open ? 'true' : 'false');
-    header.setAttribute('aria-controls', panelId);
-    header.innerHTML =
-      '<span class="month-header__label">' + g.label + '</span>' + chevron;
-
-    const panel = document.createElement('div');
-    panel.className = 'month-panel';
-    panel.id = panelId;
-    panel.setAttribute('role', 'region');
-    panel.setAttribute('aria-labelledby', headerId);
-    panel.setAttribute('aria-hidden', open ? 'false' : 'true');
-
-    const pillWrap = document.createElement('div');
-    pillWrap.className = 'month-panel__pills';
-    g.pills.forEach(function (p) { pillWrap.appendChild(p); });
-    panel.appendChild(pillWrap);
-
-    header.addEventListener('click', function () {
-      const isOpen = header.getAttribute('aria-expanded') === 'true';
-      header.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-      panel.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
-    });
-
-    groupEl.appendChild(header);
-    groupEl.appendChild(panel);
-    nav.appendChild(groupEl);
-  });
-})();
-</script>
-
 	<script src="ga4-events.js"></script>
 
 	<!-- =================== Floating Membership CTA =================== -->
@@ -1540,6 +340,6 @@ document.getElementById('class-signup-form').addEventListener('submit', async fu
     }
   }
 </style>
-	
+
 </body>
 </html>

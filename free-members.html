@@ -26,136 +26,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Class Schedule">
-  <meta property="og:description" content="Personalized yoga, meditation, and nutrition meeting you where you are.">
+  <meta property="og:title" content="Welcome, Free Member | Yoga with Lisa Rose">
+  <meta property="og:description" content="You're in. Here's how to get started with your free membership at Yoga with Lisa Rose.">
   <meta property="og:image" content="https://www.yogawithlisarose.com/images/og-linen.jpg">
-  <meta property="og:url" content="https://www.yogawithlisarose.com">
+  <meta property="og:url" content="https://www.yogawithlisarose.com/free-members.html">
   <meta property="og:type" content="website">
-
-  <!-- Schedule styles -->
-  <style>
-    .schedule-wrapper {
-      max-width: 1120px;
-      margin: 4rem auto;
-      padding: 0 1.5rem;
-    }
-    .schedule-card {
-      background: #f5eee4; /* beige card */
-      border-radius: 24px;
-      padding: 2.5rem 2rem 2rem;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.05);
-    }
-    .schedule-header {
-      margin-bottom: 1.75rem;
-    }
-    .schedule-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin: 0 0 0.5rem;
-    }
-    .schedule-subtitle {
-      max-width: 640px;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin: 0 0 1rem;
-    }
-    .schedule-date-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      font-size: 0.9rem;
-      margin-top: 0.25rem;
-    }
-    .date-pill {
-      padding: 0.35rem 0.95rem;
-      border-radius: 999px;
-      border: 1px solid #000;
-      text-decoration: none;
-      color: #000;
-      transition: background 0.18s ease, color 0.18s ease;
-    }
-    .date-pill:hover,
-    .date-pill:focus-visible {
-      background: #000;
-      color: #fff;
-    }
-    .schedule-month-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #555;
-      margin-bottom: 0.75rem;
-    }
-    .schedule-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-    }
-    .schedule-table th,
-    .schedule-table td {
-      padding: 0.75rem 0.75rem;
-      text-align: left;
-      vertical-align: middle;
-    }
-    .schedule-table thead th {
-      border-bottom: 1px solid #ddd;
-      font-weight: 600;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-    .schedule-table tbody tr {
-      border-bottom: 1px solid #eee; /* subtle divider between classes */
-    }
-    .schedule-date {
-      white-space: nowrap;
-    }
-    .schedule-time,
-    .schedule-duration {
-      white-space: nowrap;
-    }
-    .schedule-join-col,
-    .schedule-cta {
-      text-align: right;
-      width: 120px; /* give buttons room so text stays on one line */
-    }
-    .schedule-btn {
-      display: inline-block;
-      font-size: 0.9rem;
-      padding: 0.6rem 1.6rem;
-      border-radius: 999px;
-      text-transform: lowercase;
-      white-space: nowrap; /* keep 'join' on a single line */
-    }
-
-    @media (max-width: 768px) {
-      .schedule-card {
-        padding: 1.75rem 1.25rem;
-      }
-      .schedule-table thead {
-        display: none;
-      }
-      .schedule-table,
-      .schedule-table tbody,
-      .schedule-table tr,
-      .schedule-table td {
-        display: block;
-        width: 100%;
-      }
-      .schedule-table tr {
-        border-bottom: 1px solid #eee;
-        padding-bottom: 0.75rem;
-        margin-bottom: 0.75rem;
-      }
-      .schedule-table td {
-        padding: 0.25rem 0;
-      }
-      .schedule-cta {
-        margin-top: 0.5rem;
-        text-align: left;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -182,7 +57,7 @@
       <p class="nav-dropdown__group-head">Practice</p>
       <ul>
         <li><a href="class-schedule.html">Class Schedule</a></li>
-        <li><a href="yoga.html">In-Person Pop-Ups</a></li>
+        <li><a href="class-schedule.html">In-Person Pop-Ups</a></li>
           <li><a href="waiver.html">Sign Waiver</a></li>
         <li><a href="private-sessions.html">Private Sessions</a></li>
         <li><a href="on-demand.html">On Demand</a></li>
@@ -227,8 +102,7 @@
 
   <!-- Hero (image) -->
   <section class="hero hero--image" role="banner" aria-label="Hero">
-    <!-- Set your image at images/yoga-inperson.jpg -->
-    <div class="hero-media" style="background-image:url('images/yoga-inperson.jpg');" aria-hidden="true"></div>
+    <img class="hero-media hero-media--img" src="images/yoga-inperson-1.jpg" alt="Lisa Rose practicing yoga">
     <div class="hero-overlay" aria-hidden="true"></div>
 
     <div class="hero-inner">
@@ -349,160 +223,15 @@
   })();
 </script>
 
-  <!-- =================== Find a Class (Schedule) =================== -->
-  <section class="schedule-wrapper">
-    <div class="schedule-card">
-      <header class="schedule-header">
-        <h2 class="schedule-title">Find a class.</h2>
-        <p class="schedule-subtitle">
-          Designed to lift your body and your mood. All times are in Pacific Time.
-        </p>
-        <nav class="schedule-date-nav" aria-label="Upcoming dates">
-          <a href="#dec13" class="date-pill">Dec 13</a>
-          <a href="#nov21" class="date-pill">Nov 21</a>
-          <a href="#nov15" class="date-pill">Nov 15</a>
-          <a href="#oct18" class="date-pill">Oct 18</a>
-          <a href="#sept19" class="date-pill">Sept 19</a>
-          <a href="#aug19" class="date-pill">Aug 19</a>
-        </nav>
-      </header>
-
-      <div class="schedule-month-label">Upcoming Classes</div>
-
-      <table class="schedule-table" aria-label="In-person yoga schedule">
-        <thead>
-          <tr>
-            <th scope="col">Date</th>
-            <th scope="col">Time</th>
-            <th scope="col">Duration</th>
-            <th scope="col">Class</th>
-            <th scope="col">Instructor</th>
-            <th scope="col">Location</th>
-            <th scope="col" class="schedule-join-col">Sign Up</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Dec 13 -->
-          <tr id="dec13">
-            <td class="schedule-date">Saturday, Dec 13th</td>
-            <td class="schedule-time">11:00 AM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa & Brynn</td>
-            <td class="schedule-location">Green Yogi Berkeley</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://partiful.com/e/2aidGxGBVlRF2Q5FaXpf"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-          <!-- Nov 28 -->
-          <tr id="nov28">
-            <td class="schedule-date">Friday, Nov 28th</td>
-            <td class="schedule-time">1:00 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://www.beachglasshyp.com/schedule"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-          <!-- Nov 21 -->
-          <tr id="nov21">
-            <td class="schedule-date">Friday, Nov 21st</td>
-            <td class="schedule-time">1:00 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Vinyasa Flow</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Beach Glass Hot Yoga & Pilates</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://www.beachglasshyp.com/schedule"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-          <!-- Nov 15 -->
-          <tr id="nov15">
-            <td class="schedule-date">Friday, Nov 15th</td>
-            <td class="schedule-time">3:00 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Center & Flow</td>
-            <td class="schedule-instructor">Lisa & Brynn</td>
-            <td class="schedule-location">Berkeley Ballet Theater</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://partiful.com/e/DHUxfV9lVuVZHBs4idoE"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-          <!-- Oct 18 -->
-          <tr id="oct18">
-            <td class="schedule-date">Friday, Oct 18th</td>
-            <td class="schedule-time">5:30 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Evening Deep Flow</td>
-            <td class="schedule-instructor">Lisa & Brynn</td>
-            <td class="schedule-location">Green Yogi Berkeley</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://partiful.com/e/TCEOyAKeVyFvav9ayY30?"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-          <!-- Sept 19 -->
-          <tr id="sept19">
-            <td class="schedule-date">Thursday, Sept 19th</td>
-            <td class="schedule-time">5:30 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Sunset Flow</td>
-            <td class="schedule-instructor">Lisa & Brynn</td>
-            <td class="schedule-location">Green Yogi Berkeley</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://partiful.com/e/KKvYNm7SQLW4SXslqEhJ"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-
-          <!-- Aug 19 -->
-          <tr id="aug19">
-            <td class="schedule-date">Monday, Aug 19th</td>
-            <td class="schedule-time">5:30 PM</td>
-            <td class="schedule-duration">60 min</td>
-            <td class="schedule-class">Core Restore</td>
-            <td class="schedule-instructor">Lisa</td>
-            <td class="schedule-location">Green Yogi Berkeley</td>
-            <td class="schedule-cta">
-              <a class="btn btn-dark btn-pill schedule-btn"
-                 href="https://partiful.com/e/TCEOyAKeVyFvav9ayY30?"
-                 target="_blank" rel="noopener">
-                join
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <!-- =================== Find a Class =================== -->
+  <section style="max-width: 640px; margin: 0 auto 5rem; text-align: center; padding: 0 1.5rem;">
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 0.75rem;">
+      Ready to find a class?
+    </h2>
+    <p style="margin: 0 0 1.5rem; font-size: 0.95rem; line-height: 1.6;">
+      See the current schedule for online classes, private sessions, the weekly in-studio class, and in-person pop-ups.
+    </p>
+    <a class="btn btn-dark btn-pill" href="class-schedule.html">View the Class Schedule</a>
   </section>
 
   <!-- ==================== Footer Nav ==================== -->
