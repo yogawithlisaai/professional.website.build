@@ -98,4 +98,4 @@ Disallow: /membership.html
 # ------------------------------
 # SITEMAP
 # ------------------------------
-Sitemap: https://www.yogawithlisa.ai/sitemap.xml
+Sitemap: https://www.yogawithlisarose.com/sitemap.xml
