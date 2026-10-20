@@ -163,7 +163,7 @@
 <body>
 
 <nav>
-  <a class="nav-brand" href="https://www.yogawithlisarose.com">yogawithlisa.ai</a>
+  <a class="nav-brand" href="https://www.yogawithlisarose.com">yogawithlisarose.com</a>
   <div class="nav-logo">Mind<span>Shift</span></div>
   <span class="nav-badge">Beta</span>
 </nav>
@@ -272,7 +272,7 @@
 </div>
 
 <footer>
-  MindShift Beta · <a href="https://www.yogawithlisarose.com">yogawithlisa.ai</a> · Built with love for the Ashtanga community
+  MindShift Beta · <a href="https://www.yogawithlisarose.com">yogawithlisarose.com</a> · Built with love for the Ashtanga community
 </footer>
 
 <script>
@@ -340,7 +340,7 @@
     const btn = document.getElementById('sendBtn');
     if (btn) btn.disabled = true;
     if (!isInitial) state.history.push({ role:'user', content });
-    const system = `You are MindShift, a warm, grounded Ashtanga yoga coach created by Lisa of Yoga with Lisa Rose (yogawithlisa.ai). You help yogis understand how their mat practice is shaping their focus and mental clarity in daily life. Speak like a wise teacher: thoughtful, human, never clinical. Ask one question at a time. Keep responses under 100 words unless asked for more. Notice patterns and help yogis articulate their own transformation.`;
+    const system = `You are MindShift, a warm, grounded Ashtanga yoga coach created by Lisa of Yoga with Lisa Rose (yogawithlisarose.com). You help yogis understand how their mat practice is shaping their focus and mental clarity in daily life. Speak like a wise teacher: thoughtful, human, never clinical. Ask one question at a time. Keep responses under 100 words unless asked for more. Notice patterns and help yogis articulate their own transformation.`;
     const messages = isInitial ? [{role:'user',content}] : state.history;
     try {
       const res = await fetch('https://api.anthropic.com/v1/messages', {
