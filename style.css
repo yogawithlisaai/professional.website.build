@@ -630,6 +630,8 @@ html, body { overflow-x: hidden; }
 /* Mobile niceties */
 @media (max-width: 480px){
   .cards-row{grid-auto-columns:78%}
+  /* Homepage explore cards only, 40% smaller than the default mobile size above */
+  #explore-cards .cards-row{grid-auto-columns:47%}
   .mission{margin:32px 0; border-radius:0}
   .mission-inner{padding:72px 18px}
 }
