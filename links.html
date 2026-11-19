@@ -166,22 +166,38 @@
   /* ---------- Retreat ---------- */
 
   .retreat {
+    position: relative;
     display: block;
     margin-bottom: 2rem;
     padding: 1.5rem 1.4rem;
-    background: var(--cream-warm);
     border: 1px solid var(--sage);
     border-radius: 14px;
     text-decoration: none;
-    color: var(--ink);
+    color: var(--cream);
     text-align: center;
+    overflow: hidden;
+    background: var(--cream-warm) center / cover no-repeat;
+  }
+
+  .retreat::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(21,23,15,0.35) 0%, rgba(21,23,15,0.55) 100%);
   }
 
   .retreat:hover, .retreat:focus-visible { border-color: var(--sage-deep); }
 
+  .retreat-when,
+  .retreat-title,
+  .retreat-note {
+    position: relative;
+    z-index: 1;
+  }
+
   .retreat-when {
     display: block;
-    color: var(--sage-deep);
+    color: var(--sage);
     font-size: 0.78rem;
     letter-spacing: 0.06em;
     margin-bottom: 0.45rem;
@@ -193,11 +209,11 @@
     font-weight: 400;
     font-size: 1.7rem;
     line-height: 1.15;
-    color: var(--ink);
+    color: var(--cream);
     margin: 0 0 0.5rem;
   }
 
-  .retreat-note { margin: 0; font-size: 0.86rem; color: var(--ink-soft); }
+  .retreat-note { margin: 0; font-size: 0.86rem; color: var(--cream-warm); }
 
   /* ---------- Dark footer band, as in the signature ---------- */
 
@@ -273,7 +289,7 @@
     <div>
       <h1 class="name">Lisa Rose</h1>
       <p class="credential">Dr. Lisa Eshun-Wilson</p>
-      <p class="role">Founder, Yoga with Lisa Rose<br>500-hour certified instructor, San Francisco</p>
+      <p class="role">RYT1000, San Francisco, CA<br>Co-Founder, Aethera Yoga Retreats</p>
     </div>
   </header>
 
@@ -281,37 +297,37 @@
     <h2 class="group-title">Start here, free</h2>
     <p class="group-note">No account, no card, no catch.</p>
     <nav class="links" aria-label="Free resources">
-      <a class="btn" href="https://app.yogawithlisa.ai/classes">Watch free on-demand classes</a>
-      <a class="btn" href="blog.html">Read my free blog posts</a>
-      <a class="btn" href="https://app.yogawithlisa.ai/recipes">Free 50+ vegan and gluten-free recipes</a>
-      <a class="btn" href="https://www.yogawithlisarose.com/class-schedule.html">Free community class schedule</a>
-    </nav>
-  </section>
-
-  <section class="group">
-    <h2 class="group-title">Work with me</h2>
-    <nav class="links" aria-label="Paid offerings">
-      <a class="btn btn-solid" href="https://app.yogawithlisa.ai/book">Book a private session</a>
-      <a class="btn" href="https://www.yogawithlisarose.com/corporate-packages.html">Corporate and team wellness</a>
-      <a class="btn" href="https://calendly.com/contact-yogawithlisa/30min" target="_blank" rel="noopener noreferrer">Book a 30-minute call</a>
-      <a class="btn" href="https://wa.me/message/5DKVCA62VDCEH1" target="_blank" rel="noopener noreferrer">Message me on WhatsApp</a>
+      <a class="btn" href="https://app.yogawithlisa.ai/classes">Online classes</a>
+      <a class="btn" href="https://www.yogawithlisarose.com/class-schedule.html">Class Schedule</a>
+      <a class="btn" href="https://app.yogawithlisa.ai/recipes">50+ Vegan/GF receipes</a>
+      <a class="btn" href="blog.html">Blog posts</a>
     </nav>
   </section>
 
   <!-- TODO: confirm retreat destination URL -->
-  <a class="retreat" href="https://bali.yogawithlisa.ai" target="_blank" rel="noopener noreferrer">
+  <a class="retreat" href="https://bali.yogawithlisa.ai" target="_blank" rel="noopener noreferrer" style="background-image:url('images/bali-retreat.jpg')">
     <span class="retreat-when">Bali, April 2027</span>
     <h2 class="retreat-title">Return to Your Essence</h2>
-    <p class="retreat-note">Two weeks in Canggu with a group of ten. Yoga, plant-rich food, and neurowellness. Applications are open.</p>
+    <p class="retreat-note">Two weeks in Canggu with a group of ten. Yoga, plant-rich meals, neurowellness. Applications are open.</p>
   </a>
+
+  <section class="group">
+    <h2 class="group-title">Work with me</h2>
+    <nav class="links" aria-label="Paid offerings">
+      <a class="btn" href="https://calendly.com/contact-yogawithlisa/30min" target="_blank" rel="noopener noreferrer">Book a 30-minute call</a>
+      <a class="btn btn-solid" href="https://app.yogawithlisa.ai/book">Book a private session</a>
+      <a class="btn" href="https://www.yogawithlisarose.com/corporate-packages.html">Corporate and team wellness</a>
+      <a class="btn" href="https://wa.me/message/5DKVCA62VDCEH1" target="_blank" rel="noopener noreferrer">Message me on WhatsApp</a>
+    </nav>
+  </section>
 
   <section class="group">
     <h2 class="group-title">Stay close</h2>
     <nav class="links" aria-label="Community">
-      <a class="btn" href="waitlist.html">Join Our Community</a>
-      <a class="btn" href="philosophy.html">My story and why I teach</a>
       <a class="btn" href="submit-review.html">Leave a review</a>
-      <a class="btn" href="https://www.paypal.com/ncp/payment/4RPRDYNM3L252" target="_blank" rel="noopener noreferrer">Support Free Community Resources</a>
+      <a class="btn" href="https://www.paypal.com/ncp/payment/4RPRDYNM3L252" target="_blank" rel="noopener noreferrer">Make a donation</a>
+      <a class="btn" href="waitlist.html">Join our waitlist</a>
+      <a class="btn" href="philosophy.html">My story and why I teach</a>
     </nav>
   </section>
 
